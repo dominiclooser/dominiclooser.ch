@@ -1,0 +1,10 @@
+extends _base
+
+block content   
+   for item in items
+      .item-box.fullscreen(style='background-color:'+item.background)
+         .logo-box
+            img.logo(src='images/'+item.image)
+         .text-box
+            h2.item-title(style='color:'+item.color)
+               =item.name

@@ -1,0 +1,52 @@
+.fullscreen
+    min-height: 100vh
+    height: 100vh
+
+#text-list
+    h2
+        margin: 0
+        font-weight: normal
+
+#static-nav
+    margin-bottom: 4*unit
+    a:not(:last-child):after
+        content: ' / '
+    border-bottom: 1px dotted dark
+
+header
+    margin-bottom: unit
+
+#site-header
+    p 
+        margin: 0
+
+#homepage-nav
+    list-style: none
+    li:before
+        content: '\2192 \a0'
+
+.item-box
+    display: flex
+    flex-direction: column
+
+.logo-box
+    flex-grow: 2
+    display: flex
+    justify-content: center
+    align-items: center
+ 
+.logo
+    max-width: 66%
+    max-height: 66%
+    width: 300px   
+
+.text-box
+    flex-grow: 1
+    display: flex
+    justify-content: center
+    align-item: center
+    
+.item-title
+    font-weight: normal
+    margin: 0
+    

@@ -1,0 +1,9 @@
+extends _base
+
+block content
+   .container
+      header
+         h1 Text
+      ul.stacked-list#text-list
+         for text in texts
+            li: h2= text.title

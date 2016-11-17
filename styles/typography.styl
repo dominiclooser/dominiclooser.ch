@@ -1,0 +1,48 @@
+m = baseFontSize
+l = scaleFactor * m
+xl = scaleFactor * l
+xxl = scaleFactor* xl
+xxxl = scaleFactor * xxl
+xxxxl = scaleFactor * xxxl
+s = m / scaleFactor
+xs = s / scaleFactor
+
+body
+    color: textColor
+    font-size: m
+    @media bigScreen
+        font-size: l
+    font-family: bodyFont
+    line-height: baseLineHeight
+    text-rendering: geometricPrecision
+
+h1, h2, h3, h4
+    font-family: headerFont
+
+h1
+    font-size: l
+    @media bigScreen
+        font-size: xl
+    font-weight: normal
+    line-height: unit
+
+h2 
+    font-size: m
+    @media bigScreen
+        font-size: l
+    line-height: unit
+    margin-bottom: unit
+
+h3
+    font-size: m
+    line-height: unit
+    margin-bottom: unit
+
+p, ul, ol, dl
+    margin-bottom: unit
+
+p
+    hyphens: auto
+
+
+

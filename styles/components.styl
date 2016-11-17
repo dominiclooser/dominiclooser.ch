@@ -1,0 +1,30 @@
+.page-header
+    text-align: center
+    padding: unit 0
+    background: pageHeaderBackground
+    color: pageHeaderColor
+    h1
+        margin: 0
+        padding: 0
+
+.stacked-list
+    list-style: none
+    padding: 0
+    li
+        border-bottom: 1px solid softBorderColor
+        padding: 0.5 * unit 0 
+
+.definition-list
+    dt
+        display: inline
+        font-weight: bold
+        &::after
+            content: ':'
+
+    dd
+        display: inline
+        margin-left: unit 
+        width: 100%
+        &::after
+            content: '\A'
+            white-space: pre

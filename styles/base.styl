@@ -1,0 +1,52 @@
+html 
+  box-sizing: border-box
+
+*, *:before, *:after 
+  box-sizing: inherit
+
+html
+    background: baseBackground
+    height: 100%
+
+body
+    color: baseColor
+
+img, video
+    max-width: 100%
+
+canvas, img
+    vertical-align: middle
+
+a
+    color: inherit
+    text-decoration: none
+    &:hover
+        cursor: pointer
+        text-decoration: underline
+
+
+
+button
+    border: 1px solid buttonColor 
+    color: buttonColor
+    border-radius: 2em
+    cursor: pointer
+    text-transform: uppercase
+    padding: 0.5em 1em
+    &:hover
+        background-color: buttonColor
+        color: white
+
+.container
+    margin: 0 auto
+    width: 90%
+    max-width: maxPageWidth
+
+.hidden
+    display: none
+
+
+
+
+
+
