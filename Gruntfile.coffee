@@ -29,7 +29,7 @@ config =
     yaml:
         main:
             expand: true
-            src: '_data.yml'
+            src: ['**/_data.yml']
             ext: '.json'
     watch:
         options:
