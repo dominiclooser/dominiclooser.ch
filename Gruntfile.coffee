@@ -3,6 +3,9 @@ jit = require 'jit-grunt'
 autoprefixer = require 'autoprefixer'
 
 config =
+    'exec': 
+        'harp': 'harp compile'
+
     'gh-pages':
         options:
             base: 'www'
@@ -47,3 +50,4 @@ module.exports = (grunt) ->
     jit grunt
     grunt.registerTask 'default', ['yaml', 'watch']
     grunt.registerTask 'finish', ['copy', 'stylus' , 'postcss']
+    grunt.registerTask 'deploy', ['force:exec', 'finish', 'gh-pages']

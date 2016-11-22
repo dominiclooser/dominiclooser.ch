@@ -2,18 +2,17 @@
   "name": "dominiclooser",
   "version": "0.1.0",
   "devDependencies": {
+    "autoprefixer": "latest",
     "grunt": "latest",
-    "jit-grunt": "latest",
-    "matchdep": "latest",
-    "time-grunt": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-exec": "latest",
     "grunt-gh-pages": "latest",
     "grunt-postcss": "latest",
     "grunt-yaml": "latest",
-    "autoprefixer": "latest"
+    "jit-grunt": "latest",
+    "matchdep": "latest",
+    "time-grunt": "latest"
   },
-   "scripts": {
-    "deploy": "harp compile; grunt finish; grunt gh-pages",
     "test": "url=tsnuk.me; psi $url"
   }
 }
