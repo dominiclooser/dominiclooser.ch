@@ -2,7 +2,7 @@
 Sie sagen: Denk an deine Zukunft.  
 Du sagst: Die Gegenwart genügt mir.  
   
-Sie sagen: Leistung  
+Sie sagen: Leistung.  
 Du sagst: Leistung ist was für Dieselmotoren.  
   
 Sie fragen: Wieso?  
