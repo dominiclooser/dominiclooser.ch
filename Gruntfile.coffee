@@ -29,7 +29,7 @@ config =
             src: 'www/styles/styles.css'
     copy:
         main:
-            src: ['images/*.*']
+            src: ['images/*.*', 'text/*.md']
             expand: true
             dest: 'www/'   
     stylus:
