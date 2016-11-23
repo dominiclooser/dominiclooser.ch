@@ -5,5 +5,5 @@ block content
       header.page-title
          h1 Text
       ul.stacked-list#text-list
-         for text in texts
-            li: h2: a(href=text.link)= text.title
+         for text, slug in public.text._data
+            li: h2: a(href='text/'+slug)= text.title
