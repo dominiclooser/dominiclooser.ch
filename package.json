@@ -1,5 +1,5 @@
 {
-  "name": "dominiclooser",
+  "name": "portfolio-harp",
   "version": "0.1.0",
   "devDependencies": {
     "autoprefixer": "latest",
@@ -8,11 +8,13 @@
     "grunt-exec": "latest",
     "grunt-gh-pages": "latest",
     "grunt-postcss": "latest",
+    "grunt-preprocess": "^5.1.0",
     "grunt-yaml": "latest",
     "jit-grunt": "latest",
     "matchdep": "latest",
     "time-grunt": "latest"
   },
+  "scripts": {
     "test": "url=tsnuk.me; psi $url"
   }
 }

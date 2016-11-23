@@ -9,7 +9,12 @@ html(lang='de')
       title Dominic Looser – Text und Grafik
 
      
+      <!-- @ifdef ghbase -->
+      base(href='https://dominiclooser.github.io/portfolio/')
+      <!-- @endif -->
+      <!-- @ifndef ghbase -->
       base(href='/')
+      <!-- @endif -->
 
       link(rel='stylesheet', href='styles/styles.css')
       link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Inconsolata:400,700')

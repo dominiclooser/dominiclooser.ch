@@ -1,8 +1,13 @@
 index:
+  layout: none
   texts:
     - title: Das Feedback-Problem
+      link: /text/das-feedback-problem
     - title: Liebe Realität
     - title: Die Essenz des Lebens
+
+das-feedback-problem:
+  title: Das Feedback Problem
 
   
       

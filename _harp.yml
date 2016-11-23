@@ -1,0 +1,10 @@
+globals:
+   nav:
+    - title: Home
+      link: ' '
+    - title: Text
+      link: text
+    - title: Grafik
+      link: grafik
+    - title: About
+      link: about
