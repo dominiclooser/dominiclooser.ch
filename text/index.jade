@@ -2,8 +2,7 @@ extends ../_base
 
 block content
    .container
-      header.page-title
-         h1 Text
+      h1.section-header Text
       ul.stacked-list#text-list
          for text, slug in public.text._data
             li: h2: a(href='text/'+slug)= text.title

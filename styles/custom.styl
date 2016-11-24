@@ -1,31 +1,45 @@
+#about
+    h2
+        margin-top: 2*unit
+    a
+        text-decoration: underline
+        :hover
+            color: primaryColor
+
 .text
     font-family: Lora
     h1
         font-family: Lora
-        border-bottom: 1px solid dark
-        border-top: 1px solid dark
-        padding: unit2 0
-        line-height: unit2
-        margin-bottom: 2*unit2
+        // border-bottom: 1px solid dark
+        line-height: 2*unit2
+        margin-bottom: unit2
+        font-size: xl
+        @media bigScreen
+            font-size: xxl
     h2
         font-family: Lora
         // font-weight: bold
         // font-style: italic
         line-height: unit2
-        margin-top: 2*unit2
+        margin-top: 0
         border-bottom: 1px dotted dark
         display: inline-block
     p 
         line-height: lineHeight2
 
 .fullscreen
-    min-height: 100vh
-    height: 100vh
+    min-height: 105vh
+    height: 105vh
 
 #text-list
+    li:first-child
+        display:none
     h2
         margin: 0
         font-weight: normal
+
+#static-nav-container
+    background-color: #f7f7f7
 
 #static-nav
     padding: unit 0
@@ -37,13 +51,19 @@
     li:not(:last-child):after
         content: ' / '
 
-.page-title
+#site-title
     p 
         margin: 0
-    margin-bottom: unit
+
+.section-header
+#site-title
+.text
+      margin-top: 3*unit
+      margin-bottom: unit
 
 #homepage-nav
-    list-style: none
+    ul
+        list-style: none
     li:before
         content: '\2192 \a0'
 

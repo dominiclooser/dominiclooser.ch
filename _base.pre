@@ -30,8 +30,8 @@ html(lang='de')
       //-       h1: a(href='/')  
       //-       nav
       //-          a(href='/about') about
-      .container
-         nav#static-nav 
+      #static-nav-container
+         nav.container#static-nav 
             ul
                 for item in nav
                     li: a(href=item.link)= item.title
