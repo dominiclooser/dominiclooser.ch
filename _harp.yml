@@ -6,5 +6,7 @@ globals:
       link: text
     - title: Grafik
       link: grafik
+    # - title: Sites
+    #   link: sites
     - title: About
       link: about
