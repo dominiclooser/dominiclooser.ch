@@ -30,7 +30,7 @@ ficken
 
 ## Teil 5: Flow
 
-Das Leben ist wie Schreiben ist wie Pinkeln.  
+Leben ist wie Schreiben ist wie Pinkeln.  
 Es geht darum, es fliessen zu lassen.  
 
 ## Teil 6: Sex
@@ -39,7 +39,7 @@ Ah.
 
 ## Teil 7: Gut und Böse
 
-Schwule behinderte Neger sind nicht bessere Menschen als ignorante populistische Rechtsaussen-Politiker.  
+Schwule behinderte Ausländer sind nicht besser als ignorante populistische Rechtsaussen-Politiker.  
 
 
 
