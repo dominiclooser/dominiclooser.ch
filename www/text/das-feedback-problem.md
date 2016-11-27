@@ -1,3 +1,5 @@
+# Das Feedback-Problem
+
 Wem ein Problem nicht reicht, der kann sehr einfach zwei daraus machen. Er oder sie hadere einfach nur mit der Tatsache, dass er oder sie Problem Nummer eins habe. Und voila, schon ist Problem Nummer zwei zum Leben erweckt. Ein aktuelles Beispiel.
 
 Ein Problem von mir besteht darin, dass ich meinen Selbstwert stark an Feedback von aussen knüpfe. Habe ich das Gefühl, jemanden passe etwas nicht an mir, dann werde ich eingeschüchtert und beginne mich zu verkriechen. Also strebe ich nach Applaus und Lob, kommt dieses jedoch, fühle ich mich auch nicht gut. Bin ich jetzt doch ein Selbstdarsteller. Das will ich aber auch nicht sein, könnte das ja auch wiederum negativ auffallen.  Also missfällt mir sowohl negatives als auch positives Feedback, die Konsequenz davon: ich verstecke mich. Kein Feedback ist aber das Schlimmste von allem, dann hört man ja auf zu existieren, wird depressiv und erlebt nix mehr. Die Lage scheint aussichtslos.

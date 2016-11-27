@@ -1,3 +1,5 @@
+# Liebe Realität
+
 Du kotzt mich manchmal echt an. Dabei weiss ich nicht mal, ob es dich überhaupt gibt. Du bist zwar genau das, was es gibt, deshalb sollte es dich eigentlich schon geben. Gut, ich nehms zurück: dich gibt es schon. Aber wie du aussiehst, weiss ich nicht. Ist meine Sicht auf dich doch immer verzerrt irgendwie. Dich gibts, aber niemand hat dich je gesehen: Ha, unsichtbar wie ein Fucking Ghost. 
 
 Doch nun zu dem Kotz-Thema. Wir nehmen jetzt mal an, dass es dich gibt und dass wir dich ungefähr kennen. Heute morgen bist du zum Beispiel in Form von Schwindel und Antriebsmangel aufgetaucht. Ja, du bist vielseitig. Und ich wollte so ein Poster machen. Und du sagst einfach: «Nein, wir machen jetzt kein Poster. Zumindest kein Ganzes. Du darfst mal anfangen und dann chillst du wieder für ein paar Stunden.» Ich will doch nicht chillen, ich will jetzt dieses verdammte Poster machen. Du lässt dich nicht überzeugen, bleibst stur, schiebst noch ein paar Schwindelattacken nach. Fuck you, Realität!
