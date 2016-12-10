@@ -2,7 +2,17 @@ extends ../_base
 
 block content
    .container
+      
       h1.section-header Text
+      
+      h2 Texte
       ul.stacked-list#text-list
          for text, slug in public.text._data
-            li: h2: a(href='text/'+slug)= text.title
+            li: a(href='text/'+slug)= text.title
+      
+      h2 Auftritte
+      ul.stacked-list#performance-list
+         for p in performances
+            li 
+               span.left #{p.title} (#{p.place}) 
+               span.right #{p.date}

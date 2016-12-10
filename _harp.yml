@@ -1,12 +1,29 @@
 globals:
-   nav:
+  
+  nav:
     - title: Home
       link: ' '
     - title: Text
       link: text
     - title: Grafik
       link: grafik
-    # - title: Sites
-    #   link: sites
+      # - title: Sites
+      #   link: sites
     - title: About
       link: about
+
+  performances:
+    - title: Poetry Slam im Acapulco
+      place: Zürich
+      date: 30.11.16
+    - title: Slam 59
+      place: Luzern
+      date: 24.11.16
+    - title: 6. Bilingue Slam 
+      place: Aarau
+      date: 12.11.16
+    - title: Nebeneinander Poetry Slam Show
+      place: Winterthur
+      date: 13.10.16
+
+  
