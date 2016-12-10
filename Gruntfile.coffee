@@ -13,7 +13,6 @@ config =
             options:
                 context:
                     ghbase: true
-
     exec: 
         'harp': 'harp compile'
     'gh-pages':
@@ -29,7 +28,7 @@ config =
             src: 'www/styles/styles.css'
     copy:
         main:
-            src: ['images/*.*', 'text/*.md']
+            src: ['images/*.*', 'text/*.md', 'CNAME']
             expand: true
             dest: 'www/'   
     stylus:
@@ -60,4 +59,4 @@ module.exports = (grunt) ->
     jit grunt
     grunt.registerTask 'default', ['yaml', 'preprocess:slashbase', 'watch']
     grunt.registerTask 'finish', ['copy', 'stylus' , 'postcss']
-    grunt.registerTask 'deploy', ['force:on','preprocess:ghbase', 'exec', 'finish', 'gh-pages', 'preprocess:slashbase']
+    grunt.registerTask 'deploy', ['force:on','preprocess:slashbase', 'exec:harp', 'finish', 'gh-pages']
