@@ -3,16 +3,6 @@ jit = require 'jit-grunt'
 autoprefixer = require 'autoprefixer'
 
 config =
-    preprocess:
-        slashbase: 
-            src: '_base.pre'
-            dest: '_base.jade' 
-        ghbase:
-            src: '_base.pre'
-            dest: '_base.jade'
-            options:
-                context:
-                    ghbase: true
     exec: 
         'harp': 'harp compile'
     'gh-pages':
@@ -28,7 +18,7 @@ config =
             src: 'www/styles/styles.css'
     copy:
         main:
-            src: ['images/*.*', 'text/*.md', 'CNAME']
+            src: ['images/*.*', 'CNAME']
             expand: true
             dest: 'www/'   
     stylus:
@@ -38,7 +28,7 @@ config =
     yaml:
         main:
             expand: true
-            src: ['**/_data.yml', '_harp.yml', 'harp.yml']
+            src: ['**/_data.yml', '_harp.yml']
             ext: '.json'
     watch:
         options:
@@ -46,9 +36,6 @@ config =
         yaml:
             files: ['**/*.yml']
             tasks: ['yaml']
-        base:
-            files: ['_base.pre']
-            tasks: ['preprocess:slashbase']
         all:
             files: ['**/*.*']
             tasks: []
@@ -57,6 +44,6 @@ module.exports = (grunt) ->
     grunt.initConfig config
     time grunt
     jit grunt
-    grunt.registerTask 'default', ['yaml', 'preprocess:slashbase', 'watch']
-    grunt.registerTask 'finish', ['copy', 'stylus' , 'postcss']
-    grunt.registerTask 'deploy', ['force:on','preprocess:slashbase', 'exec:harp', 'finish', 'gh-pages']
+    grunt.registerTask 'default', ['yaml', 'watch']
+    grunt.registerTask 'compile', ['yaml', 'exec:harp', 'copy', 'stylus', 'postcss']
+    grunt.registerTask 'deploy', ['force:on', 'compile', 'gh-pages']

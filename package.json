@@ -15,6 +15,6 @@
     "time-grunt": "latest"
   },
   "scripts": {
-    "test": "url=tsnuk.me; psi $url"
+    "test": "psi dominiclooser.ch"
   }
 }
