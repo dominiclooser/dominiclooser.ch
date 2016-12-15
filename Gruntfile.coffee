@@ -2,6 +2,7 @@ time = require 'time-grunt'
 jit = require 'jit-grunt'
 autoprefixer = require 'autoprefixer'
 cssVariables = require 'postcss-css-variables'
+calc = require 'postcss-calc'
 
 config =
     exec: 
@@ -12,7 +13,7 @@ config =
         src: '**/*'
     postcss:
         options:
-            processors: [autoprefixer({browers: 'last 2 versions'}), cssVariables ]
+            processors: [autoprefixer({browers: 'last 2 versions'}), cssVariables, calc]
 
         dist:
             src: 'www/styles/styles.css'
