@@ -12,6 +12,7 @@
     "grunt-yaml": "latest",
     "jit-grunt": "latest",
     "matchdep": "latest",
+    "postcss-css-variables": "^0.6.0",
     "time-grunt": "latest"
   },
   "scripts": {

@@ -1,20 +1,33 @@
 .page-header
-    text-align: center
-    padding: unit 0
+    padding:var(--unit) 0
     background: pageHeaderBackground
     color: pageHeaderColor
-    h1
-        margin: 0
-        padding: 0
+
+.unmarked-links
+    a
+        text-decoration: none
+
+.arrow-list
+    list-style: none
+    li:before
+        content: '\2192 \a0'
 
 .stacked-list
     list-style: none
     padding: 0
     li  
-        padding: 0.5 * unit 0 
+        padding: calc(0.5 * var(--unit)) 0 
         border-bottom: 1px solid softBorderColor
     li:first-child
         border-top: 1px solid softBorderColor
+
+.separated-list
+    list-style: none
+    margin: 0
+    li 
+        display: inline
+    li:not(:last-child):after
+        content: ' / '
 
 .definition-list
     dt
@@ -25,7 +38,7 @@
 
     dd
         display: inline
-        margin-left: unit 
+        margin-left:var(--unit) 
         width: 100%
         &::after
             content: '\A'

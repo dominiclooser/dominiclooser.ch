@@ -1,46 +1,49 @@
-m = baseFontSize
-l = scaleFactor * m
-xl = scaleFactor * l
-xxl = scaleFactor* xl
-xxxl = scaleFactor * xxl
-xxxxl = scaleFactor * xxxl
-s = m / scaleFactor
-xs = s / scaleFactor
+:root
+    --m: var(--base-font-size)
+    --l: calc(var(--scale-factor) * var(--m))
+    --xl: calc(var(--scale-factor) * var(--l))
+    --xxl: calc(var(--scale-factor) * var(--xl))
+    --xxxl: calc(var(--scale-factor) * var(--xxl))
+    --xxxxl: calc(var(--scale-factor) * var(--xxxl))
+    --xxxxxl: calc(var(--scale-factor) * var(--xxxxl))
+    --s: calc(var(--m) / var(--scale-factor))
+    --xs: calc(var(--s) / var(--scale-factor))
 
 body
     color: textColor
-    font-size: m
-    @media bigScreen
-        font-size: l
+    font-size: var(--m)
     font-family: bodyFont
-    line-height: baseLineHeight
+    line-height: var(--base-line-height)
     text-rendering: geometricPrecision
 
 h1, h2, h3, h4
     font-family: headerFont
 
 h1
-    font-size: xl
-    @media bigScreen
-        font-size: xxl
+    font-size: var(--xl)
     font-weight: normal
-    line-height: unit
+    line-height: calc(1*var(--unit))
 
 h2 
-    font-size: l
-    @media bigScreen
-        font-size: xl
-    line-height: unit
-    margin-bottom: unit
+    font-size: var(--l)
+    line-height: var(--unit)
+    margin-bottom: var(--unit)
     font-weight: normal
 
 h3
-    font-size: m
-    line-height: unit
-    margin-bottom: unit
+    font-size: var(--m)
+    line-height: var(--unit)
+    margin-bottom: var(--unit)
 
 p, ul, ol, dl
-    margin-bottom: unit
+    margin-bottom: var(--unit)
 
 p
     hyphens: auto
+
+a
+    color: inherit
+    text-decoration: underline
+    &:hover
+        cursor: pointer
+        color: primaryColor

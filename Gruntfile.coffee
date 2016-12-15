@@ -1,6 +1,7 @@
 time = require 'time-grunt'
 jit = require 'jit-grunt'
 autoprefixer = require 'autoprefixer'
+cssVariables = require 'postcss-css-variables'
 
 config =
     exec: 
@@ -11,9 +12,8 @@ config =
         src: '**/*'
     postcss:
         options:
-            processors:
-                autoprefixer
-                    browers: 'last 2 versions'
+            processors: [autoprefixer({browers: 'last 2 versions'}), cssVariables ]
+
         dist:
             src: 'www/styles/styles.css'
     copy:
@@ -45,5 +45,5 @@ module.exports = (grunt) ->
     time grunt
     jit grunt
     grunt.registerTask 'default', ['yaml', 'watch']
-    grunt.registerTask 'compile', ['yaml', 'exec:harp', 'copy', 'stylus', 'postcss']
-    grunt.registerTask 'deploy', ['force:on', 'compile', 'gh-pages']
+    grunt.registerTask 'compile', ['yaml','force:on', 'exec:harp', 'copy', 'stylus', 'postcss']
+    grunt.registerTask 'deploy', ['compile', 'gh-pages']

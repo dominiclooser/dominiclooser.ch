@@ -1,67 +1,62 @@
-// .section-header::after
-//     content: ''
-//     background-color: #37ADE2
-//     width: 100px
-//     height: 100px
-//     display: block
-//     position: absolute
-//     // border-radius: 50%
-//     top: -50px
-//     left: -50px
-//     z-index: -1
+.page-header
+.homepage-nav
+.stacked-list
+    @extends .unmarked-links
 
-// .section-header
-//     position: relative
+.site-title  
+    p
+        line-height: var(--unit)
+        font-size: var(--l)
+        color: primaryColor
+        margin: 0
+
+.site-title
+.page-heading
+    text-transform: uppercase
+    margin-top: calc(2*var(--unit))
+    margin-bottom: calc(2*var(--unit))
+
+.contact
+    margin-top: calc(2*var(--unit))
+
 
 #performance-list
     li 
         display: flex
         justify-content: space-between
 
-#contact
-    margin-top: 2*unit
-
 #about
     h2
-        margin-top: 2*unit
-    a
-        text-decoration: underline
-        :hover
-            color: primaryColor
+        margin-top: calc(2*var(--unit))
 
 .text
-    margin-top: 3*unit2
+    margin-top: calc(2*var(--unit2))
     h1
-        line-height: unit2
-        margin-bottom: 3*unit2
-        font-size: xxl
-        @media bigScreen
-            font-size: xxxl
-        
+        line-height: calc(2*var(--unit2))
+        margin-bottom: calc(2*var(--unit2))
+        text-transform: uppercase
+        color: primaryColor
+        font-size: var(--xl)
     h2
         // font-weight: bold
         // font-style: italic
-        line-height: unit2
+        line-height:var(--unit2)
         margin-top: 0
         border-bottom: 1px dotted dark
         display: inline-block
-        font-size: l
-        @media bigScreen
-            font-size: xl
+        font-size: var(--l)
     p 
-        line-height: lineHeight2
+        line-height: var(--line-height-2)
         font-family: 'Noto Serif'
     
 .text.justify
     p 
         text-align: justify
 
-.fullscreen
-    min-height: 105vh
-    height: 105vh
+
 
 #text-list
-    margin-bottom: 2*unit
+    margin-bottom: calc(2*var(--unit))
     li:first-child
         display:none
     li:nth-child(2)   
@@ -70,33 +65,9 @@
         margin: 0
         font-weight: normal
 
-#static-nav-container
-    background-color: #f7f7f7
-
-#static-nav
-    padding: unit 0
-    ul  
-        list-style: none
-        margin: 0
-    li 
-        display: inline
-    li:not(:last-child):after
-        content: ' / '
-
-#site-title
-    p 
-        margin: 0
-
-.section-header
-#site-title
-      margin-top: 2*unit
-      margin-bottom: 2*unit
-
-#homepage-nav
-    ul
-        list-style: none
-    li:before
-        content: '\2192 \a0'
+.fullscreen
+    min-height: 105vh
+    height: 105vh
 
 .item-box
     display: flex

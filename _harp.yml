@@ -13,7 +13,10 @@ globals:
       link: about
 
   performances:
-    - title: Poetry Slam im Acapulco
+    - title: Dichtungsring Poetry Slam
+      place: Winterthur
+      date: 6.12.16
+    - title: Poetry Slam Acapulco
       place: Zürich
       date: 30.11.16
     - title: Slam 59

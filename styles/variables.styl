@@ -1,34 +1,38 @@
 //
-// typography
-//
-baseFontSize = 19px
-baseLineHeight = 1.4
-scaleFactor = 1.2
-sansFont = Lato, sans-serif
-serifFont = Merriweather, serif
-bodyFont = Inconsolata
-headerFont = Inconsolata
-unit = baseLineHeight * baseFontSize
-
-lineHeight2 = 1.5
-unit2 = lineHeight2 * baseFontSize
-
-//
 // breakpoints
 //
 bigScreen = '(min-width: 40em)'
 
 //
+// typography
+//
+
+bodyFont = Inconsolata
+headerFont = Inconsolata
+
+:root
+    --base-line-height: 1.4
+    --line-height-2: 1.5
+    --scale-factor: 1.2
+    --base-font-size: 19px
+    --font-size-2: 19px
+    @media bigScreen
+        --base-font-size: 22px
+    --unit: calc(var(--base-line-height) * var(--base-font-size))
+    --unit2: calc(var(--line-height-2) * var(--font-size-2))
+
+//
 // colors
 //
 dark = rgba(0,0,0,0.87)
+light-grey = #f7f7f7
 baseBackground = white
 textColor = dark
 buttonColor = dark
 softBorderColor = grey
-pageHeaderBackground = dark
-pageHeaderColor = white
-primaryColor = #ff43da
+pageHeaderBackground = light-grey
+pageHeaderColor = dark
+primaryColor = #F3007A
 
 //
 // misc
