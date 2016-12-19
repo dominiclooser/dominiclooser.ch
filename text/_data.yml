@@ -1,6 +1,10 @@
 index:
   layout: none
 
+bedingungslos:
+  title: Beim Psychologen
+  dialogue: True
+
 sie-sagen:
   title: Sie sagen
 
