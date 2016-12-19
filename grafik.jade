@@ -1,10 +1,11 @@
 extends _base
 
 block content   
-   for item in items
-      .item-box.fullscreen(style='background-color:'+item.background)
-         .logo-box
-            img.logo(src='images/'+item.image)
-         .text-box
-            h2.item-title(style='color:'+item.color)
-               =item.name
+   for graphic in graphics
+      .graphic.fullscreen
+         .graphic__image-box(style='background-color:'+graphic.background)
+            img.graphic__image(src='images/'+graphic.image)
+         .graphic__description
+            h2.graphic__title
+               =graphic.name
+            //- p= graphic.year

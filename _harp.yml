@@ -28,5 +28,35 @@ globals:
     - title: Nebeneinander Poetry Slam Show
       place: Winterthur
       date: 13.10.16
+ 
+  graphics:
+    - name: Empathy
+      year: 2015
+      image: empathy.svg
+      background: '#333333'
+      color: '#E8E3D6'
 
+    - name: Superdada
+      year: 2015
+      image: superdada.svg
+      background: '#f8fd94'
+      color: '#D41F20' 
+
+    - name: Heil Dada
+      year: 2015
+      image: heil-dada.svg
+      background: '#FBE1FF'
+      color: '#00FFFF'
+
+    - name: Krasse Tasse
+      year: 2016
+      image: krasse-tasse.svg
+    
+    - name: Geometry for Rebels
+      year: 2015
+      image: geometry-for-rebels.svg
+
+    - name: Schräger Vogel
+      year: 2016
+      image: schraeger-vogel.svg 
   
