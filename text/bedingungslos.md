@@ -1,1 +1,0 @@
-/Users/dominic/projects/d_text/fertigundbrauchbar/bedingungslos.md
