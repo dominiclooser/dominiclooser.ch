@@ -13,7 +13,16 @@ globals:
       link: about
 
   performances:
-    - title: Dichtungsring Poetry Slam
+    - title: PostSkriptum Poetry Slam
+      place: Linz AT
+      date: 26.1.17
+    - title: Lesebühne Original Linzer Worte
+      place: Linz AT
+      date: 20.1.17
+    - title: Dichtungsring
+      place: Winterthur
+      date: 3.1.17 
+    - title: Dichtungsring
       place: Winterthur
       date: 6.12.16
     - title: Poetry Slam Acapulco
