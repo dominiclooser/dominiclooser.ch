@@ -1,8 +1,10 @@
 index:
   layout: none
+  description: Texte von Dominic Looser.
 
 der-mensch:
   title: Der Mensch
+  description: Ein Text über den Menschen.
 
 wer-wen-mag-und-wieso:
   title: Wer wen mag und wieso

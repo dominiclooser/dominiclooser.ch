@@ -1,4 +1,8 @@
+index:
+  description: Die Webseite von Dominic Looser mit Texten und Grafiken
+
 grafik:
+  description: Grafiken von Dominic Looser
   items:
     - name: Empathy
       image: empathy.svg
