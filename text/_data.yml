@@ -1,6 +1,9 @@
 index:
   layout: none
 
+der-mensch:
+  title: Der Mensch
+
 wer-wen-mag-und-wieso:
   title: Wer wen mag und wieso
   dialogue: True
