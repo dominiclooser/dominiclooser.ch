@@ -20,6 +20,6 @@ html(lang='de')
          nav.container
             ul.separated-list
                for item in nav
-                  li: a(href=item.link)= item.title
+                  li: a(href=item.link, class=current.path[0] == item.link ? 'current-link' : '')= item.title
       block content
       block scripts
