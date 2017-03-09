@@ -1,0 +1,64 @@
+#page-construction
+    height: 100vh
+    margin-top: var(--unit)
+    background: light-grey
+    display: flex
+    align-items: center
+    svg
+        height: 60vh
+
+.page-construction-form
+    div
+        padding: var(--unit) 0
+        display: flex
+        justify-content: space-between
+        border-bottom: 1px dotted dark
+        &:first-child
+            border-top: 1px dotted dark
+    input
+        font-size: inherit
+        font-family: inherit
+        width: 60px
+        padding: 5px 0
+        text-align: right
+    label
+        margin-right: 20px
+        &:after
+            content: ':'
+    button
+        margin-top: var(--unit)
+
+.proportions
+    svg
+        margin-left: 10px
+
+.proportion
+
+    &:nth-child(2n) 
+        background: light-grey
+    display: flex 
+    flex-direction: column
+    justify-content: flex-start
+    height: 100vh
+
+    figure 
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 80vh
+
+    svg
+        height: 60vh
+        rect
+            fill: dark
+
+    .caption
+        border-top: 1px solid dark
+        border-bottom: @border-top
+        padding-left: 10px
+        display: flex
+        align-items: center
+        height: 10vh
+        margin-bottom: 10vh
+        *
+            margin: 0

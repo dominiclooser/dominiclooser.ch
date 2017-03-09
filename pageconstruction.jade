@@ -1,0 +1,25 @@
+extends _base
+
+block scripts
+   script(src='https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.4.0/svg.min.js')
+   script(src='scripts/page-layout.js')
+
+block content
+   
+   .container
+
+      h1.page-heading Page Construction
+
+      form.page-construction-form
+         div
+            label(for='page2margins') Page / Margins
+            input(id='page2margins', type='number', value=3) 
+         div
+            label(for='inner2outer') Inner / Outer
+            input(id='inner2outer', type='number', value=2)
+         div
+            label(for='bottom2top') Bottom / Top
+            input(id='bottom2top', type='number', value=2)
+         button(type='button', id='generate-button') Generate Page Construction
+
+      #page-construction
