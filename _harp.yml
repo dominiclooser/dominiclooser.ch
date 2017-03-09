@@ -7,8 +7,6 @@ globals:
       link: text
     - title: Grafik
       link: grafik
-      # - title: Sites
-      #   link: sites
     - title: About
       link: about
 
@@ -66,3 +64,12 @@ globals:
       year: 2016
       image: schraeger-vogel.svg 
   
+  proportions:
+    - ratio: 1
+      title: Square
+    - ratio: 1.4142
+      title: DIN A
+    - ratio: 1.5
+      title: '2:3'
+    - ratio: 1.618
+      title: Golden Ratio

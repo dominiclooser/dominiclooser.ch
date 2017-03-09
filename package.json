@@ -18,5 +18,8 @@
   },
   "scripts": {
     "test": "psi dominiclooser.ch"
+  },
+  "dependencies": {
+    "svg.js": "^2.4.0"
   }
 }
