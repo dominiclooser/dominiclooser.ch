@@ -1,4 +1,5 @@
 middleGrey = '#e8e6e6'
+dark = '#212121'
 
 draw = -> 
 
