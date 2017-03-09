@@ -23,4 +23,8 @@ html(lang='de')
                for item in nav
                   li: a(href=item.link, class=current.path[0] == item.link ? 'current-link' : '')= item.title
       block content
+      footer
+         .container
+            span Dominic Looser // 
+            a(href=email) dominic.looser@gmail.com
       block scripts

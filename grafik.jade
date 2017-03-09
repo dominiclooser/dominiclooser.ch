@@ -5,10 +5,9 @@ block title
 
 block content   
    for graphic in graphics
-      .graphic.fullscreen
-         .graphic__image-box(style='background-color:'+graphic.background)
-            img.graphic__image(src='images/'+graphic.image)
-         .graphic__description
-            h2.graphic__title
-               =graphic.name
+      .graphic.fullscreen(style='background-color:' + graphic.background)
+         .graphic__image-box
+            img.graphic__image(src='images/' + graphic.image)
+         .graphic__description(style='color:' + graphic.color )
+            h2.graphic__title=graphic.name
             //- p= graphic.year

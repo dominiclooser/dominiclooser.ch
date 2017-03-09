@@ -1,5 +1,7 @@
 globals:
   
+  email: dominic.looser@gmail.com
+
   nav:
     - title: Home
       link: ' '
@@ -40,11 +42,19 @@ globals:
       background: '#333333'
       color: '#E8E3D6'
 
+    - name: Geometry for Rebels
+      year: 2015
+      image: geometry-for-rebels.svg
+
     - name: Superdada
       year: 2015
       image: superdada.svg
       background: '#f8fd94'
       color: '#D41F20' 
+
+    - name: Schräger Vogel
+      year: 2016
+      image: schraeger-vogel.svg 
 
     - name: Heil Dada
       year: 2015
@@ -56,13 +66,6 @@ globals:
       year: 2016
       image: krasse-tasse.svg
     
-    - name: Geometry for Rebels
-      year: 2015
-      image: geometry-for-rebels.svg
-
-    - name: Schräger Vogel
-      year: 2016
-      image: schraeger-vogel.svg 
   
   proportions:
     - ratio: 1

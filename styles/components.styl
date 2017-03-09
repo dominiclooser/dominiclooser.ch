@@ -5,7 +5,7 @@
         flex-direction: row
 
     &__image-box
-        flex-grow: 2
+        flex-grow: 3
         display: flex
         justify-content: center
         align-items: center
@@ -18,14 +18,17 @@
 
     &__description
         flex-grow: 1
+        display: flex
         justify-content: center
-        align-item: center
+        align-items: center
+        h2
+            margin: 0
         @media bigScreen
-            display: flex
             flex-direction: column
             text-align: center
+        
     &__title
-        font-weight: normal
+        // font-weight: normal
         // margin: 0
         @media bigScreen
             font-size: var(--xxl) 

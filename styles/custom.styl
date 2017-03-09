@@ -1,4 +1,13 @@
+.colored
+    color: primaryColor
 
+footer
+    font-size: var(--s)
+    background: light-grey
+    padding: var(--unit) 0
+    border-top: 1px dotted middle-grey
+    border-bottom: @border-top
+    margin-bottom: var(--unit)
 
 .page-header
 .homepage-nav
@@ -6,9 +15,9 @@
     @extends .unmarked-links
 
 .site-title  
-    p
+    .subtitle
         line-height: var(--unit)
-        font-size: var(--l)
+        font-size: var(--xl)
         color: primaryColor
         margin: 0
 
@@ -22,8 +31,8 @@
     color: primaryColor
 
 .intro
-    p 
-        margin-bottom: 0
+    span
+        color: primaryColor
     margin-bottom: calc(2*var(--unit))
 
 .contact
