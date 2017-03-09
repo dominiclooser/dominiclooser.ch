@@ -35,4 +35,11 @@ globals:
       place: Winterthur
       date: 13.10.16
 
-  
+  proportions:
+    - ratio: 1
+    - ratio: 1.4142
+      title: DIN A
+    - ratio: 1.5
+      title: 2:3
+    - ratio: 1.6180
+      title: Golden Ratio
