@@ -28,37 +28,40 @@
     button
         margin-top: var(--unit)
 
-.proportions
-    svg
-        margin-left: 10px
-
 .proportion
 
     &:nth-child(2n) 
         background: light-grey
     display: flex 
     flex-direction: column
-    justify-content: flex-start
     height: 100vh
+    padding: 0 var(--unit) calc(2 * var(--unit)) var(--unit)
 
-    figure 
+    .image-container
+        flex-grow: 1
         display: flex
         justify-content: center
         align-items: center
-        height: 80vh
+
 
     svg
-        height: 60vh
+        height: 50vh
         rect
             fill: dark
 
-    .caption
+    // figure 
+    //     display: flex
+    //     justify-content: center
+    //     align-items: center
+    //     height: 80vh
+
+    
+    figcaption
         border-top: 1px solid dark
         border-bottom: @border-top
-        padding-left: 10px
+        padding: calc(0.5 * var(--unit))
         display: flex
         align-items: center
-        height: 10vh
-        margin-bottom: 10vh
+        justify-content: space-between
         *
             margin: 0
