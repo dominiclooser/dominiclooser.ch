@@ -1,42 +1,6 @@
-.graphic
-    display: flex
-    flex-direction: column
-    @media bigScreen
-        flex-direction: row
 
-    &__image-box
-        flex-grow: 3
-        display: flex
-        justify-content: center
-        align-items: center
-        @media bigScreen
-            max-width: 67%
-    &__image
-        max-width: 66%
-        max-height: 66%
-        width: 300px   
-
-    &__description
-        flex-grow: 1
-        display: flex
-        justify-content: center
-        align-items: center
-        h2
-            margin: 0
-        @media bigScreen
-            flex-direction: column
-            text-align: center
-        
-    &__title
-        // font-weight: normal
-        // margin: 0
-        @media bigScreen
-            font-size: var(--xxl) 
     
-.graphic:nth-child(2n)
-    .graphic__image-box
-        @media bigScreen
-            order: 2
+
 
 .page-header
     padding:var(--unit) 0

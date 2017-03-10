@@ -36,35 +36,37 @@ globals:
       date: 13.10.16
  
   graphics:
+    - name: Vielseitig Desinteressiert
+      year: 2016
+      image: vielseitig-desinteressiert.svg
     - name: Empathy
       year: 2015
       image: empathy.svg
       background: '#333333'
       color: '#E8E3D6'
-
     - name: Geometry for Rebels
       year: 2015
       image: geometry-for-rebels.svg
-
     - name: Superdada
       year: 2015
       image: superdada.svg
       background: '#f8fd94'
-      color: '#D41F20' 
-
-    - name: Schräger Vogel
-      year: 2016
-      image: schraeger-vogel.svg 
-
+      color: '#D41F20'
+    - name: DDAA
+      year: 2015
+      image: ddaa.svg
     - name: Heil Dada
       year: 2015
       image: heil-dada.svg
       background: '#FBE1FF'
       color: '#00FFFF'
-
-    - name: Krasse Tasse
+    - name: Schräger Vogel
       year: 2016
-      image: krasse-tasse.svg
+      image: schraeger-vogel.svg 
+    - name: Flyer TsnuK
+      year: 2016
+      image: flyer-tsnuk.jpg
+      background: '#D6C1A8'
     
   
   proportions:

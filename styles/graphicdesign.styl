@@ -1,0 +1,33 @@
+.graphics
+    display: flex
+    flex-direction: column
+    @media bigScreen
+        flex-direction: row
+
+.graphic
+    min-width: 400px
+    height: 105vh
+    display: flex
+    flex-direction: column
+
+    .image-container
+        height: 66.66vh
+        display: flex
+        justify-content: center
+        align-items: center
+
+    img
+        max-width: 66.66%
+        max-height: 66.66%
+        width: 300px   
+
+    figcaption
+        padding: var(--unit)
+        height: 33.33vh
+        display: flex
+        justify-content: center
+        align-items: center
+        h2
+            text-align: center
+            margin: 0
+             
