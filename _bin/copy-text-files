@@ -1,0 +1,12 @@
+#!/usr/bin/env fish
+
+cd ~/d_text/fertig
+
+set texts liebe-realitaet.md das-feedback-problem.md die-essenz-des-lebens.md
+set texts $texts sie-sagen.md wer-wen-mag-und-wieso.md der-mensch.md 
+
+for text in $texts
+    cp -iv $text ~/projects/dominiclooser.ch/dominiclooser.ch-harp/text
+end
+
+
