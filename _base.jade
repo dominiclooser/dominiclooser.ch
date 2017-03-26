@@ -22,9 +22,10 @@ html(lang='de')
             ul.separated-list
                for item in nav
                   li: a(href=item.link, class=current.path[0] == item.link ? 'current-link' : '')= item.title
-      block content
-      footer
-         .container
+      main
+         block content
+      .container
+         footer
             span Dominic Looser // 
-            a(href=email) dominic.looser@gmail.com
+            a(href=email)= email
       block scripts

@@ -1,24 +1,25 @@
 .colored
     color: primaryColor
 
+body
+    display: flex
+    flex-direction: column
+    min-height: 100%
+
+main
+    flex-grow: 1
+
 footer
     font-size: var(--s)
-    background: middle-grey
+    background: footerBackground
+    color: footerColor
     padding: var(--unit) 0
-    border-top: 1px dotted middle-grey
-    border-bottom: @border-top
+    border-top: 1px solid dark
 
 .page-header
 .homepage-nav
 .stacked-list
     @extends .unmarked-links
-
-.site-title  
-    .subtitle
-        line-height: var(--unit)
-        font-size: var(--xl)
-        color: primaryColor
-        margin: 0
 
 .site-title
 .page-heading
@@ -29,15 +30,8 @@ footer
 .current-link
     color: primaryColor
 
-.intro
-    span
-        color: primaryColor
-    margin-bottom: calc(2*var(--unit))
 
-.contact
-    margin-top: calc(2*var(--unit))
-
-
+    
 #performance-list
     li 
         display: flex

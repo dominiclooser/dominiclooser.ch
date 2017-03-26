@@ -3,11 +3,18 @@ extends _base
 block title
    title Grafik – Dominic Looser
 
-block content   
-   .graphics
+block content 
+   .graphics.grid
       for graphic in graphics
-         figure.graphic(style='background: ' + graphic.background)
-            .image-container
-               img(src='images/' + graphic.image)
-            figcaption(style='color: ' + graphic.color)
+         figure.graphic.grid-item
+            img(src='images/' + graphic.image)
+            figcaption
                h2= graphic.name
+            
+block scripts
+   script(src="https://code.jquery.com/jquery-3.1.1.min.js"
+   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+   crossorigin="anonymous")
+   script(src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js')
+   script(src='scripts/imagesloaded.js')
+   script(src='scripts/masonry.js')

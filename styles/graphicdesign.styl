@@ -1,33 +1,50 @@
-.graphics
-    padding: 0 var(--unit)
-    @media bigScreen
-        display: flex
-        flex-direction: row
+.grid-item
+    width: 300px
+    h2
+        font-size: var(--m)
 
-.graphic
-    min-width: 400px
-    height: 105vh
-    display: flex
-    flex-direction: column
 
-    .image-container
-        height: 66.66vh
-        display: flex
-        justify-content: center
-        align-items: center
+// .graphics
+//     flex-wrap: wrap
+//     padding: var(--unit)
+//     display: flex
+//     @media bigScreen
+//         // padding: var(--unit) 0
+//         display: flex
+//         align-content: space-around
 
-    img
-        max-width: 66.66%
-        max-height: 66.66%
-        width: 300px   
+// .graphic
+//     display: flex
+//     flex-direction: column
+//     width: 100%
+//     @media bigScreen
+//         // width: calc( (100vw - 4*var(--unit)) / 3 ) 
+//         width: calc(7 * var(--unit))
+//         margin-right: var(--unit)
+      
+//     .no-background
+//         background: light-grey
 
-    figcaption
-        padding: var(--unit)
-        height: 33.33vh
-        display: flex
-        justify-content: center
-        align-items: center
-        h2
-            text-align: center
-            margin: 0
+//     .image-container
+//         height: calc(1.5 * (100vw - 2*var(--unit)))
+        
+//         display: flex
+//         justify-content: center
+//         align-items: center
+//         padding: calc(2*var(--unit))
+//         padding-bottom: 100px
+//         @media bigScreen
+//             // height: calc(1.5 * (100vw - 4*var(--unit)) / 3 )
+//             height: calc(1.5 * 7 * var(--unit))
+//             padding: 10%
+
+//     img
+//         width: 100%   
+
+//     figcaption
+//         margin-bottom: var(--unit)
+//         padding: var(--unit) 0
+//         h2
+//             margin: 0
+//             font-size: var(--m)
              
