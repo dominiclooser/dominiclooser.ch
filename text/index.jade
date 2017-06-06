@@ -5,18 +5,17 @@ block title
 
 block content
    .container
-      
       h1.page-heading Text
-      
-      section
-         h2 Texte
-         ul.stacked-list#text-list
-            for text, slug in public.text._data
-               li: a(href='text/'+slug)= text.title
-      section
-         h2 Auftritte
-         ul#performance-list.stacked-list
-            for p in performances
-               li 
-                  span #{p.title} <span class=colored>/</span> #{p.place} 
-                  span #{p.date}
+      .columns
+         section.column
+            h2 Texte
+            ul.stacked-list#text-list
+               for text, slug in public.text._data
+                  li: a(href='text/'+slug)= text.title
+         section.column
+            h2 Auftritte
+            ul#performance-list.stacked-list
+               for p in performances
+                  li 
+                     span #{p.title} <span class=colored>/</span> #{p.place} 
+                     span #{p.date}
