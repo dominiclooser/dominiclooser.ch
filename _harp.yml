@@ -37,21 +37,66 @@ globals:
  
   graphics:
 
+    - name: True News And Fake News
+      year: 2017
+      image: fake-news-300.png
+
+    - name: Geometry for Rebels New Version
+      year: 2017
+      image: geometry-for-rebels-alt-300.png
+
+    - name: Far From Perfect
+      year: 2017
+      image: far-from-perfect-300.png
+
+    - name: Pussy & Dick
+      year: 2017
+      image: pussy-and-dick-300.jpg
+
+    - name: Das Glück
+      year: 2017
+      image: das-glueck-300.jpg
+
+    - name: Living Poets Society – Flyer
+      year: 2017
+      image: living-poets-society-flyer.jpg
+
+    - name: DDAA - Postkarte
+      year: 2016
+      image: ddaa-postcard.png
+
+    - name: Unbenannt
+      year: 2016
+      image: cover-300.png
+
+    - name: TsnuK – Flyer
+      year: 2016
+      image: flyer-tsnuk.jpg
+
+    - name: Das geht doch nicht – Postkarte
+      year: 2017
+      image: das-geht-doch-nicht-small.png
+
+    - name: Geometry for Rebels
+      year: 2016
+      image: geometry-for-rebels-300.png
+
+    # - name: Geometry for Rebels HD
+    #   image: geometry-for-rebels-hd.png
+
     - name: Empathy
       year: 2015
       image: empathy-small.png
 
-    - name: Flyer TsnuK
-      year: 2016
-      image: flyer-tsnuk.jpg
-
     - name: Superdada
       year: 2015
       image: superdada.png
+    
+    - name: Cinemap
+      year: 2014
+      image: cinemap-300.png
 
-    - name: Das geht doch nicht
-      year: 2017
-      image: das-geht-doch-nicht-small.png
+ 
 
     # - name: Vielseitig Desinteressiert
     #   year: 2016
