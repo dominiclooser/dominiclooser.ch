@@ -17,11 +17,11 @@ html(lang='de')
       block head
 
    body
-      header.page-header
-         nav.container
-            ul.separated-list
-               for item in nav
-                  li: a(href=item.link, class=current.path[0] == item.link ? 'current-link' : '')= item.title
+      //- header.page-header
+      //-    nav.container
+      //-       ul.separated-list
+      //-          for item in nav
+      //-             li: a(href=item.link, class=current.path[0] == item.link ? 'current-link' : '')= item.title
       main
          block content
       .container

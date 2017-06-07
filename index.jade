@@ -1,11 +1,24 @@
 extends _base
 
 block content 
+   header.page-header
+      .container
+         include _navigation
    .container
       h1.page-heading Dominic Looser
-
-      #content 
-         img(id='portrait', src='images/blue-portrait.jpg')
-         .intro
+      #intro.textplus
+         img(id='portrait', src='images/blue-portrait.jpg').textplus-plus
+         .textplus-text
             p Ich schreibe, programmiere, gestalte. Kurz-Texte, Webseiten, Bücher, Flyer, T-Shirts, Tassen. Gerne auch für Sie. Let us <a href='mailto:dominic.looser@gmail.com'>talk</a>.
-            p Mit Freunden gestalte ich unter dem Namen TsnuK T-Shirts und andere Kleider. Unser Webshop befindet sich  <a href='http://tsnuk.me'>hier</a>. 
+            p.indent Mit Freunden gestalte ich unter dem Namen TsnuK T-Shirts und andere Kleider. Unser Webshop befindet sich  <a href='http://tsnuk.me'>hier</a>. 
+      .graphics.grid
+         for graphic in graphics
+            figure.graphic.grid-item
+               img(src='images/' + graphic.image)
+block scripts       
+   script(src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous")
+   script(src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js')
+   script(src='scripts/imagesloaded.js')
+   script(src='scripts/masonry.js')

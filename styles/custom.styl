@@ -1,40 +1,39 @@
-
-
 body
     display: flex
     flex-direction: column
     min-height: 100%
-
 main
     flex-grow: 1
-
 footer
     font-size: var(--s)
     background: footerBackground
     color: footerColor
     padding: var(--unit) 0
     border-top: 1px solid dark
-
 .page-header
-.homepage-nav
 .stacked-list
     @extends .unmarked-links
-
 .page-heading
     text-transform: uppercase
-    margin-top: calc(3*var(--unit))
-    margin-bottom: calc(3*var(--unit))
-
-.current-link
-    color: primaryColor
-
-
-.contact
     margin-top: calc(2*var(--unit))
-
+    margin-bottom: calc(2*var(--unit))
+.indent
+    text-indent: 50px
+// homepage
+#intro
+    margin-bottom: var(--unit)
+// text
+#text-list
+    margin-bottom: calc(2*var(--unit))
+    li:first-child
+        display:none
+    li:nth-child(2)   
+        border-top: 1px solid softBorderColor
+    h2
+        margin: 0
+        font-weight: normal
 #performances
     margin-left: calc(2*var(--unit))
-    
 #performance-list
     p 
         margin: 0
@@ -45,48 +44,45 @@ footer
             flex: 1
         p 
             flex: 2
-        
-
-#about
-    h2
-        margin-top: calc(2*var(--unit))
-    margin-left: 0
-
 .text
-    margin-top: calc(4*var(--unit2))
+    margin-top: calc(2*var(--unit2))
     h1
-        // line-height: calc(2*var(--unit2))
-        margin-bottom: calc(4*var(--unit2))
+        margin-bottom: calc(1*var(--unit2))
         text-transform: uppercase
-        // color: primaryColor
-        // font-size: var(--xl)
     h2
-        line-height:var(--unit2)
+        line-height:var(--unit)
         margin-top: 0
         border-bottom: 1px dotted dark
         display: inline-block
-        font-size: var(--l)
-    p 
-        font-size: var(--font-size-2)
-        line-height: var(--line-height-2)
-        font-family: 'Noto Serif'
-    
+        // font-size: var(--l)
+    // p 
+    //     font-size: var(--font-size-2)
+    //     line-height: var(--line-height-2)
+    p:not(:first-of-type)
+        @extends .indent 
 .text.justify
     p 
         text-align: justify
 .text.dialogue
     em
         margin-top: 20px
-    // p 
-    //     line-height: calc(2*var(--line-height-2))
 
-#text-list
-    margin-bottom: calc(2*var(--unit))
-    li:first-child
-        display:none
-    li:nth-child(2)   
-        border-top: 1px solid softBorderColor
+// about
+#about
     h2
-        margin: 0
-        font-weight: normal
+        margin-top: calc(2*var(--unit))
+    margin-left: 0
 
+// grafik
+.graphics
+    @media bigScreen
+        margin: 0 auto
+
+.grid-item
+    margin-bottom: 30px
+    width: 300px
+    h2
+        margin-top: calc(0.5 * var(--unit))
+        line-height: 1
+        text-transform: uppercase
+        font-size: var(--m)

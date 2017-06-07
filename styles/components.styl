@@ -5,25 +5,19 @@
         .column
             flex: 1
 
-.columns
-    @media bigScreen
+.textplus
+    @media textplus
         display: flex
-    img
-        align-self: left
+.textplus-plus
+    align-self: left
+.textplus-text
+    margin: var(--unit) 0 0 0
+    @media textplus
+        margin: 0 0 0 var(--unit)
+        
             
-.graphic
-    display: flex
-    flex-direction: column
-    @media bigScreen
-        flex-direction: row
-
-
-
-
-
 
 .page-header
-    margin-top: var(--unit)
     background: pageHeaderBackground
     color: pageHeaderColor
     text-transform: uppercase
