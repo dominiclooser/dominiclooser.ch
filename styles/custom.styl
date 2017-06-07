@@ -1,3 +1,9 @@
+.page-header
+    // font-family: headerFont
+    font-size: var(--m)
+    font-weight: 400
+    text-transform: uppercase
+
 .colored
     color: primaryColor
 
@@ -30,24 +36,37 @@ footer
     color: primaryColor
 
 
+.contact
+    margin-top: calc(2*var(--unit))
+
+#performances
+    margin-left: calc(2*var(--unit))
     
 #performance-list
+    p 
+        margin: 0
     li 
         display: flex
-        justify-content: space-between
+        time
+            font-style: italic
+            flex: 1
+        p 
+            flex: 2
+        
 
 #about
     h2
         margin-top: calc(2*var(--unit))
+    margin-left: 0
 
 .text
-    margin-top: calc(2*var(--unit2))
+    margin-top: calc(4*var(--unit2))
     h1
-        line-height: calc(2*var(--unit2))
-        margin-bottom: calc(2*var(--unit2))
+        // line-height: calc(2*var(--unit2))
+        margin-bottom: calc(4*var(--unit2))
         text-transform: uppercase
-        color: primaryColor
-        font-size: var(--xl)
+        // color: primaryColor
+        // font-size: var(--xl)
     h2
         line-height:var(--unit2)
         margin-top: 0

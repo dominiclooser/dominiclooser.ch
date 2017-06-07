@@ -13,6 +13,14 @@ globals:
       link: about
 
   performances:
+    - title: Chaostage
+      place: Zürich
+    - title: Offene Bühne
+      place: Basel
+    - title: Living Poets Sociey
+      place: Linz AT
+    - title: Slam 59
+      place: Luzern
     - title: PostSkriptum Poetry Slam
       place: Linz AT
       date: 26.1.17
@@ -28,7 +36,7 @@ globals:
     - title: Slam 59
       place: Luzern
       date: 24.11.16
-    - title: 6. Bilingue Slam 
+    - title: Bilingue Slam 
       place: Aarau
       date: 12.11.16
     - title: Nebeneinander Poetry Slam Show

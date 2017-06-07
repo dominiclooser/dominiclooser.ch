@@ -1,11 +1,35 @@
 
-    
+.equal-columns 
+    @media bigScreen
+        display: flex
+        .column
+            flex: 1
+
+.columns
+    @media bigScreen
+        display: flex
+    img
+        align-self: left
+            
+.graphic
+    display: flex
+    flex-direction: column
+    @media bigScreen
+        flex-direction: row
+
+
+
+
 
 
 .page-header
-    padding:var(--unit) 0
+    margin-top: var(--unit)
     background: pageHeaderBackground
     color: pageHeaderColor
+    text-transform: uppercase
+
+.colored
+    color: primaryColor
 
 .unmarked-links
     a
@@ -30,8 +54,8 @@
     margin: 0
     li 
         display: inline
-    li:not(:last-child):after
-        content: ' / '
+    li:not(:last-child)
+        margin-right: 10px
 
 .definition-list
     dt
@@ -47,3 +71,13 @@
         &::after
             content: '\A'
             white-space: pre
+
+.container
+    margin: 0 auto
+    padding: 0 20px
+    max-width: maxPageWidth
+
+.text-container
+    margin: 0 auto
+    padding: 0 20px
+    max-width: textWidth

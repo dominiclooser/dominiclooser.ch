@@ -1,15 +1,14 @@
-.site-title  
-    font-size: var(--l)
-    margin-top: calc(2*var(--unit))
-    margin-bottom: calc(2*var(--unit))
-    // border-bottom: 1px solid dark
-    .subtitle
-        line-height: var(--unit)
-        margin: 0
+#content
+    @media (min-width: 980px)
+        display: flex
+
+#portrait
+    align-self: left
 
 .intro
-    span
-        color: primaryColor
+    margin: var(--unit) 0 0 0
+    @media (min-width: 980px)
+        margin: 0 0 0 var(--unit)
 
 @keyframes flicker
   0%,
