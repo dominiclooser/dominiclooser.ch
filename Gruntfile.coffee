@@ -8,13 +8,19 @@ config =
     exec: 
         'harp': 'harp compile'
     'gh-pages':
-        options:
-            base: 'www'
-        src: '**/*'
+        production:
+            options:
+                base: 'www'
+            src: '**/*'
+        stage:
+            options:
+                base: 'www'
+                repo: 'git@github.com:dominiclooser/dominiclooser.ch-stage.git'
+            src: '**/*'
+
     postcss:
         options:
             processors: [autoprefixer({browers: 'last 2 versions'}), cssVariables, calc]
-
         dist:
             src: 'www/styles/styles.css'
     copy:
@@ -47,4 +53,5 @@ module.exports = (grunt) ->
     jit grunt
     grunt.registerTask 'default', ['yaml', 'watch']
     grunt.registerTask 'compile', ['yaml','force:on', 'exec:harp', 'copy', 'stylus', 'postcss']
-    grunt.registerTask 'deploy', ['compile', 'gh-pages']
+    grunt.registerTask 'deploy', ['compile', 'gh-pages:production']
+    grunt.registerTask 'stage', ['compile', 'gh-pages:stage']
