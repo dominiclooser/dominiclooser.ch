@@ -1,30 +1,29 @@
 extends _base
-
 block title
    title About – Dominic Looser
-
 block content
-
+   .page-header
+      .container
+         include _includes/navigation
    .container
-         h1.page-heading About
-
-         .columns
-            img(src='images/green-portrait.jpg').column
-            .column
-               p In kreativen Momenten schreibe ich <a href='text'>Texte</a> oder gestalte <a href='http://tsnuk.me'>T&#8209;Shirts</a>. In weniger kreativen Momenten schlafe ich oder esse Champignons. Die mag ich lieber als Tomaten. Ich besitze ein blaues Schaf. Es ist mein wertvollster Besitz, nachdem ich meine CD von den Goldenen Zitronen aus Versehen verschenkt habe. 
-
-               p <strong>Krasse Fakten</strong>: Abgeschlossenes Studium der Mathematik, der deutschen Linguistik und der Informatik an der Universität Zürich. Forschung und Entwicklung in angewandter Logik. Weiterbildungen in Typographie, Impro-Theater, Drehbuch-Schreiben.  
-
-               p <strong>Krasse Skills</strong>: Auge und Händchen für minimales Typo-lastiges Design. Entwicklung und Design von Websites, statisch oder dynamisch, mit oder ohne CMS. Python, HTML, CSS, Javascript und solche Sachen. Kann vor vielen Leuten tiefsinnige und witzige Texte performen (Poetry Slam). Kann Mathematik und deutsche Grammatik beibringen. 
-
-               h2 Einflüsse
-               ul 
-                  li Conor Oberst
-                  li Sven Regener
-                  li Mani Matter
-                  li Gysbert zu Knyphausen
-                  li Robert Gwisdek
-
+      h1.page-heading About
+      .textplus 
+         #about.textplus-text
+            p In kreativen Momenten schreibe ich <a href='text'>Texte</a> oder gestalte <a href='http://tsnuk.me'>T&#8209;Shirts</a>. In weniger kreativen Momenten schlafe ich oder esse Champignons. Die mag ich lieber als Tomaten. 
+            p Ich besitze ein blaues Schaf. Es ist mein wertvollster Besitz, nachdem ich meine CD von den Goldenen Zitronen aus Versehen verschenkt habe. 
+            h2 Krasse Fakten
+            p Abgeschlossenes Studium der Mathematik, der deutschen Linguistik und der Informatik an der Universität Zürich. Forschung und Entwicklung in angewandter Logik. Weiterbildungen in Typographie, Impro-Theater, Drehbuch-Schreiben.  
+            h2 Krasse Skills
+            p Auge und Händchen für minimales Typo-lastiges Design. Entwicklung und Design von Websites, statisch oder dynamisch, mit oder ohne CMS. Python, HTML, CSS, Javascript und solche Sachen. Kann vor vielen Leuten tiefsinnige und witzige Texte performen (Poetry Slam). Kann Mathematik und deutsche Grammatik beibringen. 
+            h2 Einflüsse
+            ul 
+               li Conor Oberst
+               li Sven Regener
+               li Mani Matter
+               li Gysbert zu Knyphausen
+               li Robert Gwisdek
+         img(src='images/green-portrait.jpg').textplus-plus
+      include _includes/footer
          
          //- li Judith Holofernes / Wir sind Helden
          

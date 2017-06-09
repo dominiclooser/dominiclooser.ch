@@ -1,12 +1,10 @@
 extends ../_base
-
 block title
    title Text – Dominic Looser
-
 block content
    header.page-header
       .container
-         include ../_navigation
+         include ../_includes/navigation
    .container
       h1.page-heading Text
       .equal-columns
@@ -22,4 +20,5 @@ block content
                   li 
                      time= p.date 
                      p #{p.title}, #{p.place} 
+      include ../_includes/footer
                      

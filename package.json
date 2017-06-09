@@ -4,8 +4,12 @@
   "devDependencies": {
     "autoprefixer": "latest",
     "grunt": "latest",
+    "grunt-contrib-coffee": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "latest",
     "grunt-exec": "latest",
+    "grunt-force": "^1.0.0",
     "grunt-gh-pages": "latest",
     "grunt-postcss": "latest",
     "grunt-preprocess": "^5.1.0",

@@ -8,15 +8,21 @@
 .textplus
     @media textplus
         display: flex
-.textplus-plus
-    align-self: left
 .textplus-text
     margin: var(--unit) 0 0 0
     @media textplus
+        margin: 0 var(--unit) 0 0
+.textplus-plus
+    align-self: left
+.plustext
+    @media textplus
+        display: flex
+.plustext-text
+    margin: var(--unit) 0 0 0
+    @media textplus
         margin: 0 0 0 var(--unit)
-        
-            
-
+.plustext-plus
+    align-self: left
 .page-header
     background: pageHeaderBackground
     color: pageHeaderColor
@@ -39,6 +45,7 @@
     padding: 0
     li  
         padding: calc(0.5 * var(--unit)) 0 
+        padding-left: 10px
         border-bottom: 1px solid softBorderColor
     li:first-child
         border-top: 1px solid softBorderColor

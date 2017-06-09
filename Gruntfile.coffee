@@ -25,9 +25,17 @@ config =
             src: 'www/styles/styles.css'
     copy:
         main:
-            src: ['images/*.*', 'CNAME']
+            src: ['images/*.*', 'CNAME', 'scripts/*.js']
             expand: true
-            dest: 'www/'   
+            dest: 'www/'  
+    coffee:
+        main:
+            expand: true
+            flatten: true
+            ext: '.js'
+            src: 'scripts/*.coffee'
+            dest: 'www/scripts/'
+     
     stylus:
         main:
             src: 'styles/styles.styl'
@@ -52,6 +60,6 @@ module.exports = (grunt) ->
     time grunt
     jit grunt
     grunt.registerTask 'default', ['yaml', 'watch']
-    grunt.registerTask 'compile', ['yaml','force:on', 'exec:harp', 'copy', 'stylus', 'postcss']
+    grunt.registerTask 'compile', ['yaml','force:on', 'exec:harp','force:off', 'copy', 'stylus', 'postcss', 'coffee']
     grunt.registerTask 'deploy', ['compile', 'gh-pages:production']
     grunt.registerTask 'stage', ['compile', 'gh-pages:stage']

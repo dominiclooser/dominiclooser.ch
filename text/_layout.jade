@@ -9,7 +9,8 @@ block head
 block content
    header.page-header
       .text-container
-         include ../_navigation
+         include ../_includes/navigation
    .text-container
-      article(class='text' class={justify: justify}, class={dialogue:dialogue})
+      article(class='text' class={justify: justify}, class={dialogue:dialogue}, class={list:list})
          != yield
+      include ../_includes/footer

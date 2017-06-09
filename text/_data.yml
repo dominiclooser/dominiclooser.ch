@@ -5,6 +5,7 @@ index:
 der-mensch:
   title: Der Mensch
   description: Ein Text über den Menschen.
+  list: True
 
 wer-wen-mag-und-wieso:
   title: Wer wen mag und wieso
