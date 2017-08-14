@@ -7,8 +7,6 @@ globals:
       link: ' '
     - title: Text
       link: text
-    - title: Grafik
-      link: grafik
     - title: About
       link: about
 
@@ -70,9 +68,9 @@ globals:
       year: 2017
       image: living-poets-society-flyer.jpg
 
-    - name: DDAA - Postkarte
+    - name: DDAA
       year: 2016
-      image: ddaa-postcard.png
+      image: ddaa-300.png
 
     - name: Unbenannt
       year: 2016

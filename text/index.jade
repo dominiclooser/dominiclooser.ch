@@ -5,14 +5,9 @@ block content
    header.page-header
       .container
          include ../_includes/navigation
-   .container
+   #text.container
       h1.page-heading Text
       .equal-columns
-         .column
-            h2 Texte
-            ul.stacked-list#text-list
-               for text, slug in public.text._data
-                  li: a(href='text/'+slug)= text.title
          #performances.column
             h2 Auftritte
             ul#performance-list.stacked-list
@@ -20,5 +15,11 @@ block content
                   li 
                      time= p.date 
                      p #{p.title}, #{p.place} 
+         .column
+            h2 Texte
+            ul.stacked-list#text-list
+               for text, slug in public.text._data
+                  li: a(href='text/'+slug)= text.title
+         
       include ../_includes/footer
                      

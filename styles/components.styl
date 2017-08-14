@@ -1,32 +1,40 @@
-
 .equal-columns 
+    .column:not(:first-child)
+        margin: calc(2*var(--unit)) 0 0 0
     @media bigScreen
         display: flex
         .column
             flex: 1
+        .column:not(:first-child)
+            margin: 0 0 0 calc(2*var(--unit))
 
 .textplus
     @media textplus
         display: flex
+
 .textplus-text
-    margin: var(--unit) 0 0 0
+    margin: 0 0 var(--unit) 0
     @media textplus
         margin: 0 var(--unit) 0 0
+
 .textplus-plus
     align-self: left
+
 .plustext
     @media textplus
         display: flex
+
 .plustext-text
     margin: var(--unit) 0 0 0
     @media textplus
         margin: 0 0 0 var(--unit)
+
 .plustext-plus
     align-self: left
+
 .page-header
-    background: pageHeaderBackground
-    color: pageHeaderColor
-    text-transform: uppercase
+    background-color: page-header-background-color
+    color: page-header-text-color
 
 .colored
     color: primaryColor
@@ -46,9 +54,9 @@
     li  
         padding: calc(0.5 * var(--unit)) 0 
         padding-left: 10px
-        border-bottom: 1px solid softBorderColor
+        border-bottom: 1px solid soft-border-color
     li:first-child
-        border-top: 1px solid softBorderColor
+        border-top: 1px solid soft-border-color
 
 .separated-list
     list-style: none
@@ -56,7 +64,11 @@
     li 
         display: inline
     li:not(:last-child)
-        margin-right: 10px
+        ::after
+            margin-left: separated-list-margin
+            content: list-separator
+    li:not(:first-child)
+        margin-left: separated-list-margin
 
 .definition-list
     dt
