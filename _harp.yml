@@ -11,15 +11,36 @@ globals:
       link: about
 
   performances:
+    - title: Poetry Slam Zähringer
+      place: Zürich
+      date: 15.10.17
+    - title: Nebeneinander Poetry Slam Show
+      place: Winterthur
+      date: 28.9.17
+    - title: Neubad Slam
+      place: Luzern
+      date: 8.9.17
+    - title: Reise Reise
+      place: Zürich
+      date: 26.8.17
+    - title: Arcas Slam
+      place: Chur
+      date: 18.8.17
+    - title: Amateurkunst
+      place: Zürich
+      date: 8.7.17
     - title: Chaostage
       place: Zürich
       date: 3.6.17
     - title: Offene Bühne
       place: Basel
+      date: 7.5.17
     - title: Living Poets Sociey
       place: Linz AT
+      date: 20.4.17
     - title: Slam 59
       place: Luzern
+      date: 23.2.17
     - title: PostSkriptum Poetry Slam
       place: Linz AT
       date: 26.1.17

@@ -1,5 +1,8 @@
 extends _base
 
+block description
+   meta(name='description', content='Die Webseite von Dominic Looser: Auftritte, Text und Grafiken.')
+
 block content 
    header.page-header
       .container
@@ -11,8 +14,8 @@ block content
       #intro.plustext
          img(id='portrait', src='images/blue-portrait.jpg').plustext-plus
          .plustext-text
-            p Ich schreibe, programmiere, gestalte. Kurz-Texte, Webseiten, Bücher, Flyer, T-Shirts, Tassen. Gerne auch für Sie. Let us <a href='mailto:dominic.looser@gmail.com'>talk</a>.
-            p Mit Freunden gestalte ich unter dem Namen TsnuK T-Shirts und andere Kleider. Unser Webshop befindet sich  <a href='http://tsnuk.me'>hier</a>. 
+            p Ich <a href='text'>schreibe</a>, programmiere, gestalte. Kurz-Texte, Webseiten, Bücher, Flyer, <a href='http://tsnuk.me'>T&#8209;Shirts</a>, Tassen. Gerne auch für Sie. Let us <a href='mailto:dominic.looser@gmail.com'>talk</a>.
+            p Mit Freunden gestalte ich unter dem Namen TsnuK T&#8209;Shirts und andere Kleider. Unser Webshop befindet sich  <a href='http://tsnuk.me'>hier</a>. 
       .graphics.grid
          for graphic in graphics
             figure.graphic.grid-item

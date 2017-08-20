@@ -1,9 +1,0 @@
-#!/usr/bin/env fish
-
-set project ~/projects/dominiclooser.ch/dominiclooser.ch-harp
-set raw $project/_raw-images
-set destination $project/images
-set width 300
-
-convert $raw/ddaa.png -resize $width $destination/ddaa-$width.png
-

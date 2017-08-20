@@ -21,13 +21,6 @@ footer
 .indent
     text-indent: 50px
 
-.highlight-list
-    li:hover
-        background-color: dark
-        color: white
-        cursor: pointer
-    a:hover
-        color: inherit
 
 .spaced-paragraphs
     p + p
@@ -54,10 +47,16 @@ footer
 #text-list
     @extends .highlight-list
     margin-bottom: calc(2*var(--unit))
+    
+    a
+        display: block
+
     li:first-child
         display:none
+    
     li:nth-child(2)   
         border-top: 1px solid soft-border-color
+    
     h2
         margin: 0
         font-weight: normal
@@ -72,29 +71,45 @@ footer
             flex: 1
         p 
             flex: 2
+
 .text
-    margin-top: calc(2*var(--unit2))
+    font-family: 'Libre Baskerville'
+    font-size: var(--m-2)
+    line-height: var(--line-height-2)
+    margin-top: calc(3*var(--unit-2))
     h1
-        margin-bottom: calc(1*var(--unit2))
-        text-transform: uppercase
+        font-family: inherit
+        font-weight: normal
+        font-size: var(--xxl-2)
+        margin-bottom: calc(2*var(--unit-2))
+        text-transform: none
     h2
-        line-height:var(--unit)
+        font-family: inherit
+        font-size: var(--l-2)
+        font-weight: normal
+        text-transform: none
+        line-height:var(--unit-2)
         margin-top: 0
-        border-bottom: 1px dotted dark
-        display: inline-block
-    p:not(:first-of-type)
-        @extends .indent 
-.text.list
-    p 
-        text-indent: 0
+        // border-bottom: 1px dotted dark
+        // display: inline-block
+        margin-bottom: calc(0.5*var(--unit-2))
+
+
+.spaced
     p:not(:last-of-type)
-        margin-bottom: calc(0.5*var(--unit))
+        margin-bottom: calc(0.5*var(--unit-2))
+
+.bigspaces
+    p:not(:last-of-type)
+        margin-bottom: var(--unit-2)
 
 
-.text.justify
-    p 
-        text-align: justify
-.text.dialogue
+
+.dialogue
+    
+    p
+        text-indent: 0
+    
     em
         margin-top: 20px
 

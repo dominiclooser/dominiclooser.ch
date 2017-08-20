@@ -1,5 +1,5 @@
 :root
-    --m: var(--base-font-size)
+    --m: var(--font-size)
     --l: calc(var(--scale-factor) * var(--m))
     --xl: calc(var(--scale-factor) * var(--l))
     --xxl: calc(var(--scale-factor) * var(--xl))
@@ -9,11 +9,17 @@
     --s: calc(var(--m) / var(--scale-factor))
     --xs: calc(var(--s) / var(--scale-factor))
 
+    --m-2: var(--font-size-2)
+    --l-2: calc(var(--scale-factor) * var(--m-2))
+    --xl-2: calc(var(--scale-factor) * var(--l-2))
+    --xxl-2: calc(var(--scale-factor) * var(--xl-2))
+    --xxxl-2: calc(var(--scale-factor) * var(--xxl-2))
+
 body
     color: text-color
     font-size: var(--m)
     font-family: bodyFont
-    line-height: var(--base-line-height)
+    line-height: var(--line-height)
     text-rendering: geometricPrecision
 
 h1, h2, h3, h4
@@ -38,9 +44,6 @@ h3
 
 // p, ul, ol, dl
 //     margin-bottom: var(--unit)
-
-p
-    hyphens: auto
 
 a
     color: inherit

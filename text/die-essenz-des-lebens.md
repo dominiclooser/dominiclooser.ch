@@ -1,36 +1,5 @@
 # Die Essenz des Lebens
 
-## Teil 1: Der Philosoph
-
-denken, denken, denken  
-denken, denken, denken  
-denken, denken, denken  
-schreiben 
-
-## Teil 2: Der Boulevard-Journalist
-
-schreiben, schreiben, schreiben  
-schreiben, schreiben, schreiben  
-schreiben, schreiben, schreiben  
-schreiben
-
-## Teil 3: Die Essenz
-
-fressen, saufen, pissen  
-saufen, pissen, saufen  
-fressen, saufen, scheissen  
-ficken
-
-## Teil 4: Der Perfektionist
-
-überarbeiten, über, über, über, über, überarbeiten  
-überarbeiten, über, über, über, über, überarbeiten  
-überarbeiten, über, über, über, über, überarbeiten  
-überarbeiten, über, über, über, über, überarbeiten  
-überarbeiten, über, über, über, über, überarbeiten  
-überarbeiten, über, über, über, über, überarbeiten  
-löschen  
-
 ## Teil 5: Flow
 
 Leben ist wie Schreiben ist wie Pinkeln.  
@@ -47,3 +16,15 @@ Schwule behinderte Ausländer sind auch nicht besser als ignorante populistische
 ## Teil 8: Glück
 
 Das Glück liegt in der Tat in der Tat. 
+
+## Teil 9: Zweck
+
+Der Zweck tötet die Mittel.
+
+## Teil 10: Zeit
+
+Der späte Vogel isst halt ein Nutella-Brot.
+
+## Teil 11: Kontrolle
+
+Vertrauen ist gut, Kontrolle ist schlechter.
