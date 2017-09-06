@@ -1,0 +1,13 @@
+extends _base
+block title
+   title Websites – Dominic Looser
+block content
+   .page-header
+      .container
+         include _includes/navigation
+   .container
+      h1.page-heading Websites
+      for site in sites
+         div
+            h2= site.title
+            img(src='')

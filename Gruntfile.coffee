@@ -5,8 +5,7 @@ cssVariables = require 'postcss-css-variables'
 calc = require 'postcss-calc'
 
 config =
-        teststage: 'psi stage.dominiclooser.ch'
-
+    teststage: 'psi stage.dominiclooser.ch'
     'gh-pages':
         production:
             options:
@@ -17,7 +16,6 @@ config =
                 base: 'www'
                 repo: 'git@github.com:dominiclooser/dominiclooser.ch-stage.git'
             src: '**/*'
-
     postcss:
         options:
             processors: [autoprefixer({browers: 'last 2 versions'}), cssVariables, calc]
@@ -49,7 +47,7 @@ config =
     yaml:
         main:
             expand: true
-            src: ['**/_data.yml', '_harp.yml']
+            src: ['**/_harp.yml', '**/_data.yml']
             ext: '.json'
     watch:
         options:

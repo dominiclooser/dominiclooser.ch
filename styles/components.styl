@@ -15,10 +15,13 @@
 .textplus-text
     margin: 0 0 var(--unit) 0
     @media textplus
+        flex: 2
         margin: 0 var(--unit) 0 0
 
 .textplus-plus
-    align-self: left
+    @media textplus
+        align-self: left
+        flex: 1
 
 .plustext
     @media textplus

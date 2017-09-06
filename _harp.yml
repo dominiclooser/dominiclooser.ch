@@ -10,6 +10,17 @@ globals:
     - title: About
       link: about
 
+  sites:
+    - title: Die Krasse Tasse
+      url: http://diekrassetasse.com
+    - title: Portfolio Mariya Zhariy
+      url: http://mariyazhariy.com
+    - title: Cinemap
+      url: http://moviemento-mediathek.cinemap.org
+    - title: Friedmann Schmuck
+      url: http://friedmannschmuck.ch 
+
+
   performances:
     - title: Poetry Slam Zähringer
       place: Zürich
