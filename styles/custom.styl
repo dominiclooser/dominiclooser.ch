@@ -73,16 +73,18 @@ footer
             flex: 2
 
 .text
-    font-family: 'Libre Baskerville'
+    font-family: Lora
     font-size: var(--m-2)
     line-height: var(--line-height-2)
     margin-top: calc(3*var(--unit-2))
     h1
-        font-family: inherit
-        font-weight: normal
-        font-size: var(--xxl-2)
-        margin-bottom: calc(2*var(--unit-2))
-        text-transform: none
+        font-family: header-font
+        font-weight: 900
+        font-size: var(--xxxxl-2)
+        margin-bottom: var(--unit-2)
+        text-transform: uppercase
+        display: inline-block
+        border-bottom: 9px solid dark
     h2
         font-family: inherit
         font-size: var(--l-2)
@@ -90,10 +92,7 @@ footer
         text-transform: none
         line-height:var(--unit-2)
         margin-top: 0
-        // border-bottom: 1px dotted dark
-        // display: inline-block
         margin-bottom: calc(0.5*var(--unit-2))
-
 
 .spaced
     p:not(:last-of-type)

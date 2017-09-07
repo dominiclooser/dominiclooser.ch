@@ -5,8 +5,7 @@ cssVariables = require 'postcss-css-variables'
 calc = require 'postcss-calc'
 
 config =
-        teststage: 'psi stage.dominiclooser.ch'
-
+    teststage: 'psi stage.dominiclooser.ch'
     'gh-pages':
         production:
             options:

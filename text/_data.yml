@@ -1,10 +1,14 @@
 index:
   layout: none
-  description: Texte von Dominic Looser.
+  description: Texte von Dominic Looser
+
+nichts:
+  title: Nichts
+  spaced: True
 
 der-mensch:
   title: Der Mensch
-  description: Ein Text über den Menschen.
+  description: Ein Text über den Menschen
   bigspaces: True
 
 wer-wen-mag-und-wieso:
