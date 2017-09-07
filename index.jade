@@ -14,13 +14,24 @@ block content
       #intro.plustext
          img(id='portrait', src='images/blue-portrait.jpg').plustext-plus
          .plustext-text
-            p Ich <a href='text'>schreibe</a>, programmiere, gestalte. Kurz-Texte, Webseiten, Bücher, Flyer, <a href='http://tsnuk.me'>T&#8209;Shirts</a>, Tassen. Gerne auch für Sie. Let us <a href='mailto:dominic.looser@gmail.com'>talk</a>.
-            p Mit Freunden gestalte ich unter dem Namen TsnuK T&#8209;Shirts und andere Kleider. Unser Webshop befindet sich  <a href='http://tsnuk.me'>hier</a>. 
+            p.
+               Manchmal baue ich potentielle <a href='http://diekrassetasse.com'>Tassen-Imperien</a> auf. 
+               Manchmal schreibe ich <a href='text#texte'>Texte</a> und lese sie auf
+               <a href='text#auftritte'>Bühnen</a> vor.  
+            p.
+               Häufig entwickle ich <a href='http://madewithoutzweck.ch'>Webseiten</a>, selten layoute ich Bücher. 
+               Da wären noch die <a href='shop'>T-Shirts</a> und die Postkarten. Sehr häufig schlafe ich aber.
+            p
+               span Bin sehr offen für Kollaborationen oder Aufträge jeglicher Art. Musik, Text, Gestaltung – you name it. 
+               span Freue mich über kürzere oder längere Zeilen in  
+               a(href='mailto'+email) meinem Postfach
+               span .
       .graphics.grid
          for graphic in graphics
             figure.graphic.grid-item
                img(src='images/' + graphic.image)
       include _includes/footer
+
 block scripts       
    script(src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
