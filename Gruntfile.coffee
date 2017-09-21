@@ -6,6 +6,8 @@ calc = require 'postcss-calc'
 
 config =
     teststage: 'psi stage.dominiclooser.ch'
+    exec:
+        harp: 'harp compile'
     'gh-pages':
         production:
             options:
