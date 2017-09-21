@@ -36,7 +36,7 @@ footer
     color: primaryColor
 
 #intro
-    margin-bottom: var(--unit)
+    margin-bottom: var(--double-unit)
     @extend .spaced-paragraphs
 
 // text
@@ -73,25 +73,28 @@ footer
             flex: 2
 
 .text
-    font-family: 'Libre Baskerville'
-    font-size: var(--m-2)
-    line-height: var(--line-height-2)
-    margin-top: calc(3*var(--unit-2))
+    // font-family: 'Libre Baskerville'
+    // font-size: var(--m-2)
+    // line-height: var(--line-height-2)
+    margin-top: calc(3*var(--unit))
     h1
-        font-family: inherit
-        font-weight: normal
-        font-size: var(--xxl-2)
-        margin-bottom: calc(2*var(--unit-2))
-        text-transform: none
+        // font-family: inherit
+        font-weight: 900
+        font-size: var(--xl)
+        margin-bottom: var(--double-unit)
+        text-transform: uppercase
+        border-bottom: 4px solid dark
+        display: inline-block
+        padding-bottom: 4px
     h2
         font-family: inherit
-        font-size: var(--l-2)
+        font-size: var(--l)
         font-weight: normal
         text-transform: none
-        line-height:var(--unit-2)
+        padding-bottom: 2px
         margin-top: 0
-        // border-bottom: 1px dotted dark
-        // display: inline-block
+        border-bottom: 2px solid dark
+        display: inline-block
         margin-bottom: calc(0.5*var(--unit-2))
 
 
