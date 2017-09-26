@@ -1,4 +1,5 @@
 nav
+   a(href='/').logo DL
    ul.separated-list
       for item in nav
          li: a(href=item.link, class=current.path[0] == item.link ? 'current-link' : '')= item.title
