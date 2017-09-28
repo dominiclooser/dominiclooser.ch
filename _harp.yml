@@ -3,23 +3,12 @@ globals:
   email: dominic.looser@gmail.com
 
   nav:
-    - title: Home
-      link: ' '
-    - title: Text
-      link: text
-    - title: About
-      link: about
-
-  sites:
-    - title: Die Krasse Tasse
-      url: http://diekrassetasse.com
-    - title: Portfolio Mariya Zhariy
-      url: http://mariyazhariy.com
-    - title: Cinemap
-      url: http://moviemento-mediathek.cinemap.org
-    - title: Friedmann Schmuck
-      url: http://friedmannschmuck.ch 
-
+    - title: Auftritte
+      link: auftritte
+    - title: Texte
+      link: texte
+    - title: Über
+      link: ueber
 
   performances:
     - title: Poetry Slam Zähringer
