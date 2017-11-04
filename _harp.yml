@@ -3,11 +3,11 @@ globals:
   email: dominic.looser@gmail.com
 
   nav:
-    - title: Home
-      link: ' '
     - title: Text
       link: text
-    - title: About
+    - title: Shop
+      link: shop
+    - title: Über
       link: about
 
   sites:

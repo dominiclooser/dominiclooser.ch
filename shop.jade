@@ -1,0 +1,18 @@
+extends _default
+
+block body
+   .page-header
+      .container
+         include _includes/navigation
+   .container
+      #shop
+   .container
+      include _includes/footer
+   script.
+      var spread_shop_config = {
+         shopName: 'dominic',
+         locale: 'de_CH',
+         prefix: '//shop.spreadshirt.ch',
+         baseId: 'shop'
+      };
+   script(src="//shop.spreadshirt.at/shopfiles/shopclient/shopclient.nocache.js")   
