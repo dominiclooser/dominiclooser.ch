@@ -1,0 +1,7 @@
+#!/usr/bin/env fish
+
+set source "../_raw-images"
+set destination "../images"
+set hcw 484 # half column width
+
+convert $source/misc/typewriter.png -resize 484 $destination/misc/typewriter.png

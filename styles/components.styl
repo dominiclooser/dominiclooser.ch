@@ -1,7 +1,7 @@
 .equal-columns 
     .column:not(:first-child)
         margin: calc(2*var(--unit)) 0 0 0
-    @media bigScreen
+    @media two-columns
         display: flex
         .column
             flex: 1
@@ -96,12 +96,18 @@
     a:hover
         color: inherit
 
-.container
+.wrapper
     margin: 0 auto
     padding: 0 var(--unit)
     max-width: maxPageWidth
 
-.text-container
+.full-width-wrapper
+    padding: 0 var(--semi-unit)
+    @media large-padding
+        padding: 0 var(--double-unit)
+
+
+.text-wrapper
     margin: 0 auto
-    padding: 0 var(--unit-2)
+    padding: 0 var(--unit)
     max-width: textWidth

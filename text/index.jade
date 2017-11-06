@@ -1,0 +1,18 @@
+extends ../_default
+
+block title
+   title Texte – Dominic Looser
+
+block content
+   h1.page-heading Texte
+   .equal-columns
+      .column
+         ul#text-list.stacked-list
+            for text, slug in public.text._data
+               li
+                  a(href='text/'+slug)
+                     h2.text-title= text.title
+                     p.text-description= text.description
+      .column
+         img(src='images/misc/typewriter.png')
+                     

@@ -1,23 +1,17 @@
-extends _base
+extends _default
 
 block title
    title Auftritte – Dominic Looser
 
 block content
-   header.page-header
-      .container
-         include _includes/navigation
-   .container
-      h1.page-heading Auftritte
-      .equal-columns
-         .column
-            ul#performance-list.stacked-list
-               for p in performances
-                  li 
-                     time= p.date 
-                     p #{p.title}, #{p.place} 
-         .column
-            for image in public.images.stage._contents
-               img(src='images/stage/#{image}')
-   .container
-      include _includes/footer
+   h1.page-heading Auftritte
+   .equal-columns
+      .column
+         ul#performance-list.stacked-list
+            for p in performances
+               li 
+                  time= p.date 
+                  p #{p.title}, #{p.place} 
+      .column.image-column
+         for image in public.images.stage._contents
+            img(src='images/stage/#{image}')

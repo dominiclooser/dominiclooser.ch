@@ -1,0 +1,13 @@
+extends ../_base
+
+block title
+   title= title + ' – Dominic Looser'
+
+block body
+   header.page-header
+      .text-wrapper
+         include ../_includes/navigation
+   .text-wrapper
+      article(class='text' class={justify: justify}, class={dialogue:dialogue}, class={spaced:spaced}, class={bigspaces:bigspaces})
+         != yield
+      include ../_includes/footer

@@ -2,7 +2,9 @@
 // breakpoints
 //
 textplus = '(min-width: 980px)'
-bigScreen = '(min-width: 40em)'
+large-font = '(min-width: 800px)'
+two-columns = large-font
+large-padding = large-font
 
 //
 // typography
@@ -17,7 +19,7 @@ textWidth = 800px
 
     --line-height: 1.5
     --font-size: 19px
-    @media bigScreen
+    @media large-font
         --font-size: 22px
     --unit: calc(var(--line-height) * var(--font-size))
     --double-unit: calc(2*var(--unit))
@@ -26,7 +28,7 @@ textWidth = 800px
     
     --line-height-2: 1.7
     --font-size-2: 19px
-    @media bigScreen
+    @media large-font
         --font-size-2: 22px
     --unit-2: calc(var(--line-height-2) * var(--font-size-2))
     --semi-unit-2: calc(0.5 * var(--unit-2))

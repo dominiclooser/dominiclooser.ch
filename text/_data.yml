@@ -1,0 +1,40 @@
+index:
+  layout: none
+  description: Texte von Dominic Looser
+
+nichts:
+  title: Nichts
+  description: Wie er zweifelte, sah und schuf. 
+  spaced: True
+
+der-mensch:
+  title: Der Mensch
+  description: Ein Text über den Menschen.
+  bigspaces: True
+
+wer-wen-mag-und-wieso:
+  title: Wer wen mag und wieso
+  description: Ein Dialog.
+  spaced: True
+
+sie-sagen:
+  title: Sie sagen
+  description: Eine Art Dialog.
+  bigspaces: True
+
+die-essenz-des-lebens:
+  title: Die Essenz des Leben
+  description: Wichtige Tipps zum glücklichen Leben.
+  bigspaces: True
+
+das-feedback-problem:
+  title: Das Feedback-Problem
+  description: Seelenstriptease.
+  spaced: True
+  # justify: True
+
+liebe-realitaet:
+  title: Liebe Realität
+  description: Ein genervter Brief an die Realität.
+  spaced: True
+  # justify: True
