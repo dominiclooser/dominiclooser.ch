@@ -10,7 +10,7 @@ block content
          ul#text-list.stacked-list
             for text, slug in public.text._data
                li
-                  a(href='text/'+slug)
+                  a(href='/text/'+slug)
                      h2.text-title= text.title
                      p.text-description= text.description
       .column

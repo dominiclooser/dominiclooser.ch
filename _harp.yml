@@ -4,13 +4,13 @@ globals:
 
   nav:
     - title: Auftritte
-      link: auftritte
+      link: /auftritte
     - title: Texte
-      link: text
+      link: /text
     - title: Shop
-      link: shop
-    - title: Über
-      link: ueber
+      link: /shop
+    - title: About
+      link: /about
 
   performances:
     - title: Poetry Slam Zähringer
@@ -66,106 +66,66 @@ globals:
       date: 13.10.16
  
   graphics:
-
     - name: True News And Fake News
       year: 2017
       image: fake-news-300.png
-
     - name: Geometry for Rebels New Version
       year: 2017
       image: geometry-for-rebels-alt-300.png
-
     - name: Far From Perfect
       year: 2017
       image: far-from-perfect-300.png
-
     - name: Pussy & Dick
       year: 2017
       image: pussy-and-dick-300.jpg
-
     - name: Das Glück
       year: 2017
       image: das-glueck-300.jpg
-
     - name: Living Poets Society – Flyer
       year: 2017
       image: living-poets-society-flyer.jpg
-
     - name: DDAA
       year: 2016
       image: ddaa-300.png
-
     - name: Unbenannt
       year: 2016
       image: cover-300.png
-
     - name: TsnuK – Flyer
       year: 2016
       image: flyer-tsnuk.jpg
-
     - name: Das geht doch nicht – Postkarte
       year: 2017
       image: das-geht-doch-nicht-small.png
-
     - name: Geometry for Rebels
       year: 2016
       image: geometry-for-rebels-300.png
-
-    # - name: Geometry for Rebels HD
-    #   image: geometry-for-rebels-hd.png
-
     - name: Empathy
       year: 2015
       image: empathy-small.png
-
     - name: Superdada
       year: 2015
       image: superdada.png
-    
     - name: Cinemap
       year: 2014
       image: cinemap-300.png
 
- 
-
-    # - name: Vielseitig Desinteressiert
-    #   year: 2016
-    #   image: vielseitig-desinteressiert.svg
-    #   border: True
-    # - name: Empathy
-    #   year: 2015
-    #   image: empathy.svg
-    #   background: '#333333'
-    #   color: '#E8E3D6'
-    # - name: Geometry for Rebels
-    #   year: 2015
-    #   image: geometry-for-rebels.svg
-    # - name: Superdada
-    #   year: 2015
-    #   image: superdada.svg
-    #   background: '#f8fd94'
-    #   color: '#D41F20'
-    # - name: DDAA
-    #   year: 2015
-    #   image: ddaa.svg
-    # - name: Heil Dada
-    #   year: 2015
-    #   image: heil-dada.svg
-    #   background: '#FBE1FF'
-    #   color: '#00FFFF'
-    # - name: Schräger Vogel
-    #   year: 2016
-    #   image: schraeger-vogel.svg 
-    # - name: Flyer TsnuK
-    #   year: 2016
-    #   image: flyer-tsnuk.jpg
-    
-  proportions:
-    - ratio: 1
-      title: Square
-    - ratio: 1.4142
-      title: DIN A
-    - ratio: 1.5
-      title: '2:3'
-    - ratio: 1.618
-      title: Golden Ratio
+  inspiration:
+    music:
+      - name: Conor Oberst
+      - name: Mani Matter
+      - name: Gysbert zu Knyphausen
+      - name: Käptn Peng
+      - name: Tocotronic
+      - name: Die Fantastischen Vier
+      - name: Die Antwoord
+      - name: Wir sind Helden
+    film:
+      - name: Ulrich Seidl
+      - name: Darren Aronofsky
+      - name: Danny Boyle
+      - name: Mike Leigh
+      - name: Lukas Moodysson
+    stage:
+      - name: Lara Stoll
+      - name: Valerio Moser
+      - name: Andreas Thiel
