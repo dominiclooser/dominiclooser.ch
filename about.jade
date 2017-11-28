@@ -33,7 +33,11 @@ block content
                   h3 Bühne
                   ul 
                      for item in inspiration.stage
-                        li= item.name
+                        if item.link
+                           li: a(href='#{item.link}')= item.name
+                        else
+                           li= item.name
+
       .textplus-plus
          img(src='images/moshed-portrait.jpg')
       //- ul
