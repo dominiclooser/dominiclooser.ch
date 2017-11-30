@@ -25,7 +25,7 @@ config =
             src: 'www/styles/styles.css'
     copy:
         main:
-            src: ['images/**/*', 'scripts/*.js']
+            src: ['images/**/*', 'scripts/*.js', 'favicon.ico']
             expand: true
             dest: 'www/'  
         'production-cname':
