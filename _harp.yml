@@ -25,9 +25,6 @@ globals:
     - title: Reise Reise
       place: Zürich
       date: 26.8.17
-    - title: Arcas Slam
-      place: Chur
-      date: 18.8.17
     - title: Amateurkunst
       place: Zürich
       date: 8.7.17
@@ -66,6 +63,21 @@ globals:
       date: 13.10.16
  
   graphics:
+    - name: Alles ist Kunst (rot)
+      year: 2017
+      image: alles-ist-kunst-rot.png
+    - name: Alles ist Kunst (blau)
+      year: 2017
+      image: alles-ist-kunst-blau.png
+    - name: Alles ist Kunst
+      year: 2017
+      image: alles-ist-kunst.png
+    - name: Pandas Pasta
+      year: 2017
+      image: pandas-pasta.jpg
+    - name: Psychologie für Desinteressierte
+      year: 2017
+      image: pfd.png
     - name: True News And Fake News
       year: 2017
       image: fake-news-300.png
@@ -119,6 +131,7 @@ globals:
       - name: Die Fantastischen Vier
       - name: Die Antwoord
       - name: Wir sind Helden
+      - name: Manuel Stahlberger
     film:
       - name: Ulrich Seidl
       - name: Darren Aronofsky

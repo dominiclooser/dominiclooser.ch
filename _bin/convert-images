@@ -1,7 +1,17 @@
-#!/usr/bin/env fish
+#!/usr/bin/env python3
 
-set source "../_raw-images"
-set destination "../images"
-set hcw 484 # half column width
+from pathlib import Path
+from subprocess import run
 
-convert $source/misc/typewriter.png -resize 484 $destination/misc/typewriter.png
+
+raw = Path('../_raw-images')
+destination = Path('../images')
+
+destination_width = 400
+original = raw/'graphics/alles-ist-kunst.png'
+
+
+
+# set hcw 484 # half column width
+
+# convert $source/misc/typewriter.png -resize 484 $destination/misc/typewriter.png

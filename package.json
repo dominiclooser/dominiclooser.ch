@@ -13,6 +13,7 @@
     "grunt-gh-pages": "latest",
     "grunt-postcss": "latest",
     "grunt-preprocess": "^5.1.0",
+    "grunt-responsive-images": "^1.10.1",
     "grunt-yaml": "latest",
     "jit-grunt": "latest",
     "matchdep": "latest",

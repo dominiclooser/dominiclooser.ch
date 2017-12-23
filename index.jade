@@ -6,9 +6,9 @@ block description
 block content
    h1#site-title.page-heading
       #title Dominic Looser
-      #subtitle Text und Grafik
+      #subtitle Text & Grafik
    #intro.plustext
-      img(id='portrait', src='images/young.png').plustext-plus
+      img(id='portrait', src='images/misc/young.png').plustext-plus
       .plustext-text
          p.
             Manchmal baue ich potentielle <a href='http://diekrassetasse.com'>Tassen-Imperien</a> auf. 
@@ -22,10 +22,9 @@ block content
             span Freue mich über kürzere oder längere Zeilen in  
             a(href='mailto:'+email) meinem Postfach
             span .
-   .graphics.grid
+   .graphics.masonry
       for graphic in graphics
-         figure.graphic.grid-item
-            img(src='images/' + graphic.image)
+         img.masonry-item(src='images/graphics/' + graphic.image)
 
 block scripts       
    script(src="https://code.jquery.com/jquery-3.1.1.min.js"

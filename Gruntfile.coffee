@@ -5,6 +5,16 @@ cssVariables = require 'postcss-css-variables'
 calc = require 'postcss-calc'
 
 config =
+    responsive_images:
+        options:
+            engine: im
+        graphics:
+            options:
+                sizes: [{name: 'small', width: 400]
+            src: '_raw-image/graphics/*.*'
+            dest: 'images/graphics/'
+
+
     teststage: 'psi stage.dominiclooser.ch'
     exec:
         harp: 'harp compile'

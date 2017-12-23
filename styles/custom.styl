@@ -19,6 +19,12 @@ footer
     margin-top: calc(3*var(--unit))
     border-top: 1px dotted dark
 
+.stylish-heading
+    display: inline-block
+    padding-bottom: 0.05em
+    border-bottom: 2px solid dark
+    font-style: italic
+
 .image-column
     img
         margin-bottom: var(--semi-unit)
@@ -28,12 +34,8 @@ footer
     @extends .unmarked-links
 
 .page-heading
-    text-transform: uppercase
     margin-top: var(--triple-unit)
     margin-bottom: var(--double-unit)
-
-// .page-heading:not(#site-title)
-//     color: primary-color
 
 .indent
     text-indent: 50px
@@ -43,13 +45,18 @@ footer
         margin-top: var(--semi-unit)
         
 // homepage
+#site-title
+    border-bottom: none
+
 #title
     font-size: var(--xl)
+    text-transform: uppercase
 
 #subtitle
-    margin-top: calc(0.1 * var(--unit))
+    margin-top: 0.05em
     font-size: var(--l)
     color: primary-color
+    text-transform: uppercase
 
 #intro
     margin-bottom: var(--triple-unit)
@@ -120,12 +127,14 @@ footer
         margin-top: 20px
 
 // about
+
 #about
     @extends .spaced-paragraphs
     section
         margin-bottom: var(--double-unit)
     h2
         margin-bottom: var(--unit)
+        @extends .stylish-heading
     h3
         margin: var(--unit) 0 var(--semi-unit) 0
         text-transform: uppercase
@@ -134,14 +143,21 @@ footer
 
 // grafik
 
-.grid-item
-    margin-bottom: 30px
-    width: 300px
+
+.masonry-item
+    margin-bottom: 33px
+    width: 100%
+    @media (min-width: 400px)
+        width: calc(0.5 * (100% - 33px))
+    @media (min-width: 700px)
+        width: calc(0.33333 * (100% - 2 * 33px))
     h2
         margin-top: calc(0.5 * var(--unit))
         line-height: 1
         text-transform: uppercase
         font-size: var(--m)
+
+
         
 iframe
     width: 100%
