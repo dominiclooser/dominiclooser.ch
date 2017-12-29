@@ -1,0 +1,21 @@
+doctype html
+html(lang='de')
+   head
+      script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-109667635-1")
+      script.
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'UA-109667635-1');
+      meta(charset='utf-8')
+      block title
+         title Dominic Looser: Text und Grafik
+      block description
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      //- base(href='/')
+      link(rel='stylesheet', href='/styles/styles.css')
+      link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Inconsolata:400,700|Libre+Franklin:400,900') 
+      link(rel='stylesheet', href='//cloud.webtype.com/css/e88fb897-e714-4842-ba1a-de34c58f0555.css')
+   body(id='#{id}')
+      block body

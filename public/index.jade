@@ -1,0 +1,33 @@
+extends _default
+
+block description
+   meta(name='description', content='Die Webseite von Dominic Looser: Auftritte, Text und Grafiken.')
+
+block content
+   h1#site-title.page-heading
+      #title Dominic Looser
+      #subtitle Text & Grafik
+      
+   #intro.text-wrapper
+      p.
+         Manchmal baue ich potentielle <a href='http://diekrassetasse.com'>Tassen-Imperien</a> auf. 
+         Manchmal schreibe ich <a href='/text'>Texte</a> und trage sie auf
+         <a href='/auftritte'>Bühnen</a> vor.  
+      p.
+         Häufig entwickle ich Webseiten, selten layoute ich Bücher. 
+         Da wären noch die <a href='/shop'>T-Shirts</a> und die Postkarten. Sehr häufig schlafe ich.
+      p
+         span Offen für Aufträge oder Kollaborationen jeglicher Art. Webseiten, Text, Typographie – you name it. 
+         span Freue mich über kürzere oder längere Zeilen in  
+         a(href='mailto:'+email) meinem Postfach
+         span .
+   .graphics.masonry
+      for graphic in graphics
+         img(src='images/graphics/small/'+graphic.filename, class='masonry-item')
+
+
+block scripts       
+   script(src="https://code.jquery.com/jquery-3.1.1.min.js")
+   script(src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js')
+   script(src='scripts/imagesloaded.js')
+   script(src='scripts/masonry.js')

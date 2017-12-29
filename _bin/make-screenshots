@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cd ../images
-pageres stage.diekrassetasse.com --filename=diekrassetasse.com
-pageres friedmannschmuck.ch --filename=friedmannschmuck.ch
-pageres dominiclooser.ch --filename=dominiclooser.ch

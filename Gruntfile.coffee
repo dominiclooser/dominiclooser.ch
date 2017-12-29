@@ -7,13 +7,25 @@ calc = require 'postcss-calc'
 config =
     responsive_images:
         options:
-            engine: im
-        graphics:
+            engine: 'im'
+        'graphics-small':
             options:
-                sizes: [{name: 'small', width: 400]
-            src: '_raw-image/graphics/*.*'
-            dest: 'images/graphics/'
-
+                sizes: [{rename: false, width: 400}]
+            files: [
+                    expand: true
+                    cwd: 'raw-images/graphics/'
+                    src: '*'
+                    dest: 'public/images/graphics/small/'
+            ]
+        'graphics-large':
+            options:
+                sizes: [{rename: false, width: 800}]
+            files: [
+                    expand: true
+                    cwd: 'raw-images/graphics/'
+                    src: '*'
+                    dest: 'public/images/graphics/large/'
+            ]
 
     teststage: 'psi stage.dominiclooser.ch'
     exec:
@@ -31,35 +43,34 @@ config =
     postcss:
         options:
             processors: [autoprefixer({browers: 'last 2 versions'}), cssVariables, calc]
-        dist:
+        main:
             src: 'www/styles/styles.css'
     copy:
         main:
-            src: ['images/**/*', 'scripts/*.js', 'favicon.ico']
+            src: ['public/images/**/*', 'public/scripts/*.js', 'public/favicon.ico']
             expand: true
             dest: 'www/'  
-        'production-cname':
-            src: '_production-cname'
+        'production':
+            src: 'cnames/production'
             dest: 'www/CNAME'
-        'stage-cname':
-            src: '_stage-cname'
+        'stage':
+            src: 'cnames/stage'
             dest: 'www/CNAME'
     coffee:
         main:
             expand: true
             flatten: true
             ext: '.js'
-            src: 'scripts/*.coffee'
+            src: 'public/scripts/*.coffee'
             dest: 'www/scripts/'
-     
     stylus:
         main:
-            src: 'styles/styles.styl'
+            src: 'public/styles/styles.styl'
             dest: 'www/styles/styles.css'
     yaml:
         main:
             expand: true
-            src: ['**/_harp.yml', '**/_data.yml']
+            src: ['harp.yml', 'public/**/_data.yml']
             ext: '.json'
     watch:
         options:
@@ -67,6 +78,9 @@ config =
         yaml:
             files: ['**/*.yml']
             tasks: ['yaml']
+        images:
+            files: ['raw-images/graphics/*']
+            tasks: ['responsive_images']
         all:
             files: ['**/*.*']
             tasks: []

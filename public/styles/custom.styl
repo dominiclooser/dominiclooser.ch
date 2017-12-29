@@ -1,0 +1,188 @@
+body
+    min-height: 100%
+
+nav 
+    padding-top: var(--semi-unit)
+    padding-bottom: var(--semi-unit)
+    border-bottom: 1px dotted dark
+    display: flex
+    justify-content: space-between
+    .logo
+        color: primary-color
+        margin-right: var(--semi-unit)
+
+footer
+    font-size: var(--s)
+    background: footerBackground
+    color: footerColor
+    padding: var(--unit) 0
+    margin-top: calc(3*var(--unit))
+    border-top: 1px dotted dark
+
+.image-column
+    img
+        margin-bottom: var(--semi-unit)
+
+.page-header
+.stacked-list
+    @extends .unmarked-links
+
+.page-heading
+    margin-top: var(--three-units)
+    margin-bottom: var(--two-units)
+
+.indent
+    text-indent: 50px
+
+.spaced-paragraphs
+    p + p
+        margin-top: var(--semi-unit)
+        
+// homepage
+#site-title
+    border-bottom: none
+
+#title
+    font-size: var(--xl)
+    line-height: 0.8
+
+#subtitle
+    font-size: var(--l)
+    color: primary-color
+
+#intro
+    margin-bottom: var(--three-units)
+    @extend .spaced-paragraphs
+
+
+// text
+
+#text
+    h2
+        margin-bottom: var(--unit)
+
+#text-list
+    @extends .highlight-list
+    li:first-child
+        display:none
+    li:nth-child(2)   
+        border-top: 1px solid soft-border-color
+    .text-title
+        font-size: var(--l)
+        font-family: body-font
+        font-weight: normal
+        text-transform: none
+
+#performance-list
+    p 
+        margin: 0
+    li 
+        display: flex
+        time
+            font-style: italic
+            flex: 1
+        p 
+            flex: 2
+
+.text
+    margin-top: var(--three-units)
+    h1
+        font-family: body-font
+        font-weight: normal
+        font-size: var(--xl)
+        text-transform: none
+        margin-bottom: var(--two-units)
+    h2
+        font-family: inherit
+        font-size: var(--m)
+        font-weight: normal
+        text-transform: uppercase
+        margin-top: 0
+        margin-bottom: var(--semi-unit)
+
+.spaced
+    p:not(:last-of-type)
+        margin-bottom: calc(0.5*var(--unit-2))
+
+.bigspaces
+    p:not(:last-of-type)
+        margin-bottom: var(--unit-2)
+
+
+
+.dialogue
+    
+    p
+        text-indent: 0
+    
+    em
+        margin-top: 20px
+
+
+
+
+// grafik
+
+.masonry-item
+    margin-bottom: 33px
+    width: 100%
+    @media (min-width: 400px)
+        width: calc(0.5 * (100% - 33px))
+    @media (min-width: 700px)
+        width: calc(0.33333 * (100% - 2 * 33px))
+    h2
+        margin-top: calc(0.5 * var(--unit))
+        line-height: 1
+        text-transform: uppercase
+        font-size: var(--m)
+
+
+        
+iframe
+    width: 100%
+    height: 90vh
+
+// shop
+#shop
+    background-color: white
+
+#spreadshirt-shop
+    margin-top: var(--two-units)
+    *
+        font-family: body-font
+        font-size: var(--m)
+
+#filterBar
+    *
+        font-size: var(--s)
+    .sprd-Item
+        border-bottom: 1px dotted dark
+    .sprd-Label
+        line-height: 1.3
+        padding: 10px 0
+
+.sprd-price
+        *
+            font-size:var(--s)
+
+#grossgedrucktes
+    margin-top: var(--two-units)
+    font-size: var(--l)
+
+// *****
+// ABOUT
+// *****
+
+#about
+    @extends .spaced-paragraphs
+    section
+        margin-bottom: var(--two-units)
+    h2
+        margin-bottom: var(--unit)
+
+    h3
+        margin: var(--unit) 0 var(--semi-unit) 0
+        text-transform: uppercase
+    ul
+        margin: 0
+
