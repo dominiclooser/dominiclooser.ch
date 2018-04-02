@@ -1,12 +1,12 @@
-.equal-columns 
+.two-columns 
     .column:not(:first-child)
-        margin: calc(2*var(--unit)) 0 0 0
+        margin: var(--unit) 0 0 0
     @media two-columns
         display: flex
         .column
             flex: 1
         .column:not(:first-child)
-            margin: 0 0 0 calc(2*var(--unit))
+            margin: 0 0 0 var(--unit)
 
 .textplus
     @media textplus
@@ -50,16 +50,17 @@
     list-style: none
     li:before
         content: '\2192 \a0'
+    li
+        margin-bottom: 0.5em
 
-.stacked-list
+lined-list(border=1px dotted dark, padding=var(--semi-unit))
     list-style: none
     padding: 0
     li  
-        padding: calc(0.5 * var(--unit)) 0 
-        padding-left: 10px
-        border-bottom: 1px solid soft-border-color
+        padding: padding 0 
+        border-bottom: border
     li:first-child
-        border-top: 1px solid soft-border-color
+        border-top: border
 
 .separated-list
     list-style: none
@@ -95,6 +96,8 @@
         cursor: pointer
     a:hover
         color: inherit
+    a
+        text-decoration: none
 
 .wrapper
     margin: 0 auto

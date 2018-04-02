@@ -8,6 +8,7 @@ config =
     responsive_images:
         options:
             engine: 'im'
+            newFilesOnly: false
         'graphics-small':
             options:
                 sizes: [{rename: false, width: 400}]
@@ -19,7 +20,7 @@ config =
             ]
         'graphics-large':
             options:
-                sizes: [{rename: false, width: 800}]
+                sizes: [{rename: false, width: 1000}]
             files: [
                     expand: true
                     cwd: 'raw-images/graphics/'
@@ -47,7 +48,8 @@ config =
             src: 'www/styles/styles.css'
     copy:
         main:
-            src: ['public/images/**/*', 'public/scripts/*.js', 'public/favicon.ico']
+            src: ['images/**/*', 'scripts/*.js', 'favicon.ico']
+            cwd: 'public'
             expand: true
             dest: 'www/'  
         'production':
@@ -91,6 +93,6 @@ module.exports = (grunt) ->
     jit grunt
     grunt.registerTask 'default', ['yaml', 'watch']
     grunt.registerTask 'compile', ['yaml','force:on', 'exec:harp','force:off', 'copy', 'stylus', 'postcss', 'coffee']
-    grunt.registerTask 'deploy', ['compile','copy:production-cname', 'gh-pages:production']
-    grunt.registerTask 'stage', ['compile','copy:stage-cname', 'gh-pages:stage']
+    grunt.registerTask 'deploy', ['compile','copy:production', 'gh-pages:production']
+    grunt.registerTask 'stage', ['compile','copy:stage', 'gh-pages:stage']
     grunt.registerTask 'teststage', ['exec:teststage']

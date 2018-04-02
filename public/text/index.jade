@@ -5,9 +5,9 @@ block title
 
 block content
    h1.page-heading Texte
-   .equal-columns
+   .two-columns
       .column
-         ul#text-list.stacked-list
+         ul#text-list
             for text, slug in public.text._data
                li
                   a(href='/text/'+slug)

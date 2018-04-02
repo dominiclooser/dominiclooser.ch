@@ -1,5 +1,12 @@
-nav
-   a(href='/').logo DL
-   ul.separated-list
-      for item in nav
-         li: a(href=item.link, class=current.path[0] == item.link ? 'current-link' : '')= item.title
+header#page-header
+   //- a(href='/').logo Dominic Looser
+   nav#desktop-nav
+      ul.separated-list
+         for item in nav
+            li: a(href=item.link, class=current.path[0] == item.link ? 'current-link' : '')= item.title
+   img.hamburger(src='/images/icons/hamburger.svg')
+
+nav#mobile-nav
+   ul.stacked-list
+         for item in nav
+            a(href=item.link, class=current.path[0] == item.link ? 'current-link' : ''): li= item.title

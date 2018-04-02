@@ -3,13 +3,15 @@ textplus = '(min-width: 980px)'
 large-font = '(min-width: 800px)'
 two-columns = large-font
 large-padding = large-font
+mobile-nav = '(max-width: 500px)'
+desktop-nav = '(min-width: 500px)'
 
 // typography
 body-font = Inconsolata
-header-font = 'Source Sans Pro' //Inconsolata
+heading-font = Rubik //Larsseit //Anton //Rubik  //Roboto //Vollkorn  //'Libre Franklin'
 textWidth = 800px
 :root
-    --scale-factor: 1.33
+    --scale-factor: 1.2
     --line-height: 1.5
     --font-size: 19px
     @media large-font
@@ -17,6 +19,7 @@ textWidth = 800px
     --unit: calc(var(--line-height) * var(--font-size))
     --two-units: calc(2*var(--unit))
     --three-units: calc(3*var(--unit))
+    --four-units: calc(4*var(--unit))
     --semi-unit: calc(0.5*var(--unit))
     --line-height-2: 1.7
     --font-size-2: 19px
@@ -30,13 +33,13 @@ textWidth = 800px
 dark = rgba(0,0,0,0.87)
 light-grey = #f7f7f7
 middle-grey = #e8e6e6
-background-color = #EAEEEF //#FEFDCA //#fdfd77 //#F0F9F4 //light-grey //#eff6fb
+background-color = white//#6D97C6 //#EDF2F4 // #EAEEEF //#FEFDCA //#fdfd77 //#F0F9F4 //light-grey //#eff6fb
 text-color = dark
 page-header-background-color = inherit
 page-header-text-color = inherit
 soft-border-color = grey
 footerBackground = inherit
-primary-color =  #F3007A
+primary-color = #FC2C37// #0075F2 //#EF233C //#D90429 // #D00820
 
 // misc
 baseBorder = 1px solid text-color

@@ -1,16 +1,6 @@
 body
     min-height: 100%
 
-nav 
-    padding-top: var(--semi-unit)
-    padding-bottom: var(--semi-unit)
-    border-bottom: 1px dotted dark
-    display: flex
-    justify-content: space-between
-    .logo
-        color: primary-color
-        margin-right: var(--semi-unit)
-
 footer
     font-size: var(--s)
     background: footerBackground
@@ -29,7 +19,7 @@ footer
 
 .page-heading
     margin-top: var(--three-units)
-    margin-bottom: var(--two-units)
+    margin-bottom: var(--three-units)
 
 .indent
     text-indent: 50px
@@ -37,23 +27,83 @@ footer
 .spaced-paragraphs
     p + p
         margin-top: var(--semi-unit)
-        
+
+
+// page header
+
+#desktop-nav
+    @media mobile-nav
+        display: none
+
+#page-header 
+    a
+        text-decoration: none
+    padding-top: var(--semi-unit)
+    padding-bottom: var(--semi-unit)
+    @media desktop-nav
+        border-bottom: 1px dotted dark
+    display: flex
+    justify-content: flex-end
+    @media desktop-nav
+        justify-content: center
+    .logo
+        margin-right: var(--semi-unit)
+        @media mobile-nav
+            display: none
+
+.hamburger
+    height: var(--unit)
+    @media desktop-nav
+        display: none
+
+#mobile-nav
+    display: none
+    lined-list(1px solid white)
+    position: absolute
+    top: 0
+    height: 100vh
+    width: 100vw
+    background: primary-color
+    z-index: 1
+    left: 0
+    font-family heading-font
+    color: white
+    font-size: var(--xxl)
+    text-transform: uppercase
+    text-align: center
+    li:hover
+        background: white
+        color: primary-color
+
+
 // homepage
+
 #site-title
     border-bottom: none
-
+    font-weight: 300
+    line-height: 1
+    text-align: center
+    
 #title
     font-size: var(--xl)
-    line-height: 0.8
+    text-transform: uppercase
+
 
 #subtitle
-    font-size: var(--l)
+    font-size: var(--xxl)
+    text-transform: uppercase
     color: primary-color
 
 #intro
     margin-bottom: var(--three-units)
     @extend .spaced-paragraphs
-
+    section+section
+        margin-top: var(--unit)
+    h2
+        margin-bottom: var(--semi-unit)
+    ul 
+        @extends .arrow-list
+    
 
 // text
 
@@ -62,11 +112,14 @@ footer
         margin-bottom: var(--unit)
 
 #text-list
+    lined-list(border=1px dotted soft-border-color)
+    li
+        padding: var(--semi-unit) var(--semi-unit)
     @extends .highlight-list
     li:first-child
         display:none
     li:nth-child(2)   
-        border-top: 1px solid soft-border-color
+        border-top: 1px dotted soft-border-color
     .text-title
         font-size: var(--l)
         font-family: body-font
@@ -74,12 +127,12 @@ footer
         text-transform: none
 
 #performance-list
+    lined-list(1px dotted soft-border-color)
     p 
         margin: 0
     li 
         display: flex
         time
-            font-style: italic
             flex: 1
         p 
             flex: 2
@@ -108,8 +161,6 @@ footer
     p:not(:last-of-type)
         margin-bottom: var(--unit-2)
 
-
-
 .dialogue
     
     p
@@ -119,9 +170,16 @@ footer
         margin-top: 20px
 
 
-
-
 // grafik
+
+.lb-caption
+    font-size: var(--s) !important
+    font-family: heading-font !important
+    font-weight: normal !important
+    color: white !important
+
+.lb-dataContainer
+    margin-top: 8px !important
 
 .masonry-item
     margin-bottom: 33px
@@ -130,19 +188,19 @@ footer
         width: calc(0.5 * (100% - 33px))
     @media (min-width: 700px)
         width: calc(0.33333 * (100% - 2 * 33px))
-    h2
-        margin-top: calc(0.5 * var(--unit))
-        line-height: 1
-        text-transform: uppercase
-        font-size: var(--m)
+    figcaption
+        margin-top: var(--semi-unit)
+        padding: 0.2em
+        border-top: 2px solid dark
+        border-bottom: @border-top
+        font-family: heading-font
+        font-size: var(--s)
+        // text-transform: uppercase
+        font-weight: 600
 
-
-        
-iframe
-    width: 100%
-    height: 90vh
 
 // shop
+
 #shop
     background-color: white
 
@@ -169,9 +227,8 @@ iframe
     margin-top: var(--two-units)
     font-size: var(--l)
 
-// *****
-// ABOUT
-// *****
+ 
+// about
 
 #about
     @extends .spaced-paragraphs

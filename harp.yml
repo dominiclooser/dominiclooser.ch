@@ -3,6 +3,8 @@ globals:
   email: dominic.looser@gmail.com
 
   nav:
+    - title: Home/Grafik
+      link: /
     - title: Auftritte
       link: /auftritte
     - title: Texte
@@ -13,9 +15,19 @@ globals:
       link: /about
 
   performances:
+
+    - title: Dichtungsring
+      place: Winterthur
+      date: 3.4.18
+    - title: MooseStache Poetry Slam
+      place: Zürich
+      date: 1.3.18
     - title: Poetry Slam Zähringer
       place: Zürich
       date: 15.10.17
+    - title: Rampe Slam
+      place: Zürich
+      date: 4.10.17
     - title: Nebeneinander Poetry Slam Show
       place: Winterthur
       date: 28.9.17
@@ -63,61 +75,87 @@ globals:
       date: 13.10.16
  
   graphics:
-    - name: Alles ist Kunst (rot)
+    - title: Professionalität ist nur ein Wort
+      year: 2018
+      filename: professionalitaet-ist-nur-ein-wort.png
+    - title: Was Raus Kam
+      description: Buchcover
+      year: 2018
+      filename: wasrauskam2.jpg
+    - title: Zeit ist nur ein Wort
+      year: 2018
+      filename: zeit-ist-nur-ein-wort.png
+    - title: Urinstinkt
+      year: 2017
+      filename: urinstinkt.jpg
+    - title: Dings Shizzle Bums
+      year: 2017
+      filename: dings-shizzle-bums.png
+    - title: Kunst ist nur ein Wort
+      year: 2017
+      filename: kunst-ist-nur-ein-wort.jpg
+    - title: Alles ist Kunst (rot)
       year: 2017
       filename: alles-ist-kunst-rot.png
-    - name: Alles ist Kunst (blau)
+    - title: Alles ist Kunst (blau)
       year: 2017
       filename: alles-ist-kunst-blau.png
-    - name: Alles ist Kunst
+    - title: Alles ist Kunst
       year: 2017
       filename: alles-ist-kunst.png
-    - name: Pandas Pasta
-      year: 2017
-      filename: pandas-pasta.jpg
-    - name: Psychologie für Desinteressierte
+   #  - title: Pandas Pasta
+   #    year: 2017
+   #    filename: pandas-pasta.jpg
+    - title: Psychologie für Desinteressierte
+      description: Buchcover
       year: 2017
       filename: psychologie-fuer-desinteressierte.png
-    - name: True News And Fake News
+    - title: True News About Fake News
       year: 2017
-      filename: fake-news.png
-    - name: Geometry For Rebels (Alternative Version)
+      filename: true-news-about-fake-news.png
+    - title: Geometry For Rebels (Alternative Version)
       year: 2017
       filename: geometry-for-rebels-alternative.png
-    - name: Far From Perfect
+    - title: Far From Pefect
       year: 2017
-      filename: far-from-perfect.png
-    - name: Pussy & Dick
+      filename: far-from-pefect.png
+    - title: Pussy & Dick
       year: 2017
       filename: pussy-and-dick.jpg
-    - name: Das Glück
+    - title: Das Glück
       year: 2017
       filename: das-glueck.jpg
-    - name: Living Poets Society – Flyer
+    - title: Living Poets Society – Flyer
       year: 2017
-      filename: living-poets-society-flyer.jpg
-    - name: DDAA
+      filename: living-poets-society.png
+    - title: Fotography for Rebels – Draft
+      year: 2016
+      filename: dreiecke.jpg
+    - title: DDAA
       year: 2016
       filename: ddaa.png
-    - name: Unbenannt
+    - title: Rote Linie
       year: 2016
-      filename: unbenannt.png
-    - name: TsnuK – Flyer
+      filename: rote-linie.png
+    - title: TsnuK – Flyer
       year: 2016
       filename: tsnuk-flyer.jpg
-    - name: Das geht doch nicht – Postkarte
-      year: 2017
-      filename: das-geht-doch-nicht.png
-    - name: Geometry for Rebels
+   #  - title: Das geht doch nicht – Postkarte
+   #    year: 2017
+   #    filename: das-geht-doch-nicht.png
+   #  - title: Geometry for Rebels
+   #    year: 2016
+   #    filename: geometry-for-rebels.png
+    - title: Vielseitig Desinteressiert
       year: 2016
-      filename: geometry-for-rebels.png
-    - name: Empathy
+      filename: vielseitig-desinteressiert.png
+    - title: Empathy
       year: 2015
       filename: empathy.png
-    - name: Superdada
-      year: 2015
-      filename: superdada.png
-    - name: Explore The World Through Films
+   #  - title: Superdada
+   #    year: 2015
+   #    filename: superdada.png
+    - title: Explore The World Through Films
       year: 2014
       filename: explore-the-world-through-films.png
 
@@ -140,12 +178,16 @@ globals:
       - name: Lukas Moodysson
     stage:
       - name: Josef Hader
-        link: http://www.hader.at/
+        link: http://hader.at
       - name: Lara Stoll
         link: http://larastoll.ch
       - name: Valerio Moser
         link: http://valeriomoser.ch
       - name: Andreas Thiel
-    design:
+      - name: Nico Semsrott
+        link: http://nicosemsrott.de
+    misc:
       - name: Jeremiah Shoaf
         link: https://www.jeremiahshoaf.com
+      - name: Pema Chödrön
+      
