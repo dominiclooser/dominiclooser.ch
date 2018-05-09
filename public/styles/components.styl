@@ -35,44 +35,42 @@
 .plustext-plus
     align-self: left
 
-.page-header
-    background-color: page-header-background-color
-    color: page-header-text-color
 
-.colored
-    color: primary-color
-
-.unmarked-links
+.discreet-links
     a
-        text-decoration: none
+        text-decoration: underline
+        &:hover
+            color: primary-color
 
-.arrow-list
+arrow-list()
     list-style: none
+    li
+        display: flex
     li:before
         content: '\2192 \a0'
-    li
-        margin-bottom: 0.5em
+    // li:not(:first-child)
+    //     margin-top: 0.2em
 
-lined-list(border=1px dotted dark, padding=var(--semi-unit))
+stacked-list(verticalpadding = var(--semi-unit), border = 1px dotted dark)
     list-style: none
     padding: 0
     li  
-        padding: padding 0 
+        padding: verticalpadding 0 
         border-bottom: border
     li:first-child
         border-top: border
 
-.separated-list
+separated-list(separator = '', spacing = 10px)
     list-style: none
     margin: 0
     li 
         display: inline
     li:not(:last-child)
         ::after
-            margin-left: separated-list-margin
-            content: list-separator
+            margin-left: spacing
+            content: separator
     li:not(:first-child)
-        margin-left: separated-list-margin
+        margin-left: spacing
 
 .definition-list
     dt
@@ -89,10 +87,10 @@ lined-list(border=1px dotted dark, padding=var(--semi-unit))
             content: '\A'
             white-space: pre
 
-.highlight-list
+highlight-list(background = dark, color = white)
     li:hover
-        background-color: dark
-        color: white
+        background: background
+        color: color
         cursor: pointer
     a:hover
         color: inherit

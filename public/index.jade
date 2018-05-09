@@ -6,29 +6,37 @@ block description
 block content
    h1#site-title.page-heading
       p#title Dominic Looser
-      p#subtitle Text und Grafik
+      p#subtitle 
+         a(href='text') Text
+         span  / 
+         a(href='web') Web 
+         span / 
+         a(href='grafik') Grafik
 
-   #intro.two-columns
-      .column
-         h2 News
-         ul
-            li Mein erstes Buch <em>Was Raus Kam</em> ist bald erhältlich. Stay tuned.
-            li Die <em>Krasse Tasse</em> gibt es nun im <a href=''>Cafe Z im Park</a> zu kaufen.
-            li Ich trete auf.... 
+   .intro.two-columns
       .column
          section
-            h2 Zusammenarbeit
-            p.
-               Gerne unterstütze
-               ich Sie in typographischen, sprachlichen oder grafischen Belangen. Ich freue mich
-               über <a href='mailto:#{email}'>digitale Post</a>.
+            h2 Angebot
+            ul
+               li Webentwicklung
+               li Buchdesign
+               li Lesungen
+               li Typographische Gestaltung aller Art
+            p. 
+               Für ein unverbindliches Vorgespräch melden Sie sich bitte
+               <a href='mailto:#{email}'>per Email</a>.
+      .column
          section
-            h2 Weitere Projekte
+            h2 Projekte
             ul
                li: a(href='http://diekrassetasse.com') Die Krasse Tasse GmbH
                li: a(href='http://einezwecklosewebseite.ch') Eine Zwecklose Webseite
-               li: a(href='http://tsnuk.me') TsnuK T-Shirt Shop
-         
+               li: a(href='https://www.facebook.com/AnalogeTage/') Analoge Tage
+   //- h2 News
+         //- ul
+         //-    li Mein erstes Buch <em>Was Raus Kam</em> ist bald erhältlich. Stay tuned.
+         //-    li Die <em>Krasse Tasse</em> gibt es nun im <a href='http://zampark.ch/'>Cafe Z im Park</a> zu kaufen.
+         //-    li Ich trete auf....       
          
 
    //- #intro.text-wrapper

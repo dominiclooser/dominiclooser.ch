@@ -2,10 +2,25 @@ index:
   layout: none
   description: Texte von Dominic Looser
 
+einzeiler:
+   title: Einzeiler
+   description: Kürzesttexte.
+   listofshorts: True
+
+pandas-pasta:
+   title: Pandas Pasta
+   description: Jung freute sich. Freud liebte seine Mutter nicht. 
+   spaced: True
+
 nichts:
   title: Nichts
   description: Wie er zweifelte, sah und schuf. 
   spaced: True
+
+da-sass-ich-nun:
+   title: Da Sass Ich Nun
+   description: Was ich erlebte als ich so da sass. 
+   spaced: True
 
 der-mensch:
   title: Der Mensch

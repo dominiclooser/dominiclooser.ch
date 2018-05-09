@@ -6,8 +6,15 @@ block title
 block main
    header.page-header
       .center-text-wrapper
-         include ../_includes/navigation
+         include ../../includes/navigation
+         nav.text-nav
+            ul
+               for text, slug in public.text._data
+                  if slug != 'index'
+                     li: a(href='/text/'+slug)= text.title
+                     
    .center-text-wrapper
-      article(class='text' class={justify: justify}, class={dialogue:dialogue}, class={spaced:spaced}, class={bigspaces:bigspaces})
+      article(class='text' class={justify:justify}, class={dialogue:dialogue}, class={spaced:spaced}, class={bigspaces:bigspaces}, class={listofshorts:listofshorts})
+         h1.text-title= title
          != yield
-      include ../_includes/footer
+      include ../../includes/footer

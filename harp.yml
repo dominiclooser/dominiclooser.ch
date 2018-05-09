@@ -1,193 +1,216 @@
 globals:
   
-  email: dominic.looser@gmail.com
+   email: dominic.looser@gmail.com
 
-  nav:
-    - title: Home/Grafik
-      link: /
-    - title: Auftritte
-      link: /auftritte
-    - title: Texte
-      link: /text
-    - title: Shop
-      link: /shop
-    - title: About
-      link: /about
+   nav:
+      - title: Auftritte
+        link: /auftritte
+      - title: Texte
+        link: /text
+      - title: Shop
+        link: /shop
+      - title: About
+        link: /about
+   
+   sites:
+      - title: Being Okey
+        category: Film
+        image: being-okey.jpg  
+        link: http://beingokey.ch
+        year: 2018
+      # - title: Ein zwecklose Webseite
+      #   category: 
+      #   image: eine-zwecklose-webseite.jpg  
+      #   link: http://einezwecklosewebseite.ch
+      #   year: 2018
+      - title: Mascha Illich
+        category: Fotografie
+        image: mascha-illich.jpg
+        link: http://mariyazhariy.com
+        year: 2015
+      - title: Friedmann Schmuck
+        category: Schmuck
+        image: friedmann-schmuck.jpg
+        link: http://friedmannschmuck.ch
+        year: 2014   
 
-  performances:
-
-    - title: Dichtungsring
-      place: Winterthur
-      date: 3.4.18
-    - title: MooseStache Poetry Slam
-      place: Zürich
-      date: 1.3.18
-    - title: Poetry Slam Zähringer
-      place: Zürich
-      date: 15.10.17
-    - title: Rampe Slam
-      place: Zürich
-      date: 4.10.17
-    - title: Nebeneinander Poetry Slam Show
-      place: Winterthur
-      date: 28.9.17
-    - title: Neubad Slam
-      place: Luzern
-      date: 8.9.17
-    - title: Reise Reise
-      place: Zürich
-      date: 26.8.17
-    - title: Amateurkunst
-      place: Zürich
-      date: 8.7.17
-    - title: Chaostage
-      place: Zürich
-      date: 3.6.17
-    - title: Offene Bühne
-      place: Basel
-      date: 7.5.17
-    - title: Living Poets Sociey
-      place: Linz AT
-      date: 20.4.17
-    - title: Slam 59
-      place: Luzern
-      date: 23.2.17
-    - title: PostSkriptum Poetry Slam
-      place: Linz AT
-      date: 26.1.17
-    - title: Lesebühne Original Linzer Worte
-      place: Linz AT
-      date: 20.1.17
-    - title: Dichtungsring
-      place: Winterthur
-      date: 6.12.16
-    - title: Poetry Slam Acapulco
-      place: Zürich
-      date: 30.11.16
-    - title: Slam 59
-      place: Luzern
-      date: 24.11.16
-    - title: Bilingue Slam 
-      place: Aarau
-      date: 12.11.16
-    - title: Nebeneinander Poetry Slam Show
-      place: Winterthur
-      date: 13.10.16
+   performances:
+      - title: Dichtungsring
+        place: Winterthur
+        date: 3.4.18
+      - title: MooseStache Poetry Slam
+        place: Zürich
+        date: 1.3.18
+      - title: Poetry Slam Zähringer
+        place: Zürich
+        date: 15.10.17
+      - title: Rampe Slam
+        place: Zürich
+        date: 4.10.17
+      - title: Nebeneinander Poetry Slam Show
+        place: Winterthur
+        date: 28.9.17
+      - title: Neubad Slam
+        place: Luzern
+        date: 8.9.17
+      - title: Reise Reise
+        place: Zürich
+        date: 26.8.17
+      - title: Amateurkunst
+        place: Zürich
+        date: 8.7.17
+      - title: Chaostage
+        place: Zürich
+        date: 3.6.17
+      - title: Offene Bühne
+        place: Basel
+        date: 7.5.17
+      - title: Living Poets Sociey
+        place: Linz AT
+        date: 20.4.17
+      - title: Slam 59
+        place: Luzern
+        date: 23.2.17
+      - title: PostSkriptum Poetry Slam
+        place: Linz AT
+        date: 26.1.17
+      - title: Lesebühne Original Linzer Worte
+        place: Linz AT
+        date: 20.1.17
+      - title: Dichtungsring
+        place: Winterthur
+        date: 6.12.16
+      - title: Poetry Slam Acapulco
+        place: Zürich
+        date: 30.11.16
+      - title: Slam 59
+        place: Luzern
+        date: 24.11.16
+      - title: Bilingue Slam 
+        place: Aarau
+        date: 12.11.16
+      - title: Nebeneinander Poetry Slam Show
+        place: Winterthur
+        date: 13.10.16
  
-  graphics:
-    - title: Professionalität ist nur ein Wort
-      year: 2018
-      filename: professionalitaet-ist-nur-ein-wort.png
-    - title: Was Raus Kam
-      description: Buchcover
-      year: 2018
-      filename: wasrauskam2.jpg
-    - title: Zeit ist nur ein Wort
-      year: 2018
-      filename: zeit-ist-nur-ein-wort.png
-    - title: Urinstinkt
-      year: 2017
-      filename: urinstinkt.jpg
-    - title: Dings Shizzle Bums
-      year: 2017
-      filename: dings-shizzle-bums.png
-    - title: Kunst ist nur ein Wort
-      year: 2017
-      filename: kunst-ist-nur-ein-wort.jpg
-    - title: Alles ist Kunst (rot)
-      year: 2017
-      filename: alles-ist-kunst-rot.png
-    - title: Alles ist Kunst (blau)
-      year: 2017
-      filename: alles-ist-kunst-blau.png
-    - title: Alles ist Kunst
-      year: 2017
-      filename: alles-ist-kunst.png
-   #  - title: Pandas Pasta
-   #    year: 2017
-   #    filename: pandas-pasta.jpg
-    - title: Psychologie für Desinteressierte
-      description: Buchcover
-      year: 2017
-      filename: psychologie-fuer-desinteressierte.png
-    - title: True News About Fake News
-      year: 2017
-      filename: true-news-about-fake-news.png
-    - title: Geometry For Rebels (Alternative Version)
-      year: 2017
-      filename: geometry-for-rebels-alternative.png
-    - title: Far From Pefect
-      year: 2017
-      filename: far-from-pefect.png
-    - title: Pussy & Dick
-      year: 2017
-      filename: pussy-and-dick.jpg
-    - title: Das Glück
-      year: 2017
-      filename: das-glueck.jpg
-    - title: Living Poets Society – Flyer
-      year: 2017
-      filename: living-poets-society.png
-    - title: Fotography for Rebels – Draft
-      year: 2016
-      filename: dreiecke.jpg
-    - title: DDAA
-      year: 2016
-      filename: ddaa.png
-    - title: Rote Linie
-      year: 2016
-      filename: rote-linie.png
-    - title: TsnuK – Flyer
-      year: 2016
-      filename: tsnuk-flyer.jpg
-   #  - title: Das geht doch nicht – Postkarte
-   #    year: 2017
-   #    filename: das-geht-doch-nicht.png
-   #  - title: Geometry for Rebels
-   #    year: 2016
-   #    filename: geometry-for-rebels.png
-    - title: Vielseitig Desinteressiert
-      year: 2016
-      filename: vielseitig-desinteressiert.png
-    - title: Empathy
-      year: 2015
-      filename: empathy.png
+   graphics:
+      - title: Professionalität ist nur ein Wort
+        year: 2018
+        filename: professionalitaet-ist-nur-ein-wort.png
+      - title: Was Raus Kam
+        description: Buchcover
+        year: 2018
+        filename: wasrauskam2.jpg
+      - title: Zeit ist nur ein Wort
+        year: 2018
+        filename: zeit-ist-nur-ein-wort.png
+      - title: Urinstinkt
+        year: 2017
+        filename: urinstinkt.jpg
+      - title: Dings Shizzle Bums
+        year: 2017
+        filename: dings-shizzle-bums.png
+      - title: Kunst ist nur ein Wort
+        year: 2017
+        filename: kunst-ist-nur-ein-wort.jpg
+      - title: Alles ist Kunst (rot)
+        year: 2017
+        filename: alles-ist-kunst-rot.png
+      - title: Alles ist Kunst (blau)
+        year: 2017
+        filename: alles-ist-kunst-blau.png
+      - title: Alles ist Kunst
+        year: 2017
+        filename: alles-ist-kunst.png
+        #  - title: Pandas Pasta
+        #    year: 2017
+        #    filename: pandas-pasta.jpg
+      - title: Psychologie für Desinteressierte
+        description: Buchcover
+        year: 2017
+        filename: psychologie-fuer-desinteressierte.png
+      - title: True News About Fake News
+        year: 2017
+        filename: true-news-about-fake-news.png
+      - title: Geometry For Rebels (Alternative Version)
+        year: 2017
+        filename: geometry-for-rebels-alternative.png
+      - title: Far From Pefect
+        year: 2017
+        filename: far-from-pefect.png
+      - title: Pussy & Dick
+        year: 2017
+        filename: pussy-and-dick.jpg
+      - title: Das Glück
+        year: 2017
+        filename: das-glueck.jpg
+      - title: Living Poets Society – Flyer
+        year: 2017
+        filename: living-poets-society.png
+      - title: Fotography for Rebels – Draft
+        year: 2016
+        filename: dreiecke.jpg
+      - title: DDAA
+        year: 2016
+        filename: ddaa.png
+      - title: Rote Linie
+        year: 2016
+        filename: rote-linie.png
+      - title: TsnuK – Flyer
+        year: 2016
+        filename: tsnuk-flyer.jpg
+        #  - title: Das geht doch nicht – Postkarte
+        #    year: 2017
+        #    filename: das-geht-doch-nicht.png
+        #  - title: Geometry for Rebels
+        #    year: 2016
+        #    filename: geometry-for-rebels.png
+      - title: Vielseitig Desinteressiert
+        year: 2016
+        filename: vielseitig-desinteressiert.png
+      - title: Empathy
+        year: 2015
+        filename: empathy.png
    #  - title: Superdada
    #    year: 2015
    #    filename: superdada.png
-    - title: Explore The World Through Films
-      year: 2014
-      filename: explore-the-world-through-films.png
+      - title: Explore The World Through Films
+        year: 2014
+        filename: explore-the-world-through-films.png
 
-  inspiration:
-    music:
-      - name: Conor Oberst
-      - name: Mani Matter
-      - name: Gysbert zu Knyphausen
-      - name: Käptn Peng
-      - name: Tocotronic
-      - name: Die Fantastischen Vier
-      - name: Die Antwoord
-      - name: Wir sind Helden
-      - name: Manuel Stahlberger
-    film:
-      - name: Ulrich Seidl
-      - name: Darren Aronofsky
-      - name: Danny Boyle
-      - name: Mike Leigh
-      - name: Lukas Moodysson
-    stage:
-      - name: Josef Hader
-        link: http://hader.at
-      - name: Lara Stoll
-        link: http://larastoll.ch
-      - name: Valerio Moser
-        link: http://valeriomoser.ch
-      - name: Andreas Thiel
-      - name: Nico Semsrott
-        link: http://nicosemsrott.de
-    misc:
-      - name: Jeremiah Shoaf
-        link: https://www.jeremiahshoaf.com
-      - name: Pema Chödrön
+   inspiration:
+      music:
+         - name: Conor Oberst
+         - name: Mani Matter
+         - name: Gysbert zu Knyphausen
+         - name: Käptn Peng
+         - name: Tocotronic
+         - name: Die Fantastischen Vier
+         - name: Die Antwoord
+         - name: Wir sind Helden
+         - name: Manuel Stahlberger
+      film:
+         - name: Ulrich Seidl
+         - name: Darren Aronofsky
+         - name: Danny Boyle
+         - name: Mike Leigh
+         - name: Lukas Moodysson
+      stage:
+         - name: Josef Hader
+           link: http://hader.at
+         - name: Lara Stoll
+           link: http://larastoll.ch
+         - name: Valerio Moser
+           link: http://valeriomoser.ch
+         - name: Andreas Thiel
+         - name: Nico Semsrott
+           link: http://nicosemsrott.de
+         - name: Volker Pispers
+           link: http://www.volker-pispers.de
+      misc:
+         - name: Jeremiah Shoaf
+           link: https://www.jeremiahshoaf.com
+         - name: Pema Chödrön
+         - name: Poppy
+           link: http://impoppy.com
       

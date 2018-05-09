@@ -6,6 +6,8 @@
     --xxxl: calc(var(--scale-factor) * var(--xxl))
     --xxxxl: calc(var(--scale-factor) * var(--xxxl))
     --xxxxxl: calc(var(--scale-factor) * var(--xxxxl))
+    --xxxxxxl: calc(var(--scale-factor) * var(--xxxxxl))
+    --xxxxxxxl: calc(var(--scale-factor) * var(--xxxxxxl))
     --s: calc(var(--m) / var(--scale-factor))
     --xs: calc(var(--s) / var(--scale-factor))
 
@@ -38,9 +40,3 @@ h3
     line-height: var(--unit)
     margin-bottom: var(--unit)
 
-a
-    color: inherit
-    text-decoration: underline
-    &:hover
-        cursor: pointer
-        color: primary-color

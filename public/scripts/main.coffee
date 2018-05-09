@@ -1,2 +1,5 @@
-$('.hamburger').click ->
-    $('#mobile-nav').show()
+$('.open-nav').click ->
+    $('.mobile-nav').show()
+
+$('.close').click ->
+    $('.mobile-nav').hide()
