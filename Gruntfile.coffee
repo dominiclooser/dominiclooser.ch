@@ -8,7 +8,7 @@ config =
     responsive_images:
         options:
             engine: 'im'
-            newFilesOnly: false
+            newFilesOnly: true
         'graphics-small':
             options:
                 sizes: [{rename: false, width: 400}]
@@ -51,7 +51,7 @@ config =
 
     copy:
         main:
-            src: ['images/**/*', 'scripts/*.js', 'favicon.ico']
+            src: ['images/**/*', 'scripts/*.js', 'favicon.ico', 'fonts/*.*' ]
             cwd: 'public'
             expand: true
             dest: 'www/' 

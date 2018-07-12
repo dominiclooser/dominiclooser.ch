@@ -1,0 +1,18 @@
+extends _default
+
+block content
+   ul.lyrics
+      for item in lyrics
+         li
+            p.lyrics-text!= item.text
+            p= item.song + ' / ' + item.author 
+   .grid
+      for category, slug in inspiration
+         section.card
+            h3.card-title= slug
+            ul
+               for item in category
+                  if item.link
+                     li: a(href='#{item.link}')= item.name
+                  else
+                     li= item.name

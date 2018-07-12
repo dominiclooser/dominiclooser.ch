@@ -1,2 +1,24 @@
+index:
+   id: home-page
+
+web:
+   id: web-page
+   pagetitle: Web
+
+grafik:
+   id: grafik-page
+   pagetitle: Grafik
+
 shop:
-  id: shop
+   id: shop
+
+about:
+   id: about-page
+   pagetitle: About
+
+nureinwort:
+   id: nureinwort-page
+
+inspiration:
+   id: inspiration-page
+   pagetitle: Inspiration

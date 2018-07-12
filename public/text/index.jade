@@ -1,18 +1,32 @@
 extends ../_default
 
-block title
-   title Texte – Dominic Looser
-
 block content
-   h1.page-heading Texte
-   .two-columns
-      .column
-         ul#text-list
+   main.page-main.grid
+      +wasrauskam
+      section#auftritte.card
+         h2.card-title Auftritte
+         ul.performance-list
+               for p in performances
+                  li 
+                     time= p.date 
+                     p #{p.title}, #{p.place} 
+         .button-wrapper
+            button.button.more mehr &hellip;
+      section.card
+         h2.card-title Texte
+         ul.text-list
             for text, slug in public.text._data
-               li
-                  a(href='/text/'+slug)
+               if slug != 'index'
+                  li: a(href='/text/'+slug)
                      h2.text-title= text.title
                      p.text-description= text.description
-      .column
-         img(src='/images/misc/typewriter.png')
+         .button-wrapper
+            button.button.more mehr &hellip;
+               
+block append scripts
+   script(src='/scripts/lightbox.min.js')
+   script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js')
+   script(src='/scripts/formatdates.js')
+   script(src='/scripts/more.js')
+
                      

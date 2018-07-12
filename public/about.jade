@@ -1,68 +1,17 @@
 extends _default
 
-block title
-   title About – Dominic Looser
-
 block content
-   .about
-      h1.page-heading About
+   main
       .textplus 
          .textplus-text
-            section
+            section.text-section
                p In kreativen Momenten schreibe ich <a href='text'>Texte</a> oder gestalte <a href='shop'>T&#8209;Shirts</a>. In weniger kreativen Momenten schlafe ich oder esse Champignons. Die mag ich lieber als Tomaten. 
                p Ich besitze ein blaues Schaf. Es ist mein wertvollster Besitz, nachdem ich meine CD von den Goldenen Zitronen aus Versehen verschenkt habe. 
-            section
-               h2 Krasse Fakten
+            section.text-section
+               h2.h2 Krasse Fakten
                p Abgeschlossenes Studium der Mathematik, der deutschen Linguistik und der Informatik an der Universität Zürich. Forschung und Entwicklung in angewandter Logik. Weiterbildungen in Typographie, Impro-Theater, Drehbuch-Schreiben.  
-            section
-               h2 Krasse Skills
+            section.text-section
+               h2.h2 Krasse Skills
                p Auge und Händchen für minimales Typo-lastiges Design. Entwicklung und Design von Webseiten, statisch oder dynamisch, mit oder ohne CMS. HTML, CSS, Javascript, Python und solche Sachen. Ich kann ausserdem Mathematik, deutsche Grammatik und allerlei anderen zwecklosen Shizzle beibringen. 
-            section 
-               h2 Inspiration
-               .two-columns
-                  .column
-                     h3 Musik
-                     ul 
-                        for item in inspiration.music
-                           li= item.name
-                  .column
-                     h3 Film
-                     ul 
-                        for item in inspiration.film
-                           li= item.name
-               .two-columns
-                  .column
-                     h3 Bühne
-                     ul 
-                        for item in inspiration.stage
-                           if item.link
-                              li: a(href='#{item.link}')= item.name
-                           else
-                              li= item.name
-                  .column
-                     h3 Divers
-                     ul 
-                        for item in inspiration.misc
-                           if item.link
-                              a(href='#{item.link}'): li= item.name
-                           else
-                              li= item.name
-
-               //- h2 Stücke
-               //- iframe(src="https://open.spotify.com/embed/track/1hjHahCEeplmWDeu0KFKhT", width="300", height="80", frameborder="0", allowtransparency="true")
-
          .textplus-plus
             img(src='images/misc/moshed-portrait.jpg')
-      //- ul
-      //-    li Mathematik
-      //-    li (deutsche) Linguistik
-      //-    li Informatik
-      //-    li Typographie
-      //-    li Grafikdesign
-      //-    li Webdevelopment
-      //-    li Webdesign
-      //-    li Kurztexte
-      //-    li Billard
-      //-    li Go
-      //-    li Backgammon
-      //-    li Gitarre

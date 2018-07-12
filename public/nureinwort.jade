@@ -1,0 +1,10 @@
+extends _default
+
+block content
+   h1.page-heading Nur ein Wort
+   main
+      .images
+         for image in nureinwort
+            img(src='/images/graphics/small/#{image.filename}')
+
+   

@@ -1,3 +1,22 @@
+mixin wasrauskam
+   section.card#wasrauskam
+      h2.card-title Was raus kam
+      main
+         section.card-images.card-section
+            a(href='/images/graphics/large/was-raus-kam-2-front.jpg', data-lightbox='wasrauskam')
+               img(src='/images/graphics/small/was-raus-kam-2-front.jpg')
+            a(href='/images/graphics/large/was-raus-kam-2-back.jpg', data-lightbox='wasrauskam')
+               img(src='/images/graphics/small/was-raus-kam-2-back.jpg')
+         section.card-section
+            p Meine Texte gibt es jetzt im Büchlein mit dem Titel <em>Was raus kam</em>.
+
+mixin performancelist
+   ul.performance-list
+      for p in performances
+         li 
+            time= p.date 
+            p #{p.title} • #{p.place} 
+
 doctype html
 html(lang='de')
    head

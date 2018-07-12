@@ -3,53 +3,79 @@ globals:
    email: dominic.looser@gmail.com
 
    nav:
-      - title: Auftritte
-        link: /auftritte
-      - title: Texte
-        link: /text
-      - title: Shop
-        link: /shop
-      - title: About
-        link: /about
+      -  title: Text
+         link: /text
+      -  title: Web
+         link: /web
+      -  title: Grafik
+         link: /grafik
+      -  title: Inspiration
+         link: /inspiration
+      -  title: Shop
+         link: /shop
+      -  title: About
+         link: /about
    
    sites:
-      - title: Being Okey
-        category: Film
-        image: being-okey.jpg  
-        link: http://beingokey.ch
-        year: 2018
-      # - title: Ein zwecklose Webseite
-      #   category: 
-      #   image: eine-zwecklose-webseite.jpg  
-      #   link: http://einezwecklosewebseite.ch
-      #   year: 2018
-      - title: Mascha Illich
-        category: Fotografie
-        image: mascha-illich.jpg
-        link: http://mariyazhariy.com
-        year: 2015
-      - title: Friedmann Schmuck
-        category: Schmuck
-        image: friedmann-schmuck.jpg
-        link: http://friedmannschmuck.ch
-        year: 2014   
+      # -  title: Matthew Tovstiga
+      #    link: http://tovstiga.studio
+      #    year: 2018
+      #    properties:
+      #       - mehrsprachig
+      #       - CMS
+      #       - responsive (inkl. responsive Images)
+      #             
+      #       - Gallerie-Navigation mit Swipe und Tastatur 
+      -  title: Being Okey
+         category: Film
+         image: being-okey.jpg  
+         link: http://beingokey.ch
+         year: 2018
+         whatidid:
+            - Frontend-Development
+            - Anbindung CMS (Bolt)
+      -  title: Eine zwecklose Webseite 
+         image: eine-zwecklose-webseite.jpg  
+         link: http://einezwecklosewebseite.ch
+         year: 2018
+
+      -  title: Mascha Illich
+         category: Fotografie
+         image: mascha-illich.jpg
+         link: http://mariyazhariy.com
+         year: 2015
+         whatidid:
+            - Anbindung CMS (Bolt)
+
+      -  title: Friedmann Schmuck
+         category: Schmuck
+         image: friedmann-schmuck.jpg
+         link: http://friedmannschmuck.ch
+         year: 2014
+         whatidid:
+            - Anpassung Template
+            - Texte
+            - Struktur
 
    performances:
-      - title: Dichtungsring
-        place: Winterthur
-        date: 3.4.18
+      -  title: Die Essenz des Lebens
+         place: Container von «Keine Klasse» beim Toni-Areal, Zürich
+         date: 2018-06-28
+      -  title: Dichtungsring
+         place: Winterthur
+         date: 2018-04-03
       - title: MooseStache Poetry Slam
         place: Zürich
-        date: 1.3.18
+        date: 2018-03-01
       - title: Poetry Slam Zähringer
         place: Zürich
-        date: 15.10.17
+        date: 2017-10-15
       - title: Rampe Slam
         place: Zürich
-        date: 4.10.17
+        date: 2017-10-01
       - title: Nebeneinander Poetry Slam Show
         place: Winterthur
-        date: 28.9.17
+        date: 2017-09-28
       - title: Neubad Slam
         place: Luzern
         date: 8.9.17
@@ -93,23 +119,33 @@ globals:
         place: Winterthur
         date: 13.10.16
  
+   nureinwort:
+      -  filename: geschlecht-ist-nur-ein-wort.jpg
+      -  filename: professionalitaet-ist-nur-ein-wort.png
+      -  filename: zeit-ist-nur-ein-wort.png
+      -  filename: kunst-ist-nur-ein-wort.jpg
+
    graphics:
+      -  title: Das Glück
+         filename: das-glueck.png
+      -  title: Geschlecht ist nur ein Wort
+         filename: geschlecht-ist-nur-ein-wort.jpg
       - title: Professionalität ist nur ein Wort
         year: 2018
         filename: professionalitaet-ist-nur-ein-wort.png
       - title: Was Raus Kam
         description: Buchcover
         year: 2018
-        filename: wasrauskam2.jpg
+        filename: was-raus-kam-2-front.jpg
       - title: Zeit ist nur ein Wort
         year: 2018
         filename: zeit-ist-nur-ein-wort.png
-      - title: Urinstinkt
-        year: 2017
-        filename: urinstinkt.jpg
-      - title: Dings Shizzle Bums
-        year: 2017
-        filename: dings-shizzle-bums.png
+      # - title: Urinstinkt
+      #   year: 2017
+      #   filename: urinstinkt.jpg
+      # - title: Dings Shizzle Bums
+      #   year: 2017
+      #   filename: dings-shizzle-bums.png
       - title: Kunst ist nur ein Wort
         year: 2017
         filename: kunst-ist-nur-ein-wort.jpg
@@ -178,24 +214,28 @@ globals:
         year: 2014
         filename: explore-the-world-through-films.png
 
+   lyrics:
+      -  text: Das ist das Land der begrenzten Unmöglichkeiten
+         author: Wir sind Helden
+         song: Müssen nur wollen
+      -  text: I'm not carefree, no <br> I'm free to care, I just never do
+         author: Monsters Of Folk
+         song: Ahead Of The Curve
+
    inspiration:
-      music:
-         - name: Conor Oberst
-         - name: Mani Matter
-         - name: Gysbert zu Knyphausen
-         - name: Käptn Peng
-         - name: Tocotronic
-         - name: Die Fantastischen Vier
-         - name: Die Antwoord
-         - name: Wir sind Helden
-         - name: Manuel Stahlberger
-      film:
-         - name: Ulrich Seidl
-         - name: Darren Aronofsky
-         - name: Danny Boyle
-         - name: Mike Leigh
-         - name: Lukas Moodysson
-      stage:
+      Musik:
+         -  name: Conor Oberst
+         -  name: Mani Matter
+         -  name: Gysbert zu Knyphausen
+         -  name: Käptn Peng
+         -  name: Tocotronic
+         -  name: Die Fantastischen Vier
+         -  name: Die Antwoord
+         -  name: Wir sind Helden
+         -  name: Manuel Stahlberger
+         -  name: Grossstadtgeflüster
+            link: http://grossstadtgefluester.de/
+      Bühne:
          - name: Josef Hader
            link: http://hader.at
          - name: Lara Stoll
@@ -207,10 +247,36 @@ globals:
            link: http://nicosemsrott.de
          - name: Volker Pispers
            link: http://www.volker-pispers.de
-      misc:
-         - name: Jeremiah Shoaf
-           link: https://www.jeremiahshoaf.com
+      Regie:
+         - name: Ulrich Seidl
+         - name: Darren Aronofsky
+         - name: Danny Boyle
+         - name: Mike Leigh
+         - name: Lukas Moodysson
+      Skandinavischer Film:
+         -  name: 101 Reykjavik (Island)
+            link: http://en.wikipedia.org/wiki/101_Reykjav%C3%ADk
+         -  name: Nói albinói (Island)
+         -  name: Nord (Norwegen)
+         -  name: Tillsammans (Schweden)
+         -  name: Lilya 4-ever (Schweden)
+            link: https://en.wikipedia.org/wiki/Lilya_4-ever
+      Typographie:
+         -  name: Druk (2014, Berton Hasebe, Commercial Type)
+         -  name: Bebas Neue
+         -  name: Noe
+         -  name: Inconsolata
+         -  name: Jeremiah Shoaf
+            link: https://www.jeremiahshoaf.com
+         -  name: Typewolf
+            link: http://typewolf.com
+            
+      Diverses:
          - name: Pema Chödrön
          - name: Poppy
            link: http://impoppy.com
+      Serien:
+         -  name: Westworld
+         -  name: A Handmaid's Tale
+      
       

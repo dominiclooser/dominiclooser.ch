@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+
+from pathlib import Path
+from subprocess import run
+
+
+project_path = Path('.') 
+
+source = Path.home() / 'text' / 'ready'
+for input in source.glob('*.md'):
+    output = project_path / 'public' / 'text' / input.name
+    run(['pandoc', input, '-o', output,  '-t', 'markdown_strict'])
+
+aphorismen_input = source / 'aphorismen.md'
+aphorismen_output = project_path / 'includes' / 'aphorismen.html' 
+
+run(['pandoc', aphorismen_input, '-o', aphorismen_output])

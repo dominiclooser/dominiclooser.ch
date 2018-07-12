@@ -1,48 +1,62 @@
 // breakpoints
 textplus = '(min-width: 980px)'
-large-font = '(min-width: 800px)'
-two-columns = large-font
-large-padding = large-font
+large-text = '(min-width: 800px)'
+two-columns = '(min-width: 500px)'
+three-columns = '(min-width: 1000px)'
+large-padding = large-text
 mobile-nav = '(max-width: 500px)'
 desktop-nav = '(min-width: 500px)'
+big-heading = large-text
+big-mobile = '(min-width: 375px)'
+
 
 // typography
 body-font = Inconsolata
-heading-font = Bebas Neue //Rubik //Larsseit //Anton //Rubik  //Roboto //Vollkorn  //'Libre Franklin'
-textWidth = 800px
+heading-font = 'Druk Text Web' //Druk Wide //Bebas Neue //Rubik //Larsseit //Anton //Rubik  //Roboto //Vollkorn  //'Libre Franklin'
+text-width = 800px
+heading-line-height = 1.2
 :root
     --scale-factor: 1.2
-    --line-height: 1.5
-    --font-size: 19px
-    @media large-font
-        --font-size: 22px
+    --line-height: 1.4
+    --font-size: 17px
+    @media large-text
+        --font-size: 19px
     --unit: calc(var(--line-height) * var(--font-size))
     --two-units: calc(2*var(--unit))
     --three-units: calc(3*var(--unit))
     --four-units: calc(4*var(--unit))
+    --five-units: calc(5*var(--unit))
+    --six-units: calc(6*var(--unit))
+    --seven-units: calc(7*var(--unit))
     --semi-unit: calc(0.5*var(--unit))
+    --quarter-unit: calc(0.5*var(--semi-unit))
     --line-height-2: 1.7
     --font-size-2: 19px
-    @media large-font
+    @media large-text
         --font-size-2: 22px
     --unit-2: calc(var(--line-height-2) * var(--font-size-2))
     --semi-unit-2: calc(0.5 * var(--unit-2))
     --two-units-2: calc(2 * var(--unit-2))
 
 // colors
+primary-color = #DF2B19//#FC2C37
 dark = rgba(0,0,0,0.87)
 light-grey = #f7f7f7
 middle-grey = #e8e6e6
-background-color = white//#6D97C6 //#EDF2F4 // #EAEEEF //#FEFDCA //#fdfd77 //#F0F9F4 //light-grey //#eff6fb
+background-color = #E4D5AD//white//#6D97C6 //#EDF2F4 // #EAEEEF //#FEFDCA //#fdfd77 //#F0F9F4 //light-grey //#eff6fb
+light-background-color =  rgb(245, 245, 245)
 text-color = dark
+link-color = primary-color
 page-header-background-color = inherit
 page-header-text-color = inherit
 soft-border-color = grey
 footerBackground = inherit
-primary-color = #FC2C37// #0075F2 //#EF233C //#D90429 // #D00820
+light-overlay-color = rgba(256, 256, 256, 0.3)
+// #0075F2 //#EF233C //#D90429 // #D00820
 
 // misc
 baseBorder = 1px solid text-color
-maxPageWidth = 1000px
+max-page-width = text-width//1200px
 list-separator = ' '
 separated-list-margin = 5px
+min-column-width = 15em

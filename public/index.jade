@@ -1,66 +1,61 @@
 extends _default
 
-block description
-   meta(name='description', content='Die Webseite von Dominic Looser: Auftritte, Texte und Grafiken.')
+//- block description
+//-    meta(name='description', content='Die Webseite von Dominic Looser: Auftritte, Texte und Grafiken.')
 
 block content
-   h1#site-title.page-heading
-      p#title Dominic Looser
-      p#subtitle 
-         a(href='text') Text
-         span  / 
-         a(href='web') Web 
-         span / 
-         a(href='grafik') Grafik
-
-   .intro.two-columns
-      .column
-         section
-            h2 Angebot
-            ul
-               li Webentwicklung
-               li Buchdesign
-               li Lesungen
-               li Typographische Gestaltung aller Art
-            p. 
-               Für ein unverbindliches Vorgespräch melden Sie sich bitte
-               <a href='mailto:#{email}'>per Email</a>.
-      .column
-         section
-            h2 Projekte
-            ul
+   header.page-heading
+      h1.page-title Dominic Looser
+      ul.page-subtitle
+         li: a(href='text') Text
+         li: a(href='web') Web
+         li: a(href='grafik') Grafik
+   main.page-main
+      .page-intro
+         p.
+            Hallo. Mein Name ist Dominic Looser und mache diverse Sachen. Vieles davon dreht
+            sich um Sprache. Auch Paradoxien mag ich sehr. Und Typografie. Webseiten. Postkarten. Bücher.
+      .grid
+         +wasrauskam
+         section.card
+            h2.card-title Nächste Auftritte
+            +performancelist
+         section.card
+            h2.card-title Web
+            - site = sites[0]
+            a(href=site.link).card-section
+               img(src='/images/sites/' + site.image)
+            h3.card-section= site.title
+            .card-section
+               a(href='/web').arrow-link alle Webseiten 
+         section.card
+            h2.card-title Grafik
+            - lastgraphics = [graphics[0], graphics[1]]
+            section.card-section.card-images
+               for graphic in lastgraphics
+                  a(href='/images/graphics/large/' + graphic.filename, data-lightbox='lastgraphics', data-title=graphic.title)
+                     img(src='/images/graphics/small/' + graphic.filename)
+            section.card-section
+               a(href='/grafik').arrow-link alle Grafiken
+         section.card
+            h2.card-title Projekte
+            ul.arrow-list
                li: a(href='http://diekrassetasse.com') Die Krasse Tasse GmbH
                li: a(href='http://einezwecklosewebseite.ch') Eine Zwecklose Webseite
                li: a(href='https://www.facebook.com/AnalogeTage/') Analoge Tage
-   //- h2 News
-         //- ul
-         //-    li Mein erstes Buch <em>Was Raus Kam</em> ist bald erhältlich. Stay tuned.
-         //-    li Die <em>Krasse Tasse</em> gibt es nun im <a href='http://zampark.ch/'>Cafe Z im Park</a> zu kaufen.
-         //-    li Ich trete auf....       
-         
+         section.card
+            h2.card-title Kontakt
+            a.arrow-link(href='mailto:#{email}') Email
+            a.arrow-link(href='https://www.facebook.com/dominic.looser') Facebook
+            a.arrow-link(href='tel:+41787730105') 078 773 01 05
+            
 
-   //- #intro.text-wrapper
-   //-    p.
-   //-       Manchmal baue ich potentielle <a href='http://diekrassetasse.com'>Tassen-Imperien</a> auf. 
-   //-       Manchmal schreibe ich <a href='/text'>Texte</a> und trage sie auf
-   //-       <a href='/auftritte'>Bühnen</a> vor.  
-   //-    p.
-   //-       Häufig entwickle ich Webseiten, selten layoute ich Bücher. 
-   //-       Da wären noch die <a href='/shop'>T-Shirts</a> und die Postkarten. Sehr häufig schlafe ich.
-   //-    p
-   //-       span Offen für Aufträge oder Kollaborationen jeglicher Art. Webseiten, Text, Typographie – you name it. 
-   //-       span Freue mich über kürzere oder längere Zeilen in  
-   //-       a(href='mailto:'+email) meinem Postfach
-   //-       span .
-   .graphics.masonry
-      for graphic in graphics
-         figure.masonry-item
-            a(href='/images/graphics/large/' + graphic.filename, data-lightbox='graphics', data-title=graphic.title + ' / ' + graphic.description + ' / ' + graphic.year)
-               img(src='/images/graphics/small/' + graphic.filename)
-            //- figcaption= graphic.title
+block append scripts
+   script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js')
+   script(src='/scripts/homepage.js')
+   script(src='/scripts/formatdates.js')
+   script(src='/scripts/lightbox.min.js')
 
-block append scripts       
-   script(src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js')
-   script(src='scripts/imagesloaded.js')
-   script(src='scripts/lightbox.min.js')
-   script(src='scripts/masonry.js')
+
+   
+

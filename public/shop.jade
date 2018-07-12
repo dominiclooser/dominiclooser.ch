@@ -1,12 +1,12 @@
 extends _base
 
 block main
-   .page-header
-      .full-width-wrapper
+   .center-text-wrapper
+      .page-header
          include ../includes/navigation
-   .full-width-wrapper
       #shop-intro.text-wrapper
-         h1.page-heading Shop
+         header.page-heading
+            h1.page-title Shop
          .spaced-paragraphs
             p. 
                Hier darf getauscht werden: hyper-individuelle und Lebensfreude versprühende
@@ -20,13 +20,14 @@ block main
                auf individuelle Wünsche ein wie zum Beispiel Varianten oder komplett neue Designs. 
             p.
                Happy Shopping! 
+   .full-width-wrapper   
       #spreadshirt-shop
-      .text-wrapper
-         p. 
-            <strong>Grossgedrucktes</strong>: Die Kleider werden in Deutschland bedruckt und verschickt. Deswegen kann ab
-            etwa 50 Franken Bestellwert (inklusive Porto) Zoll anfallen.  Damit kann dann die 
-            Schweiz wieder neue Kindergärten bauen und neue Kampfflugzeuge einkaufen. 
-            Oh happy day.
+   .center-text-wrapper
+      p. 
+         <strong>Grossgedrucktes</strong>: Die Kleider werden in Deutschland bedruckt und verschickt. Deswegen kann ab
+         etwa 50 Franken Bestellwert (inklusive Porto) Zoll anfallen.  Damit kann dann die 
+         Schweiz wieder neue Kindergärten bauen und neue Kampfflugzeuge einkaufen. 
+         Oh happy day.
       include ../includes/footer
    script.
       var spread_shop_config = {

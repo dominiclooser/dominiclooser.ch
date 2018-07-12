@@ -7,7 +7,7 @@ block main
    header.page-header
       .center-text-wrapper
          include ../../includes/navigation
-         nav.text-nav
+         nav.text-nav.underline-on-hover-links
             ul
                for text, slug in public.text._data
                   if slug != 'index'

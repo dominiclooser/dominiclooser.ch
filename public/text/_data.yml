@@ -1,6 +1,8 @@
 index:
-  layout: none
-  description: Texte von Dominic Looser
+   id: text-page
+   pagetitle: Text
+   layout: none
+   description: Texte von Dominic Looser
 
 einzeiler:
    title: Einzeiler
