@@ -58,6 +58,9 @@ globals:
             - Struktur
 
    performances:
+      -  title: Nebeneinander Poetry Show
+         place: Winterthur
+         date: 2018-09-20
       -  title: Die Essenz des Lebens
          place: Container von «Keine Klasse» beim Toni-Areal, Zürich
          date: 2018-06-28
@@ -221,6 +224,15 @@ globals:
       -  text: I'm not carefree, no <br> I'm free to care, I just never do
          author: Monsters Of Folk
          song: Ahead Of The Curve
+      -  text: Don’t ever buy nothing from a man named Truth
+         author: Monsters Of Folk
+         song: Man Named Truth
+      -  text: And if you swear that there's no truth and who cares <br> How come you say it like you're right?
+         author: Bright Eyes
+         song: We Are Nowhere and It's Now
+      -  text: Aber Mut heißt nicht, keine Angst zu haben<br>Mut heißt nur, dass man trotzdem springt
+         author: Sarah Lesch
+         song: Da Draussen
 
    inspiration:
       Musik:
@@ -235,18 +247,23 @@ globals:
          -  name: Manuel Stahlberger
          -  name: Grossstadtgeflüster
             link: http://grossstadtgefluester.de/
+         -  name: Funny van Dannen
+      Bücher:
+         -  name: The Hitchhiker's Guide to the Galaxy (Douglas Adams)
+         -  name: Torture the Artist (Joey Goebel)
+         -  name: The Wisdom of Insecurity (Alan Watts)
       Bühne:
-         - name: Josef Hader
-           link: http://hader.at
-         - name: Lara Stoll
-           link: http://larastoll.ch
-         - name: Valerio Moser
-           link: http://valeriomoser.ch
-         - name: Andreas Thiel
-         - name: Nico Semsrott
-           link: http://nicosemsrott.de
-         - name: Volker Pispers
-           link: http://www.volker-pispers.de
+         -  name: Josef Hader
+            link: http://hader.at
+         -  name: Lara Stoll
+            link: http://larastoll.ch
+         -  name: Valerio Moser
+            link: http://valeriomoser.ch
+         -  name: Andreas Thiel
+         -  name: Nico Semsrott
+            link: http://nicosemsrott.de
+         -  name: Volker Pispers
+            link: http://www.volker-pispers.de
       Regie:
          - name: Ulrich Seidl
          - name: Darren Aronofsky
@@ -269,12 +286,11 @@ globals:
          -  name: Jeremiah Shoaf
             link: https://www.jeremiahshoaf.com
          -  name: Typewolf
-            link: http://typewolf.com
-            
+            link: http://typewolf.com  
       Diverses:
-         - name: Pema Chödrön
-         - name: Poppy
-           link: http://impoppy.com
+         -  name: Pema Chödrön
+         -  name: Poppy
+            link: http://impoppy.com
       Serien:
          -  name: Westworld
          -  name: A Handmaid's Tale
