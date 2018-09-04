@@ -1,8 +1,5 @@
 extends _default
 
-//- block description
-//-    meta(name='description', content='Die Webseite von Dominic Looser: Auftritte, Texte und Grafiken.')
-
 block content
    header.page-heading
       h1.page-title Dominic Looser
@@ -13,9 +10,10 @@ block content
    main.page-main
       .page-intro
          p.
-            Hallo. Mein Name ist Dominic Looser und mache diverse Sachen. Vieles davon dreht
-            sich um Sprache. Auch Paradoxien mag ich sehr. Und Typografie. Webseiten. Postkarten. Bücher.
-      .grid
+            Ich bin ein Mathematiker, der keine Mathematik macht. Sondern Webseiten, Bücher und 
+            Lesungen. Und noch ein paar Sachen mehr. Hallo.
+
+      .page-content.grid
          +wasrauskam
          section.card
             h2.card-title Nächste Auftritte
@@ -30,19 +28,30 @@ block content
                a(href='/web').arrow-link alle Webseiten 
          section.card
             h2.card-title Grafik
-            - lastgraphics = [graphics[0], graphics[1]]
-            section.card-section.card-images
-               for graphic in lastgraphics
-                  a(href='/images/graphics/large/' + graphic.filename, data-lightbox='lastgraphics', data-title=graphic.title)
-                     img(src='/images/graphics/small/' + graphic.filename)
+            section.card-section
+               img(src='/images/graphics/small/das-glueck.jpg')
+            //- - lastgraphics = [graphics[0], graphics[1]]
+            //- section.card-section.card-images
+            //-    for graphic in lastgraphics
+            //-       a(href='/images/graphics/large/' + graphic.filename, data-lightbox='lastgraphics', data-title=graphic.title)
+            //-          img(src='/images/graphics/small/' + graphic.filename)
             section.card-section
                a(href='/grafik').arrow-link alle Grafiken
          section.card
             h2.card-title Projekte
             ul.arrow-list
+               li Die Essenz des Lebens
                li: a(href='http://diekrassetasse.com') Die Krasse Tasse GmbH
-               li: a(href='http://einezwecklosewebseite.ch') Eine Zwecklose Webseite
+               li: a(href='http://einezwecklosewebseite.ch') Eine zwecklose Webseite
                li: a(href='https://www.facebook.com/AnalogeTage/') Analoge Tage
+               li TsnuK
+               li Cinemap
+         section.card
+            h2.card-title Dienstleistungen
+            ul.arrow-list
+               li: a(href='/web') Web: Design und Programmierung
+               li: a(href='/grafik') Typographische Gestaltung
+               li: a(href='/text') Lesungen und Performances
          section.card
             h2.card-title Kontakt
             a.arrow-link(href='mailto:#{email}') Email
@@ -51,7 +60,7 @@ block content
             
 
 block append scripts
-   script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js')
+   script(src='/scripts/moment-with-locales.min.js')
    script(src='/scripts/homepage.js')
    script(src='/scripts/formatdates.js')
    script(src='/scripts/lightbox.min.js')

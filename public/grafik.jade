@@ -5,15 +5,17 @@ block content
       p.
          Ich gestalte Bücher, Postkarten, T-Shirts, Tassen, Poster und Flyer. Am liebsten in Verbindung 
          mit Sprache und Typographie. 
-   .graphics.masonry
-      for graphic in graphics
-         figure.masonry-item
-            a(href='/images/graphics/large/' + graphic.filename, data-lightbox='graphics', data-title=graphic.title)
-               img(src='/images/graphics/small/' + graphic.filename)
+   .page-content
+      .graphics.masonry
+         for graphic in graphics
+            figure.masonry-item
+               a(href='/images/graphics/large/' + graphic.filename, data-lightbox='graphics', data-title=graphic.title)
+                  img(src='/images/graphics/small/' + graphic.filename)
 
-block append scripts       
-   script(src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js')
+block append scripts
+   script(src='/scripts/masonry.pkgd.min.js')
    script(src='/scripts/imagesloaded.js')
-   script(src='/scripts/masonry.js')
    script(src='/scripts/lightbox.min.js')
+   script(src='/scripts/masonry.js')
+   
    

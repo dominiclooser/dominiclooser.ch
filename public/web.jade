@@ -4,14 +4,10 @@ block content
    .page-intro
       p.
          Ich gestalte und entwickle Webseiten: individuell, reduziert, ästhetisch.
-   #sites.underline-on-hover-links
+   .page-content.underline-on-hover-links.grid
       for site in sites
          figure.site
             a(href=site.link)
                img(src='/images/sites/' + site.image)
             figcaption
                a(href=site.link): h2= site.title
-               //- ul
-               //-    if site.whatidid
-               //-       for thing in site.whatidid
-               //-          li= thing

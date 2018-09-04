@@ -2,6 +2,7 @@ index:
    id: text-page
    pagetitle: Text
    layout: none
+   title: Texte – Dominic Looser
    description: Texte von Dominic Looser
 
 einzeiler:
@@ -40,7 +41,7 @@ sie-sagen:
   bigspaces: True
 
 die-essenz-des-lebens:
-  title: Die Essenz des Leben
+  title: Die Essenz des Lebens
   description: Wichtige Tipps zum glücklichen Leben.
   bigspaces: True
 

@@ -18,20 +18,21 @@
 .text-section
     margin-bottom: var(--two-units)
 
-.h2
-    font-size: var(--xl)
-    margin-bottom: var(--quarter-unit)
-    font-family: heading-font
-
-.h3
-    font-size: var(--s)
-    margin-bottom: var(--quarter-unit)
-
 .card
     padding: var(--unit) var(--semi-unit)
-    background: light-overlay-color
+    @media(min-width: 400px)
+        padding: var(--unit)
+    background: card-background-color
+    // border: 2px solid primary-color
     img + p
         margin-top: var(--unit)
+    &:nth-child(3n+1)
+        background: primary-color
+    &:nth-child(3n+2)
+        background: secondary-color
+    &:nth-child(3n+3)
+        background: tertiary-color
+    
 
 .card-section + .card-section
     margin-top: var(--semi-unit)
@@ -52,6 +53,11 @@
     grid-template-columns: repeat(auto-fit, minmax(min-column-width, 1fr ))
     grid-column-gap: var(--unit)
     grid-row-gap: var(--unit)
+
+.cards-column
+    .card + .card
+        margin-top: var(--unit)
+    
 
 .textplus
     @media textplus
@@ -79,7 +85,6 @@
 
 .plustext-plus
     align-self: left
-
 
 .arrow-list
     list-style: none

@@ -3,6 +3,8 @@ globals:
    email: dominic.looser@gmail.com
 
    nav:
+      -  title: Home
+         link: /
       -  title: Text
          link: /text
       -  title: Web
@@ -58,21 +60,25 @@ globals:
             - Struktur
 
    performances:
+      -  title: 8. Wollerauer Poetry Slam
+         place: Wollerau
+         date: 2018-10-27
+         link: http://www.wollerau.ch/de/kulfre/freizeit/anlaesseaktuelles/welcome.php?action=showevent&event_id=2722964
       -  title: Nebeneinander Poetry Show
          place: Winterthur
          date: 2018-09-20
       -  title: Die Essenz des Lebens
-         place: Container von «Keine Klasse» beim Toni-Areal, Zürich
+         place: Zürich
          date: 2018-06-28
       -  title: Dichtungsring
          place: Winterthur
          date: 2018-04-03
-      - title: MooseStache Poetry Slam
-        place: Zürich
-        date: 2018-03-01
-      - title: Poetry Slam Zähringer
-        place: Zürich
-        date: 2017-10-15
+      -  title: MooseStache Poetry Slam
+         place: Zürich
+         date: 2018-03-01
+      -  title: Poetry Slam Zähringer
+         place: Zürich
+         date: 2017-10-15
       - title: Rampe Slam
         place: Zürich
         date: 2017-10-01
@@ -242,7 +248,6 @@ globals:
          -  name: Käptn Peng
          -  name: Tocotronic
          -  name: Die Fantastischen Vier
-         -  name: Die Antwoord
          -  name: Wir sind Helden
          -  name: Manuel Stahlberger
          -  name: Grossstadtgeflüster
@@ -251,7 +256,7 @@ globals:
       Bücher:
          -  name: The Hitchhiker's Guide to the Galaxy (Douglas Adams)
          -  name: Torture the Artist (Joey Goebel)
-         -  name: The Wisdom of Insecurity (Alan Watts)
+
       Bühne:
          -  name: Josef Hader
             link: http://hader.at
@@ -287,12 +292,27 @@ globals:
             link: https://www.jeremiahshoaf.com
          -  name: Typewolf
             link: http://typewolf.com  
-      Diverses:
+      Buddhismus:
          -  name: Pema Chödrön
+         -  name: The Wisdom of Insecurity (Alan Watts)
+         -  name: Buddhism Plain and Simple
+      Style:
          -  name: Poppy
             link: http://impoppy.com
+         -  name: Deichkind
+         -  name: Pet Shop Boys
+         -  name: Die Antwoord
       Serien:
          -  name: Westworld
          -  name: A Handmaid's Tale
+      Zürcher Locations:
+         -  name: Xenix
+            link: http://xenix.ch
+         -  name: Kosmos
+            link: http://kosmos.ch
+      Musik aus Österreich:
+         -  name: 'Molden, Resetarits, Soyka, Wirth: Ho Rugg'
+         -  name: Seiler und Speer
+            link: http:/seilerundspeer.at
       
       

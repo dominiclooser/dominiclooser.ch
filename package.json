@@ -1,32 +1,33 @@
 {
-  "name": "portfolio-harp",
-  "version": "0.1.0",
+  "name": "dominiclooser.ch",
+  "version": "4.0.0",
   "devDependencies": {
     "autoprefixer": "latest",
     "grunt": "latest",
-    "grunt-contrib-coffee": "^1.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-coffee": "1.*",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-stylus": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-exec": "latest",
-    "grunt-force": "^1.0.0",
+    "grunt-force": "latest",
     "grunt-gh-pages": "latest",
     "grunt-postcss": "latest",
-    "grunt-preprocess": "^5.1.0",
-    "grunt-responsive-images": "^1.10.1",
+    "grunt-responsive-images": "latest",
     "grunt-yaml": "latest",
     "jit-grunt": "latest",
     "matchdep": "latest",
-    "postcss-calc": "^5.3.1",
-    "postcss-css-variables": "^0.6.0",
+    "postcss-calc": "latest",
+    "postcss-css-variables": "latest",
     "time-grunt": "latest"
   },
   "scripts": {
     "test": "psi dominiclooser.ch"
   },
   "dependencies": {
-    "imagesloaded": "^4.1.1",
+    "imagesloaded": "latest",
+    "jquery": "latest",
     "lightbox2": "^2.10.0",
-    "svg.js": "^2.4.0"
+    "masonry-layout": "^4.2.2",
+    "moment": "^2.22.2"
   }
 }

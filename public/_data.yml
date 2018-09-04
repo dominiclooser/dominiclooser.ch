@@ -9,8 +9,13 @@ grafik:
    id: grafik-page
    pagetitle: Grafik
 
+inspiration:
+   id: inspiration-page
+   pagetitle: Inspiration
+
 shop:
    id: shop
+   pagetitle: Shop
 
 about:
    id: about-page
@@ -18,7 +23,5 @@ about:
 
 nureinwort:
    id: nureinwort-page
+   pagetitle: Nur ein Wort
 
-inspiration:
-   id: inspiration-page
-   pagetitle: Inspiration

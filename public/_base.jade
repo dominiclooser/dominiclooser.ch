@@ -9,13 +9,17 @@ mixin wasrauskam
                img(src='/images/graphics/small/was-raus-kam-2-back.jpg')
          section.card-section
             p Meine Texte gibt es jetzt im Büchlein mit dem Titel <em>Was raus kam</em>.
+            a.arrow-link(href='/wasrauskam') Info & Konsum
 
 mixin performancelist
    ul.performance-list
       for p in performances
-         li 
-            time= p.date 
-            p #{p.title} • #{p.place} 
+         li.performance
+            header.performance-header 
+               time.performance-date= p.date 
+               span.performance-place #{p.place} 
+            h3.performance-title #{p.title}
+            
 
 doctype html
 html(lang='de')
@@ -28,8 +32,12 @@ html(lang='de')
          gtag('config', 'UA-109667635-1');
       meta(charset='utf-8')
       block title
-         title Dominic Looser: Text und Grafik
+         if pagetitle
+            title= pagetitle + ' – Dominic Looser'
+         else
+            title Dominic Looser: Text/Web/Grafik
       block description
+         meta(name='description', content=description)
       meta(http-equiv='X-UA-Compatible', content='IE=edge')
       meta(name='viewport', content='width=device-width, initial-scale=1')
 
@@ -40,5 +48,5 @@ html(lang='de')
    body(id='#{id}')
       block main
       block scripts
-         script(src="https://code.jquery.com/jquery-3.1.1.min.js")
-         script(src='/scripts/main.js')
+         script(src='/scripts/jquery.min.js')
+         script(src='/scripts/navigation.js')

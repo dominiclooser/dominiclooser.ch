@@ -6,5 +6,6 @@ draw = ->
     new Masonry('.masonry', options)
 
 $('.masonry').imagesLoaded(draw)
+
 lightbox.option
     showImageNumberLabel: false
