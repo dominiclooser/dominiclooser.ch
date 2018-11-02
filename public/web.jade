@@ -6,8 +6,10 @@ block content
          Ich gestalte und entwickle Webseiten: individuell, reduziert, ästhetisch.
    .page-content.underline-on-hover-links.grid
       for site in sites
-         figure.site
-            a(href=site.link)
-               img(src='/images/sites/' + site.image)
-            figcaption
-               a(href=site.link): h2= site.title
+         figure.card_nopadding
+            a(href=site.link).card-section_fullwidth
+               img(src='/images/small/web/' + site.image)
+            figcaption.card-section.website-footer
+               h2= site.title
+               p: a(href=site.link)= site.link
+               

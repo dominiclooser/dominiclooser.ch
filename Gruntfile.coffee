@@ -9,23 +9,23 @@ config =
         options:
             engine: 'im'
             newFilesOnly: true
-        'graphics-small':
+        'small':
             options:
                 sizes: [{rename: false, width: 400}]
             files: [
                     expand: true
-                    cwd: 'raw-images/graphics/'
-                    src: '*'
-                    dest: 'public/images/graphics/small/'
+                    cwd: 'raw-images'
+                    src: '**/*.{jpg,png}'
+                    dest: 'public/images/small'
             ]
-        'graphics-large':
+        'large':
             options:
                 sizes: [{rename: false, width: 1000}]
             files: [
                     expand: true
-                    cwd: 'raw-images/graphics/'
-                    src: '*'
-                    dest: 'public/images/graphics/large/'
+                    cwd: 'raw-images'
+                    src: '**/*.{jpg,png}'
+                    dest: 'public/images/large'
             ]
 
     exec:
@@ -88,7 +88,7 @@ config =
             files: ['**/*.yml']
             tasks: ['yaml']
         images:
-            files: ['raw-images/graphics/*']
+            files: ['raw-images/**/*']
             tasks: ['responsive_images']
         texts:
             files: '~/text/ready/*'

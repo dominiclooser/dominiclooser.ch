@@ -1,7 +1,18 @@
+body
+    min-height: 100%
 
-//////////////
-// typography
-//////////////
+footer
+    font-size: var(--s)
+    background: footerBackground
+    color: footerColor
+    padding: var(--unit) 0
+    margin-top: var(--three-units)
+    border-top: 1px dotted dark
+
+
+////////////////
+// typography //
+///////////////
 
 .h1
     font-family: heading-font
@@ -15,12 +26,14 @@
 
 .h2
     font-size: var(--xl)
-    margin-bottom: var(--quarter-unit)
     font-family: heading-font
 
+p+.h2
+    margin-top: var(--unit)
+
 .h3
-    font-size: var(--s)
-    margin-bottom: var(--quarter-unit)
+    font-size: var(--l)
+    font-family: heading-font
 
 
 ///////////
@@ -90,13 +103,13 @@
         separated-list(separator: '/')
 
 .page-heading
-    margin-top: var(--five-units)
-    margin-bottom: var(--four-units)
-    text-align: center
-    @media big-heading
-        text-align: left
-        margin-top: var(--unit)
-        margin-bottom: var(--unit)
+    // margin-top: var(--five-units)
+    // margin-bottom: var(--four-units)
+    // text-align: center
+    // @media big-heading
+    //     text-align: left
+    margin-top: var(--three-units)
+    margin-bottom: var(--two-units)
 
 .page-title
     @extends .h1
@@ -106,7 +119,7 @@
 
 .page-intro
     max-width: text-width
-    margin-bottom: var(--two-units)
+    margin-bottom: var(--unit)
     @extend .spaced-paragraphs
     section+section
         margin-top: var(--unit)
@@ -127,24 +140,15 @@
 .performance-list
     stacked-list(border: 1px solid dark)
 
-.performance-header
-    display: flex
-    justify-content: space-between
-
 .performance-date
-    margin-right: var(--unit)
     word-spacing: -0.2em
+    &::after
+        content: ' / '
+        margin-right: 0.5em
 
-body
-    min-height: 100%
-
-footer
-    font-size: var(--s)
-    background: footerBackground
-    color: footerColor
-    padding: var(--unit) 0
-    margin-top: var(--three-units)
-    border-top: 1px dotted dark
+.performance-title
+    display: inline
+    font-size: var(--l)
 
 .button
     font-family: body-font
@@ -157,6 +161,19 @@ footer
     &:hover
         background: dark
         color: light-background-color
+
+///////////
+// cards //
+///////////
+
+.colored-cards
+    .card
+        &:nth-child(3n+1)
+            background: primary-color
+        &:nth-child(3n+2)
+            background: secondary-color
+        &:nth-child(3n+3)
+            background: tertiary-color
 
 .card
     .button-wrapper

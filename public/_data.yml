@@ -21,6 +21,10 @@ about:
    id: about-page
    pagetitle: About
 
+wasrauskam:
+   id: wasrauskam-page
+   pagetitle: Was raus kam
+
 nureinwort:
    id: nureinwort-page
    pagetitle: Nur ein Wort

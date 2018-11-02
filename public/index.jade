@@ -1,19 +1,19 @@
 extends _default
+include _mixins
 
 block content
    header.page-heading
-      h1.page-title Dominic Looser
-      ul.page-subtitle
+      ul.page-title.color-on-hover-links
          li: a(href='text') Text
          li: a(href='web') Web
          li: a(href='grafik') Grafik
+      h1.page-subtitle Design is Art for Loosers
    main.page-main
       .page-intro
          p.
-            Ich bin ein Mathematiker, der keine Mathematik macht. Sondern Webseiten, Bücher und 
-            Lesungen. Und noch ein paar Sachen mehr. Hallo.
-
-      .page-content.grid
+            Mein Name ist Dominic Looser und ich mache Webseiten, Bücher und 
+            Lesungen. Und noch ein paar Sachen mehr. Hallo!
+      .page-content.grid.colored-cards
          +wasrauskam
          section.card
             h2.card-title Nächste Auftritte
@@ -22,14 +22,14 @@ block content
             h2.card-title Web
             - site = sites[0]
             a(href=site.link).card-section
-               img(src='/images/sites/' + site.image)
-            h3.card-section= site.title
+               img(src='/images/small/web/' + site.image)
+            //- h3.card-section= site.title
             .card-section
                a(href='/web').arrow-link alle Webseiten 
          section.card
             h2.card-title Grafik
             section.card-section
-               img(src='/images/graphics/small/das-glueck.jpg')
+               img(src='/images/small/graphics/das-glueck.jpg')
             //- - lastgraphics = [graphics[0], graphics[1]]
             //- section.card-section.card-images
             //-    for graphic in lastgraphics
@@ -39,24 +39,25 @@ block content
                a(href='/grafik').arrow-link alle Grafiken
          section.card
             h2.card-title Projekte
-            ul.arrow-list
-               li Die Essenz des Lebens
+            ul.arrow-links
+               //- li: a(href='/die-essenz-des-lebens') Die Essenz des Lebens
                li: a(href='http://diekrassetasse.com') Die Krasse Tasse GmbH
                li: a(href='http://einezwecklosewebseite.ch') Eine zwecklose Webseite
-               li: a(href='https://www.facebook.com/AnalogeTage/') Analoge Tage
-               li TsnuK
-               li Cinemap
+               li: a(href='https://facebook.com/AnalogeTage/') Analoge Tage
+               li: a(href='http://tsnuk.me') TsnuK
+               li: a(href='http://cinemap.org') Cinemap
          section.card
             h2.card-title Dienstleistungen
-            ul.arrow-list
+            ul.arrow-links
                li: a(href='/web') Web: Design und Programmierung
                li: a(href='/grafik') Typographische Gestaltung
                li: a(href='/text') Lesungen und Performances
          section.card
             h2.card-title Kontakt
-            a.arrow-link(href='mailto:#{email}') Email
-            a.arrow-link(href='https://www.facebook.com/dominic.looser') Facebook
-            a.arrow-link(href='tel:+41787730105') 078 773 01 05
+            ul.arrow-links
+               li: a(href='mailto:#{email}') Email
+               li: a(href='https://www.facebook.com/dominic.looser') Facebook
+               li: a(href='tel:+41787730105') 078 773 01 05
             
 
 block append scripts

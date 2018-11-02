@@ -19,27 +19,36 @@ globals:
          link: /about
    
    sites:
-      # -  title: Matthew Tovstiga
-      #    link: http://tovstiga.studio
-      #    year: 2018
-      #    properties:
-      #       - mehrsprachig
-      #       - CMS
-      #       - responsive (inkl. responsive Images)
-      #             
-      #       - Gallerie-Navigation mit Swipe und Tastatur 
+      
+      # -  title: hier (Meta Meta)
+      #    link: http://dominiclooser.ch
+
+      -  title: Matthew Tovstiga
+         image: tovstiga.jpg
+         link: http://tovstiga.studio
+         year: 2018
+         properties:
+            - mehrsprachig
+            - CMS
+            - responsive (inkl. responsive Images)
+            - Gallerie-Navigation mit Swipe und Tastatur 
+
       -  title: Being Okey
-         category: Film
          image: being-okey.jpg  
          link: http://beingokey.ch
          year: 2018
          whatidid:
             - Frontend-Development
             - Anbindung CMS (Bolt)
+
       -  title: Eine zwecklose Webseite 
          image: eine-zwecklose-webseite.jpg  
          link: http://einezwecklosewebseite.ch
          year: 2018
+
+      # -  title: TsnuK
+      #    image: tsnuk.jpg
+      #    link: http://tsnuk.me
 
       -  title: Mascha Illich
          category: Fotografie
@@ -59,7 +68,15 @@ globals:
             - Texte
             - Struktur
 
+      # -  title: Cinemap
+      #    image: cinemap.jpg
+      #    link: http://moviemento-mediathek.cinemap.org
+
    performances:
+      -  title: Die Essenz des Lebens
+         place: Zürich
+         link: https://www.langenachtderphilosophie.ch/speakers/die-essenz-des-lebens/
+         date: 2018-11-15
       -  title: 8. Wollerauer Poetry Slam
          place: Wollerau
          date: 2018-10-27
@@ -70,6 +87,12 @@ globals:
       -  title: Die Essenz des Lebens
          place: Zürich
          date: 2018-06-28
+      -  title: Zebrafanten Poetryslam 
+         place: Walchwil
+         date: 2018-06-09
+      -  title: Frackwochen Slam
+         place: Winterthur
+         date: 2018-05-23
       -  title: Dichtungsring
          place: Winterthur
          date: 2018-04-03
@@ -100,7 +123,7 @@ globals:
       - title: Offene Bühne
         place: Basel
         date: 7.5.17
-      - title: Living Poets Sociey
+      - title: Living Poets Society
         place: Linz AT
         date: 20.4.17
       - title: Slam 59
@@ -128,12 +151,6 @@ globals:
         place: Winterthur
         date: 13.10.16
  
-   nureinwort:
-      -  filename: geschlecht-ist-nur-ein-wort.jpg
-      -  filename: professionalitaet-ist-nur-ein-wort.png
-      -  filename: zeit-ist-nur-ein-wort.png
-      -  filename: kunst-ist-nur-ein-wort.jpg
-
    graphics:
       -  title: Das Glück
          filename: das-glueck.png
@@ -313,6 +330,9 @@ globals:
       Musik aus Österreich:
          -  name: 'Molden, Resetarits, Soyka, Wirth: Ho Rugg'
          -  name: Seiler und Speer
-            link: http:/seilerundspeer.at
+            link: http://seilerundspeer.at
+      Shopping:
+         -  name: RageOn
+            link: http://rageon.com
       
       

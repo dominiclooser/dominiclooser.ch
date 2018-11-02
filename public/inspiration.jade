@@ -6,7 +6,7 @@ block content
          li
             p.lyrics-text!= item.text
             p= item.song + ' / ' + item.author 
-   .grid
+   .grid.colored-cards
       for category, slug in inspiration
          section.card
             h3.card-title= slug

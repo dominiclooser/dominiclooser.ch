@@ -13,3 +13,5 @@ else
                 $(this).remove()
             $entry.remove()
     
+    $listItems = $list.children('li')
+    $list.append($listItems.get().reverse())

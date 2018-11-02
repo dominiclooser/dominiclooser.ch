@@ -1,40 +1,21 @@
-
-//////////////
-// homepage
-/////////////
+//////////
+// home //
+//////////
 
 #home-page
     .page-heading
-        font-family: heading-font
-        font-weight: 700
         text-transform: uppercase
     .page-title
-        line-height: 0.7
-        font-size: var(--xxxxl)
-        @media big-heading
-            font-size: var(--xxxxxl)
-            display: inline  
-    .page-subtitle  
         separated-list(separator: '/', spacing-left: 0.2em, spacing-right: 0.2em) 
-        a:hover
-            color: primary-color
-        font-size: var(--xl)
+        font-size: var(--xxxl)
         @media big-heading
-            separated-list(separator: ' ', spacing-left: 0, spacing-right: 0)
-            font-size: var(--xxxxxl)//var(--xl)
-            display: inline
-            &:before
-                content: ' '
-            li:nth-child(1)
-                color: primary-color
-            li:nth-child(2)
-                color: secondary-color
-            li:nth-child(3)
-                color: tertiary-color
-             a:hover
-                color: dark
-    .page-main
-        @extends .underline-on-hover-links
+            font-size: var(--xxxxl)
+    .page-subtitle  
+        font-family: body-font
+        margin-top: -0.2em
+        font-size: var(--l)
+        @media big-heading
+            font-size: var(--xl)
 
 
 //////////
@@ -104,19 +85,15 @@
     em
         margin-top: 20px
 
-// web
 
-#sites
-    @extends .grid
+/////////
+// web //
+/////////
 
-.site
-    background: light-overlay-color
-    figcaption
-        padding: var(--unit) var(--semi-unit)
-        h2
-            font-family: heading-font
-        ul
-            separated-list(',', padding-left=0)
+.website-footer
+    padding: var(--semi-unit)
+    background: light-grey
+
 
 // grafik
 

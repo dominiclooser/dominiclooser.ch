@@ -1,7 +1,29 @@
 .arrow-link
-    display: flex
-    &:before
-        content: '\2192 \a0'
+    &::before
+        content: '\2192'
+        // font-family: heading-font
+        // content: '->'
+        margin-right: 0.3em
+        // background-image: url('/images/icons/right-arrow.svg')
+        display: inline-block
+    &:hover
+        text-decoration: underline
+        
+
+.arrow-links
+    a
+        @extends .arrow-link
+
+.underlined-link
+    text-decoration: underline
+    &:hover
+        // color: primary-color
+        background: text-color
+        color: white
+
+.underlined-links
+    a
+        @extends .underlined-link
 
 .color-on-hover-links
     a:hover
@@ -13,7 +35,7 @@
 
 .spaced-paragraphs
     p+p
-        margin-top: var(--semi-unit)
+        margin-top: var(--quarter-unit)
 
 .text-section
     margin-bottom: var(--two-units)
@@ -22,20 +44,21 @@
     padding: var(--unit) var(--semi-unit)
     @media(min-width: 400px)
         padding: var(--unit)
-    background: card-background-color
-    // border: 2px solid primary-color
     img + p
         margin-top: var(--unit)
-    &:nth-child(3n+1)
-        background: primary-color
-    &:nth-child(3n+2)
-        background: secondary-color
-    &:nth-child(3n+3)
-        background: tertiary-color
-    
+  
 
+.card_nopadding
+    @extend .card
+    padding: 0
+    
 .card-section + .card-section
     margin-top: var(--semi-unit)
+
+.card-section_fullwidth
+    // margin-left: calc((-1) * var(--unit))
+    // margin-right: calc((-1) * var(--unit))
+    margin-top: calc((-1) * var(--unit))
 
 .card-title
     margin-bottom: var(--semi-unit)
@@ -53,12 +76,7 @@
     grid-template-columns: repeat(auto-fit, minmax(min-column-width, 1fr ))
     grid-column-gap: var(--unit)
     grid-row-gap: var(--unit)
-
-.cards-column
-    .card + .card
-        margin-top: var(--unit)
     
-
 .textplus
     @media textplus
         display: flex
@@ -146,7 +164,7 @@ highlight-list(background = dark, color = white)
     max-width: max-page-width
 
 .full-width-wrapper
-    padding: 0 var(--semi-unit)
+    padding: 0 var(--unit)
     @media large-padding
         padding: 0 var(--two-units)
 
