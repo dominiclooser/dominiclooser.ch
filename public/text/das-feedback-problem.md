@@ -4,7 +4,7 @@ Problem Nummer eins habe. Und voilà, schon ist Problem Nummer zwei zum
 Leben erweckt. Ein aktuelles Beispiel.
 
 Ein Problem von mir besteht darin, dass ich meinen Selbstwert stark an
-Feedback von aussen knüpfe. Habe ich das Gefühl, jemanden passe etwas
+Feedback von aussen knüpfe. Habe ich das Gefühl, jemandem passe etwas
 nicht an mir, dann werde ich eingeschüchtert und beginne mich zu
 verkriechen. Also strebe ich nach Applaus und Lob, kommt dieses jedoch,
 fühle ich mich auch nicht gut. Bin ich jetzt doch ein Selbstdarsteller.
@@ -29,7 +29,7 @@ Nummer eins, noch grösser als die eins selbst.
 Eine kleine Anmerkung für die Spitzfindigen unter euch: Problem Nummer
 zwei ist eigentlich kein neues Problem, sondern auch eine Manifestation
 von Problem Nummer eins, war der Kommentar meiner Freundin ja auch ein
-Feedback. Aber lassen wir das
+Feedback. Aber lassen wir das.
 
 Lustigerweise macht mir Problem Nummer eins, das Feedback-Problem, auch
 in diesem Moment, in dem ich diesen Text schreibe, zu schaffen. So mache
@@ -41,7 +41,7 @@ heisst: negatives Feedback, also Problem Nummer eins, emotionale
 Probleme, Weltflucht und Depression. Dieser Satz war jetzt aber wieder
 authentisch, das könnte also Lob bedeuten. Das heisst aber wieder
 Selbstdarsteller oder gar Narzisst. Was wiederum zu Selbsthass,
-emotionalen Problemen und Weltfucht führt. Wenn ich den Text aber jetzt
+emotionalen Problemen und Weltflucht führt. Wenn ich den Text aber jetzt
 einfach wieder lösche, dann kriege ich gar kein Feedback. Und wohin das
 führt, wissen wir ja schon.
 

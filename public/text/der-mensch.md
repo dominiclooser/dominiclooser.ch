@@ -14,8 +14,8 @@ Der Mensch meint, dass mehr Leistung zu mehr Geld führt.
 Der Mensch macht sich häufig Gedanken zur Grösse seiner primären und
 sekundären Geschlechtsmerkmale.
 
-Der Mensch baut seine sozialen Netzwerke heutzutage aus Nullern und
-Einsern.
+Der Mensch baut seine sozialen Netzwerke heutzutage aus Nullen und
+Einsen.
 
 Der Mensch baut Suchmaschinen und benennt sie lustig.
 
@@ -69,7 +69,7 @@ Der Mensch macht häufig Produktpreise, die möglichst knapp unter einer
 runden Zahl liegen. Der Mensch kauft auch häufiger Dinge, die solche
 Preise haben.
 
-Apropos Preise: Der Preis eine Produktes ist für den Menschen häufig
+Apropos Preise: Der Preis eines Produktes ist für den Menschen häufig
 wichtiger als das Produkt selbst.
 
 Apropos selbst: Der Mensch unterscheidet zwischen selbst und selber. Er
@@ -129,5 +129,5 @@ lustiger.
 Der Mensch versucht, seine Emotionen durch rationales Denken zu
 ersetzen. Und scheitert damit.
 
-Apropos Scheitern: Der Mensch scheitern sehr ungern. Ausser der
+Apropos Scheitern: Der Mensch scheitert sehr ungern. Ausser der
 Amerikaner.

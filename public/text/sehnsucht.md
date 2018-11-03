@@ -6,7 +6,7 @@ Reptilienhirn plant schon die nächsten Schritte.
 
 Drei Tage später, du triffst die Frau. Deine Sehnsucht ist immer noch
 da, die sekundären Geschlechtsmerkmale auch. Dein Reptilienhirn ist
-sofort mit seinem Schlachtplan zur Stelle. Dir gefällts.
+sofort mit seinem Schlachtplan zur Stelle. Dir gefällt’s.
 
 Du machst ein paar Schritte, näherst dich ihr an. Zwei Meter Distanz,
 ein gegenseites Lächeln. Dein Reptilienhirn holt den Schlachtplan aus
@@ -26,7 +26,7 @@ Deinem Frontalkortex gefällt das Gespräch. Intelligente
 Sachdiskussionen, dies und das wird verhandelt. Ihr versteht euch gut.
 Doch in dir lodert immer noch diese Sehnsucht; du machst deinem
 Frontalkortex Vorwürfe, doch dieser ist zufrieden. Du versuchst, deinem
-Reptilienhirn nochmals Beine zu machen. Du nutzt die Gelgeheit, dass
+Reptilienhirn nochmals Beine zu machen. Du nutzt die Gelegenheit, dass
 gerade die letzte Staffel *House of Cards* fertig geguckt ist und sagst:
 «So, noch ein Versuch! Come on!»
 
@@ -40,7 +40,7 @@ nicht ihren aufmerksamsten Tag.
 
 Dein Gegenüber antwortet mit «Klar! Gerne». Das zweite Einsatzkommando
 der Stasi sitzt am Gehörgang und schreit Alarm. Der Frontalkortex kriegt
-Wind von der Sache fordert entsetzt Schadensbegrenzung. Seine
+Wind von der Sache und fordert entsetzt Schadensbegrenzung. Seine
 Propaganda-Maschinerie tüftelt in horrendem Tempo, doch die Zeit drängt.
 Ihr bester Einfall: «Du wohnst mit deinem Freund zusammen, oder?». Sie
 bejaht. Du bist konsterniert. Fluchst innerlich, dein Reptilienhirn
@@ -56,9 +56,7 @@ Frontalkortex die Nahrung abzuschneiden. Also verbrennst du alle Bücher,
 wirfst deinen Computer und dein Smartphone aus dem Fenster. Dann kaufst
 du dir alle Bücher von Dieter Bohlen und Donald Trump. Ausserdem alle
 Fussballer-Autobiographien. Du lebst drei Monate im Wald, erlegst wilde
-Tiere und liest deine neuen Bücher.
-
-Dein Frontalkortex hungert tatsächlich aus und dein Reptilienhirn wächst
-auf nie dagewesene Grösse an. Du bist jetzt dumm wie stroh, dafür
-triebgesteuert wie 100 Bonobo-Männchen. Und so nimmt die Sache ihren
-Lauf.
+Tiere und liest deine neuen Bücher. Dein Frontalkortex hungert
+tatsächlich aus und dein Reptilienhirn wächst auf nie dagewesene Grösse
+an. Du bist jetzt dumm wie Stroh, dafür triebgesteuert wie 100
+Bonobo-Männchen. Und so nimmt die Sache ihren Lauf.

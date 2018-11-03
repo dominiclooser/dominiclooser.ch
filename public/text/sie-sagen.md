@@ -10,7 +10,7 @@ Dieselmotoren.
 Hunde, sind für Wasweissdennich.
 
 <span class="smallcaps">Sie sagen:</span> Du musst.  
-<span class="smallcaps">Du sagst:</span> Ich musst gar nichts.
+<span class="smallcaps">Du sagst:</span> Ich muss gar nichts.
 
 <span class="smallcaps">Sie fragen:</span> Und wovon lebst du?  
 <span class="smallcaps">Du sagst:</span> Ich atme, esse und trinke.
@@ -189,12 +189,12 @@ du nicht anfängst?
 <span class="smallcaps">Du sagst:</span> Der Teufel hat auch mehrere
 Namen.
 
-<span class="smallcaps">Sie fragen:</span> Was sind ihre Schwächen?  
+<span class="smallcaps">Sie fragen:</span> Was sind Ihre Schwächen?  
 <span class="smallcaps">Du sagst:</span> Perfektionismus und Ungeduld.  
 <span class="smallcaps">Sie sagen:</span> Das sind doch keine
 Schwächen!  
 <span class="smallcaps">Du sagst:</span> Haben Sie in einem
-Vorstellungsgespräch schon mal über ihre Schwächen gesprochen?
+Vorstellungsgespräch schon mal über Ihre Schwächen gesprochen?
 
 <span class="smallcaps">Sie sagen:</span> Gegen Ende wird dein Text
 immer schlechter.  

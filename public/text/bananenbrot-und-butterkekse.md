@@ -20,7 +20,7 @@ Uhr und Smartphone – zeitlos. Das Rivella ist leer. Punkt 4: «Belebender
 Grüntee» – ich merke nicht viel davon. Die eine Dame nebenan redet über
 Googeln und Stimmenzählen, Pädagogen und Bevorzugungen.
 
-Die süsse Frau hinter dem Tresen bring ein Licht und räumt ein
+Die süsse Frau hinter dem Tresen bringt ein Licht und räumt ein
 Micky-Maus-Heft weg. Viele Menschen heissen Martin – zumindest bei uns.
 Die Tresenfrau, ich nenne sie mal Andrea, trägt ein schwarz-weiss
 gestreiftes Kleid und Strümpfe. Ihre Körperproportionen stimmen. Andrea
@@ -33,12 +33,12 @@ Der Schwindel drückt und vermischt sich jetzt mit Übelkeit.
 Billardspielen steht auf dem weiteren Tagesprogramm. Gesprächsfetzen
 über Facebook hinter mir, zwei junge Frauen lösen die Damen mittleren
 Alters ab. Sie machen längere Pausen beim Reden, eine spricht ein
-helvetischen Hochdeutsch mit einer guten Portion *CH*: Züri*ch*. Die
+helvetisches Hochdeutsch mit einer guten Portion *CH*: Züri*ch*. Die
 Vorfreude aufs Billardspielen hält sich in engen Grenzen, immerhin ist
 es dann wieder dunkel. Sonne, Frühling, Fröhlichkeit ertrage ich
-schlecht zurzeit. Das liegt am Kontrast. Der Gidor feiert
-40-Jahre-Jubiläum, Haare müssen immer geschnitten werden. Sie wachsen
-auch sehr zuverlässig wieder nach.
+schlecht zurzeit. Das liegt am Kontrast. Gidor feiert 40-Jahre-Jubiläum,
+Haare müssen immer geschnitten werden. Sie wachsen auch sehr zuverlässig
+wieder nach.
 
 Schreiben ist Externalisieren, Mitteilen, Ordnen – mächtig und
 unterbenutzt. Mir fröstelt’s. Kontraste sind schön – meistens. Trotz

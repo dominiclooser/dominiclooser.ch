@@ -26,20 +26,21 @@ globals:
       -  title: Matthew Tovstiga
          image: tovstiga.jpg
          link: http://tovstiga.studio
+         category: Architektur
          year: 2018
          properties:
+            - Content Management System
             - mehrsprachig
-            - CMS
-            - responsive (inkl. responsive Images)
-            - Gallerie-Navigation mit Swipe und Tastatur 
+            - responsive
 
       -  title: Being Okey
          image: being-okey.jpg  
          link: http://beingokey.ch
          year: 2018
-         whatidid:
-            - Frontend-Development
-            - Anbindung CMS (Bolt)
+         category: Film
+         properties:
+            - Content Management System
+            - responsive
 
       -  title: Eine zwecklose Webseite 
          image: eine-zwecklose-webseite.jpg  
@@ -81,6 +82,9 @@ globals:
          place: Wollerau
          date: 2018-10-27
          link: http://www.wollerau.ch/de/kulfre/freizeit/anlaesseaktuelles/welcome.php?action=showevent&event_id=2722964
+      -  title: Capital Slam
+         place: Bern
+         date: 2018-10-16
       -  title: Nebeneinander Poetry Show
          place: Winterthur
          date: 2018-09-20
@@ -273,7 +277,6 @@ globals:
       Bücher:
          -  name: The Hitchhiker's Guide to the Galaxy (Douglas Adams)
          -  name: Torture the Artist (Joey Goebel)
-
       Bühne:
          -  name: Josef Hader
             link: http://hader.at
@@ -320,6 +323,7 @@ globals:
          -  name: Pet Shop Boys
          -  name: Die Antwoord
       Serien:
+         -  name: Daredevil
          -  name: Westworld
          -  name: A Handmaid's Tale
       Zürcher Locations:
@@ -334,5 +338,8 @@ globals:
       Shopping:
          -  name: RageOn
             link: http://rageon.com
+      Software:
+         -  name: z (or fasd)
+            link: https://github.com/rupa/z
       
       

@@ -9,7 +9,7 @@ Doch nun zu dem Kotz-Thema. Wir nehmen jetzt mal an, dass es dich gibt
 und dass wir dich ungefähr kennen. Heute morgen bist du zum Beispiel in
 Form von Schwindel und Antriebsmangel aufgetaucht. Ja, du bist
 vielseitig. Und ich wollte so ein Poster machen. Und du sagst einfach:
-«Nein, wir machen jetzt kein Poster. Zumindest kein Ganzes. Du darfst
+«Nein, wir machen jetzt kein Poster. Zumindest kein ganzes. Du darfst
 mal anfangen und dann chillst du wieder für ein paar Stunden.» Ich will
 doch nicht chillen, ich will jetzt dieses verdammte Poster machen. Du
 lässt dich nicht überzeugen, bleibst stur, schiebst noch ein paar
@@ -30,7 +30,7 @@ dass es jetzt Zeit ist für ein Poster. Eins, das du vielleicht verkaufen
 kannst und damit Geld verdienen. Um ein wertvolles Mitglied zu werden.
 Und dann von allen akzeptiert zu sein und geschätzt. Und vielleicht eine
 gute Pension zu haben. Oder ein Haus kaufen. Kinder kriegen und ihnen
-eine BWL-Studium finanzieren. Und im Winter in die Karibik.
+ein BWL-Studium finanzieren. Und im Winter in die Karibik.
 
 Ich soll mich beruhigen? Du bist gut. Du, die du einfach bist wie du
 bist. Ich bin aber nicht wie ich bin. Ich will jetzt ein Poster machen.

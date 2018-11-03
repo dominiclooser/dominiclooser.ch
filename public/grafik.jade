@@ -3,14 +3,14 @@ extends _default
 block content
    .page-intro
       p.
-         Ich gestalte Bücher, Postkarten, T-Shirts, Tassen, Poster und Flyer. Am liebsten in Verbindung 
+         Ich gestalte Bücher, Postkarten, T&#8209;Shirts, Tassen, Poster und Flyer. Am liebsten in Verbindung 
          mit Sprache und Typographie. 
    .page-content
       .graphics.masonry
          for graphic in graphics
             figure.masonry-item
-               a(href='/images/graphics/large/' + graphic.filename, data-lightbox='graphics', data-title=graphic.title)
-                  img(src='/images/graphics/small/' + graphic.filename)
+               a(href='/images/large/graphics/' + graphic.filename, data-lightbox='graphics', data-title=graphic.title)
+                  img(src='/images/small/graphics/' + graphic.filename)
 
 block append scripts
    script(src='/scripts/masonry.pkgd.min.js')

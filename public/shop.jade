@@ -1,34 +1,39 @@
 extends _base
 
 block main
-   .center-text-wrapper
+   .full-width-wrapper
       .page-header
          include ../includes/navigation
-      #shop-intro.text-wrapper
-         header.page-heading
-            h1.page-title Shop
-         .spaced-paragraphs
-            p. 
-               Hier darf getauscht werden: hyper-individuelle und Lebensfreude versprühende
-               Kleidungsstücke gegen groteske digitale Zahlen.
-            p.
-               Entdecken Sie <strong> Vielseitig Desinteressiert</strong> T-Shirts, 
-               <strong>Geometry for Rebels</strong> Pullover und vieles Lustiges mehr!
-            p.
-               Die meisten Produkte sind auch direkt bei <a href='mailto:#{email}'>mir</a>
-               in Zürich erhältlich (möglicherweise günstiger). Ausserdem gehe ich gerne
-               auf individuelle Wünsche ein wie zum Beispiel Varianten oder komplett neue Designs. 
-            p.
-               Happy Shopping! 
-   .full-width-wrapper   
       #spreadshirt-shop
-   .center-text-wrapper
-      p. 
-         <strong>Grossgedrucktes</strong>: Die Kleider werden in Deutschland bedruckt und verschickt. Deswegen kann ab
-         etwa 50 Franken Bestellwert (inklusive Porto) Zoll anfallen.  Damit kann dann die 
-         Schweiz wieder neue Kindergärten bauen und neue Kampfflugzeuge einkaufen. 
-         Oh happy day.
-      include ../includes/footer
+   //- .center-text-wrapper
+   //-    .page-header
+   //-       include ../includes/navigation
+   //-    #shop-intro.text-wrapper
+   //-       header.page-heading
+   //-          h1.page-title Shop
+   //-       .spaced-paragraphs
+   //-          p. 
+   //-             Hier darf getauscht werden: hyper-individuelle und Lebensfreude versprühende
+   //-             Kleidungsstücke gegen groteske digitale Zahlen.
+   //-          p.
+   //-             Entdecken Sie <strong> Vielseitig Desinteressiert</strong> T-Shirts, 
+   //-             <strong>Geometry for Rebels</strong> Pullover und vieles Lustiges mehr!
+   //-          p.
+   //-             Die meisten Produkte sind auch direkt bei <a href='mailto:#{email}'>mir</a>
+   //-             in Zürich erhältlich (möglicherweise günstiger). Ausserdem gehe ich gerne
+   //-             auf individuelle Wünsche ein wie zum Beispiel Varianten oder komplett neue Designs. 
+   //-          p.
+   //-             Happy Shopping! 
+   //- .full-width-wrapper   
+      
+   
+   //- .center-text-wrapper
+   //-    p. 
+   //-       <strong>Grossgedrucktes</strong>: Die Kleider werden in Deutschland bedruckt und verschickt. Deswegen kann ab
+   //-       etwa 50 Franken Bestellwert (inklusive Porto) Zoll anfallen.  Damit kann dann die 
+   //-       Schweiz wieder neue Kindergärten bauen und neue Kampfflugzeuge einkaufen. 
+   //-       Oh happy day.
+   //-    include ../includes/footer
    script.
       var spread_shop_config = {
          shopName: 'dominic',
