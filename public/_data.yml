@@ -25,7 +25,29 @@ wasrauskam:
    id: wasrauskam-page
    pagetitle: Was raus kam
 
-nureinwort:
-   id: nureinwort-page
-   pagetitle: Nur ein Wort
-
+die-essenz-des-lebens:
+   id: dieessenzdeslebens-page
+   pagetitle: Die Essenz des Lebens
+   media:
+      -  filename: title.jpg
+         title: Titelfolie
+      -  filename: intro.mp4
+         type: video
+      -  filename: sie-sagen.mp4
+         type: video
+      -  filename: sie-sagen-2.mp4
+         type: video
+      -  filename: merkel.jpg
+      -  filename: kiste-container.mp4
+         type: video
+      -  filename: pepe.jpg
+      -  filename: interview.mp4
+         type: video
+      -  filename: totale.jpg
+      -  filename: kiste-sam.mp4
+         type: video
+      -  filename: painting-1.jpg
+      -  filename: painting-2.jpg
+      -  filename: core-crew.jpg
+      -  filename: big-crew.jpg
+      

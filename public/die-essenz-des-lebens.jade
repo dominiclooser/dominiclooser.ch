@@ -1,0 +1,24 @@
+extends _default
+
+block content
+   .page-intro
+      p.
+         Wo ist das Glück und wie kommt man dahin? Was macht der Zweck mit den Mitteln und was isst der späte Vogel zum Frühstück? «Die Essenz des Lebens» liefert endlich Antworten auf die ganz grossen Fragen des Lebens.
+
+      p.
+         Fertig mit halbgaren Selbsthilfe-Ratgebern, fertig mit Shiva, fertig mit kognitiver Verhaltenstherapie. Instant healing right now. Finally! 
+   .page-content
+      .masonry
+         for item in media
+            .masonry-item
+               if item.type == 'video'
+                  video(src='/videos/' + item.filename, controls)
+               else
+                  a(href='/images/large/die-essenz-des-lebens/' + item.filename, data-lightbox='dedl')
+                     img(src='/images/small/die-essenz-des-lebens/' + item.filename)
+  
+block append scripts
+   script(src='/scripts/masonry.pkgd.min.js')
+   script(src='/scripts/imagesloaded.js')
+   script(src='/scripts/lightbox.min.js')
+   script(src='/scripts/masonry.js')

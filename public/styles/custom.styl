@@ -118,10 +118,12 @@
 .masonry-item
     margin-bottom: 33px
     width: 100%
-    @media (min-width: 400px)
+    @media (min-width: 500px)
         width: calc(0.5 * (100% - 33px))
     @media (min-width: 700px)
         width: calc(0.33333 * (100% - 2 * 33px))
+    @media (min-width: 1200px)
+        width: calc(0.25 * (100% - 3 * 33px))
     figcaption
         margin-top: var(--semi-unit)
         padding: 0.2em
