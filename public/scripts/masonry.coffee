@@ -6,7 +6,7 @@ draw = ->
     new Masonry('.masonry', options)
 
 $('.masonry').imagesLoaded ->
-    setTimeout(draw, 500)
+    setTimeout(draw, 800)
 
 lightbox.option
     showImageNumberLabel: false

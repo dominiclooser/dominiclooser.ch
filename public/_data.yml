@@ -31,6 +31,11 @@ die-essenz-des-lebens:
    media:
       -  filename: title.jpg
          title: Titelfolie
+      -  filename: malen.mp4
+         type: video
+      -  filename: krasse-tasse-paula.mp4
+         type: video
+      -  filename: gemaelde.jpg
       -  filename: intro.mp4
          type: video
       -  filename: sie-sagen.mp4
