@@ -1,9 +1,9 @@
 $list = $('.performance-list')
-latestDate =  $list.find('li:first-child').children('time').html()
+latestDate =  $list.find('li:first-child').find('time').html()
 now = moment()
 
 if moment(latestDate).isBefore(now)
-    $list.parents('section').remove()
+    $list.parents('.card').remove()
 else
     $list.find('li').each ->
         $entry = $(this)

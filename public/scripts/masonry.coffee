@@ -5,7 +5,8 @@ draw = ->
         percentPosition: true
     new Masonry('.masonry', options)
 
-$('.masonry').imagesLoaded(draw)
+$('.masonry').imagesLoaded ->
+    setTimeout(draw, 500)
 
 lightbox.option
     showImageNumberLabel: false
