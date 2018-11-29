@@ -1,10 +1,16 @@
 header.desktop-page-header
-   //- a(href='/').logo Dominic Looser
+   a(href='/').logo 
+      span Dominic 
+      span Looser
    nav.desktop-nav
       ul
          for item in nav
             li: a(href=item.link, class=current.path[0] == item.link ? 'current-link' : '')= item.title
+
 header.mobile-page-header
+   a(href='/').logo 
+      span Dominic 
+      span Looser
    p.open-nav Menu
 
 nav.mobile-nav

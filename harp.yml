@@ -262,18 +262,32 @@ globals:
          song: Da Draussen
 
    inspiration:
-      Musik:
+
+      Singer/Songwriter:
+         -  name: Bob Dylan
+         -  name: Fee Badenius
          -  name: Conor Oberst
          -  name: Mani Matter
          -  name: Gysbert zu Knyphausen
-         -  name: Käptn Peng
-         -  name: Tocotronic
-         -  name: Die Fantastischen Vier
-         -  name: Wir sind Helden
+         -  name: Funny van Dannen
          -  name: Manuel Stahlberger
+
+      Rap:
+         -  name: Käptn Peng
+         -  name: Die Fantastischen Vier
+
+      Musik aus Österreich:
+         -  name: Seiler und Speer
+            link: http://seilerundspeer.at
+         -  name: Ludwig Hirsch
+         -  name: 'Molden, Resetarits, Soyka, Wirth'
+
+      Musik (verschiedene):
+         -  name: Tocotronic
+         -  name: Wir sind Helden
          -  name: Grossstadtgeflüster
             link: http://grossstadtgefluester.de/
-         -  name: Funny van Dannen
+         
       Bücher:
          -  name: The Hitchhiker's Guide to the Galaxy (Douglas Adams)
          -  name: Torture the Artist (Joey Goebel)
@@ -304,43 +318,45 @@ globals:
          -  name: Lilya 4-ever (Schweden)
             link: https://en.wikipedia.org/wiki/Lilya_4-ever
       Typographie:
-         -  name: Druk (2014, Berton Hasebe, Commercial Type)
+         -  name: Druk 
          -  name: Bebas Neue
-         -  name: Noe
+         -  name: Noe Text
          -  name: Inconsolata
          -  name: Jeremiah Shoaf
             link: https://www.jeremiahshoaf.com
          -  name: Typewolf
             link: http://typewolf.com  
+      
       Buddhismus:
          -  name: Pema Chödrön
          -  name: The Wisdom of Insecurity (Alan Watts)
          -  name: Buddhism Plain and Simple
+      
       Style:
          -  name: Poppy
             link: http://impoppy.com
          -  name: Deichkind
          -  name: Pet Shop Boys
          -  name: Die Antwoord
+      
       Serien:
-         -  name: Daredevil
          -  name: Westworld
          -  name: A Handmaid's Tale
+      
       Zürcher Locations:
          -  name: Xenix
             link: http://xenix.ch
          -  name: Kosmos
             link: http://kosmos.ch
-      Musik aus Österreich:
-         -  name: 'Molden, Resetarits, Soyka, Wirth: Ho Rugg'
-         -  name: Seiler und Speer
-            link: http://seilerundspeer.at
+      
       Shopping:
          -  name: RageOn
             link: http://rageon.com
+      
       Software:
-         -  name: z (or fasd)
+         -  name: z/fasd
             link: https://github.com/rupa/z
+      
       Fotografie:
          -  name: Elena Brotschi 
             link: http://www.elenabrotschi.com/

@@ -44,12 +44,11 @@ p+.h2
     @media desktop-nav
         display: none
     font-family: heading-font
-    font-size: var(--s)
     text-transform: uppercase
     padding: var(--semi-unit) 0 
     border-bottom: 2px solid dark
     display: flex
-    justify-content: center
+    justify-content: space-between
 
 .mobile-nav
     display: none
@@ -59,7 +58,7 @@ p+.h2
     height: 100vh
     width: 100vw
     background: primary-color
-    z-index: 1
+    z-index: 10
     left: 0
     font-family heading-font
     color: white
@@ -87,10 +86,19 @@ p+.h2
     stroke: dark
     cursor: pointer
 
+.logo
+    font-family: heading-font
+    text-transform: uppercase
+    margin-right: var(--unit)
+    span:nth-child(3n+1)
+        color: primary-color
+    span:nth-child(3n+2)
+        color: secondary-color
+    span:nth-child(3n+3)
+        color: tertiary-color
+
 .desktop-page-header
     @extends .color-on-hover-links
-    // background: secondary-color
-    // color: primary-color
     letter-spacing: 0.05em
     border-bottom: 2px solid dark
     text-transform: uppercase
@@ -100,20 +108,14 @@ p+.h2
     padding: var(--semi-unit) 0
     @media mobile-nav
         display: none
-    .logo
-        font-family: heading-font
-        text-transform: uppercase
-
+    
 .desktop-nav
+    display: inline
     ul
+        display: inline
         separated-list(separator: '•')
 
 .page-heading
-    // margin-top: var(--five-units)
-    // margin-bottom: var(--four-units)
-    // text-align: center
-    // @media big-heading
-    //     text-align: left
     margin-top: var(--three-units)
     margin-bottom: var(--two-units)
 
