@@ -90,19 +90,41 @@
 // web //
 /////////
 
-.website-footer
-    padding: var(--semi-unit)
-    background: light-grey
-
 #web-page
     .grid
         img
             width: 100%
+        grid-column-gap: var(--two-units)
+        grid-row-gap: var(--two-units)
+
+.site-footer
+    margin-top: var(--unit)
+    padding-top: var(--semi-unit)
+    padding-bottom: @padding-top
+    display: flex
+    justify-content: space-between
+    align-items: bottom
+    line-height: var(--unit) !important
+    vertical-align: bottom
+    border-top: 1px solid dark 
+    border-bottom: @border-top
 
 
 
+// .site
+//     &:nth-child(3n+1)
+//         .site-title
+//             color: primary-color
+//     &:nth-child(3n+2)
+//         .site-title
+//             color: secondary-color
+//     &:nth-child(3n+3)
+//         .site-title
+//             color: tertiary-color
 
-// grafik
+////////////
+// grafik //
+////////////
 
 .lb-caption
     font-size: var(--m) !important

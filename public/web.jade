@@ -6,11 +6,16 @@ block content
          Ich gestalte und entwickle Webseiten: individuell, reduziert, ästhetisch.
    .page-content.underline-on-hover-links.grid
       for site in sites
-         figure.card_nopadding.site
-            a(href=site.link).card-section_fullwidth
+         figure.site
+            a(href='/images/large/web/' + site.image, data-lightbox=site.title, data-title=site.title)
                img(src='/images/small/web/' + site.image)
-            figcaption.card-section.website-footer
-               h2.site-title: a(href=site.link)= site.title
-               if site.category
-                  p= site.category
+            figcaption.card-section.site-footer
+               h2.site-title=  site.title
+               if site.link
+                  p: a(href=site.link).arrow-link Live
+               else
+                  p (offline)
+
+block append scripts
+   script(src='/scripts/lightbox.min.js')
                
