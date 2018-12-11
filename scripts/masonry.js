@@ -11,7 +11,9 @@
     return new Masonry('.masonry', options);
   };
 
-  $('.masonry').imagesLoaded(draw);
+  $('.masonry').imagesLoaded(function() {
+    return setTimeout(draw, 800);
+  });
 
   lightbox.option({
     showImageNumberLabel: false
