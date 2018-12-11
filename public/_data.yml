@@ -1,25 +1,35 @@
 index:
    id: home-page
+   description: 'Dominic Looser ist Slam Poet, Web-Developer und Tassen-Entrepreneur. 
+      Hier befindet sich sein (kreativer) Output.'
+
 
 web:
    id: web-page
    pagetitle: Web
+   description: 'Ich gestalte und entwickle Webseiten: individuell, reduziert, ästhetisch.'
 
 grafik:
    id: grafik-page
    pagetitle: Grafik
+   description: 'Ich gestalte Bücher, Postkarten, T‑Shirts, Tassen, Poster und Flyer. 
+      Am liebsten in Verbindung mit Sprache und Typographie.'
 
 inspiration:
    id: inspiration-page
    pagetitle: Inspiration
+   description: Was mich so inspiriert (hat).
 
 shop:
    id: shop
    pagetitle: Shop
+   description: T-Shirts und mehr. Klassische Motive wie «Geometry for Rebels» 
+      und «vielseitig desinteressiert»
 
 about:
    id: about-page
    pagetitle: About
+   description: Über mich.
 
 wasrauskam:
    id: wasrauskam-page
