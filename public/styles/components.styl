@@ -9,7 +9,6 @@
     &:hover
         text-decoration: underline
         
-
 .arrow-links
     a
         @extends .arrow-link
@@ -29,9 +28,13 @@
     a:hover
         color: link-color
 
-.underline-on-hover-links
-    a:hover
+.underline-on-hover
+    &:hover
         text-decoration: underline
+
+
+.underline-on-hover-links a
+    @extends .underline-on-hover
 
 .spaced-paragraphs
     p+p

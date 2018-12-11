@@ -51,7 +51,7 @@ config =
 
     copy:
         main:
-            src: ['images/**/*', 'scripts/*.js', 'favicon.ico', 'fonts/*.*', 'videos/*.*']
+            src: ['images/**/*', 'scripts/*.js', 'favicon.ico', 'fonts/*.*', 'videos/*.*', 'styles/*.css']
             cwd: 'public'
             expand: true
             dest: 'www/' 

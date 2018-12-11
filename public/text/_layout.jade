@@ -4,8 +4,8 @@ block title
    title= title + ' – Dominic Looser'
 
 block main
-   header.page-header
-      .center-text-wrapper
+   .full-width-wrapper
+      header.page-header
          include ../../includes/navigation
          nav.text-nav.underline-on-hover-links
             ul
@@ -13,7 +13,6 @@ block main
                   if slug != 'index'
                      li: a(href='/text/'+slug)= text.title
                      
-   .center-text-wrapper
       article(class='text' class={justify:justify}, class={dialogue:dialogue}, class={spaced:spaced}, class={bigspaces:bigspaces}, class={listofshorts:listofshorts})
          h1.text-title= title
          != yield

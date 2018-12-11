@@ -12,7 +12,7 @@
             font-size: var(--xxxxl)
     .page-subtitle  
         font-family: body-font
-        margin-top: -0.2em
+        margin-top: 0em
         font-size: var(--l)
         @media big-heading
             font-size: var(--xl)
@@ -47,6 +47,7 @@
 
 
 .text
+    max-width: text-width
     margin-top: var(--three-units)
     h2
         font-family: inherit
@@ -91,36 +92,59 @@
 /////////
 
 #web-page
-    .grid
-        img
-            width: 100%
-        grid-column-gap: var(--two-units)
-        grid-row-gap: var(--two-units)
+    background: #e
+  
+.sites
+    max-width: 800px
+    stacked-list(spacing:var(--unit), border:4px solid dark)
 
-.site-footer
-    margin-top: var(--unit)
-    padding-top: var(--semi-unit)
-    padding-bottom: @padding-top
+.site
+    @media two-columns-sites
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-column-gap: var(--unit)
+
+.site-image
+    width: 100%
+
+.site-description
     display: flex
     justify-content: space-between
     align-items: bottom
     line-height: var(--unit) !important
     vertical-align: bottom
-    border-top: 1px solid dark 
-    border-bottom: @border-top
+    font-family: heading-font
+    text-transform: uppercase
+    @media two-columns-sites
+        display: block
+        order: 5
+    
+.site-title
+    font-family: heading-font
+    font-size: var(--xl)
+    @media big-mobile
+        font-size: var(--xxl)
+    @media big-heading
+        font-size: var(--xxxxl)
+    margin-bottom: var(--semi-unit)
 
 
+
+    // display: grid
+    // grid-row-gap: var(--two-units)
+    // @media (min-width: 800px)
+    //     grid-template-columns: 1fr 1fr
+    //     grid-column-gap: var(--two-units)
+        
 
 // .site
-//     &:nth-child(3n+1)
-//         .site-title
-//             color: primary-color
-//     &:nth-child(3n+2)
-//         .site-title
-//             color: secondary-color
-//     &:nth-child(3n+3)
-//         .site-title
-//             color: tertiary-color
+//     a
+//         img
+//             border: 1px solid dark
+
+
+
+
 
 ////////////
 // grafik //

@@ -4,17 +4,18 @@ block content
    .page-intro
       p.
          Ich gestalte und entwickle Webseiten: individuell, reduziert, ästhetisch.
-   .page-content.underline-on-hover-links.grid
+   ul.page-content.underline-on-hover-links.sites
       for site in sites
-         figure.site
-            a(href='/images/large/web/' + site.image, data-lightbox=site.title, data-title=site.title)
-               img(src='/images/small/web/' + site.image)
-            figcaption.card-section.site-footer
-               h2.site-title=  site.title
+         li.site
+            .site-description
+               h2.h1.site-title=  site.title
                if site.link
-                  p: a(href=site.link).arrow-link Live
+                  p.h2: a(href=site.link).arrow-link Live
                else
                   p (offline)
+            a(href='/images/large/web/' + site.image, data-lightbox=site.title, data-title=site.title).site-image
+               img(src='/images/large/web/' + site.image)
+            
 
 block append scripts
    script(src='/scripts/lightbox.min.js')

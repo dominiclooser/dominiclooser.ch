@@ -47,9 +47,9 @@ globals:
          link: http://einezwecklosewebseite.ch
          year: 2018
 
-      # -  title: TsnuK
-      #    image: tsnuk.jpg
-      #    link: http://tsnuk.me
+      -  title: TsnuK
+         image: tsnuk.png
+         link: http://tsnuk.me
 
       -  title: Mascha Illich
          category: Fotografie
@@ -339,6 +339,7 @@ globals:
          -  name: Die Antwoord
       
       Serien:
+         -  name: The End of the F***ing World
          -  name: Westworld
          -  name: A Handmaid's Tale
       

@@ -19,7 +19,7 @@ block content
             h2.card-title Nächste Auftritte
             +performancelist
          section.card
-            h2.card-title Web
+            h2.card-title: a(href='web').underline-on-hover Web
             - site = sites[0]
             a(href=site.link).card-section
                img(src='/images/small/web/' + site.image)
@@ -27,7 +27,7 @@ block content
             .card-section
                a(href='/web').arrow-link alle Webseiten 
          section.card
-            h2.card-title Grafik
+            h2.card-title: a(href='grafik').underline-on-hover Grafik
             section.card-section
                img(src='/images/small/graphics/das-glueck.jpg')
             //- - lastgraphics = [graphics[0], graphics[1]]
