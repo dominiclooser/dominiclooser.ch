@@ -129,23 +129,6 @@
     margin-bottom: var(--semi-unit)
 
 
-
-    // display: grid
-    // grid-row-gap: var(--two-units)
-    // @media (min-width: 800px)
-    //     grid-template-columns: 1fr 1fr
-    //     grid-column-gap: var(--two-units)
-        
-
-// .site
-//     a
-//         img
-//             border: 1px solid dark
-
-
-
-
-
 ////////////
 // grafik //
 ////////////
@@ -178,6 +161,28 @@
         font-family: heading-font
         font-size: var(--s)
         font-weight: 600
+
+
+/////////////////
+// inspiration //
+/////////////////
+
+#inspiration-page
+    .card
+        ul
+            stacked-list()
+
+.lyrics
+    margin-bottom: var(--two-units)
+    stacked-list(border: 1px solid black, spacing: var(--unit))
+
+.lyrics-text
+    font-family: heading-font
+    font-size: var(--xl)
+    line-height: heading-line-height
+    margin-bottom: var(--quarter-unit)
+
+
 //////////
 // shop //
 //////////
@@ -214,45 +219,5 @@
     margin-top: var(--two-units)
     font-size: var(--l)
 
-// about
-
-#about-page
-    main
-        @extends .spaced-paragraphs
-        .textplus
-            margin-bottom: var(--two-units)
-        h2
-            @extends .h2
-        h3
-            @extends .h3
-        ul
-            margin: 0
-            stacked-list(spacing: 0)
-
-#nureinwort-page
-    .images
-        @media two-columns
-            display: grid
-            grid-template-columns: 1fr 1fr 1fr
-            grid-column-gap: var(--unit)
-            grid-row-gap: var(--unit)
-        img
-            border: 1px solid  lightgray 
 
 
-// inspiration
-
-#inspiration-page
-    .card
-        ul
-            stacked-list()
-
-.lyrics
-    margin-bottom: var(--two-units)
-    stacked-list(border: 1px solid black, spacing: var(--unit))
-
-.lyrics-text
-    font-family: heading-font
-    font-size: var(--xl)
-    line-height: heading-line-height
-    margin-bottom: var(--quarter-unit)

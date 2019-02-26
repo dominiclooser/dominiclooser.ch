@@ -49,7 +49,6 @@ globals:
 
       -  title: TsnuK
          image: tsnuk.png
-         link: http://tsnuk.me
 
       -  title: Mascha Illich
          category: Fotografie
@@ -272,6 +271,8 @@ globals:
          -  name: Manuel Stahlberger
 
       Rap:
+         -  name: Beastie Boys
+         -  name: Scroobius Pip
          -  name: Käptn Peng
          -  name: Die Fantastischen Vier
 
@@ -279,7 +280,7 @@ globals:
          -  name: Seiler und Speer
             link: http://seilerundspeer.at
          -  name: Ludwig Hirsch
-         -  name: 'Molden, Resetarits, Soyka, Wirth'
+         -  name: Molden, Resetarits, Soyka, Wirth
 
       Musik (verschiedene):
          -  name: Tocotronic
@@ -290,6 +291,7 @@ globals:
       Bücher:
          -  name: The Hitchhiker's Guide to the Galaxy (Douglas Adams)
          -  name: Torture the Artist (Joey Goebel)
+      
       Bühne:
          -  name: Josef Hader
             link: http://hader.at
@@ -302,12 +304,14 @@ globals:
             link: http://nicosemsrott.de
          -  name: Volker Pispers
             link: http://www.volker-pispers.de
+      
       Regie:
          - name: Ulrich Seidl
          - name: Darren Aronofsky
          - name: Danny Boyle
          - name: Mike Leigh
          - name: Lukas Moodysson
+      
       Skandinavischer Film:
          -  name: 101 Reykjavik (Island)
             link: http://en.wikipedia.org/wiki/101_Reykjav%C3%ADk
@@ -316,10 +320,11 @@ globals:
          -  name: Tillsammans (Schweden)
          -  name: Lilya 4-ever (Schweden)
             link: https://en.wikipedia.org/wiki/Lilya_4-ever
+      
       Typographie:
          -  name: Druk 
          -  name: Bebas Neue
-         -  name: Noe Text
+         -  name: Noe
          -  name: Inconsolata
          -  name: Jeremiah Shoaf
             link: https://www.jeremiahshoaf.com
@@ -354,8 +359,12 @@ globals:
             link: http://rageon.com
       
       Software:
-         -  name: z/fasd
+         -  name: z
             link: https://github.com/rupa/z
+
+      Webseiten:
+         -  name: 9 Volt Nelly
+            link: http://9voltnelly.ch
       
       Fotografie:
          -  name: Elena Brotschi 
