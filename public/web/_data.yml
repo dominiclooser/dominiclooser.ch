@@ -5,3 +5,13 @@ index:
 
 workflow:
    pagetitle: Workflow
+
+ressourcen:
+   pagetitle: Ressourcen
+   items:
+      -  name: The Modern Javascript Tutorial
+         link: https://javascript.info/
+      -  name: CSS Tricks
+         link: https://css-tricks.com/
+      -  name: MDN web docs
+         link: https://developer.mozilla.org/

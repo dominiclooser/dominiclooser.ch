@@ -1,0 +1,6 @@
+extends ../_default
+
+block content
+   ul
+      for item in items
+         li: a(href=item.link)= item.name
