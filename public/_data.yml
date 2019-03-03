@@ -3,11 +3,6 @@ index:
    description: 'Dominic Looser ist Slam Poet, Web-Developer und Tassen-Entrepreneur. 
       Hier befindet sich sein (kreativer) Output.'
 
-web:
-   id: web-page
-   pagetitle: Web
-   description: 'Ich gestalte und entwickle Webseiten: individuell, reduziert, ästhetisch.'
-
 grafik:
    id: grafik-page
    pagetitle: Grafik
