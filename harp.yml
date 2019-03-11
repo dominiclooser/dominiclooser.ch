@@ -291,6 +291,7 @@ globals:
       Bücher:
          -  name: The Hitchhiker's Guide to the Galaxy (Douglas Adams)
          -  name: Torture the Artist (Joey Goebel)
+         # -  name: Murakami
       
       Bühne:
          -  name: Josef Hader
