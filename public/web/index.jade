@@ -16,7 +16,7 @@ block content
             .site-description
                h2.h1.site-title=  site.title
                if site.link
-                  p.h2: a(href=site.link).arrow-link Live
+                  a(href=site.link).arrow-link.h2.site-link Live
                else
                   p (offline)
             a(href='/images/large/web/' + site.image, data-lightbox=site.title, data-title=site.title).site-image

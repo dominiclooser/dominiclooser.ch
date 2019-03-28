@@ -18,6 +18,15 @@ globals:
       -  title: About
          link: /about
    
+   sizes:
+      Bett:
+         -  name: Duvetbezug
+            size: 160 x 210 
+            ratio: 1.313
+         -  name: Kissen
+            size: 65 x 100 
+            ratio: 1.538
+
    sites:
       
       # -  title: hier (Meta Meta)

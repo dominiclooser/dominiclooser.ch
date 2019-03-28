@@ -1,10 +1,13 @@
 index:
    id: web-page
-   pagetitle: Web
    description: 'Ich gestalte und entwickle Webseiten: individuell, reduziert, ästhetisch.'
 
-workflow:
-   pagetitle: Workflow
+preise:
+   packages: 
+      -  name: Packet 1A Deluxe
+      -  name: Packet 1A Deluxe Premium
+         price: 6000.05
+      -  name: Texte
 
 ressourcen:
    pagetitle: Ressourcen

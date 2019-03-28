@@ -172,9 +172,20 @@ footer
             background: tertiary-color
 
 .card
+    @extends .spaced-paragraphs
+    p+ul 
+        margin-top: var(--semi-unit)
+
     .button-wrapper
         display: flex 
         padding-top: var(--unit)
+
+.card-title
+    margin-bottom: var(--unit)
+    font-family: heading-font
+    font-weight: 700
+    font-size: var(--xl)
+
 
 //////////
 // misc //

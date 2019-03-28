@@ -1,13 +1,15 @@
 extends _default
 include _mixins
 
-block content
+block header
    header.page-heading
       ul.page-title.color-on-hover-links
          li: a(href='text') Text
          li: a(href='web') Web
          li: a(href='grafik') Grafik
       h1.page-subtitle Design is Art for Loosers
+
+block content
    main.page-main
       .page-intro
          p.

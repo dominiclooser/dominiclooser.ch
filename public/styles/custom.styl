@@ -45,7 +45,6 @@
     p
         line-height: 1.2
 
-
 .text
     max-width: text-width
     margin-top: var(--three-units)
@@ -110,9 +109,7 @@
 .site-description
     display: flex
     justify-content: space-between
-    align-items: bottom
     line-height: var(--unit) !important
-    vertical-align: bottom
     font-family: heading-font
     text-transform: uppercase
     @media two-columns-sites
@@ -126,7 +123,10 @@
         font-size: var(--xxl)
     @media big-heading
         font-size: var(--xxxxl)
-    margin-bottom: var(--semi-unit)
+    margin-bottom: var(--unit)
+
+.site-link
+    min-width: 3em
 
 #workflow
     display: grid
@@ -135,6 +135,27 @@
     @media desktop-nav
         grid-template-columns: 1fr 2fr
 
+#base
+    p+ul
+        margin-top: var(--semi-unit)
+    ul
+        stacked-list(border: 1px solid dark)
+
+.product
+    display: flex
+    flex-direction: column
+    ul
+        stacked-list(border: 1px solid dark)
+
+.product-description
+    margin-bottom: var(--unit)
+
+.product-price
+    margin-top: auto
+    border: 2px solid dark
+    text-align: center
+    padding: var(--semi-unit) 0 
+    font-size: var(--l)
 
 #workflow-figure
     display: flex
