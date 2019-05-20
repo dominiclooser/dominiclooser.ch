@@ -92,12 +92,7 @@ footer
     font-family: heading-font
     text-transform: uppercase
     margin-right: var(--unit)
-    span:nth-child(3n+1)
-        color: primary-color
-    span:nth-child(3n+2)
-        color: secondary-color
-    span:nth-child(3n+3)
-        color: tertiary-color
+    color: colors[0]
 
 .desktop-page-header
     @extends .color-on-hover-links
@@ -164,15 +159,19 @@ footer
 
 .colored-cards
     .card
+        padding: var(--unit) var(--semi-unit)
+        @media(min-width: 400px)
+            padding: var(--unit)
         &:nth-child(3n+1)
-            background: primary-color
+            background: colors[0]
         &:nth-child(3n+2)
-            background: secondary-color
+            background: colors[1]
         &:nth-child(3n+3)
-            background: tertiary-color
+            background: colors[2]
 
 .card
     @extends .spaced-paragraphs
+    
     p+ul 
         margin-top: var(--semi-unit)
 
@@ -183,7 +182,6 @@ footer
 .card-title
     margin-bottom: var(--unit)
     font-family: heading-font
-    font-weight: 700
     font-size: var(--xl)
 
 

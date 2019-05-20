@@ -13,6 +13,114 @@ inspiration:
    id: inspiration-page
    pagetitle: Inspiration
    description: Was mich so inspiriert (hat).
+   inspiration:
+      Firmen:
+         -  name: The Boring Company
+            link: https://www.boringcompany.com/
+         -  name: Amt für Ideen
+            link: http://www.amt-fuer-ideen.ch/
+         -  name: Die Krasse Tasse GmbH
+            link: https://diekrassetassegmbh.ch
+         -  name: Die Form der Unruhe
+            link: http://dfdu.org/
+      Singer/Songwriter:
+         -  name: Bob Dylan
+         -  name: Fee Badenius
+         -  name: Conor Oberst
+         -  name: Mani Matter
+         -  name: Gysbert zu Knyphausen
+         -  name: Funny van Dannen
+         -  name: Manuel Stahlberger
+      Rap:
+         -  name: Beastie Boys
+         -  name: Scroobius Pip
+         -  name: Käptn Peng
+         -  name: Die Fantastischen Vier
+      Musik aus Österreich:
+         -  name: Seiler und Speer
+            link: http://seilerundspeer.at
+         -  name: Ludwig Hirsch
+         -  name: Molden, Resetarits, Soyka, Wirth
+      Musik (verschiedene):
+         -  name: Björk
+         -  name: Tocotronic
+         -  name: Wir sind Helden
+         -  name: Grossstadtgeflüster
+            link: http://grossstadtgefluester.de/  
+      Bücher:
+         -  name: "Douglas Adams: The Hitchhiker's Guide to the Galaxy"
+         -  name: 'Joey Goebel: Torture the Artist'
+         # -  name: Murakami
+      Bühne:
+         -  name: Josef Hader
+            link: http://hader.at
+         -  name: Lara Stoll
+            link: http://larastoll.ch
+         -  name: Valerio Moser
+            link: http://valeriomoser.ch
+         -  name: Andreas Thiel
+         -  name: Nico Semsrott
+            link: http://nicosemsrott.de
+         -  name: Volker Pispers
+            link: http://www.volker-pispers.de
+      Regie:
+         - name: Michel Gondry
+         - name: Ulrich Seidl
+         - name: Darren Aronofsky
+         - name: Danny Boyle
+         - name: Mike Leigh
+         - name: Lukas Moodysson
+      Skandinavischer Film:
+         -  name: 101 Reykjavik (Island)
+            link: http://en.wikipedia.org/wiki/101_Reykjav%C3%ADk
+         -  name: Nói albinói (Island)
+         -  name: Nord (Norwegen)
+         -  name: Tillsammans (Schweden)
+         -  name: Lilya 4-ever (Schweden)
+            link: https://en.wikipedia.org/wiki/Lilya_4-ever
+      Typographie:
+         -  name: Druk 
+         -  name: Bebas Neue
+         -  name: Noe
+         -  name: Inconsolata
+         -  name: Jeremiah Shoaf
+            link: https://www.jeremiahshoaf.com
+         -  name: Typewolf
+            link: http://typewolf.com  
+      Buddhismus:
+         -  name: Pema Chödrön
+         -  name: 'Alan Watts: The Wisdom of Insecurity'
+         -  name: Buddhism Plain and Simple
+      Style:
+         -  name: Poppy
+            link: http://impoppy.com
+         -  name: Deichkind
+         -  name: Pet Shop Boys
+         -  name: Die Antwoord
+      Serien:
+         -  name: The End of the F***ing World
+         -  name: Westworld
+         -  name: A Handmaid's Tale
+      Zürcher Locations:
+         -  name: Xenix
+            link: http://xenix.ch
+         -  name: Kosmos
+            link: http://kosmos.ch
+      Shopping:
+         -  name: RageOn
+            link: http://rageon.com
+      Software:
+         -  name: Flask
+         -  name: Python
+         -  name: LaTeX
+         -  name: z
+            link: https://github.com/rupa/z
+      Webseiten:
+         -  name: 9 Volt Nelly
+            link: http://9voltnelly.ch
+      Fotografie:
+         -  name: Elena Brotschi 
+            link: http://www.elenabrotschi.com/
 
 shop:
    id: shop

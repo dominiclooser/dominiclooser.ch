@@ -1,14 +1,9 @@
 extends _default
 
 block content
-   //- ul.lyrics
-   //-    for item in lyrics
-   //-       li
-   //-          p.lyrics-text!= item.text
-   //-          p= item.song + ' / ' + item.author 
    .grid.colored-cards
       for category, slug in inspiration
-         section.card
+         section.card.inspiration-section
             h3.card-title= slug
             ul
                for item in category

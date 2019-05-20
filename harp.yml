@@ -252,6 +252,10 @@ globals:
         filename: explore-the-world-through-films.png
 
    lyrics:
+      -  text: And language just happened. It was never planned
+         author: Bright Eyes
+         song: A Scale, A Mirror, and Those Indifferent Clocks
+         album: Fevers and Mirrors 
       -  text: Das ist das Land der begrenzten Unmöglichkeiten
          author: Wir sind Helden
          song: Müssen nur wollen
@@ -268,116 +272,6 @@ globals:
          author: Sarah Lesch
          song: Da Draussen
 
-   inspiration:
-
-      Singer/Songwriter:
-         -  name: Bob Dylan
-         -  name: Fee Badenius
-         -  name: Conor Oberst
-         -  name: Mani Matter
-         -  name: Gysbert zu Knyphausen
-         -  name: Funny van Dannen
-         -  name: Manuel Stahlberger
-
-      Rap:
-         -  name: Beastie Boys
-         -  name: Scroobius Pip
-         -  name: Käptn Peng
-         -  name: Die Fantastischen Vier
-
-      Musik aus Österreich:
-         -  name: Seiler und Speer
-            link: http://seilerundspeer.at
-         -  name: Ludwig Hirsch
-         -  name: Molden, Resetarits, Soyka, Wirth
-
-      Musik (verschiedene):
-         -  name: Tocotronic
-         -  name: Wir sind Helden
-         -  name: Grossstadtgeflüster
-            link: http://grossstadtgefluester.de/
-         
-      Bücher:
-         -  name: The Hitchhiker's Guide to the Galaxy (Douglas Adams)
-         -  name: Torture the Artist (Joey Goebel)
-         # -  name: Murakami
-      
-      Bühne:
-         -  name: Josef Hader
-            link: http://hader.at
-         -  name: Lara Stoll
-            link: http://larastoll.ch
-         -  name: Valerio Moser
-            link: http://valeriomoser.ch
-         -  name: Andreas Thiel
-         -  name: Nico Semsrott
-            link: http://nicosemsrott.de
-         -  name: Volker Pispers
-            link: http://www.volker-pispers.de
-      
-      Regie:
-         - name: Ulrich Seidl
-         - name: Darren Aronofsky
-         - name: Danny Boyle
-         - name: Mike Leigh
-         - name: Lukas Moodysson
-      
-      Skandinavischer Film:
-         -  name: 101 Reykjavik (Island)
-            link: http://en.wikipedia.org/wiki/101_Reykjav%C3%ADk
-         -  name: Nói albinói (Island)
-         -  name: Nord (Norwegen)
-         -  name: Tillsammans (Schweden)
-         -  name: Lilya 4-ever (Schweden)
-            link: https://en.wikipedia.org/wiki/Lilya_4-ever
-      
-      Typographie:
-         -  name: Druk 
-         -  name: Bebas Neue
-         -  name: Noe
-         -  name: Inconsolata
-         -  name: Jeremiah Shoaf
-            link: https://www.jeremiahshoaf.com
-         -  name: Typewolf
-            link: http://typewolf.com  
-      
-      Buddhismus:
-         -  name: Pema Chödrön
-         -  name: The Wisdom of Insecurity (Alan Watts)
-         -  name: Buddhism Plain and Simple
-      
-      Style:
-         -  name: Poppy
-            link: http://impoppy.com
-         -  name: Deichkind
-         -  name: Pet Shop Boys
-         -  name: Die Antwoord
-      
-      Serien:
-         -  name: The End of the F***ing World
-         -  name: Westworld
-         -  name: A Handmaid's Tale
-      
-      Zürcher Locations:
-         -  name: Xenix
-            link: http://xenix.ch
-         -  name: Kosmos
-            link: http://kosmos.ch
-      
-      Shopping:
-         -  name: RageOn
-            link: http://rageon.com
-      
-      Software:
-         -  name: z
-            link: https://github.com/rupa/z
-
-      Webseiten:
-         -  name: 9 Volt Nelly
-            link: http://9voltnelly.ch
-      
-      Fotografie:
-         -  name: Elena Brotschi 
-            link: http://www.elenabrotschi.com/
+   
       
       
