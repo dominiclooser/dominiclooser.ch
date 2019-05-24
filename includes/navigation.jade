@@ -3,7 +3,8 @@ header.desktop-page-header
    nav.desktop-nav
       ul
          for item in nav
-            li: a(href=item.link, class=current.path[0] == item.link ? 'current-link' : '')= item.title
+            unless item.link == '/'
+               li: a(href=item.link, class=current.path[0] == item.link ? 'current-link' : '')= item.title
 
 header.mobile-page-header
    a(href='/').logo 

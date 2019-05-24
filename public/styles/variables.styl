@@ -1,5 +1,7 @@
+/////////////////
+// breakpoints //
+/////////////////
 
-// breakpoints
 textplus = '(min-width: 980px)'
 large-text = '(min-width: 800px)'
 two-columns = '(min-width: 500px)'
@@ -11,18 +13,32 @@ big-heading = large-text
 big-mobile = '(min-width: 375px)'
 two-columns-sites = two-columns
 
-// typography
-body-font = 'Noe Text'
+////////////////
+// typography //
+////////////////
+
+body-font = Inconsolata
 heading-font = Druk Text
 text-width = 700px
 heading-line-height = 0.9
+
 :root
     --scale-factor: 1.2
-    // --heading-scale-factor: 2
     --line-height: 1.4
     --font-size: 18px
     @media large-text
         --font-size: 21px
+    --m: var(--font-size)
+    --l: calc(var(--scale-factor) * var(--m))
+    --xl: calc(var(--scale-factor) * var(--l))
+    --xxl: calc(var(--scale-factor) * var(--xl))
+    --xxxl: calc(var(--scale-factor) * var(--xxl))
+    --xxxxl: calc(var(--scale-factor) * var(--xxxl))
+    --xxxxxl: calc(var(--scale-factor) * var(--xxxxl))
+    --xxxxxxl: calc(var(--scale-factor) * var(--xxxxxl))
+    --xxxxxxxl: calc(var(--scale-factor) * var(--xxxxxxl))
+    --s: calc(var(--m) / var(--scale-factor))
+    --xs: calc(var(--s) / var(--scale-factor))
     --unit: calc(var(--line-height) * var(--font-size))
     --two-units: calc(2*var(--unit))
     --three-units: calc(3*var(--unit))
@@ -32,6 +48,7 @@ heading-line-height = 0.9
     --seven-units: calc(7*var(--unit))
     --semi-unit: calc(0.5*var(--unit))
     --quarter-unit: calc(0.5*var(--semi-unit))
+
     --line-height-2: 1.7
     --font-size-2: 19px
     @media large-text
@@ -39,16 +56,23 @@ heading-line-height = 0.9
     --unit-2: calc(var(--line-height-2) * var(--font-size-2))
     --semi-unit-2: calc(0.5 * var(--unit-2))
     --two-units-2: calc(2 * var(--unit-2))
+    --m-2: var(--font-size-2)
+    --l-2: calc(var(--scale-factor) * var(--m-2))
+    --xl-2: calc(var(--scale-factor) * var(--l-2))
+    --xxl-2: calc(var(--scale-factor) * var(--xl-2))
+    --xxxl-2: calc(var(--scale-factor) * var(--xxl-2))
+    --xxxxl-2: calc(var(--scale-factor) * var(--xxxl-2))
+    
+////////////
+// colors //
+////////////
 
-
-
-// colors
 colors = #05CDFE #ED5083 #08E498 
 light-colors = lightness(colors[0], 80%) lightness(colors[1], 70%) lightness(colors[2], 70%) 
 primary-color =  #05CDFE 
 secondary-color = #08E498
 tertiary-color = #ED5083
-dark = hsl(0, 0, 30%)  // rgba(0,0,0,0.87)
+dark = hsl(0, 0, 25%)  // rgba(0,0,0,0.87)
 light-grey = #f7f7f7
 middle-grey = #e8e6e6
 background-color = #fefefe // #E4D5AD//white//#6D97C6 //#EDF2F4 // #EAEEEF //#FEFDCA //#fdfd77 //#F0F9F4 //light-grey //#eff6fb
@@ -61,20 +85,12 @@ footerBackground = inherit
 light-overlay-color = rgba(256, 256, 256, 0.3)
 // #0075F2 //#EF233C //#D90429 // #D00820
 
-// misc
+//////////
+// misc //
+//////////
+
 baseBorder = 1px solid text-color
 max-page-width = text-width//1200px
 list-separator = ' '
 separated-list-margin = 5px
 min-column-width = 15em
-
-:root
-    --m: var(--font-size)
-    --s: calc(var(--m) / var(--scale-factor))
-    --xs: calc(var(--s) / var(--scale-factor))
-    --l: calc(var(--scale-factor) * var(--m))
-    --xl: calc(var(--scale-factor) * var(--l))
-    --xxl: calc(var(--scale-factor) * var(--xl))
-    --xxxl: calc(var(--scale-factor) * var(--xxl))
-    --xxxxl: calc(var(--scale-factor) * var(--xxxl))
-    --xxxxxl: calc(var(--scale-factor) * var(--xxxxl))

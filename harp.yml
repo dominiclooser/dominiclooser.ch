@@ -32,6 +32,9 @@ globals:
       # -  title: hier (Meta Meta)
       #    link: http://dominiclooser.ch
 
+      -  title: Caroline Dorn
+         link: https://carolinedorn.ch
+
       -  title: Matthew Tovstiga
          image: tovstiga.jpg
          link: http://tovstiga.studio
@@ -81,6 +84,9 @@ globals:
       #    link: http://moviemento-mediathek.cinemap.org
 
    performances:
+      -  title: Gegeneinander Anti Slam
+         place: Winterthur
+         date: 2019-01-17
       -  title: Die Essenz des Lebens
          place: Zürich
          link: https://www.langenachtderphilosophie.ch/speakers/die-essenz-des-lebens/
@@ -163,6 +169,8 @@ globals:
         date: 13.10.16
  
    graphics:
+      # -  title: Die Krasse Tasse GmbH – Logo
+      #    year: 2019
       -  title: Das Glück
          filename: das-glueck.png
       -  title: Geschlecht ist nur ein Wort

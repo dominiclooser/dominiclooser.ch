@@ -1,0 +1,9 @@
+graph TD
+com[Comcast] --- uni[Universal Pictures]
+
+disney[The Walt Disney Company] --- x[Walt Disney Pictures]
+x --- c[Pirates of the Carribean]
+disney --- Pixar
+disney --- a[Marvel Studios]
+disney --- b[20th Century Fox]
+disney --- Lucasfilm
