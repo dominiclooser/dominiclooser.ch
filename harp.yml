@@ -32,8 +32,8 @@ globals:
       # -  title: hier (Meta Meta)
       #    link: http://dominiclooser.ch
 
-      -  title: Caroline Dorn
-         link: https://carolinedorn.ch
+      # -  title: Caroline Dorn
+      #    link: https://carolinedorn.ch
 
       -  title: Matthew Tovstiga
          image: tovstiga.jpg
