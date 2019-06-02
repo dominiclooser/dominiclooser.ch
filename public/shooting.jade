@@ -1,0 +1,13 @@
+extends _default
+
+block content
+   h2.h2 KandidatInnen
+   ul#candidates
+      for person in candidates
+         li
+            .person
+               .person-left
+                  h3.person-name= person.name
+                  p.person-comments= person.comments
+               .person-right
+                  img(src='/images/small/shooting/' + person.image)

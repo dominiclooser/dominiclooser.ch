@@ -34,6 +34,11 @@ footer
     font-family: heading-font
     & + p
         margin-top: var(--quarter-unit)
+    & + .grid
+        margin-top: var(--semi-unit)
+    & + ul
+        margin-top: var(--semi-unit)
+    
 
 .h3
     font-size: var(--l)
@@ -159,18 +164,6 @@ footer
 // cards //
 ///////////
 
-.colored-cards
-    .card
-        padding: var(--unit) var(--semi-unit)
-        @media(min-width: 400px)
-            padding: var(--unit)
-        &:nth-child(3n+1)
-            background: colors[0]
-        &:nth-child(3n+2)
-            background: colors[1]
-        &:nth-child(3n+3)
-            background: colors[2]
-
 .card
     @extends .spaced-paragraphs
     
@@ -180,6 +173,17 @@ footer
     .button-wrapper
         display: flex 
         padding-top: var(--unit)
+
+
+
+.colored-cards
+    .card
+        &:nth-child(3n+1)
+            background: colors[0]
+        &:nth-child(3n+2)
+            background: colors[1]
+        &:nth-child(3n+3)
+            background: colors[2]
 
 .card-title
     margin-bottom: var(--unit)

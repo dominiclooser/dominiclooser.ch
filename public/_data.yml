@@ -3,6 +3,26 @@ index:
    description: 'Dominic Looser ist Slam Poet, Web-Developer und Tassen-Entrepreneur. 
       Hier befindet sich sein (kreativer) Output.'
 
+shooting:
+   id: shooting-page
+   candidates:
+      -  name: Samuel Nuesch
+         image: samuel-nüesch.jpg
+      -  name: Urs Wild
+         image: urs-wild.jpg
+         comments: liegend
+      -  name: Stefan Diermayr
+         image: urs-wild.jpg
+         comments: rechts
+      -  name: Nadja Schnetzler 
+         image: nadja-schnetzler.jpg
+         comments: gerne dabei! ♥️
+      -  name: Sebastian Wagner
+         image: sebastian-wagner.png
+         comments: Wenn du mich willst, dann sehr gern am 26. (am 17. bin i nit da) Bin schwer angetan von Elenas Bildern!
+      -  name: Stefan M. Seydel
+         image: stefan-seydel.jpg
+         comments: könnte gehen. je nach ort... 
 grafik:
    id: grafik-page
    pagetitle: Grafik
@@ -15,6 +35,8 @@ inspiration:
    description: Was mich so inspiriert (hat).
    inspiration:
       Firmen:
+         -  name: Teenage Engineering
+         -  link: https://teenage.engineering/
          -  name: The Boring Company
             link: https://www.boringcompany.com/
          -  name: Amt für Ideen
@@ -42,6 +64,7 @@ inspiration:
          -  name: Ludwig Hirsch
          -  name: Molden, Resetarits, Soyka, Wirth
       Musik (verschiedene):
+         -  name: Element of Crime
          -  name: Björk
          -  name: Tocotronic
          -  name: Wir sind Helden

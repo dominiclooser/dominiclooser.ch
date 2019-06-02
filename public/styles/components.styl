@@ -43,11 +43,15 @@
     margin-bottom: var(--two-units)
 
 .card
-    padding: var(--unit) 0
+    padding: var(--semi-unit) var(--quarter-unit)
     @media(min-width: 400px)
-        padding: var(--unit) 0
+        padding: var(--unit)
     img + p
         margin-top: var(--unit)
+
+.card_bordered
+    @extends .card
+    border: 1px solid colors[0]
   
 .card_nopadding
     @extend .card
