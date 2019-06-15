@@ -85,7 +85,6 @@
         flex: 2
         margin: 0 var(--unit) 0 0
 
-
 .textplus-plus
     @media textplus
         align-self: left
@@ -103,6 +102,9 @@
 
 .plustext-plus
     align-self: left
+
+.default-list
+    list-style: disc inside
 
 .arrow-list
     list-style: none
@@ -175,3 +177,13 @@ highlight-list(background = dark, color = white)
 
 .text-wrapper
     max-width: text-width
+
+.twocols 
+    *:first-child
+        margin-bottom: var(--unit)
+    @media two-cols
+        *:first-child
+            margin-bottom: 0
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-column-gap: var(--unit)

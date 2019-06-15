@@ -3,7 +3,7 @@ index:
    pagetitle: Web
    description: 'Ich gestalte und entwickle Webseiten: individuell, reduziert, ästhetisch.'
 
-preise:
+angebot:
    packages: 
       -  name: Paket 1A Deluxe
       -  name: Paket 1A Deluxe Premium
@@ -12,8 +12,10 @@ preise:
 ressourcen:
    items:
       -  name: The Modern Javascript Tutorial
-         link: https://javascript.info/
+         link: https://javascript.info
       -  name: CSS Tricks
-         link: https://css-tricks.com/
+         link: https://css-tricks.com
       -  name: MDN web docs
-         link: https://developer.mozilla.org/
+         link: https://developer.mozilla.org
+      -  name: The Pattern Library
+         link: http://thepatternlibrary.com

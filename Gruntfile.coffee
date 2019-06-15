@@ -31,6 +31,7 @@ config =
     exec:
         textimport: 'bin/import-texts' 
         harp: 'harp compile'
+        encrypt: 'staticrypt www/shooting.html tomatensuppe -o www/shooting.html'
 
     'gh-pages':
         production:
@@ -102,6 +103,6 @@ module.exports = (grunt) ->
     time grunt
     jit grunt
     grunt.registerTask 'default', ['yaml', 'watch'] 
-    grunt.registerTask 'compile', ['exec:textimport', 'yaml','force:on', 'exec:harp','force:off', 'copy:main', 'stylus', 'postcss', 'coffee']
-    grunt.registerTask 'deploy', ['compile','copy:production', 'gh-pages:production']
-    grunt.registerTask 'stage', ['compile','copy:stage', 'gh-pages:stage']
+    grunt.registerTask 'build', ['exec:textimport', 'yaml','force:on', 'exec:harp','force:off', 'copy:main', 'stylus', 'postcss', 'coffee', 'exec:encrypt']
+    grunt.registerTask 'deploy', ['build','copy:production', 'gh-pages:production']
+    grunt.registerTask 'stage', ['build','copy:stage', 'gh-pages:stage']

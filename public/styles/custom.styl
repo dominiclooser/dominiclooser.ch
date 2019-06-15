@@ -98,7 +98,7 @@
     stacked-list(spacing:var(--unit), border:4px solid dark)
 
 .site
-    @media two-columns-sites
+    @media two-cols
         display: grid
         grid-template-columns: 1fr 1fr
         grid-column-gap: var(--unit)
@@ -176,33 +176,12 @@
 .lb-dataContainer
     margin-top: 8px !important
 
-.masonry-item
-    margin-bottom: 33px
-    // width: 100%
-    @media (min-width: 500px)
-        width: calc(0.5 * (100% - 33px))
-    @media (min-width: 700px)
-        width: calc(0.33333 * (100% - 2 * 33px))
-    @media (min-width: 1200px)
-        width: calc(0.25 * (100% - 3 * 33px))
-    figcaption
-        margin-top: var(--semi-unit)
-        padding: 0.2em
-        border-top: 2px solid dark
-        border-bottom: @border-top
-        font-family: heading-font
-        font-size: var(--s)
-        font-weight: 600
-
 
 /////////////////
 // inspiration //
 /////////////////
 
-.inspiration-section
-    li
-        font-size: var(--l)
-        
+.inspiration-section        
     ul
         stacked-list(border: 1px dotted dark)
     .card-title
@@ -267,11 +246,8 @@
         max-width: 800px
         stacked-list(spacing:var(--unit), border:4px solid dark)
     .person
-        display: grid
-        column-gap: var(--unit)
-        grid-template-columns: 1fr 1fr
         img
-            max-height: 200px
+            width: 100%
     .person-name
         font-family: heading-font
         line-height: heading-line-height
@@ -279,7 +255,4 @@
         font-size: var(--xxxl)
     .person-comments
         margin-top: var(--semi-unit)
-    
-        
-    
 

@@ -5,15 +5,43 @@ index:
 
 shooting:
    id: shooting-page
+   inspirationimages:
+      -  drei.png
+      -  gelb.png
+      -  nackt.png
+      -  zelt.png
    candidates:
+      -  name: Christian Johannes Käser
+         image: christian-käser.jpg
+         comments: Würde gerne dabei sein. Weiss noch, ob er an den Daten kann.
+      -  name: Bart
+         image: bart.jpg
+         comments: Hat Interesse. Daten unklar.
+      -  name: Gabriele Nosatti
+         image: gabriele-nosatti.jpg
+         comments: I’m interested but I’m not sure I will have an afternoon off of work. So both days won’t really work for me.
+      -  name: Jenny Schwarz
+         image: jennifer-schwarz.jpg
+         comments: Tolle Idee!!! :) Bin sehr gerne dabei, falls es mit meinem Arbeitsplan passt...
+      -  name: Ilse New
+         image: ilse-new.jpg
+         comments: So cute, Dominic!! Put me down for the date, will try and come up with a few ideas shortly...
+      -  name: Judith Heiniger
+         image: judith-heiniger.jpg
+         comments: Du kennst die liebe Elena!!!!!!
+               Komme gerne, darf ich den Kurzen mitnehmen?
+               Oder wäre das zu krass für dich?
+      -  name: Anita Merkt
+         image: anita-merkt.jpg
       -  name: Samuel Nuesch
          image: samuel-nüesch.jpg
+         comments: kann am ersten Termin nicht
       -  name: Urs Wild
          image: urs-wild.jpg
-         comments: liegend
+         comments: (liegend) kann am 17ten nicht
       -  name: Stefan Diermayr
          image: urs-wild.jpg
-         comments: rechts
+         comments: (rechts). nur allzu gerne würde ich bei dem Fotoshooting mitmachen ... Leider bin ich an den Terminen nicht in der Schweiz.  Wetter- und seelenhalber sind wir vom 15.06.-01.07. in Sardinien.
       -  name: Nadja Schnetzler 
          image: nadja-schnetzler.jpg
          comments: gerne dabei! ♥️
@@ -35,8 +63,10 @@ inspiration:
    description: Was mich so inspiriert (hat).
    inspiration:
       Firmen:
+         -  name: Atelier für Sonderaufgaben
+            link: https://www.sonderaufgaben.ch
          -  name: Teenage Engineering
-         -  link: https://teenage.engineering/
+            link: https://teenage.engineering/
          -  name: The Boring Company
             link: https://www.boringcompany.com/
          -  name: Amt für Ideen
@@ -87,12 +117,16 @@ inspiration:
          -  name: Volker Pispers
             link: http://www.volker-pispers.de
       Regie:
-         - name: Michel Gondry
-         - name: Ulrich Seidl
-         - name: Darren Aronofsky
-         - name: Danny Boyle
-         - name: Mike Leigh
-         - name: Lukas Moodysson
+         -  name: Stanley Kubrik
+         -  name: Michel Gondry
+         -  name: Ulrich Seidl
+         -  name: Darren Aronofsky
+         -  name: Danny Boyle
+         -  name: Mike Leigh
+         -  name: Lukas Moodysson
+      # Schöne und heftig:
+      #    -  name: A Clockwork Orange 
+      #    -  name: Requiem for a Dream
       Skandinavischer Film:
          -  name: 101 Reykjavik (Island)
             link: http://en.wikipedia.org/wiki/101_Reykjav%C3%ADk
@@ -143,7 +177,10 @@ inspiration:
             link: http://9voltnelly.ch
       Fotografie:
          -  name: Elena Brotschi 
-            link: http://www.elenabrotschi.com/
+            link: http://www.elenabrotschi.com
+      Kunst:
+         -  name: Herr Hürzeler
+            link: http://herrhuerzeler.ch
 
 shop:
    id: shop

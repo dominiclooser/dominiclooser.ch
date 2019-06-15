@@ -12,3 +12,8 @@ namen:
             -  Jimi Hendrix
             -  James Brown
             -  Jim Morrison
+standards:
+   standards:
+      -  id: ISO 8601-1:2019
+         title: Data elements and interchange formats – Information interchange – Representation of dates and times
+         since: 1988

@@ -1,13 +1,67 @@
 extends _default
 
 block content
-   h2.h2 KandidatInnen
-   ul#candidates
-      for person in candidates
+   section.s1
+      h2.h2 Datum
+      p Mittwoch, 26.6.19, 17 Uhr
+
+   section.s1
+      h2.h2 Stil
+      p Absurd und schön
+
+   section.s1
+      h2.h2 Inspiration
+      ul.default-list 
+         li Die Antwoord
+         li Deichkind
+         li Pet Shop Boys
+      .masonry
+         for filename in public.images.small.shooting.inspiration._contents
+            figure.masonry-item
+               a(href='images/large/shooting/inspiration/' + filename, data-lightbox='inspiration')
+                  img(src='images/small/shooting/inspiration/' + filename)
+         
+
+   section.s1.underlined-links
+      h2.h2 Ort
+      ul.default-list
+         li: a()
+         li: a(href='http://www.zuriplay.ch/de/spielplatze/eichrain-bei-tennisplatz') Eichrain
+         li: a(href='http://www.zuriplay.ch/de/spielplatze/artergut') Artergut
+         li: a(href='http://www.zuriplay.ch/de/spielplatze/buchlern') Buchlern
+         li 
+            a(href='http://www.zuriplay.ch/de/spielplatze/schrli-grnzug') Schörli
+            br
+            img(src='images/large/shooting/schörli.jpg')
          li
-            .person
-               .person-left
-                  h3.person-name= person.name
-                  p.person-comments= person.comments
-               .person-right
-                  img(src='/images/small/shooting/' + person.image)
+            a(href='http://www.zuriplay.ch/de/spielplatze/fhrenwald') Föhrenwald, Kreis 11
+            br
+            img(src='images/large/shooting/föhrenwald.jpg')
+   section.s1
+      h2.h2 Requisiten
+      ul.default-list
+         li Pferdemaske, Hasenmaske
+         li Tassen
+         li weisser Schutzanzug
+         li Schaf
+         li viele verschiedene Sonnenbrillen
+         li zwei verschiedene Goldketten
+   
+   section.s1
+      h2.h2 Models
+      ul#candidates
+         for person in candidates
+            li
+               .person.twocols
+                  div
+                     h3.person-name= person.name
+                     p.person-comments= person.comments
+                  a(href='/images/large/shooting/' + person.image, data-lightbox='people', data-title=person.name)
+                     img(src='/images/small/shooting/' + person.image)
+  
+
+block append scripts
+   script(src='/scripts/masonry.pkgd.min.js')
+   script(src='/scripts/imagesloaded.js')
+   script(src='/scripts/lightbox.min.js')
+   script(src='/scripts/masonry.js')

@@ -18,6 +18,14 @@ globals:
       -  title: About
          link: /about
    
+   domains:
+      -  name: friedmannschmuck.ch
+         periods:
+            -  start: 2019-05-31    
+               end: 2020-05-31
+               seller: switchplus
+               price: 15.50
+
    sizes:
       Bett:
          -  name: Duvetbezug
