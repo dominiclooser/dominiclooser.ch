@@ -4,7 +4,40 @@ index:
       Hier befindet sich sein (kreativer) Output.'
 
 shooting:
+   pagetitle: 'Shooting – Die Krasse Tasse GmbH'
    id: shooting-page
+   playgrounds:
+      -  name: Pfingstweidpark
+      -  name: Artergut
+         link: http://www.zuriplay.ch/de/spielplatze/artergut
+         district: 7 
+         comments: ♥
+         image: artergut.jpg
+      -  name: Buchlern
+         link: http://www.zuriplay.ch/de/spielplatze/buchlern
+         district: 9
+      -  name: Eichrain 
+         link: http://www.zuriplay.ch/de/spielplatze/eichrain-bei-tennisplatz
+         district: 11
+         image: eichrain.jpg
+         comments: ♥
+      -  name: Schörli
+         link: http://www.zuriplay.ch/de/spielplatze/schrli-grnzug
+         image: schörli.jpg
+         district: 12
+      -  name: Föhrenwald
+         district: 11
+         link: http://www.zuriplay.ch/de/spielplatze/fhrenwald
+         image: föhrenwald.jpg
+   
+   models:
+      -  name: Bart van Oerle
+         image: bart.jpg
+      -  name: Judith Heiniger
+         image: judith-heiniger.jpg
+      -  name: Sebastian Wagner
+         image: sebastian-wagner.png
+
    inspirationimages:
       -  drei.png
       -  gelb.png
@@ -62,6 +95,11 @@ inspiration:
    pagetitle: Inspiration
    description: Was mich so inspiriert (hat).
    inspiration:
+      Pretty British:
+         -  name: Kate Tempest
+            link: https://katetempest.co.uk
+         -  name: Scroobius Pip
+            link: http://scroobiuspip.co.uk
       Firmen:
          -  name: Atelier für Sonderaufgaben
             link: https://www.sonderaufgaben.ch
@@ -73,8 +111,15 @@ inspiration:
             link: http://www.amt-fuer-ideen.ch/
          -  name: Die Krasse Tasse GmbH
             link: https://diekrassetassegmbh.ch
-         -  name: Die Form der Unruhe
-            link: http://dfdu.org/
+         -  name: dfdu AG
+            link: http://dfdu.org
+      Produkte:
+         -  name: Nuuna Notizbücher
+            link: https://www.nuuna.com
+         -  name: Undies For Two
+            link: https://www.amazon.com/Forum-Novelties-Adult-Undies-Underwear/dp/B0149D0HWO
+         -  name: Krasse Tasse
+            link: https://diekrassetassegmbh.ch
       Singer/Songwriter:
          -  name: Bob Dylan
          -  name: Fee Badenius
@@ -84,6 +129,8 @@ inspiration:
          -  name: Funny van Dannen
          -  name: Manuel Stahlberger
       Rap:
+         -  name: Die Antwoord
+         -  name: Money Boy
          -  name: Beastie Boys
          -  name: Scroobius Pip
          -  name: Käptn Peng
@@ -124,9 +171,37 @@ inspiration:
          -  name: Danny Boyle
          -  name: Mike Leigh
          -  name: Lukas Moodysson
-      # Schöne und heftig:
-      #    -  name: A Clockwork Orange 
-      #    -  name: Requiem for a Dream
+      'Film: Geheimtipps': 
+         -  name: Cold Souls
+            link: https://www.imdb.com/title/tt1127877
+         -  name: Holy Motors 
+      Dokumentarfilme:
+         -  name: Cinéma Inch'Allah!
+            link: https://www.imdb.com/title/tt2349854
+         -  name: Young@Heart 
+      'Film: schön / heftig':
+         -  name: Never Let Me Go
+         -  name: The Secret Life of Words
+         -  name: Trainspotting
+         -  name: Fight Club
+         -  name: A Clockwork Orange 
+         -  name: Requiem for a Dream
+         -  name: Cidade de Deus
+            link: https://www.imdb.com/title/tt0317248
+         -  name: Magnolia
+            link: https://www.imdb.com/title/tt0175880
+         -  name: Lilja 4-ever
+            link: https://www.imdb.com/title/tt0300140
+         -  name: American History X 
+      'Film: absurd / lustig':
+         -  name: 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb'
+            link: https://www.imdb.com/title/tt0057012
+         -  name: Exit Through the Gift Shop
+            link: https://www.imdb.com/title/tt1587707
+         -  name: The Great Dictator
+            link: https://www.imdb.com/title/tt0032553
+         -  name: No Man's Land 
+         -  name: Ed Wood
       Skandinavischer Film:
          -  name: 101 Reykjavik (Island)
             link: http://en.wikipedia.org/wiki/101_Reykjav%C3%ADk
@@ -158,7 +233,10 @@ inspiration:
          -  name: The End of the F***ing World
          -  name: Westworld
          -  name: A Handmaid's Tale
-      Zürcher Locations:
+         -  name: Twin Peaks
+      Locations (Zürich):
+         -  name: Bar am Egge
+            link: http://amegge.ch
          -  name: Xenix
             link: http://xenix.ch
          -  name: Kosmos

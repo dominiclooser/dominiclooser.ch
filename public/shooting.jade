@@ -3,7 +3,34 @@ extends _default
 block content
    section.s1
       h2.h2 Datum
-      p Mittwoch, 26.6.19, 17 Uhr
+      p Dienstag 20. August 2019 16:00
+      p Mittwoch 28. August 2019 16:00 (bei schlechtem Wetter am 20sten)
+
+   section.s1
+      h2.h2 Fotografie
+      p: a(href='http://elenabrotschi.com') Elena Brotschi
+
+   section.s1.underlined-links
+      h2.h2 Mögliche Locations
+      ul.default-list
+         for playground in playgrounds
+            li.playground
+               a(href=playground.link)= playground.name
+               span  (Kreis #{playground.district}, #{playground.comments})
+               if playground.image
+                  img(src='images/small/shooting/playgrounds/' + playground.image)
+
+   section.s1
+      h2.h2 DarstellerInnen
+      ul#candidates
+         for person in models
+            li
+               .person.twocols
+                  div
+                     h3.person-name= person.name
+                     p.person-comments= person.comments
+                  a(href='/images/large/shooting/' + person.image, data-lightbox='people', data-title=person.name)
+                     img(src='/images/small/shooting/' + person.image)
 
    section.s1
       h2.h2 Stil
@@ -11,32 +38,21 @@ block content
 
    section.s1
       h2.h2 Inspiration
-      ul.default-list 
-         li Die Antwoord
-         li Deichkind
-         li Pet Shop Boys
-      .masonry
-         for filename in public.images.small.shooting.inspiration._contents
-            figure.masonry-item
-               a(href='images/large/shooting/inspiration/' + filename, data-lightbox='inspiration')
-                  img(src='images/small/shooting/inspiration/' + filename)
+      section.s2
+         ul.default-list 
+            li Die Antwoord
+            li Deichkind
+            li Pet Shop Boys
+      section.s2
+         .masonry
+            for filename in public.images.small.shooting.inspiration._contents
+               figure.masonry-item
+                  a(href='images/large/shooting/inspiration/' + filename, data-lightbox='inspiration')
+                     img(src='images/small/shooting/inspiration/' + filename)
+      //- section.s2
+      //-    .grid
+      //-       videos
          
-
-   section.s1.underlined-links
-      h2.h2 Ort
-      ul.default-list
-         li: a()
-         li: a(href='http://www.zuriplay.ch/de/spielplatze/eichrain-bei-tennisplatz') Eichrain
-         li: a(href='http://www.zuriplay.ch/de/spielplatze/artergut') Artergut
-         li: a(href='http://www.zuriplay.ch/de/spielplatze/buchlern') Buchlern
-         li 
-            a(href='http://www.zuriplay.ch/de/spielplatze/schrli-grnzug') Schörli
-            br
-            img(src='images/large/shooting/schörli.jpg')
-         li
-            a(href='http://www.zuriplay.ch/de/spielplatze/fhrenwald') Föhrenwald, Kreis 11
-            br
-            img(src='images/large/shooting/föhrenwald.jpg')
    section.s1
       h2.h2 Requisiten
       ul.default-list
@@ -47,17 +63,7 @@ block content
          li viele verschiedene Sonnenbrillen
          li zwei verschiedene Goldketten
    
-   section.s1
-      h2.h2 Models
-      ul#candidates
-         for person in candidates
-            li
-               .person.twocols
-                  div
-                     h3.person-name= person.name
-                     p.person-comments= person.comments
-                  a(href='/images/large/shooting/' + person.image, data-lightbox='people', data-title=person.name)
-                     img(src='/images/small/shooting/' + person.image)
+   
   
 
 block append scripts

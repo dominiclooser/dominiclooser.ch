@@ -1,10 +1,17 @@
 extends ../_default
 
 block content
-   dl
-      dt Tagline
-      dd= tagline
-      dt Angebot
-      dd= product
-      dt Zielgruppe
-      dd= targetmarket
+   .page-intro= tagline
+   dl.definition-list
+      for prop in props
+         dt= prop.name
+         dd= prop.value
+
+      //- dt Tagline
+      //- dd= tagline
+      //- dt keywords
+      //- dd= keywords
+      //- dt Angebot
+      //- dd= product
+      //- dt Zielgruppe
+      //- dd= targetmarket

@@ -1,7 +1,22 @@
+litapp:
+   pagetitle: LitÄpp
+   tagline: Nichts ist fix
+   props:
+      -  name: Keywords
+         value: Zusammen
+      -  name: Elevator Pitch
+      -  name: Angebot
+         value: Webapp
+      -  name: Zielgruppe
+         value: 
+      -  name: Unique Selling Proposition
+      -  name: Farben
+      -  name: Schriftarten
+      -  name: Logo
+
 cjk:
    pagetitle: Christian Johannes Käser
-   tagline: Musikalische Stegreif Comedy
-   attributes:
+   keywords: Musikalische Stegreif Comedy
    products:
    targetmarket:
    usp:
