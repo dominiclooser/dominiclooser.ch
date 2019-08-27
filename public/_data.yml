@@ -4,8 +4,14 @@ index:
       Hier befindet sich sein (kreativer) Output.'
 
 shooting:
-   pagetitle: 'Shooting – Die Krasse Tasse GmbH'
+   pagetitle: 'Shooting'
+   subtitle: 'Die Krasse Tasse GmbH'
    id: shooting-page
+   playground: 
+      name: Eichrain 
+      link: http://www.zuriplay.ch/de/spielplatze/eichrain-bei-tennisplatz
+      district: 11
+      image: eichrain.jpg
    playgrounds:
       -  name: Pfingstweidpark
       -  name: Artergut
@@ -128,6 +134,10 @@ inspiration:
          -  name: Gysbert zu Knyphausen
          -  name: Funny van Dannen
          -  name: Manuel Stahlberger
+      # Songs:
+      #    -  name: Die Flut
+      #       creator: Joachim Witt, Peter Heppner
+      #       link: https://www.youtube.com/watch?v=vIOSucOj2_k
       Rap:
          -  name: Die Antwoord
          -  name: Money Boy
@@ -151,6 +161,7 @@ inspiration:
          -  name: "Douglas Adams: The Hitchhiker's Guide to the Galaxy"
          -  name: 'Joey Goebel: Torture the Artist'
          # -  name: Murakami
+         # Das Fest des Ziegenbocks
       Bühne:
          -  name: Josef Hader
             link: http://hader.at
@@ -179,6 +190,14 @@ inspiration:
          -  name: Cinéma Inch'Allah!
             link: https://www.imdb.com/title/tt2349854
          -  name: Young@Heart 
+         -  name: Crumb
+            link: https://en.wikipedia.org/wiki/Crumb_(film)
+         -  name: Exit Through The Gift Shop
+            link: https://en.wikipedia.org/wiki/Exit_Through_the_Gift_Shop
+         -  name: Waltz with Bashir
+            link: https://en.wikipedia.org/wiki/Waltz_with_Bashir
+         -  name: Cinemania
+            link: https://www.imdb.com/title/tt0281724
       'Film: schön / heftig':
          -  name: Never Let Me Go
          -  name: The Secret Life of Words

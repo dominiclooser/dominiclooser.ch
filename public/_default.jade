@@ -5,7 +5,10 @@ block main
       include ../includes/navigation
       block header
          header.page-heading
-            h1.page-title= pagetitle
+            h1
+               p.page-title= pagetitle
+               p.page-subtitle= subtitle
+
       block content
       include ../includes/footer
 

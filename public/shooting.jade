@@ -3,22 +3,28 @@ extends _default
 block content
    section.s1
       h2.h2 Datum
-      p Dienstag 20. August 2019 16:00
-      p Mittwoch 28. August 2019 16:00 (bei schlechtem Wetter am 20sten)
+      p Mittwoch 28. August 2019 16:00
+
+   section.s1
+      h2.h2 Location
+      p: a.arrow-link(href=playground.link)= playground.name
+      iframe(src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d5398.261619970577!2d8.543186327611027!3d47.428892616692934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d47.4289615!2d8.548243!5e0!3m2!1sde!2sch!4v1566936323198!5m2!1sde!2sch", width="600", height="450", frameborder="0", style="border:0;", allowfullscreen="")
 
    section.s1
       h2.h2 Fotografie
-      p: a(href='http://elenabrotschi.com') Elena Brotschi
+      p: a.arrow-link(href='http://elenabrotschi.com') Elena Brotschi
 
-   section.s1.underlined-links
-      h2.h2 Mögliche Locations
-      ul.default-list
-         for playground in playgrounds
-            li.playground
-               a(href=playground.link)= playground.name
-               span  (Kreis #{playground.district}, #{playground.comments})
-               if playground.image
-                  img(src='images/small/shooting/playgrounds/' + playground.image)
+   
+
+   //- section.s1.underlined-links
+   //-    h2.h2 Mögliche Locations
+   //-    ul.default-list
+   //-       for playground in playgrounds
+   //-          li.playground
+   //-             a(href=playground.link)= playground.name
+   //-             span  (Kreis #{playground.district}, #{playground.comments})
+   //-             if playground.image
+   //-                img(src='images/small/shooting/playgrounds/' + playground.image)
 
    section.s1
       h2.h2 DarstellerInnen
