@@ -13,8 +13,8 @@ globals:
          link: /grafik
       -  title: Inspiration
          link: /inspiration
-      -  title: Shop
-         link: /shop
+      # -  title: Shop
+      #    link: /shop
       -  title: About
          link: /about
    

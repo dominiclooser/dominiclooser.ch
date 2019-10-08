@@ -103,24 +103,24 @@ inspiration:
    inspiration:
       # monty python
       # Erzaehlmirnix
-      KanadierInnen: 
+      Kanada: 
          -  name: Leonhard Cohen
-         -  name: Margaret Atwood
+         # -  name: Margaret Atwood
          -  name: Sarah Polley
-         -  name: Jim Carrey
-         -  name: Ryan Gosling
-         -  name: Jason Reitman
-         -  name: Alanis Morissette
-      ÖsterreicherInnen:
-         -  name: Erwin Schrödinger
+         -  name: Jim Carrey 
+         # -  name: Ryan Gosling 
+         # -  name: Jason Reitman 
+         # -  name: Alanis Morissette 
+      Österreich:
+         # -  name: Erwin Schrödinger 
          -  name: Ludwig Wittgenstein
          -  name: Falco
-         -  name: Christoph Waltz
-         -  name: Niki Lauda
-         -  name: Romy Schneider
-         -  name: Udo Jürgens
-         -  name: Friedensreich Hundertwasser
-         -  name: Wolfgang Amadeus Mozart
+         # -  name: Christoph Waltz 
+         # -  name: Niki Lauda 
+         # -  name: Romy Schneider 
+         # -  name: Udo Jürgens 
+         # -  name: Friedensreich Hundertwasser 
+         # -  name: Wolfgang Amadeus Mozart
          -  name: Kurt Gödel
       Pretty British:
          -  name: Kate Tempest
@@ -138,6 +138,7 @@ inspiration:
             link: http://www.amt-fuer-ideen.ch/
          -  name: Die Krasse Tasse GmbH
             link: https://diekrassetassegmbh.ch
+      Firmen 2:
          -  name: dfdu AG
             link: http://dfdu.org
       Produkte:
@@ -153,6 +154,8 @@ inspiration:
          -  name: Conor Oberst
          -  name: Mani Matter
          -  name: Gysbert zu Knyphausen
+
+      'Singer/Songwriter 2':
          -  name: Funny van Dannen
          -  name: Manuel Stahlberger
       # Songs:
@@ -161,11 +164,12 @@ inspiration:
       #       link: https://www.youtube.com/watch?v=vIOSucOj2_k
       Rap:
          -  name: Die Antwoord
-         -  name: Money Boy
          -  name: Beastie Boys
          -  name: Scroobius Pip
          -  name: Käptn Peng
          -  name: Die Fantastischen Vier
+      Rap 2:
+         -  name: Money Boy
       'Musik: Österreich':
          -  name: Seiler und Speer
             link: http://seilerundspeer.at
@@ -198,14 +202,18 @@ inspiration:
          -  name: Andreas Thiel
          -  name: Nico Semsrott
             link: http://nicosemsrott.de
+      Bühne 2:
          -  name: Volker Pispers
             link: http://www.volker-pispers.de
+         -  name: 9 Volt Nelly
+            link: http://9voltnelly.ch
       Regie:
          -  name: Stanley Kubrik
          -  name: Michel Gondry
          -  name: Ulrich Seidl
          -  name: Darren Aronofsky
          -  name: Danny Boyle
+      Regie 2:
          -  name: Mike Leigh
          -  name: Lukas Moodysson
       # man on the moon
@@ -229,6 +237,7 @@ inspiration:
             link: https://en.wikipedia.org/wiki/Exit_Through_the_Gift_Shop
          -  name: Waltz with Bashir
             link: https://en.wikipedia.org/wiki/Waltz_with_Bashir
+      Dokumentarfilme 2:
          -  name: Cinemania
             link: https://www.imdb.com/title/tt0281724
       'Film: schön / heftig':
@@ -237,6 +246,7 @@ inspiration:
          -  name: Trainspotting
          -  name: Fight Club
          -  name: A Clockwork Orange 
+      'Film: schön / heftig 2':   
          -  name: Requiem for a Dream
          -  name: Cidade de Deus
             link: https://www.imdb.com/title/tt0317248
@@ -246,15 +256,15 @@ inspiration:
             link: https://www.imdb.com/title/tt0300140
          -  name: American History X 
       'Film: absurd / lustig':
-         -  name: 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb'
-            link: https://www.imdb.com/title/tt0057012
-         -  name: Exit Through the Gift Shop
-            link: https://www.imdb.com/title/tt1587707
-         -  name: The Great Dictator
-            link: https://www.imdb.com/title/tt0032553
-         -  name: No Man's Land 
-         -  name: Ed Wood
-      Skandinavischer Film:
+         - name: 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb'
+           link: https://www.imdb.com/title/tt0057012
+         - name: Exit Through the Gift Shop
+           link: https://www.imdb.com/title/tt1587707
+         - name: The Great Dictator
+           link: https://www.imdb.com/title/tt0032553
+         - name: No Man's Land
+         - name: Ed Wood 
+      'Film: Skandinavien':
          -  name: 101 Reykjavik (Island)
             link: http://en.wikipedia.org/wiki/101_Reykjav%C3%ADk
          -  name: Nói albinói (Island)
@@ -269,11 +279,12 @@ inspiration:
          -  name: Inconsolata
          -  name: Jeremiah Shoaf
             link: https://www.jeremiahshoaf.com
+      Typographie 2:
          -  name: Typewolf
             link: http://typewolf.com  
       Buddhismus:
          -  name: Pema Chödrön
-         -  name: 'Alan Watts: The Wisdom of Insecurity'
+         -  name: Alan Watts – The Wisdom of Insecurity
          -  name: Buddhism Plain and Simple
       Style:
          -  name: Poppy
@@ -282,11 +293,11 @@ inspiration:
          -  name: Pet Shop Boys
          -  name: Die Antwoord
       Serien:
-         -  name: 'The End of the F***ing World'
+         -  name: The End of the F***ing World
          -  name: Westworld
          -  name: A Handmaid's Tale
          -  name: Twin Peaks
-      Locations (Zürich):
+      'Zürich: Locations':
          -  name: Bar am Egge
             link: http://amegge.ch
          -  name: Xenix
@@ -307,8 +318,10 @@ inspiration:
          -  name: 9 Volt Nelly
             link: http://9voltnelly.ch
       Fotografie:
-         -  name: Elena Brotschi 
-            link: http://www.elenabrotschi.com
+         - name: Elena Brotschi 
+           link: http://www.elenabrotschi.com
+         - name: Sebastian Wagner 
+           link: https://sebastianwagner.studio
       Kunst:
          -  name: Herr Hürzeler
             link: http://herrhuerzeler.ch
