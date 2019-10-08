@@ -101,6 +101,27 @@ inspiration:
    pagetitle: Inspiration
    description: Was mich so inspiriert (hat).
    inspiration:
+      # monty python
+      # Erzaehlmirnix
+      KanadierInnen: 
+         -  name: Leonhard Cohen
+         -  name: Margaret Atwood
+         -  name: Sarah Polley
+         -  name: Jim Carrey
+         -  name: Ryan Gosling
+         -  name: Jason Reitman
+         -  name: Alanis Morissette
+      ÖsterreicherInnen:
+         -  name: Erwin Schrödinger
+         -  name: Ludwig Wittgenstein
+         -  name: Falco
+         -  name: Christoph Waltz
+         -  name: Niki Lauda
+         -  name: Romy Schneider
+         -  name: Udo Jürgens
+         -  name: Friedensreich Hundertwasser
+         -  name: Wolfgang Amadeus Mozart
+         -  name: Kurt Gödel
       Pretty British:
          -  name: Kate Tempest
             link: https://katetempest.co.uk
@@ -145,11 +166,15 @@ inspiration:
          -  name: Scroobius Pip
          -  name: Käptn Peng
          -  name: Die Fantastischen Vier
-      Musik aus Österreich:
+      'Musik: Österreich':
          -  name: Seiler und Speer
             link: http://seilerundspeer.at
          -  name: Ludwig Hirsch
          -  name: Molden, Resetarits, Soyka, Wirth
+      'Musik: Schweiz':
+         -  name: Stephan Eicher
+         -  name: Patent Ochsner
+         -  name: Mani Matter
       Musik (verschiedene):
          -  name: Element of Crime
          -  name: Björk
@@ -162,6 +187,7 @@ inspiration:
          -  name: 'Joey Goebel: Torture the Artist'
          # -  name: Murakami
          # Das Fest des Ziegenbocks
+         # Der futorologische Kongress
       Bühne:
          -  name: Josef Hader
             link: http://hader.at
@@ -182,11 +208,18 @@ inspiration:
          -  name: Danny Boyle
          -  name: Mike Leigh
          -  name: Lukas Moodysson
+      # man on the moon
+      'Filme mit geilem Soundtrack':
+         -  name: Herr Lehmann
+         -  name: 28 Days Later
+      'Film: Apokalypse':
+         -  name: 28 Days Later
       'Film: Geheimtipps': 
          -  name: Cold Souls
             link: https://www.imdb.com/title/tt1127877
          -  name: Holy Motors 
       Dokumentarfilme:
+         # the unmaking of don quijote
          -  name: Cinéma Inch'Allah!
             link: https://www.imdb.com/title/tt2349854
          -  name: Young@Heart 
@@ -249,7 +282,7 @@ inspiration:
          -  name: Pet Shop Boys
          -  name: Die Antwoord
       Serien:
-         -  name: The End of the F***ing World
+         -  name: 'The End of the F***ing World'
          -  name: Westworld
          -  name: A Handmaid's Tale
          -  name: Twin Peaks
@@ -264,6 +297,7 @@ inspiration:
          -  name: RageOn
             link: http://rageon.com
       Software:
+         -  name: IINA
          -  name: Flask
          -  name: Python
          -  name: LaTeX

@@ -19,4 +19,14 @@ ressourcen:
          link: https://developer.mozilla.org
       -  name: The Pattern Library
          link: http://thepatternlibrary.com
+      -  link: https://realfavicongenerator.net/
+         name: Real Favicon Generator
+      -  link: https://metatags.io/
+         name: Metatags
+
+techstack:
+   -  name: Shell
+      value: fish (friendly interactive shell)
+      link: fishshell.com
+      author: Axel Liljencrantz
 
