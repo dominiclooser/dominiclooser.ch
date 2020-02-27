@@ -1,0 +1,12 @@
+- link: /
+  title: Home
+- link: /text
+  title: Text
+- link: /web
+  title: Web
+- link: /grafik
+  title: Grafik
+- link: /inspiration
+  title: Inspiration
+- link: /about
+  title: About

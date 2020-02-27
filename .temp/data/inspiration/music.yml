@@ -1,0 +1,56 @@
+content:
+  Diverse:
+  - label: Bright Eyes
+  - label: Element of Crime
+  - label: "Bj\xF6rk"
+  - label: Tocotronic
+  - label: Wir sind Helden
+  - label: "Grossstadtgefl\xFCster"
+    link: http://grossstadtgefluester.de/
+  Rap:
+  - label: Die Antwoord
+  - label: Beastie Boys
+  - label: Scroobius Pip
+  - label: "K\xE4ptn Peng"
+  - label: Die Fantastischen Vier
+  - label: Money Boy
+  Schweiz:
+  - label: Stephan Eicher
+  - label: Patent Ochsner
+  - label: Mani Matter
+  Singer/Songwriter:
+  - label: Bob Dylan
+  - label: Fee Badenius
+  - label: Conor Oberst
+  - label: Mani Matter
+  - label: Gysbert zu Knyphausen
+  - label: Funny van Dannen
+  - label: Manuel Stahlberger
+  lyrics:
+  - album: Fevers and Mirrors
+    author: Bright Eyes
+    song: A Scale, A Mirror, and Those Indifferent Clocks
+    text: And language just happened. It was never planned
+  - author: Wir sind Helden
+    song: "M\xFCssen nur wollen"
+    text: "Das ist das Land der begrenzten Unm\xF6glichkeiten"
+  - author: Monsters Of Folk
+    song: Ahead Of The Curve
+    text: I'm not carefree, no <br> I'm free to care, I just never do
+  - author: Monsters Of Folk
+    song: Man named Truth
+    text: "Don\u2019t ever buy nothing from a man named Truth"
+  - author: Bright Eyes
+    song: We Are Nowhere and It's Now
+    text: And if you swear that there's no truth and who cares <br> How come you say
+      it like you're right?
+  - author: Sarah Lesch
+    song: Da Draussen
+    text: "Aber Mut hei\xDFt nicht, keine Angst zu haben<br>Mut hei\xDFt nur, dass\
+      \ man trotzdem springt"
+  "\xD6sterreich":
+  - label: Seiler und Speer
+    link: http://seilerundspeer.at
+  - label: Ludwig Hirsch
+  - label: Molden, Resetarits, Soyka, Wirth
+title: Musik

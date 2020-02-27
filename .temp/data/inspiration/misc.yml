@@ -1,0 +1,9 @@
+content:
+  Software:
+  - label: Python
+  - label: CoffeeScript
+  - label: IINA
+  - label: Flask
+  - label: LaTeX
+  - label: z
+    link: https://github.com/rupa/z
