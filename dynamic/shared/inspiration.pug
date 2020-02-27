@@ -1,0 +1,13 @@
+extends /default
+
+block content
+   .grid.colored-cards
+      for items, title in local.content
+         section.card.inspiration-section
+            h3.card-title= title
+            ul
+               for item in items
+                  if item.link
+                     li: a(href=item.link)= item.label
+                  else
+                     li= item.label

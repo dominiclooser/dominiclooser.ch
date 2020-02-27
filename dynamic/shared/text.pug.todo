@@ -1,0 +1,19 @@
+extends /base
+
+block title
+   title= title + ' – Dominic Looser'
+
+block main
+   .full-width-wrapper
+      header.page-header
+         include /navigation
+         nav.text-nav.underline-on-hover-links
+            ul
+               for text, slug in public.text._data
+                  if slug != 'index'
+                     li: a(href='/text/'+slug)= text.title
+                     
+      article(class='text' class={justify:justify}, class={dialogue:dialogue}, class={spaced:spaced}, class={bigspaces:bigspaces}, class={listofshorts:listofshorts})
+         h1.text-title= title
+         != yield
+      include ../../includes/footer

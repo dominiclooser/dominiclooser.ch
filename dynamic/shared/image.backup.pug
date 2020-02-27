@@ -1,0 +1,14 @@
+mixin image(relativePath, responsive=false, lightboxGroup=null)
+   - lPath = '/images/l/' + relativePath
+   - mPath = '/images/m/' + relativePath
+   - sPath = '/images/s/' + relativePath
+   - srcset = `${lPath} 2000w, ${mPath} 1000w, ${sPath} 400w`
+   
+   if lightboxGroup
+      a(href=mPath, data-lightbox=lightboxGroup, class=attributes.class)
+         img(src=sPath)
+   else
+      if responsive
+         img(src=mPath, srcset=srcset, usemap=attributes.usemap)
+      else
+         img(src=mPath, usemap=attributes.usemap)

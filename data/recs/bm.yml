@@ -1,0 +1,10 @@
+likes:
+   films:
+      - Q322206  # Heavenly Creatures
+      - Q159063  # Der Vorleser
+      - Q19355   # La vita e bella
+      - Q352000  # Adams Apples
+      - Q7705911 # Herr Lehmann
+   directors:
+      - Q192762  # Darren Aranofsky
+      - Q2001    # Stanley Kubrik

@@ -1,0 +1,8 @@
+mixin listCard(title, items)
+   .card
+      header.card-header
+         h3.card-title= title
+      main.card-main
+         ul
+            for item in items
+               li= item.title 

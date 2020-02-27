@@ -3,36 +3,103 @@ jit = require 'jit-grunt'
 autoprefixer = require 'autoprefixer'
 cssVariables = require 'postcss-css-variables'
 calc = require 'postcss-calc'
+fs = require 'fs'
+glob = require 'glob'
+toml = require 'toml'
+pug = require 'pug'
+replaceExt = require 'replace-ext'
+{ join, parse } = require 'path'
+_ = require 'lodash'
+yaml = require 'yaml'
+matter = require 'gray-matter'
+rimraf = require 'rimraf'
+marked = require 'marked'
+moment = require 'moment'
 
+PROCESSED_DATA_DIR = '.temp/data'
+OUT_DIR = 'out'
+CONFIG_PATH = 'config.toml'
+
+getData = (path) ->
+    name = parse(path).base
+    id = replaceExt(name, '')
+    suffix = parse(path).ext
+    content = fs.readFileSync(path, 'utf8')
+    data = {}
+
+    if suffix == '.md'
+        parsed = matter(content)
+        data = parsed.data
+        data.content = marked(parsed.content)
+    
+    else if suffix == '.yml'
+        try
+            data = yaml.parse(content)
+        catch error
+            console.log(error)
+
+    else if suffix == '.toml'
+        try
+            data = toml.parse(content)
+        catch error
+            console.log(error)
+    
+    data.id = id
+    return data
+
+getDataObject = (dir) ->
+    data = {}
+    
+    for name in fs.readdirSync(dir)
+        path = join(dir, name)
+        id = replaceExt(name, '')
+        id = id.split('-').join('_')
+        if fs.lstatSync(path).isDirectory()
+            try
+                data[id] = getDataObject(path)
+            catch e
+                console.error(e)
+        else
+            try
+                data[id] = getData(path)
+            catch e
+                console.log(e)
+    return data
+   
 config =
+    exec:
+        process_data: 'dspg'
     responsive_images:
         options:
             engine: 'im'
             newFilesOnly: true
-        'small':
+        's':
             options:
                 sizes: [{rename: false, width: 400}]
             files: [
                     expand: true
-                    cwd: 'raw-images'
-                    src: '**/*.{jpg,png}'
-                    dest: 'public/images/small'
+                    cwd: 'dynamic/images'
+                    src: '**/*.{jpg,png,gif}'
+                    dest: 'out/images/s'
             ]
-        'large':
+        'm':
             options:
                 sizes: [{rename: false, width: 1000}]
             files: [
                     expand: true
-                    cwd: 'raw-images'
-                    src: '**/*.{jpg,png}'
-                    dest: 'public/images/large'
+                    cwd: 'dynamic/images'
+                    src: '**/*.{jpg,png,gif}'
+                    dest: 'out/images/m'
             ]
-
-    exec:
-        textimport: 'bin/import-texts' 
-        harp: 'harp compile'
-        encrypt: 'staticrypt www/shooting.html tomatensuppe -o www/shooting.html'
-
+        'l':
+            options:
+                sizes: [{rename: false, width: 1500}]
+            files: [
+                    expand: true
+                    cwd: 'dynamic/images'
+                    src: '**/*.{jpg,png,gif}'
+                    dest: 'out/images/l'
+            ]
     'gh-pages':
         production:
             options:
@@ -43,66 +110,196 @@ config =
                 base: 'www'
                 repo: 'git@github.com:dominiclooser/dominiclooser.ch-stage.git'
             src: '**/*'
-
     postcss:
         options:
             processors: [autoprefixer({browers: 'last 2 versions'}), cssVariables, calc]
         main:
-            src: 'www/styles/styles.css'
-
+            src: 'out/styles/styles.css'
     copy:
-        main:
-            src: ['images/**/*', 'scripts/*.js', 'favicon.ico', 'fonts/*.*', 'videos/*.*', 'styles/*.css']
-            cwd: 'public'
+        static:
+            cwd: 'static'
+            src: '**/*'
             expand: true
-            dest: 'www/' 
+            dest: 'out' 
         'production':
             src: 'cnames/production'
-            dest: 'www/CNAME'
+            dest: 'out/CNAME'
         'stage':
             src: 'cnames/stage'
-            dest: 'www/CNAME'
-
+            dest: 'out/CNAME'
     coffee:
         main:
             expand: true
             flatten: true
             ext: '.js'
-            src: 'public/scripts/*.coffee'
-            dest: 'www/scripts/'
-
+            src: 'dynamic/scripts/*.coffee'
+            dest: 'out/scripts/'
     stylus:
         main:
-            src: 'public/styles/styles.styl'
-            dest: 'www/styles/styles.css'
-
-    yaml:
-        main:
-            expand: true
-            src: ['harp.yml', 'public/**/_data.yml']
-            ext: '.json'
-            
+            src: 'dynamic/styles/styles.styl'
+            dest: 'out/styles/styles.css'  
     watch:
-        options:
-            livereload: true
-        yaml:
-            files: ['**/*.yml']
-            tasks: ['yaml']
+        gruntfile:
+            files: 'gruntfile.coffee'
+            tasks: 'build'
+        scripts:
+            files: 'dynamic/scripts/*'
+            tasks: 'coffee'
+        data:
+            files: 'data/**/*'
+            tasks: ['exec:process_data', 'pug', 'strip-extensions']
+        pages:
+            files: ['dynamic/pages/*', 'dynamic/shared/*']
+            tasks: ['pug', 'strip-extensions']
+        styles:
+            files: 'dynamic/styles/*'
+            tasks: 'stylus'
+        static:
+            files: 'static/**/*'
+            tasks: 'copy:static'
         images:
-            files: ['raw-images/**/*']
-            tasks: ['responsive_images']
-        texts:
-            files: '~/text/ready/*'
-            tasks: 'exec:textimport'
-        all:
-            files: ['**/*.*']
-            tasks: []
+            files: 'dynamic/images/**/*'
+            tasks: 'responsive_images'
 
 module.exports = (grunt) ->
     grunt.initConfig config
     time grunt
     jit grunt
-    grunt.registerTask 'default', ['yaml', 'watch'] 
-    grunt.registerTask 'build', ['exec:textimport', 'yaml','force:on', 'exec:harp','force:off', 'copy:main', 'stylus', 'postcss', 'coffee', 'exec:encrypt']
-    grunt.registerTask 'deploy', ['build','copy:production', 'gh-pages:production']
-    grunt.registerTask 'stage', ['build','copy:stage', 'gh-pages:stage']
+
+    grunt.registerTask 'print-data', ->
+        console.log getDataObject(PROCESSED_DATA_DIR)
+
+    grunt.registerTask 'clean', -> 
+        rimraf.sync(join(OUT_DIR, '*'))
+
+    grunt.registerTask 'clean-data', ->
+        rimraf.sync(PROCESSED_DATA_DIR)
+
+    grunt.registerTask 'make-dirs', ->
+        if !fs.existsSync(OUT_DIR)
+            fs.mkdirSync(OUT_DIR)
+
+    grunt.registerTask 'strip-extensions', ->
+        for filePath in glob.sync('out/**/*.html')
+            parsedPath = parse(filePath)
+            name = parsedPath.name
+            if name != 'index'
+                dir = parsedPath.dir
+                newDir = dir + '/' + name
+                if !fs.existsSync(newDir)
+                    fs.mkdirSync(newDir)
+                fs.renameSync(filePath, newDir + '/index.html')
+    
+    grunt.registerTask 'pug', ->
+        globals = 
+            global: getDataObject(PROCESSED_DATA_DIR)
+        
+        globalData = getDataObject(PROCESSED_DATA_DIR)
+        
+        globals = 
+            global: globalData
+
+        getImages = (dirId) -> 
+            answer = []
+            baseDir = 'dynamic/images/' + dirId
+            if fs.existsSync(baseDir)
+                for name in fs.readdirSync(baseDir)
+                    fileId = dirId + '/' + name
+                    answer.push(fileId)
+            return answer
+        
+        containsImages = (dirId) ->
+            images = getImages(dirId)
+            if images.length == 0
+                return false
+            else
+                return true
+
+        globalOptions =
+            basedir: 'dynamic/shared'
+            base: (path) -> parse(path).base
+            fs: fs
+            moment: moment
+            getImages: getImages
+            containsImages: containsImages
+            marked: marked
+            
+
+        if fs.existsSync(CONFIG_PATH)
+            
+            configString = fs.readFileSync(CONFIG_PATH)
+            try
+                config = toml.parse(configString)
+            catch e
+                console.error(e)
+
+            for generator in config.generators
+                
+                targetDirName = generator.target || ''
+                targetDirPath = join(OUT_DIR, targetDirName)
+                if !fs.existsSync(targetDirPath)
+                    fs.mkdirSync(targetDirPath)
+
+                templateName = generator.template || 'page.pug'
+
+                templatePath = 'dynamic/shared/' + templateName
+                templateString = fs.readFileSync(templatePath)
+                parsedTemplate = matter(templateString)
+                templateContent = parsedTemplate.content
+                templateData = parsedTemplate.data
+                
+                dataGlob = generator.data
+
+                for path in glob.sync(join(PROCESSED_DATA_DIR, dataGlob))
+                         
+                    local = {}
+                    _.merge(local, getData(path), templateData)
+                    locals = 
+                        local: local
+
+                    options = {}
+                    _.merge(options, locals, globals, globalOptions)
+
+                    process.stdout.write("Rendering #{templatePath} with data from #{path} ... ")
+                    try
+                        html = pug.render(templateContent, options)
+                    catch e
+                        console.log('error.')
+                        console.error(e)
+                        continue
+                        
+                    key = parse(path).base
+                    
+                    name = replaceExt(key, '.html')
+                    targetFile = join(targetDirPath, name)
+                
+                    fs.writeFileSync(targetFile, html)
+                    console.log("done. Generated #{targetFile}")
+               
+        for path in glob.sync('dynamic/pages/*.pug')
+            string = fs.readFileSync(path)
+            parsed = matter(string)
+            
+            options = {}
+            locals = 
+                local: parsed.data
+            _.merge(options, locals, globals, globalOptions)
+            
+            pugString = parsed.content
+            
+            try
+                console.log('trying to compile ' + path)
+                html = pug.render(pugString, options)
+            catch e
+                console.error(e)
+                continue
+
+            base = parse(path).base
+            target = join(OUT_DIR, replaceExt(base, '.html'))
+           
+            fs.writeFileSync(target, html)
+
+    grunt.registerTask 'build', ['responsive_images', 'pug', 'stylus', 'coffee', 'copy:static', 'strip-extensions']
+    grunt.registerTask 'default', ['build', 'watch']
+    grunt.registerTask 'deploy', ['clean', 'make-dirs', 'build', 'copy:production', 'gh-pages:production']
+    grunt.registerTask 'stage', ['clean-build','copy:stage', 'gh-pages:stage']

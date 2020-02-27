@@ -6,3 +6,6 @@ _data.json
 www
 raw-images
 harp.json
+
+# Local Netlify folder
+.netlify

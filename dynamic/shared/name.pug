@@ -1,0 +1,12 @@
+extends /default
+
+block content
+   if local.forms
+      ul.default-list
+         for form in local.forms
+            li= form
+
+   if local.people
+      ul.default-list
+         for person in local.people
+            li= person

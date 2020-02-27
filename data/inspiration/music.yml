@@ -1,0 +1,64 @@
+title: Musik
+content:
+   lyrics:
+         -  text: And language just happened. It was never planned
+            author: Bright Eyes
+            song: A Scale, A Mirror, and Those Indifferent Clocks
+            album: Fevers and Mirrors 
+         -  text: Das ist das Land der begrenzten Unmöglichkeiten
+            author: Wir sind Helden
+            song: Müssen nur wollen
+         -  text: I'm not carefree, no <br> I'm free to care, I just never do
+            author: Monsters Of Folk
+            song: Ahead Of The Curve
+         -  text: Don’t ever buy nothing from a man named Truth
+            author: Monsters Of Folk
+            song: Man named Truth
+         -  text: And if you swear that there's no truth and who cares <br> How come you say it like you're right?
+            author: Bright Eyes
+            song: We Are Nowhere and It's Now
+         -  text: Aber Mut heißt nicht, keine Angst zu haben<br>Mut heißt nur, dass man trotzdem springt
+            author: Sarah Lesch
+            song: Da Draussen
+
+   Singer/Songwriter:
+      -  label: Bob Dylan
+      -  label: Fee Badenius
+      -  label: Conor Oberst
+      -  label: Mani Matter
+      -  label: Gysbert zu Knyphausen
+      -  label: Funny van Dannen
+      -  label: Manuel Stahlberger
+
+   Rap:
+      -  label: Die Antwoord
+      -  label: Beastie Boys
+      -  label: Scroobius Pip
+      -  label: Käptn Peng
+      -  label: Die Fantastischen Vier
+      -  label: Money Boy
+
+   Österreich:
+      -  label: Seiler und Speer
+         link: http://seilerundspeer.at
+      -  label: Ludwig Hirsch
+      -  label: Molden, Resetarits, Soyka, Wirth
+
+   Schweiz:
+      -  label: Stephan Eicher
+      -  label: Patent Ochsner
+      -  label: Mani Matter
+
+   Diverse:
+      -  Q915714
+      -  label: Element of Crime
+      -  label: Björk
+      -  label: Tocotronic
+      -  label: Wir sind Helden
+      -  label: Grossstadtgeflüster
+         link: http://grossstadtgefluester.de/  
+
+   # Songs:
+   #    -  label: Die Flut
+   #       creator: Joachim Witt, Peter Heppner
+   #       link: https://www.youtube.com/watch?v=vIOSucOj2_k

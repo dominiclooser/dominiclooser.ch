@@ -1,0 +1,32 @@
+---
+pagetitle: Text
+---
+extends /default
+include /mixins
+
+block content
+   main.page-main.grid.colored-cards
+      section.card
+         header.card-header
+            h2.card-title Texte
+         //- ul.text-list
+         //-    for text, slug in public.text._data
+         //-       if slug != 'index'
+         //-          li: a(href='/text/'+slug)
+         //-             h2.text-title= text.title
+         //-             p.text-description= text.description
+      +wasrauskam
+      section#auftritte.card
+         header.card-header
+            h2.card-title Auftritte
+         +performancelist
+         .button-wrapper
+            button.button.more mehr &hellip;
+               
+block append scripts
+   script(src='/scripts/lightbox.min.js')
+   script(src='/scripts/moment-with-locales.min.js')
+   script(src='/scripts/formatdates.js')
+   script(src='/scripts/more.js')
+
+                     

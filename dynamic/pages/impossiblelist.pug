@@ -1,0 +1,13 @@
+---
+pagetitle: il
+---
+
+extends /default
+
+block content
+   for cat in global.impossiblelist
+      section.s1
+         h2.h2= cat.title
+         ul.default-list
+         for item in cat.items
+            li= item.title

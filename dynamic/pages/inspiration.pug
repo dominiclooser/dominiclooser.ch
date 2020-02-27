@@ -1,0 +1,26 @@
+---
+pagetitle: Inspiration
+---
+extends /default
+
+block content
+   .colored-cards
+      for section in global.inspiration   
+         .card
+            h2.card-header= section.title
+
+
+
+   //- for cat_sections, cat_title in inspiration
+   //-    section.inspiration-category
+   //-       h3.h3= cat_title
+   //-       .grid.colored-cards
+   //-          for section_items, section_title in cat_sections
+   //-             section.card.inspiration-section
+   //-                h3.card-title= section_title
+   //-                ul
+   //-                   for item in section_items
+   //-                      if item.link
+   //-                         li: a(href='#{item.link}')= item.name
+   //-                      else
+   //-                         li= item.name

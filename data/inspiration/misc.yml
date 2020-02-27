@@ -1,0 +1,9 @@
+content:
+   Software:
+      -  Q28865
+      -  Q1106819 
+      -  label: IINA
+      -  label: Flask
+      -  label: LaTeX
+      -  label: z
+         link: https://github.com/rupa/z

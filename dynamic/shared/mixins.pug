@@ -1,0 +1,27 @@
+include /image
+
+mixin wasrauskam
+   section.card#wasrauskam
+      header.card-header
+         h2.card-title: a(href='/wasrauskam').underline-on-hover Was raus kam
+      main.card-main
+         section.card-images.card-section
+            +image('grafik/was-raus-kam-2-front.jpg', 's')
+            +image('grafik/was-raus-kam-2-back.jpg', 's')
+         section.card-section.spaced-paragraphs
+            p Meine Texte gibt es jetzt im Büchlein mit dem Titel <em>Was raus kam</em>.
+            p: a.arrow(href='/wasrauskam') Info & Konsum
+
+mixin performancelist
+   p todo
+   //- ul.performance-list
+   //-    for p in site.performances
+   //-       li.performance
+   //-          header.performance-header 
+   //-             time.performance-date= p.date 
+   //-             span.performance-place= p.place 
+   //-          //- h3.performance-title
+   //-          //-    if p.link
+   //-          //-       a(href=p.link).arrow-link= p.title
+   //-          //-    else
+   //-          //-       span= p.title

@@ -1,0 +1,9 @@
+extends /default
+
+block content
+   dl.default-dl
+      for prop in local.props
+         dt= prop.key
+         dd= prop.value
+
+   div= local.content

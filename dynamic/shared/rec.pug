@@ -1,0 +1,35 @@
+---
+pagetitle: Deine Empfehlungen
+---
+extends /default
+include /cards
+
+block content
+   if local.recs
+      if local.recs.people
+         section.s1
+            header.s1-header
+               h2.h2 Personen
+            main.s1-main.grid.colored-cards
+               for person in local.recs.people
+                  .card
+                     h3.card-title= person.label
+
+      if local.recs.books
+         section.s1
+            header.s1-header
+               h2.h2 Bücher
+            main.s1-main.grid.colored-cards
+               for book in local.recs.books
+                  .card
+                     h3.card-title= book.label
+
+   //- if local.likes
+   //-    section.s1
+   //-       header.s1-header
+   //-          h2.h2 Was du magst
+   //-       main.s1-main.grid.colored-cards
+   //-          if local.likes.films
+   //-             +listCard('Filme', local.likes.films)
+   //-          if local.likes.directors
+   //-             +listCard('Regie', local.likes.directors)
