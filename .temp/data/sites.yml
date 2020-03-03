@@ -1,38 +1,53 @@
-- category: Architektur
-  image: tovstiga.jpg
-  link: http://tovstiga.studio
-  properties:
-  - Content Management System
-  - mehrsprachig
-  - responsive
-  title: Matthew Tovstiga
-  year: 2018
-- category: Film
-  image: being-okey.jpg
-  link: http://beingokey.ch
-  properties:
-  - Content Management System
-  - responsive
-  title: Being Okey
-  year: 2018
-- image: eine-zwecklose-webseite.jpg
-  link: http://einezwecklosewebseite.ch
-  title: Eine zwecklose Webseite
-  year: 2018
-- image: tsnuk.png
-  title: TsnuK
-- category: Fotografie
-  image: mascha-illich.jpg
-  title: Mascha Illich
-  whatidid:
-  - Anbindung CMS (Bolt)
-  year: 2015
-- category: Schmuck
-  image: friedmann-schmuck.jpg
-  link: http://friedmannschmuck.ch
-  title: Friedmann Schmuck
-  whatidid:
-  - Anpassung Template
-  - Texte
-  - Struktur
-  year: 2014
+# -  title: hier (Meta Meta)
+#    link: http://dominiclooser.ch
+
+# -  title: Caroline Dorn
+#    link: https://carolinedorn.ch
+
+-  title: Matthew Tovstiga
+   image: tovstiga.jpg
+   link: http://tovstiga.studio
+   category: Architektur
+   year: 2018
+   properties:
+      - Content Management System
+      - mehrsprachig
+      - responsive
+
+-  title: Being Okey
+   image: being-okey.jpg  
+   link: http://beingokey.ch
+   year: 2018
+   category: Film
+   properties:
+      - Content Management System
+      - responsive
+
+-  title: Eine zwecklose Webseite 
+   image: eine-zwecklose-webseite.jpg  
+   link: http://einezwecklosewebseite.ch
+   year: 2018
+
+-  title: TsnuK
+   image: tsnuk.png
+
+-  title: Mascha Illich
+   category: Fotografie
+   image: mascha-illich.jpg
+   year: 2015
+   whatidid:
+      - Anbindung CMS (Bolt)
+
+-  title: Friedmann Schmuck
+   category: Schmuck
+   image: friedmann-schmuck.jpg
+   link: http://friedmannschmuck.ch
+   year: 2014
+   whatidid:
+      - Anpassung Template
+      - Texte
+      - Struktur
+
+# -  title: Cinemap
+#    image: cinemap.jpg
+#    link: http://moviemento-mediathek.cinemap.org

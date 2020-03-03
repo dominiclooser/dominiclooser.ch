@@ -1,10 +1,10 @@
 likes:
-  directors:
-  - label: Darren Aronofsky
-  - label: Stanley Kubrick
-  films:
-  - label: Heavenly Creatures
-  - label: The Reader
-  - label: Life is Beautiful
-  - label: Adam's Apples
-  - label: Herr Lehmann
+   films:
+      - Q322206  # Heavenly Creatures
+      - Q159063  # Der Vorleser
+      - Q19355   # La vita e bella
+      - Q352000  # Adams Apples
+      - Q7705911 # Herr Lehmann
+   directors:
+      - Q192762  # Darren Aranofsky
+      - Q2001    # Stanley Kubrik

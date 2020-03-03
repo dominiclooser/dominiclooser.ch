@@ -1,9 +1,9 @@
 recs:
-  books:
-  - label: Buddhism Plain and Simple
-  - label: 'The Tao of fully feeling: Harvesting forgiveness out of blame'
-  people:
-  - label: Jordan Peterson
-  - label: Teal Swan
-  - label: "Pema Ch\xF6dr\xF6n"
-  - label: Alan Watts
+   books:
+      - Q83504291  # Buddshism plain and simple
+      - Q83504496  # Tao of fully feeling
+   people:
+      - Q442384    # Pema Chödrön
+      - Q6276882   # Jordan Peterson
+      - Q18246346  # Teal Swan
+      - Q354867    # Alan Watts 

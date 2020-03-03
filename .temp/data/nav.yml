@@ -1,12 +1,14 @@
-- link: /
-  title: Home
-- link: /text
-  title: Text
-- link: /web
-  title: Web
-- link: /grafik
-  title: Grafik
-- link: /inspiration
-  title: Inspiration
-- link: /about
-  title: About
+-  title: Home
+   link: /
+-  title: Text
+   link: /text
+-  title: Web
+   link: /web
+-  title: Grafik
+   link: /grafik
+-  title: Inspiration
+   link: /inspiration
+# -  title: Shop
+#    link: /shop
+-  title: About
+   link: /about

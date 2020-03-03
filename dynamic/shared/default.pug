@@ -4,11 +4,15 @@ block main
    .fullwidth-wrapper
       include /navigation
       block header
-         if local.pagetitle
+         if local.pagetitle || local.title
             header.page-heading
                h1
-                  p.page-title!= local.pagetitle
+                  if local.pagetitle
+                     p.page-title= local.pagetitle
+                  else if local.title
+                     p.page-title= local.title
                   if local.subtitle
                      p.page-subtitle!= local.subtitle
+                  
       block content
       include /footer

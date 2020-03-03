@@ -1,0 +1,24 @@
+title: Länder
+content:
+   Europa:
+      Schweden: 
+         -  label: Roxette
+      Island:
+         -  label: Björk
+      Österreich:
+         -  label: Ludwig Wittgenstein
+         -  label: Falco
+         -  label: Kurt Gödel
+      Pretty British:
+         - Q315756    # Mike Leigh
+         -  label: Kate Tempest
+            link: https://katetempest.co.uk
+         -  label: Scroobius Pip
+            link: http://scroobiuspip.co.uk
+   Amerika:
+      Kanada: 
+         -  label: Jordan Peterson
+         -  label: Ellen Page
+         -  label: Leonhard Cohen
+         -  label: Sarah Polley
+         -  label: Jim Carrey 

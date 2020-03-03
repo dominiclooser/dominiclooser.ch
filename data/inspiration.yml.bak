@@ -1,80 +1,7 @@
 # monty python
 # Erzaehlmirnix
 
-Events: 
 
-   2017:
-      - type: death
-        entity: Q270935  # Chris Cornell
-        
-   2019: 
-      - name: Marie Fredrikkson
-      - Q54862508  # Jojo Rabbit
-
-   2020:
-      - type: death
-        entity: Q104027  # Kirk Douglas 
-
-Länder:
-   Schweden: 
-      -  name: Roxette
-   Island:
-      -  name: Björk
-   Kanada: 
-      -  name: Jordan Peterson
-      -  name: Ellen Page (Halifax)
-      -  name: Leonhard Cohen
-      # -  name: Margaret Atwood
-      -  name: Sarah Polley
-      -  name: Jim Carrey 
-      # -  name: Ryan Gosling 
-      # -  name: Jason Reitman 
-      # -  name: Alanis Morissette 
-   Österreich:
-      # -  name: Erwin Schrödinger 
-      -  name: Ludwig Wittgenstein
-      -  name: Falco
-      # -  name: Christoph Waltz 
-      # -  name: Niki Lauda 
-      # -  name: Romy Schneider 
-      # -  name: Udo Jürgens 
-      # -  name: Friedensreich Hundertwasser 
-      # -  name: Wolfgang Amadeus Mozart
-      -  name: Kurt Gödel
-   Pretty British:
-      -  name: Kate Tempest
-         link: https://katetempest.co.uk
-      -  name: Scroobius Pip
-         link: http://scroobiuspip.co.uk
-# Firmen:
-#    -  name: Atelier für Sonderaufgaben
-#       link: https://www.sonderaufgaben.ch
-#    -  name: Teenage Engineering
-#       link: https://teenage.engineering/
-#    -  name: The Boring Company
-#       link: https://www.boringcompany.com/
-#    -  name: Amt für Ideen
-#       link: http://www.amt-fuer-ideen.ch/
-#    -  name: Die Krasse Tasse GmbH
-#       link: https://diekrassetassegmbh.ch
-#    -  name: dfdu AG
-#       link: http://dfdu.org
-#
-# Produkte:
-#    -  name: Nuuna Notizbücher
-#       link: https://www.nuuna.com
-#    -  name: Undies For Two
-#       link: https://www.amazon.com/Forum-Novelties-Adult-Undies-Underwear/dp/B0149D0HWO
-#    -  name: Krasse Tasse
-#       link: https://diekrassetassegmbh.ch
-
-# Bücher:
-#    -  name: "Douglas Adams: The Hitchhiker's Guide to the Galaxy"
-#    -  name: 'Joey Goebel: Torture the Artist'
-#    # -  name: Murakami
-#    # Das Fest des Ziegenbocks
-#    # Der futorologische Kongress
-#
 # Bühne:
 #    -  name: Josef Hader
 #       link: http://hader.at
@@ -90,15 +17,7 @@ Länder:
 #    -  name: 9 Volt Nelly
 #       link: http://9voltnelly.ch
 
-# Typographie:
-#    -  name: Druk 
-#    -  name: Bebas Neue
-#    -  name: Noe
-#    -  name: Inconsolata
-#    -  name: Jeremiah Shoaf
-#       link: https://www.jeremiahshoaf.com
-#    -  name: Typewolf
-#       link: http://typewolf.com  
+
 #
 # Buddhismus:
 #    -  name: Pema Chödrön

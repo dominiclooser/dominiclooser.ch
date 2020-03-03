@@ -16,9 +16,15 @@ body
 
 .grid
     display: grid
-    grid-template-columns: repeat(auto-fit, minmax(min-column-width, 1fr ))
+     //repeat(auto-fit, minmax(min-column-width, 1fr ))
     grid-column-gap: var(--semi-unit)
     grid-row-gap: var(--semi-unit)
+    @media m
+        grid-template-columns: 1fr 1fr
+    @media l
+        grid-template-columns: 1fr 1fr 1fr
+
+
 
 
 ////////////////

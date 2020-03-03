@@ -1,16 +1,18 @@
-- items:
-  - title: Mathematiker*in
-  - title: Philosoph*n
-  - title: Kino
-  - title: Regisseur*n
-  title: Webseiten
-- items:
-  - title: Postkarten verkaufen
-  - title: Kino-Werbung
-  - title: Werbe-Plakat
-  - title: Kunst-Ausstellung
-  - title: Bei einem Jazz-Slam auftreten
-  title: Diverses
-- items:
-  - title: "K\xE4ptn Peng"
-  title: Menschen treffen
+-  title: Webseiten
+   items:
+      - title: Mathematiker*in
+      - title: Philosoph*n
+      - title: Kino
+      - title: Regisseur*n
+
+-  title: Diverses
+   items:
+      -  title: Postkarten verkaufen
+      -  title: Kino-Werbung
+      -  title: Werbe-Plakat
+      -  title: Kunst-Ausstellung
+      -  title: Bei einem Jazz-Slam auftreten
+
+-  title: Menschen treffen
+   items: 
+      -  title: Käptn Peng

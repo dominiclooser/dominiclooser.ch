@@ -1,9 +1,41 @@
+title: Diverses
+flat: true
 content:
-  Software:
-  - label: Python
-  - label: CoffeeScript
-  - label: IINA
-  - label: Flask
-  - label: LaTeX
-  - label: z
-    link: https://github.com/rupa/z
+   Typographie:
+      -  label: Jeremiah Shoaf
+         link: https://www.jeremiahshoaf.com
+      -  label: Typewolf
+         link: http://typewolf.com 
+   Schriftarten:
+      -  label: Druk 
+      -  label: Bebas Neue
+      -  label: Noe Text
+      -  label: Inconsolata
+   Software:
+      -  Q86924750  # Pug
+      -  Q28865     # Python
+      -  Q1106819   # Coffeescript
+      -  label: IINA
+      -  label: LaTeX
+      -  label: z
+         link: https://github.com/rupa/z
+   Firmen:
+      -  label: Atelier für Sonderaufgaben
+         link: https://www.sonderaufgaben.ch
+      -  label: Teenage Engineering
+         link: https://teenage.engineering/
+      -  label: The Boring Company
+         link: https://www.boringcompany.com/
+      -  label: Amt für Ideen
+         link: http://www.amt-fuer-ideen.ch/
+      -  label: Die Krasse Tasse GmbH
+         link: https://diekrassetassegmbh.ch
+      -  label: dfdu AG
+         link: http://dfdu.org
+   Produkte:
+      -  label: Nuuna Notizbücher
+         link: https://www.nuuna.com
+      -  label: Undies For Two
+         link: https://www.amazon.com/Forum-Novelties-Adult-Undies-Underwear/dp/B0149D0HWO
+      -  label: Krasse Tasse
+         link: https://diekrassetassegmbh.ch

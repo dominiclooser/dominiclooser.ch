@@ -7,7 +7,8 @@ block content
    .colored-cards
       for section in global.inspiration   
          .card
-            h2.card-header= section.title
+            h2.card-title
+               a(href=section.id)= section.title
 
 
 

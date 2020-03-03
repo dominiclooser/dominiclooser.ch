@@ -1,13 +1,35 @@
 extends /default
 
 block content
-   .grid.colored-cards
-      for items, title in local.content
-         section.card.inspiration-section
-            h3.card-title= title
-            ul
-               for item in items
-                  if item.link
-                     li: a(href=item.link)= item.label
-                  else
-                     li= item.label
+   
+   if local.flat
+      .grid.colored-cards
+         for cardItems, cardTitle in local.content
+            .card
+               header.card-header
+                  h3.card-title= cardTitle
+               main.card-main
+                  ul
+                     for item in cardItems
+                        if item.link
+                           li: a(href=item.link)= item.label
+                        else
+                           li= item.label
+
+   else
+      for sectionContent, section in local.content
+         section.s1
+            header.s1-header
+               h2.h2= section
+            main.s1-main.grid.colored-cards
+               for cardItems, cardTitle in sectionContent
+                  .card
+                     header.card-header
+                        h3.card-title= cardTitle
+                     main.card-main
+                        ul
+                           for item in cardItems
+                              if item.link
+                                 li: a(href=item.link)= item.label
+                              else
+                                 li= item.label

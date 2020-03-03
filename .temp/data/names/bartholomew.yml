@@ -1,4 +1,4 @@
-base: Bar-Tolmai
-forms:
-- Bartholomew
-- "Bartholom\xE4us"
+base: Bar-Tolmai 
+forms: 
+   - Bartholomew
+   - Bartholomäus

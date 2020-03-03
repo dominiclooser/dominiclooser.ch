@@ -1,11 +1,21 @@
-2017:
-- entity:
-    label: Chris Cornell
-  type: death
-2019:
-- name: Marie Fredrikkson
-- label: Jojo Rabbit
+2014:
+   deaths:
+      - Q860479 # Philipp seymor hoffmann
+
+201d:
+   deaths:
+      - Q270935  # Chris Cornell
+     
+2019: 
+   deaths:
+      - label: Marie Fredrikkson
+   films:
+      - Q54862508  # Jojo Rabbit
+   misc:
+      - Q81068910  # Corona Virus
+
 2020:
-- entity:
-    label: Kirk Douglas
-  type: death
+   deaths:
+      - Q104027    # Kirk Douglas 
+   misc:
+      - Q85636305  # Hanau Shootings
