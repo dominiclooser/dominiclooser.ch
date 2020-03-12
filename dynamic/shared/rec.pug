@@ -4,26 +4,28 @@ pagetitle: Deine Empfehlungen
 extends /default
 include /cards
 
+mixin section(items, title)
+   if items
+      section.s1
+         header.s1-header
+            h2.h2= title
+         main.s1-main.grid.randomly-colored
+            for item in items
+               .rec
+                  h3.rec-title: wd-entity(id=item, label, lang='en')
+
+
 block content
    if local.recs
-      if local.recs.people
-         section.s1
-            header.s1-header
-               h2.h2 Personen
-            main.s1-main.grid.colored-cards
-               for person in local.recs.people
-                  .card
-                     h3.card-title= person.label
+      +section(local.recs.people, 'Personen')
+      +section(local.recs.books, 'Bücher')
+      +section(local.recs.films, 'Filme')
+      +section(local.recs.tv, 'Serien')
+      
+      
 
-      if local.recs.books
-         section.s1
-            header.s1-header
-               h2.h2 Bücher
-            main.s1-main.grid.colored-cards
-               for book in local.recs.books
-                  .card
-                     h3.card-title= book.label
 
+                  
    //- if local.likes
    //-    section.s1
    //-       header.s1-header

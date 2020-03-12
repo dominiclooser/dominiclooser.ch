@@ -1,14 +1,16 @@
-characters:
-- label: Marge Simpson
 forms:
-- Marguerite
-- Margit
-- Margot
-- Maggie
-- Margarete
-- Gretchen
-- Greta
-- Grete
+   - Marguerite
+   - Margit
+   - Margot
+   - Maggie
+   - Margarete
+   - Gretchen
+   - Greta
+   - Grete
+
 people:
-- label: Greta Thunberg
-- label: Greta Gerwig
+   - Q56434717  # Greta Thunberg
+   - Q271967  # Greta Gerwig
+
+characters:
+   - Q7828  # Marge Simpson

@@ -1,7 +1,7 @@
 recs:
-   - Q83504291  # Buddhism plain and simple
-   - Q83504496  # Tao of fully feeling
-   # Westworld
-   - Q17572811
-   # Fight Club   
-   - Q190050
+   books:
+      - Q83504496  # Tao of fully feeling
+   tv:
+      - Q17572811  # Westworld
+   films:   
+      - Q190050    # Fight Club  

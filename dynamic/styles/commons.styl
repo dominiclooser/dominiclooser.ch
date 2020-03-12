@@ -14,22 +14,24 @@ body
 // layout //
 ////////////
 
+.square-grid
+    display: grid
+
+
 .grid
     display: grid
      //repeat(auto-fit, minmax(min-column-width, 1fr ))
     grid-column-gap: var(--semi-unit)
     grid-row-gap: var(--semi-unit)
-    @media m
+    @media two-cols
         grid-template-columns: 1fr 1fr
-    @media l
+    @media three-cols
         grid-template-columns: 1fr 1fr 1fr
-
-
 
 
 ////////////////
 // typography //
-///////////////
+////////////////
 
 .s1
     padding-top: var(--unit)
@@ -47,8 +49,8 @@ body
     margin-top: var(--semi-unit)
 
 .h1
+    font-family: heading-font
     color: heading-color
-    font-weight: 300
     font-size: var(--xxxl)
     @media big-mobile
         font-size: var(--xxxxl)
@@ -58,7 +60,6 @@ body
 
 .h2
     font-size: var(--l)
-    font-weight: 400
 
 .h3
     text-transform: uppercase
@@ -209,10 +210,15 @@ body
 .card-section + .card-section
     margin-top: var(--semi-unit)
 
+.card-list
+    vlist(spacing: 0.5em, border: 1px solid dark)
+
 .card-images
     display: grid
     grid-template-columns: 1fr 1fr
     grid-gap: var(--semi-unit)
+    img
+        max-height: none
 
 .colored-cards
     .card

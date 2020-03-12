@@ -23,7 +23,7 @@ mixin lightboxImage(imageId, lightboxGroup)
    - mPath = '/images/m/' + imageId
    - lPath = '/images/l/' + imageId
    
-   if ! lightboxGroup
+   if !lightboxGroup
       - lightboxGroup = imageId
 
    a(href=mPath, data-lightbox=lightboxGroup, class=attributes.class)

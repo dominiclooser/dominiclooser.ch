@@ -1,3 +1,9 @@
+recs:
+   films:
+      - Q59931      # garden state
+      - Q14578326   # wish i was here
+      - Q260509     # submarine
+
 likes:
    films:
       - Q322206  # Heavenly Creatures

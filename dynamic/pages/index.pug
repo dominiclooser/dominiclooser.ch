@@ -1,6 +1,3 @@
----
-pagetitle: hello
----
 extends /default
 include /mixins
 include /image
@@ -21,6 +18,26 @@ block content
             Lesungen. Und noch ein paar Sachen mehr. Hallo!
       .page-content.grid.colored-cards
          +wasrauskam
+
+         mixin sectionCard(title, link)
+            section.card
+               header.card-header
+                  h2.card-title
+                     if link
+                        a(href=link).underline-on-hover= title
+                     else
+                        = title
+               main.card-main
+                  block
+                  
+
+         +sectionCard('Grafik', 'grafik')
+            section.card-section
+               +lightboxImage('grafik/das-glueck.jpg')
+            section.card-section
+               a(href='/grafik').arrow alle Grafiken
+
+
          //- section.card
          //-    h2.card-title Nächste Auftritte
          //-    +performancelist
@@ -32,21 +49,15 @@ block content
          //-    //- h3.card-section= site.title
          //-    .card-section
          //-       a(href='/web').arrow-link alle Webseiten 
-         section.card
-            header.card-header
-               h2.card-title: a(href='grafik').underline-on-hover Grafik
-            main.card-main
-               section.card-section
-                  +lightboxImage('grafik/das-glueck.jpg')
-               section.card-section
-                  a(href='/grafik').arrow alle Grafiken
+         
          //- section.card
          //-    h2.card-title T-Shirts
          //-    a(href='https://image.spreadshirtmedia.net/image-server/v1/products/141240618/views/1,width=650,height=650,appearanceId=2,crop=detail,modelId=1405,version=1542191349.jpg')
          //-       img(src='https://image.spreadshirtmedia.net/image-server/v1/products/141240618/views/1,width=650,height=650,appearanceId=2,crop=detail,modelId=1405,version=1542191349.jpg')
-         section.card
-            h2.card-title Projekte
+         
+         +sectionCard('Projekte')
             ul.arrow-links
+               li: a(href='https://thebinarytruth.com') The Binary Truth
                li: a(href='projekt-799') Projekt 799
                li: a(href='http://diekrassetassegmbh.ch') Die Krasse Tasse GmbH
                li: a(href='/die-essenz-des-lebens') Die Essenz des Lebens
@@ -54,14 +65,14 @@ block content
                li: a(href='https://facebook.com/AnalogeTage/') Analoge Tage
                li TsnuK (inaktiv)
                li Cinemap (inaktiv)
-         section.card
-            h2.card-title Dienstleistungen
+
+         +sectionCard('Dienstleistungen')
             ul.arrow-links
                li: a(href='/web') Web: Design und Programmierung
                li: a(href='/grafik') Typographische Gestaltung
                li: a(href='/text') Lesungen und Performances
-         section.card
-            h2.card-title Kontakt
+
+         +sectionCard('Kontakt')
             ul.arrow-links
                li: a(href='mailto:#{email}') Email
                li: a(href='https://www.facebook.com/dominic.looser') Facebook

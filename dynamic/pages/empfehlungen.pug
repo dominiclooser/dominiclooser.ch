@@ -1,0 +1,9 @@
+---
+pagetitle: Empfehlungen
+---
+extends /default
+
+block content
+   ul.color-on-hover-links
+      for rec in global.recs
+         li: a(href=rec.id)= rec.id

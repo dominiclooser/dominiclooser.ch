@@ -2,6 +2,7 @@ recs:
    books:
       - Q83504291  # Buddshism plain and simple
       - Q83504496  # Tao of fully feeling
+      # cptsd
    people:
       - Q442384    # Pema Chödrön
       - Q6276882   # Jordan Peterson

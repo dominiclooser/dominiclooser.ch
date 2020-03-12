@@ -38,6 +38,7 @@ content:
          # Taika Waititi
          # Wes Anderson
          # Ken Loach
+         - Q40035   # Richard Linklater
          - Q56095   # Coen Brothers
          - Q459349  # Noah Baumbach
          - Q312751  # Charlie Kaufmann
@@ -51,13 +52,16 @@ content:
          - label: Lukas Moodysson
    
    Filme:
+
       # Q14578326   # wish i was here
+      # Q488222     # the host
 
       Lieblingsfilme:
          - Q669591    # Happy go lucky
          - Q300555    # A serious man
 
       Fastdokumentarisch:
+         # the wrestler
          - Q646426    # Kids
          - Q1675435   # It's a free world
          - Q1963079   # Naked
@@ -71,9 +75,11 @@ content:
          - Q19864603  # Manchester by the sea
          # Blue Valentine 
          
-      'Wegen Soundtrack':
+      Musik:
+         - Q137754   # Once
+         - Q2935739  # Begin Again
          -  label: Herr Lehmann
-         -  label: 28 Days Later
+         # -  label: 28 Days Later
          
       Apokalypse:
          -  label: 28 Days Later

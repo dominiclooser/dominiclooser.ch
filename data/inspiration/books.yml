@@ -1,4 +1,5 @@
 title: Buch
+flat: true
 content:
    misc:
       -  label: "Douglas Adams: The Hitchhiker's Guide to the Galaxy"

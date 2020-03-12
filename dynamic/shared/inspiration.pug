@@ -9,7 +9,7 @@ block content
                header.card-header
                   h3.card-title= cardTitle
                main.card-main
-                  ul
+                  ul.card-list
                      for item in cardItems
                         if item.link
                            li: a(href=item.link)= item.label
@@ -27,7 +27,7 @@ block content
                      header.card-header
                         h3.card-title= cardTitle
                      main.card-main
-                        ul
+                        ul.card-list
                            for item in cardItems
                               if item.link
                                  li: a(href=item.link)= item.label

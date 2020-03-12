@@ -9,6 +9,7 @@ toml = require 'toml'
 pug = require 'pug'
 replaceExt = require 'replace-ext'
 { join, parse } = require 'path'
+path = require 'path'
 _ = require 'lodash'
 yaml = require 'yaml'
 matter = require 'gray-matter'
@@ -16,15 +17,18 @@ rimraf = require 'rimraf'
 marked = require 'marked'
 moment = require 'moment'
 
+DATA_DIR = 'data'
 PROCESSED_DATA_DIR = '.temp/data'
 OUT_DIR = 'out'
 CONFIG_PATH = 'config.toml'
+PAGES_PATH = 'dynamic/pages'
 
-getData = (path) ->
-    name = parse(path).base
+
+getData = (dataPath) ->
+    name = parse(dataPath).base
     id = replaceExt(name, '')
-    suffix = parse(path).ext
-    content = fs.readFileSync(path, 'utf8')
+    suffix = parse(dataPath).ext
+    content = fs.readFileSync(dataPath, 'utf8')
     data = {}
 
     if suffix == '.md'
@@ -44,24 +48,25 @@ getData = (path) ->
         catch error
             console.log(error)
     
-    data.id = id
+    if data
+        data.id = id
     return data
 
 getDataObject = (dir) ->
     data = {}
     
     for name in fs.readdirSync(dir)
-        path = join(dir, name)
+        dataPath = join(dir, name)
         id = replaceExt(name, '')
         id = id.split('-').join('_')
-        if fs.lstatSync(path).isDirectory()
+        if fs.lstatSync(dataPath).isDirectory()
             try
-                data[id] = getDataObject(path)
+                data[id] = getDataObject(dataPath)
             catch e
                 console.error(e)
         else
             try
-                data[id] = getData(path)
+                data[id] = getData(dataPath)
             catch e
                 console.log(e)
     return data
@@ -147,7 +152,7 @@ config =
             tasks: 'coffee'
         data:
             files: 'data/**/*'
-            tasks: ['exec:process_data', 'pug', 'strip-extensions']
+            tasks: ['pug', 'strip-extensions']
         pages:
             files: ['dynamic/pages/*', 'dynamic/shared/*']
             tasks: ['pug', 'strip-extensions']
@@ -178,6 +183,11 @@ module.exports = (grunt) ->
     grunt.registerTask 'make-dirs', ->
         if !fs.existsSync(OUT_DIR)
             fs.mkdirSync(OUT_DIR)
+        for name in fs.readdirSync(PAGES_PATH)
+            if fs.lstatSync(path.join(PAGES_PATH, name)).isDirectory()
+                outSubdir = path.join(OUT_DIR, name)
+                if ! fs.existsSync(outSubdir)
+                    fs.mkdirSync(outSubdir)
 
     grunt.registerTask 'strip-extensions', ->
         for filePath in glob.sync('out/**/*.html')
@@ -191,21 +201,24 @@ module.exports = (grunt) ->
                 fs.renameSync(filePath, newDir + '/index.html')
     
     grunt.registerTask 'pug', ->
-        globals = 
-            global: getDataObject(PROCESSED_DATA_DIR)
         
-        globalData = getDataObject(PROCESSED_DATA_DIR)
+        globals = 
+            global: getDataObject(DATA_DIR)
+
+        globalData = getDataObject(DATA_DIR)
         
         globals = 
             global: globalData
-
+        
         getImages = (dirId) -> 
             answer = []
             baseDir = 'dynamic/images/' + dirId
             if fs.existsSync(baseDir)
                 for name in fs.readdirSync(baseDir)
-                    fileId = dirId + '/' + name
-                    answer.push(fileId)
+                    ext = path.parse(name).ext
+                    if ext in ['.jpg', '.png']
+                        fileId = dirId + '/' + name
+                        answer.push(fileId)
             return answer
         
         containsImages = (dirId) ->
@@ -224,7 +237,7 @@ module.exports = (grunt) ->
             containsImages: containsImages
             marked: marked
             
-
+       
         if fs.existsSync(CONFIG_PATH)
             
             configString = fs.readFileSync(CONFIG_PATH)
@@ -250,17 +263,17 @@ module.exports = (grunt) ->
                 
                 dataGlob = generator.data
 
-                for path in glob.sync(join(PROCESSED_DATA_DIR, dataGlob))
+                for dataPath in glob.sync(join(DATA_DIR, dataGlob))
                          
                     local = {}
-                    _.merge(local, getData(path), templateData)
+                    _.merge(local, getData(dataPath), templateData)
                     locals = 
                         local: local
 
                     options = {}
                     _.merge(options, locals, globals, globalOptions)
 
-                    process.stdout.write("Rendering #{templatePath} with data from #{path} ... ")
+                    process.stdout.write("Rendering #{templatePath} with data from #{dataPath} ... ")
                     try
                         html = pug.render(templateContent, options)
                     catch e
@@ -268,7 +281,7 @@ module.exports = (grunt) ->
                         console.error(e)
                         continue
                         
-                    key = parse(path).base
+                    key = parse(dataPath).base
                     
                     name = replaceExt(key, '.html')
                     targetFile = join(targetDirPath, name)
@@ -276,8 +289,8 @@ module.exports = (grunt) ->
                     fs.writeFileSync(targetFile, html)
                     console.log("done. Generated #{targetFile}")
                
-        for path in glob.sync('dynamic/pages/*.pug')
-            string = fs.readFileSync(path)
+        for pagePath in glob.sync('dynamic/pages/**/*.pug')
+            string = fs.readFileSync(pagePath)
             parsed = matter(string)
             
             options = {}
@@ -288,16 +301,21 @@ module.exports = (grunt) ->
             pugString = parsed.content
             
             try
-                console.log('trying to compile ' + path)
+                process.stdout.write("Compiling #{pagePath} ... ")
                 html = pug.render(pugString, options)
             catch e
+                console.log('error.')
                 console.error(e)
                 continue
 
-            base = parse(path).base
-            target = join(OUT_DIR, replaceExt(base, '.html'))
-           
+            relativePath = path.relative(PAGES_PATH, pagePath)
+            relativeTarget = replaceExt(relativePath, '.html')
+            target = join(OUT_DIR, relativeTarget)
+            console.log("done. Writing to #{target}")
             fs.writeFileSync(target, html)
+            
+            # base = path.parse(pagePath).base
+            
 
     grunt.registerTask 'build', ['responsive_images', 'pug', 'stylus', 'coffee', 'copy:static', 'strip-extensions']
     grunt.registerTask 'default', ['build', 'watch']
