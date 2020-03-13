@@ -1,7 +1,17 @@
 extends /default
 
+mixin item(data)
+   if typeof data == 'string' && data.startsWith('Q')
+      button(id=data): wd-entity(id=data, label, lang='en')
+   else if data.link
+      a(href=data.link)= data.label
+   else if data.label 
+      = data.label
+   else
+      = data
+      
+
 block content
-   
    if local.flat
       .grid.colored-cards
          for cardItems, cardTitle in local.content
@@ -11,10 +21,8 @@ block content
                main.card-main
                   ul.card-list
                      for item in cardItems
-                        if item.link
-                           li: a(href=item.link)= item.label
-                        else
-                           li= item.label
+                        li: +item(item)
+                        
 
    else
       for sectionContent, section in local.content
@@ -29,7 +37,4 @@ block content
                      main.card-main
                         ul.card-list
                            for item in cardItems
-                              if item.link
-                                 li: a(href=item.link)= item.label
-                              else
-                                 li= item.label
+                              li: +item(item)

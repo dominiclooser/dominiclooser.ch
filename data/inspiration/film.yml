@@ -37,7 +37,7 @@ content:
          # Harmony Korine
          # Taika Waititi
          # Wes Anderson
-         # Ken Loach
+         - Q55238   # ken loach
          - Q40035   # Richard Linklater
          - Q56095   # Coen Brothers
          - Q459349  # Noah Baumbach
@@ -48,7 +48,7 @@ content:
          - label: Ulrich Seidl
          - label: Darren Aronofsky
          - label: Danny Boyle
-         - label: Mike Leigh
+         - Q315756 # Mike Leigh
          - label: Lukas Moodysson
    
    Filme:
@@ -85,8 +85,7 @@ content:
          -  label: 28 Days Later
 
       Geheimtipps: 
-         -  label: Cold Souls
-            link: https://www.imdb.com/label/tt1127877
+         -  Q4499335   # cold souls
          -  label: Holy Motors 
 
       Dokumentarfilme:
@@ -96,8 +95,7 @@ content:
          -  label: Young@Heart 
          -  label: Crumb
             link: https://en.wikipedia.org/wiki/Crumb_(film)
-         -  label: Exit Through The Gift Shop
-            link: https://en.wikipedia.org/wiki/Exit_Through_the_Gift_Shop
+         -  Q1119322  # exit through the gift shop
          -  label: Waltz with Bashir
             link: https://en.wikipedia.org/wiki/Waltz_with_Bashir
          -  label: Cinemania
@@ -127,13 +125,13 @@ content:
          -  label: The Great Dictator
             link: https://www.imdb.com/label/tt0032553
          -  label: "No Man's Land"
-         -  label: Ed Wood 
+         -  Q639481  # Ed Wood
 
       Skandinavien:
          -  label: 101 Reykjavik (Island)
             link: http://en.wikipedia.org/wiki/101_Reykjav%C3%ADk
          -  label: Nói albinói (Island)
-         -  label: Nord (Norwegen)
+         - Q7053629   # nord
          -  label: Tillsammans (Schweden)
          -  label: Lilya 4-ever (Schweden)
             link: https://en.wikipedia.org/wiki/Lilya_4-ever

@@ -1,4 +1,4 @@
-////////////
+    ////////////
 // layout //
 ////////////
 
@@ -27,18 +27,24 @@ grid(min-column-width = 100px, gap = var(--unit))
         display: flex
 
 .textplus-text
-    margin: var(--unit) 0 0 0
+    flex-basis: 50%
+    max-width: max-text-width
     @media textplus
-        margin: 0 var(--unit) 0 0
+        margin-right: var(--unit)
 
 .textplus-plus
+    flex-basis: 50%
+    margin-top: var(--unit)
     align-self: left
+    @media textplus
+        margin: 0
 
 .plustext
     @media textplus
         display: flex
 
 .plustext-text
+    max-width: max-text-width
     margin: var(--unit) 0 0 0
     @media textplus
         margin: 0 0 0 var(--unit)
@@ -116,7 +122,7 @@ grid(min-column-width = 100px, gap = var(--unit))
     li:before
         content: '\2192 \a0'        
 
-stacked-list(spacing=var(--semi-unit), border=1px dotted dark)
+vlist(spacing=var(--semi-unit), border='1px dotted dark')
     list-style: none
     padding: 0
     li  
@@ -125,7 +131,7 @@ stacked-list(spacing=var(--semi-unit), border=1px dotted dark)
         &:first-child
             border-top: border
 
-hlist(sep='', spacing-left=0.5em, spacing-right=0.5em)
+hlist(sep = '', spacing-left = 0.5em, spacing-right = 0.5em)
     list-style: none
     margin: 0
     li 
