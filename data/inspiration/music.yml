@@ -24,7 +24,10 @@ content:
       Battle Rap:
          - Q15975687 # Karate Andi
       Singer/Songwriter:
+         -  label: Conor Oberst
          -  label: Bob Dylan
+         -  label: Mani Matter
+         -  label: Funny van Dannen
          -  label: Fee Badenius
          -  label: Conor Oberst
          -  label: Mani Matter
@@ -32,36 +35,43 @@ content:
          -  label: Funny van Dannen
          -  label: Manuel Stahlberger
       Rap:
+         - Q15907277  # Käptn Peng und die Tentakel von Delphi
+         - Q66729708  # Kummer
          -  label: Die Antwoord
          -  label: Beastie Boys
-         -  label: Scroobius Pip
-         -  label: Käptn Peng
+         - Q17334464  # Scroobius Pip
          -  label: Die Fantastischen Vier
          -  label: Money Boy
    Land:
+      England:
+         - Q17334464  # Scroobius Pip
       Deutschland:
-         - Q895739  # Element of crime
-         - Q694170  # Die Fantastischen Vier
-         - Q157079  # Wir sind Helden
+         - Q880650    # PeterLicht
+         - Q15907277  # Käptn Peng und die Tentakel von Delphi
+         - label: Tocotronic
+         - label: Grossstadtgeflüster
+         - Q445911    # Kettcar
+         - Q509334    # Kraftclub
+         - Q895739    # Element of crime
+         - Q694170    # Die Fantastischen Vier
+         - Q157079    # Wir sind Helden
       Österreich:
          -  label: Seiler und Speer
             link: http://seilerundspeer.at
-         -  label: Ludwig Hirsch
-         -  label: Molden, Resetarits, Soyka, Wirth
+         -  label: Ludwig Hirsch 
       Schweiz:
          -  label: Stephan Eicher
          -  label: Patent Ochsner
          -  label: Mani Matter
       USA:
+         # Nirvana
          - Q915714  # Bright Eyes
       Island: 
          - Q42455   # Björk
    Werke:
-      Diverse:
-         -  label: Tocotronic
-         -  label: Grossstadtgeflüster
-            link: http://grossstadtgefluester.de/  
       Songs:
          -  label: Die Flut
             creator: Joachim Witt, Peter Heppner
             link: https://www.youtube.com/watch?v=vIOSucOj2_k
+      # Alben:
+      #    -  label: Molden, Resetarits, Soyka, Wirth

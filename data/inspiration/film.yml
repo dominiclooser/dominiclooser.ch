@@ -82,7 +82,7 @@ content:
          # -  label: 28 Days Later
          
       Apokalypse:
-         -  label: 28 Days Later
+         - Q221075     # 28 days later
 
       Geheimtipps: 
          -  Q4499335   # cold souls
@@ -118,9 +118,8 @@ content:
          -  label: American History X 
 
       Absurd und lustig:
-         -  label: 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb'
-            link: https://www.imdb.com/label/tt0057012
-         -  label: Exit Through the Gift Shop
+         -  Q105702    # dr. strangelove
+         -  Q1119322   # exit thourgh the gift shop
             link: https://www.imdb.com/label/tt1587707
          -  label: The Great Dictator
             link: https://www.imdb.com/label/tt0032553
