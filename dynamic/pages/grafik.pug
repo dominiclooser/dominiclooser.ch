@@ -1,0 +1,24 @@
+---
+pagetitle: Grafik
+---
+extends /default
+include /image
+
+block content
+   .page-intro
+      p.
+         Ich gestalte Bücher, Postkarten, T&#8209;Shirts, Tassen, Poster und Flyer. Am liebsten in Verbindung 
+         mit Sprache und Typographie. 
+   .page-content
+      .grafik.columns
+         for item in global.grafik
+            +lightboxImage(`grafik/${item.filename}`, lightboxGroup='grafik')
+  
+
+block append scripts
+   script(src='/scripts/masonry.pkgd.min.js')
+   script(src='/scripts/imagesloaded.js')
+   script(src='/scripts/lightbox.min.js')
+   script(src='/scripts/masonry.js')
+   
+   
