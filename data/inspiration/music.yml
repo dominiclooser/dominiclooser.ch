@@ -45,6 +45,7 @@ content:
    Land:
       England:
          - Q17334464  # Scroobius Pip
+         - Q485820    # Blur
       Deutschland:
          - Q880650    # PeterLicht
          - Q15907277  # Käptn Peng und die Tentakel von Delphi
@@ -65,10 +66,14 @@ content:
          -  label: Mani Matter
       USA:
          # Nirvana
-         - Q915714  # Bright Eyes
+         - Q915714    # Bright Eyes
       Island: 
-         - Q42455   # Björk
+         - Q42455     # Björk
    Werke:
+      Zurück:
+         - Q87988832  # Bring it back
+         - Q87989169  # Back in town
+         - Q87988680  # Die Fotzen sind wieder da
       Songs:
          -  label: Die Flut
             creator: Joachim Witt, Peter Heppner

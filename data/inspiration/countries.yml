@@ -16,6 +16,8 @@ content:
          -  label: Scroobius Pip
             link: http://scroobiuspip.co.uk
    Amerika:
+      USA:
+         - Q17457     # Donald Knuth
       Kanada: 
          -  label: Jordan Peterson
          -  label: Ellen Page

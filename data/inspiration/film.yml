@@ -78,15 +78,15 @@ content:
       Musik:
          - Q137754   # Once
          - Q2935739  # Begin Again
-         -  label: Herr Lehmann
+         - label: Herr Lehmann
          # -  label: 28 Days Later
          
       Apokalypse:
          - Q221075     # 28 days later
 
       Geheimtipps: 
-         -  Q4499335   # cold souls
-         -  label: Holy Motors 
+         - Q4499335   # cold souls
+         - label: Holy Motors 
 
       Dokumentarfilme:
          # the unmaking of don quijote
@@ -102,7 +102,7 @@ content:
             link: https://www.imdb.com/label/tt0281724
 
       Schön und heftig:
-         - Q676047    # Blue Valentine
+         -  Q676047    # Blue Valentine
          -  label: Never Let Me Go
          -  label: The Secret Life of Words
          -  label: Trainspotting
@@ -120,7 +120,6 @@ content:
       Absurd und lustig:
          -  Q105702    # dr. strangelove
          -  Q1119322   # exit thourgh the gift shop
-            link: https://www.imdb.com/label/tt1587707
          -  label: The Great Dictator
             link: https://www.imdb.com/label/tt0032553
          -  label: "No Man's Land"
@@ -130,7 +129,7 @@ content:
          -  label: 101 Reykjavik (Island)
             link: http://en.wikipedia.org/wiki/101_Reykjav%C3%ADk
          -  label: Nói albinói (Island)
-         - Q7053629   # nord
+         -  Q7053629   # nord
          -  label: Tillsammans (Schweden)
          -  label: Lilya 4-ever (Schweden)
             link: https://en.wikipedia.org/wiki/Lilya_4-ever

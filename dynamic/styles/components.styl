@@ -17,9 +17,7 @@
     max-width: max-page-width
 
 .fullwidth-wrapper
-    padding: 0 var(--unit)
-    @media l
-        padding: 0 var(--four-units)
+    padding: 0 var(--page-padding)
 
 .text-wrapper
     max-width: max-text-width
@@ -61,7 +59,7 @@ grid(min-column-width = 100px, gap = var(--unit))
     align-self: left
 
 .columns
-    columns: 200px
+    column-width: 200px
     column-gap: var(--semi-unit)
     *
         margin-bottom: var(--semi-unit)
@@ -202,4 +200,5 @@ dl(row-gap=var(--semi-unit), term-width=min-content, weight=bold)
         left: 0
         width: 100%
         height: 100%
+
 

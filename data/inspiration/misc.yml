@@ -12,9 +12,10 @@ content:
       -  label: Noe Text
       -  label: Inconsolata
    Software:
-      -  Q86924750  # Pug
-      -  Q28865     # Python
-      -  Q1106819   # Coffeescript
+      - Q5301      # TeX
+      - Q86924750  # Pug
+      - Q28865     # Python
+      - Q1106819   # Coffeescript
       -  label: IINA
       -  label: LaTeX
       -  label: z

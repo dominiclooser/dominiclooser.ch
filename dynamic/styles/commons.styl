@@ -14,19 +14,9 @@ body
 // layout //
 ////////////
 
-.square-grid
-    display: grid
-
 
 .grid
-    display: grid
-     //repeat(auto-fit, minmax(min-column-width, 1fr ))
-    grid-column-gap: var(--semi-unit)
-    grid-row-gap: var(--semi-unit)
-    @media two-cols
-        grid-template-columns: 1fr 1fr
-    @media three-cols
-        grid-template-columns: 1fr 1fr 1fr
+    grid(min-column-width: 400px, gap: var(--semi-unit))
 
 
 ////////////////
@@ -60,6 +50,7 @@ body
 
 .h2
     font-size: var(--l)
+    color: heading-color
 
 .h3
     text-transform: uppercase
