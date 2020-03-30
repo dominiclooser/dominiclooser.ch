@@ -1,4 +1,5 @@
 ---
+title: TeX
 wikidata_id: Q5301
 pagetitle: TeX
 author: Donald E. Knuth

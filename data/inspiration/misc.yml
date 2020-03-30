@@ -34,6 +34,8 @@ content:
       -  label: dfdu AG
          link: http://dfdu.org
    Produkte:
+      -  label: Place of Places
+         link: http://placeofplaces.com
       -  label: Nuuna Notizbücher
          link: https://www.nuuna.com
       -  label: Undies For Two

@@ -1,6 +1,6 @@
 mixin item(data)
    if typeof data == 'string' && data.startsWith('Q')
-      button.show-item(data-id=data): wd-entity(id=data, label, lang='en')
+      button(id=data): wd-entity(id=data, label, lang='en')
    else if data.link
       a(href=data.link)= data.label
    else if data.label 

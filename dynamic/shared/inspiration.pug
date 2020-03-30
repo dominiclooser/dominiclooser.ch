@@ -23,8 +23,11 @@ block content
                for cardItems, cardTitle in sectionContent
                   .card
                      header.card-header
-                        h3.card-title= cardTitle
+                        h3.card-title
+                           +item(cardTitle)
                      main.card-main
                         ul.card-list
                            for item in cardItems
                               li: +item(item)
+
+   script(src='/scripts/wikidata.js')

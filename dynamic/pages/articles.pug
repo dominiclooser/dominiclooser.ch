@@ -1,0 +1,9 @@
+---
+pagetitle: Artikel
+---
+extends /default
+
+block content
+   ul.default-list
+      for article in global.articles
+         li: a(href=article.id)= article.title

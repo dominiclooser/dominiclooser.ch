@@ -1,9 +1,19 @@
 extends /default
+include /wikidata
 
 block content
-   dl.default-dl
-      for prop in local.props
-         dt= prop.key
-         dd= prop.value
+   if local.props
+      dl.dl
+         for prop in local.props
+            dt= prop.key
+            dd 
+               if typeof prop.value == 'string'
+                  +item(prop.value)
+               else
+                  ul
+                     for value in prop.value
+                        li
+                           +item(value)
 
-   div= local.content
+   if local.content
+      != local.content

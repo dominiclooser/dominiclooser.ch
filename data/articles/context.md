@@ -1,4 +1,5 @@
 ---
+title: ConTeXt
 pagetitle: ConTeXt
 props:
    -  key: Author
