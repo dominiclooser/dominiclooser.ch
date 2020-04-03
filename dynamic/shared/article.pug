@@ -15,5 +15,22 @@ block content
                         li
                            +item(value)
 
+   section.s1
+      header.s1-header
+         h2.h2 Videos
+      .s1-main
+         ul.default-list.underlined-on-hover-links
+            for video in local.videos
+               li: a(href='https://www.youtube.com/watch?v=' + video.youtube_id)= video.title
+
+   section.s1
+      header.s1-header
+         h2.h2 Resources
+      .s1-main
+         ul.default-list.underlined-on-hover-links
+            for res in local.resources
+               li
+                  +item(res)
+
    if local.content
-      != local.content
+      main.spaced-paragraphs!= local.content

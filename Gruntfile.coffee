@@ -15,7 +15,7 @@ yaml = require 'yaml'
 matter = require 'gray-matter'
 rimraf = require 'rimraf'
 marked = require 'marked'
-moment = require 'moment'
+moment = require 'moment-timezone'
 
 DATA_DIR = 'data'
 PROCESSED_DATA_DIR = '.temp/data'
@@ -74,6 +74,7 @@ getDataObject = (dir) ->
 config =
     exec:
         process_data: 'dspg'
+        encrypt: 'staticrypt out/articles/corona/index.html keinpasswort -o out/articles/corona/index.html'
     responsive_images:
         options:
             engine: 'im'
@@ -269,7 +270,6 @@ module.exports = (grunt) ->
                     _.merge(local, getData(dataPath), templateData)
                     locals = 
                         local: local
-
                     options = {}
                     _.merge(options, locals, globals, globalOptions)
 
@@ -317,7 +317,7 @@ module.exports = (grunt) ->
             # base = path.parse(pagePath).base
             
 
-    grunt.registerTask 'build', ['responsive_images', 'pug', 'stylus', 'coffee', 'copy:static', 'strip-extensions']
+    grunt.registerTask 'build', ['responsive_images', 'pug', 'stylus', 'coffee', 'copy:static', 'strip-extensions', 'exec:encrypt']
     grunt.registerTask 'default', ['build', 'watch']
     grunt.registerTask 'deploy', ['clean', 'make-dirs', 'build', 'copy:production', 'gh-pages:production']
     grunt.registerTask 'stage', ['clean-build','copy:stage', 'gh-pages:stage']
