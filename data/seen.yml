@@ -1,0 +1,12 @@
+films:
+   -  what: Q696928    # funny games
+      when: 20-04-19
+
+   -  when: 2020-04-17
+      what: Q67628998  # the platform
+   
+   -  what: Q55907451  # midsommar
+      when: 20-02-16
+
+   -  when: 20-02-23
+      what: Q48671199  # marriage story 

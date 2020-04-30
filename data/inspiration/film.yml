@@ -1,5 +1,9 @@
 title: Film
+image: 'backgrounds/film.jpg'
 content:
+   # Abre los Ojos
+   # the host
+   # Q1130310  the skin i live in
    # marriage story
    # Eternal sunshine of a spotless mind
    # Q649165  # Being John Malkovich
@@ -9,7 +13,6 @@ content:
    # night on earth
    # coffee and cigarettes
    # the darjeeling limited
-   # blue valentine
    # me and you and everyone we know
    # Ulrich Seidl Filme
    # Wes Anderson Filme
@@ -17,50 +20,22 @@ content:
    # me and earl and the dying girl
    # frank
    # magnolia
+
+
    # kategorie: sonderbar sympathisch, kitchen sink
-   # fish tank
-   
-   Personen:
-
-      Schauspiel: 
-         # Mark Ruffolo
-         - Q236875  # Thora Birch
-         - Q156796  # Michelle Williams
-         - label: Chloë Sevigny
-         - Q233466  # Elisabeth Moss 
-         - Q57147   # Michael Fassbender
-         - Q219655  # Carey Mulligan
-
-      Regie:
-
-         # Jim Jarmusch
-         # Harmony Korine
-         # Taika Waititi
-         # Wes Anderson
-         - Q55238   # ken loach
-         - Q40035   # Richard Linklater
-         - Q56095   # Coen Brothers
-         - Q459349  # Noah Baumbach
-         - Q312751  # Charlie Kaufmann
-         - Q25089   # Woody Allen
-         - label: Stanley Kubrik
-         - label: Michel Gondry
-         - label: Ulrich Seidl
-         - label: Darren Aronofsky
-         - label: Danny Boyle
-         - Q315756 # Mike Leigh
-         - label: Lukas Moodysson
    
    Filme:
       # Q59931      # garden state
       # Q14578326   # wish i was here
       # Q488222     # the host
+      # Q144756     # let the right one in
 
       Lieblingsfilme:
          - Q669591    # Happy go lucky
          - Q300555    # A serious man
 
       Fastdokumentarisch:
+         # fish tank
          # the wrestler
          - Q646426    # Kids
          - Q1675435   # It's a free world
@@ -71,6 +46,7 @@ content:
          - Q860479    # Synecdoche Ney York
 
       Psychologisch:
+         - Q165699    # melancholia
          - Q909445    # Shame
          - Q19864603  # Manchester by the sea
          # Blue Valentine 
@@ -81,7 +57,7 @@ content:
          - label: Herr Lehmann
          # -  label: 28 Days Later
          
-      Apokalypse:
+      Dystopia:
          - Q221075     # 28 days later
 
       Geheimtipps: 
@@ -101,7 +77,7 @@ content:
          -  label: Cinemania
             link: https://www.imdb.com/label/tt0281724
 
-      Schön und heftig:
+      Heftig und manchmal schön:
          -  Q676047    # Blue Valentine
          -  label: Never Let Me Go
          -  label: The Secret Life of Words
@@ -124,6 +100,46 @@ content:
             link: https://www.imdb.com/label/tt0032553
          -  label: "No Man's Land"
          -  Q639481  # Ed Wood
+   
+   Personen:
+
+      Schauspiel: 
+         - Q236875  # Thora Birch
+         - Q156796  # Michelle Williams
+         - label: Chloë Sevigny
+         - Q233466  # Elisabeth Moss 
+         - Q57147   # Michael Fassbender
+         - Q219655  # Carey Mulligan
+
+      Regie:
+         # Jim Jarmusch
+         # Harmony Korine
+         # Taika Waititi
+         # Wes Anderson
+         - Q504656  # todd solondz
+         - Q55238   # ken loach
+         - Q315756  # Mike Leigh
+         - Q40035   # Richard Linklater
+         - Q56095   # Coen Brothers
+         - Q459349  # Noah Baumbach
+         - Q312751  # Charlie Kaufmann
+         - Q25089   # Woody Allen
+         - label: Stanley Kubrik
+         - label: Michel Gondry
+         - label: Ulrich Seidl
+         - label: Darren Aronofsky
+         - label: Danny Boyle
+         - label: Lukas Moodysson
+   
+
+
+      
+
+   Geographisch:
+      
+      Österreich:
+         - Q84199    # Michael Haneke
+         - Q112182   # Ulrich Seidl
 
       Skandinavien:
          -  label: 101 Reykjavik (Island)

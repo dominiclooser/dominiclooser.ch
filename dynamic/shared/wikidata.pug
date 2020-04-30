@@ -1,10 +1,10 @@
-mixin item(data)
-   if typeof data == 'string' && data.startsWith('Q')
-      //- button.show-item(data-id=data): wd-entity(id=data, label, lang='en')
-      wd-entity(id=data, label, lang='en')
+mixin item(data, lang='en')
+   if typeof data == 'string' 
+      if data.startsWith('Q')
+         button.show-item(data-id=data): wd-entity(id=data, label, lang=lang)
+      else
+         = data
    else if data.link
       a(href=data.link)= data.label
    else if data.label 
       = data.label
-   else
-      = data

@@ -1,18 +1,19 @@
 extends /base
 
 block main
+   - lang = 'en'
    .fullwidth-wrapper
       include /navigation
       block header
-         if local.pagetitle || local.title
-            header.page-heading
-               h1
-                  if local.pagetitle
-                     p.page-title= local.pagetitle
-                  else if local.title
-                     p.page-title= local.title
-                  if local.subtitle
-                     p.page-subtitle!= local.subtitle
-                  
+         header.page-heading
+            h1
+               if local.pagetitle
+                  p.page-title= local.pagetitle
+               else if local.title
+                  p.page-title= local.title
+               else if local.wikidata_id
+                  p.page-title: wd-entity(id=local.wikidata_id, label, lang=lang)
+               if local.subtitle
+                  p.page-subtitle!= local.subtitle
       block content
       include /footer

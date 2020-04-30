@@ -1,9 +1,11 @@
 extends /default
 include /wikidata
+include /image
 
 block content
+
    if local.flat
-      .grid.colored-cards
+      .colored-cards
          for cardItems, cardTitle in local.content
             .card
                header.card-header
@@ -19,15 +21,16 @@ block content
          section.s1
             header.s1-header
                h2.h2= section
-            main.s1-main.grid.colored-cards
+            main.s1-main.colored-cards
                for cardItems, cardTitle in sectionContent
                   .card
+                     //- +responsiveImage(local.image)(class='card-background-image')
                      header.card-header
-                        h3.card-title
-                           +item(cardTitle)
+                        h3.card-title= cardTitle
                      main.card-main
                         ul.card-list
                            for item in cardItems
                               li: +item(item)
 
+   script(src='/scripts/wikibase-sdk.min.js')
    script(src='/scripts/wikidata.js')

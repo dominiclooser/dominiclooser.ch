@@ -1,6 +1,14 @@
 ---
 title: Corona
+
 videos:
+
+   -  youtube_id: Vy-VuSRoNPQ
+      title: Neue RKI-Zahlen widersprechen Kanzlerin Merkel - Punkt.PRERADOVIC mit Prof. Dr. Stefan Homburg
+
+   -  youtube_id: lGC5sGdz4kg
+      title: Perspectives on the Pandemic | Professor Knut Wittkowski | Episode 2
+
    -  title: 'Corona-Krise: Offener Brief an die Bundeskanzlerin von Prof. Sucharit Bhakdi'
       youtube_id: LsExPrHCHbw
    
@@ -16,6 +24,9 @@ videos:
    -  youtube_id: BvLx17NNlu0
       title: Is COVID-19 Even Real?
 resources:
+
+   -  link: http://inproportion2.talkigy.com/
+      label: COVID-19 in Proportion
 
    -  link: https://swprs.org/covid-19-hinweis-ii/
       label: Swiss Propaganda Research – COVID19
@@ -58,16 +69,20 @@ resources:
    -  link: https://www.istat.it/en/population-and-households?    data-and-indicators
       label: Statistics Italy
 props:
-   -  key: Involved
+   -  key: Institutionen
       value: 
+         - Q7817       # WHO
+         - Q1005448    # BAG
          - Q87933407   # Daniel Koch
          - Q193727     # John Hopkins University
+         - Q679041     # Robert Koch Institut
          - Q1079331    # Christian Drosten
          - Q43331181   # Lothar Wieler
-         - Q679041     # Robert Koch Institut
-         - Q1473437
+
+   -  key: Kritiker
+      value: 
+         - Q1473437    # Sucharit Bhakdi
          - Q84698      # Wolfgang Wodarg
-         - Q7817       # WHO
          - Q88789072   # Stefan Hoeckertz         
 --- 
 <!-- Fragen: wer löscht Videos?
@@ -78,4 +93,14 @@ Kampf gegen den unsichtbaren Feind
 Sirenen, die das Unheil verkünden
 
 die Zahl der Infizierten steigt unaufhörlich -->
+
+In einer Fußgängerzone steht ein Mann und klatscht alle 10 Sekunden in die Hände.
+Als ein Passant ihn fragt, was er denn tue, antwortet er: „Ich vertreibe die wilden Elefanten !“.
+Erstaunt entgegnet der Passant: „Aber hier sind doch gar keine Elefanten.“
+Worauf der klatschende Mann zufrieden lächelt und feststellt: „Sehen Sie, das Klatschen wirkt“
+
+änderung google algorithms
+youtube löschung
+facebook?
+twitter?
 

@@ -2,8 +2,13 @@
 pagetitle: Artikel
 ---
 extends /default
+include /wikidata
 
 block content
    ul.default-list
       for article in global.articles
-         li: a(href=article.id)= article.title
+         li: a(href=article.id)
+            if article.title
+               = article.title
+            else if article.wikidata_id
+               +item(article.wikidata_id)

@@ -12,11 +12,12 @@ content:
       -  label: Noe Text
       -  label: Inconsolata
    Software:
+      - Q28401317
       - Q5301      # TeX
       - Q86924750  # Pug
       - Q28865     # Python
       - Q1106819   # Coffeescript
-      -  label: IINA
+      - Q60608219  # IINA
       -  label: LaTeX
       -  label: z
          link: https://github.com/rupa/z

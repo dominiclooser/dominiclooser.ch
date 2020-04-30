@@ -1,0 +1,11 @@
+---
+pagetitle: Notizen
+---
+extends /default
+include /wikidata
+
+block content
+   ul.notes-list
+      for note in global.notes
+         li
+            +item(note, lang='de')

@@ -1,3 +1,5 @@
+   
+
 body
     font-weight: 300
 
@@ -11,6 +13,15 @@ body
 
 .dl
     dl(weight: 400)
+    
+
+.overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background: background-color
 
 
 ////////////
@@ -186,7 +197,7 @@ body
     
     padding: var(--semi-unit) var(--semi-unit)
     @media m
-        padding: var(--unit)
+        padding: var(--two-units)
 
     p+ul 
         margin-top: var(--semi-unit)
@@ -195,11 +206,16 @@ body
         display: flex 
         padding-top: var(--unit)
 
+.card-background-image
+    object-fit: contain
+
 .card-header + .card-main
-    margin-top: var(--semi-unit)
+    margin-top: var(--unit)
 
 .card-title
-    font-size: var(--l)
+    font-family: heading-font
+    font-size: var(--xxl)
+    // font-weight: 500
 
 .card-section + .card-section
     margin-top: var(--semi-unit)
@@ -214,14 +230,26 @@ body
     img
         max-height: none
 
+.cards
+    display: grid
+    gap: var(--semi-unit)
+    @media two-cols
+        grid-template-columns: 1fr 1fr
+    @media three-cols
+        grid-template-columns: 1fr 1fr 1fr
+
 .colored-cards
+    @extends .cards
     .card
         &:nth-child(3n+1)
-            background: colors[0]
+            // border: 6px solid colors[0]
+            background: lights[0]
         &:nth-child(3n+2)
-            background: colors[1]
+            // border: 6px solid colors[1]
+            background: lights[1]
         &:nth-child(3n+3)
-            background: colors[2]
+            // border: 6px solid colors[2]
+            background: lights[2]
 
 
 //////////
