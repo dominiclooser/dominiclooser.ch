@@ -100,6 +100,15 @@ content:
             link: https://www.imdb.com/label/tt0032553
          -  label: "No Man's Land"
          -  Q639481  # Ed Wood
+
+      Serien: 
+         # Lost, X-Files
+         - Q28443710  # Dark
+         - Q239672    # The IT-Crowd
+         - label: The End of the F***ing World
+         - label: Westworld
+         - label: A Handmaid's Tale
+         - label: Twin Peaks
    
    Personen:
 
@@ -131,11 +140,11 @@ content:
          - label: Danny Boyle
          - label: Lukas Moodysson
    
-
-
-      
-
+         
    Geographisch:
+
+      Deutschland: 
+         - Q28443710   # Dark
       
       Österreich:
          - Q84199    # Michael Haneke
