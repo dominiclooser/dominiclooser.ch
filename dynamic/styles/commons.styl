@@ -1,4 +1,11 @@
    
+.props-dl
+    dt
+        font-weight: 400
+    dd
+        margin-top: var(--semi-unit)
+    dd+dt
+        margin-top: var(--unit)
 
 body
     font-weight: 300
@@ -14,6 +21,14 @@ body
 .dl
     dl(weight: 400)
     
+.close
+    height: var(--unit) 
+    stroke-width: 0.3em
+    stroke: dark   
+    cursor: pointer
+    &:hover
+        stroke-width: 0.6em
+
 .overlay
     position: fixed
     top: 0
@@ -26,11 +41,16 @@ body
 .overlay-content
     margin: 0 auto
     height: 100%
-    width: text-width
+    max-width: text-width
     background: lights[0]
-    padding: var(--unit)
+    padding: var(--two-units) var(--unit)
     @media l
         padding: var(--two-units)
+
+.overlay-header
+    display: flex
+    align-items: center
+    justify-content: space-between
 
 .overlay-title
     font-family: heading-font
@@ -39,7 +59,7 @@ body
         font-size: var(--xxxxl)
 
 .overlay-main
-    margin-top: var(--unit)
+    margin-top: var(--two-units)
 
 .overlay-props
     dl(weight: 400)
@@ -292,6 +312,20 @@ body
         arrow-list()
     ul+p
         margin-top: var(--semi-unit) 
+
+.page-content
+    @media l
+        display: grid
+        grid-template-columns: 1fr 2fr
+        grid-gap: var(--unit)
+
+.page-aside
+    padding: var(--unit)
+    background: hsl(0, 0, 94%)
+
+.page-main
+    max-width: text-width
+
 
 .masonry-item
     margin-bottom: 33px

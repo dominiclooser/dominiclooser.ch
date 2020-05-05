@@ -2,43 +2,64 @@ extends /default
 include /wikidata
 
 block content
-   - lang = 'de'
-   if local.props
-      dl.dl
-         for prop in local.props
-            if prop.key
-               dt= prop.key
-               dd 
-                  if Array.isArray(prop.value)
-                     ul
-                        for value in prop.value
-                           li
-                              +item(value, lang=lang)
+   - lang = 'en'
+   .page-content
+
+      if local.props
+         aside.page-aside
+            dl.props-dl
+               for prop in local.props
+                  if prop.key
+                     dt= prop.key
+                     dd 
+                        if Array.isArray(prop.value)
+                           ul
+                              for value in prop.value
+                                 li
+                                    +item(value, lang=lang)
+                        else
+                           +item(prop.value, lang=lang)
+                           
                   else
-                     +item(prop.value, lang=lang)
-                     
-            else
-               dt: wd-entity(id=prop, label, lang=lang)
-               dd: wd-entity(id=local.wikidata_id, property=prop, lang=lang)
+                     dt: wd-entity(id=prop, label, lang=lang)
+                     dd: wd-entity(id=local.wikidata_id, property=prop, lang=lang)
+      main.page-main
 
-   if local.videos
-      section.s1
-         header.s1-header
-            h2.h2 Videos
-         .s1-main
-            ul.default-list.underlined-on-hover-links
-               for video in local.videos
-                  li: a(href='https://www.youtube.com/watch?v=' + video.youtube_id)= video.title
+         if local.content
+            main.spaced-paragraphs!= local.content
 
-   if local.resources
-      section.s1
-         header.s1-header
-            h2.h2 Resources
-         .s1-main
-            ul.default-list.underlined-on-hover-links
-               for res in local.resources
-                  li
-                     +item(res)
+         if local.videos
+            section.s1
+               header.s1-header
+                  h2.h2 Videos
+               .s1-main
+                  ul.default-list.underlined-on-hover-links
+                     for video in local.videos
+                        li: a(href='https://www.youtube.com/watch?v=' + video.youtube_id)= video.title
 
-   if local.content
-      main.spaced-paragraphs!= local.content
+
+
+         if local.resources
+            section.s1
+               header.s1-header
+                  h2.h2 Resourcen
+               .s1-main
+                  ul.default-list.underlined-on-hover-links
+                     for res in local.resources
+                        li
+                           +item(res)
+
+         if local.articles
+            section.s1
+               header.s1-header
+                  h2.h2 Artikel
+               .s1-main
+                  ul.default-list.underlined-on-hover-links
+                     for article in local.articles
+                        li
+                           +item(article)
+
+block append scripts
+   script(src='/scripts/wikibase-sdk.min.js')
+   script(src='/scripts/wd-elements.umd.js')
+   script(src='/scripts/wikidata.js')

@@ -1,7 +1,13 @@
 ---
-title: Corona
+title: COVID19
 
 videos:
+
+   -  youtube_id: WFkMIlKyHoI
+      title: Ende der Pandemie? Neue Zahlen widersprechen Regierungs-Linie - Punkt.PRERADOVIC mit Prof. Homburg
+
+   -  youtube_id: 9Q-KIUtFTiQ
+      title: RUBIKON Im Gespräch „Der Virus-Wahn“ (Claus Köhnlein und Johannes Vorndran)
 
    -  youtube_id: Vy-VuSRoNPQ
       title: Neue RKI-Zahlen widersprechen Kanzlerin Merkel - Punkt.PRERADOVIC mit Prof. Dr. Stefan Homburg
@@ -23,15 +29,27 @@ videos:
    
    -  youtube_id: BvLx17NNlu0
       title: Is COVID-19 Even Real?
-resources:
 
-   -  link: http://inproportion2.talkigy.com/
-      label: COVID-19 in Proportion
+resources:
 
    -  link: https://swprs.org/covid-19-hinweis-ii/
       label: Swiss Propaganda Research – COVID19
 
    -  Q89034727   # EuroMOMO
+
+   -  link: https://cidm.online
+      label: Corona Initivate Deutscher Mittelstand
+
+   -  link: http://inproportion2.talkigy.com/
+      label: COVID-19 in Proportion
+
+   -  link: https://www.istat.it/en/population-and-households?data-and-indicators
+      label: Statistics Italy
+
+articles:
+
+   -  link: https://www.pressreader.com/germany/dresdner-neueste-nachrichten/20200423/281496458428447
+      label: Der deutsche Impfexperte Professor Dr. Siegwart Bigl hält den Coronaschutz für ‚überzogen‘
 
    -  link: https://web.archive.org/web/20200324214448/https://www.telegraph.co.uk/global-health/science-and-disease/have-many-coronavirus-patients-died-italy/
       label: Why have so many coronavirus patients died in Italy? 
@@ -66,24 +84,32 @@ resources:
    -  link: https://www.mdr.de/wissen/corona-berechnung-todesrate-unterschiede-italien-100.html#sprung5
       label: Warum hat Italien eine so hohe Todesrate?
 
-   -  link: https://www.istat.it/en/population-and-households?    data-and-indicators
-      label: Statistics Italy
+   
+
 props:
    -  key: Institutionen
       value: 
          - Q7817       # WHO
          - Q1005448    # BAG
-         - Q87933407   # Daniel Koch
+         - Q93242934   # schweizer covid task force
          - Q193727     # John Hopkins University
          - Q679041     # Robert Koch Institut
+        
+
+   -  key: Personen
+      value: 
+         - Q87933407   # Daniel Koch
          - Q1079331    # Christian Drosten
          - Q43331181   # Lothar Wieler
-
-   -  key: Kritiker
-      value: 
+         - Q89342183   # Klaus Köhnlein
+         - Q92449334   # Bodo Schiffmann
+         - Q6251482    # ioanidis
+         - Q1745581    # klaus püschel
          - Q1473437    # Sucharit Bhakdi
          - Q84698      # Wolfgang Wodarg
-         - Q88789072   # Stefan Hoeckertz         
+         - Q88789072   # Stefan Hoeckertz   
+         - Q28032204   # streeck 
+         - Q1489360     
 --- 
 <!-- Fragen: wer löscht Videos?
 - wie funktioniert Propaganda
@@ -94,7 +120,7 @@ Sirenen, die das Unheil verkünden
 
 die Zahl der Infizierten steigt unaufhörlich -->
 
-In einer Fußgängerzone steht ein Mann und klatscht alle 10 Sekunden in die Hände.
+<!-- In einer Fußgängerzone steht ein Mann und klatscht alle 10 Sekunden in die Hände.
 Als ein Passant ihn fragt, was er denn tue, antwortet er: „Ich vertreibe die wilden Elefanten !“.
 Erstaunt entgegnet der Passant: „Aber hier sind doch gar keine Elefanten.“
 Worauf der klatschende Mann zufrieden lächelt und feststellt: „Sehen Sie, das Klatschen wirkt“
@@ -102,5 +128,5 @@ Worauf der klatschende Mann zufrieden lächelt und feststellt: „Sehen Sie, das
 änderung google algorithms
 youtube löschung
 facebook?
-twitter?
+twitter? -->
 
