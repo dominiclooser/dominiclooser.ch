@@ -1,35 +1,5 @@
 # monty python
 # Erzaehlmirnix
-
-
-# Bühne:
-#    -  name: Josef Hader
-#       link: http://hader.at
-#    -  name: Lara Stoll
-#       link: http://larastoll.ch
-#    -  name: Valerio Moser
-#       link: http://valeriomoser.ch
-#    -  name: Andreas Thiel
-#    -  name: Nico Semsrott
-#       link: http://nicosemsrott.de
-#    -  name: Volker Pispers
-#       link: http://www.volker-pispers.de
-#    -  name: 9 Volt Nelly
-#       link: http://9voltnelly.ch
-
-
-#
-# Buddhismus:
-#    -  name: Pema Chödrön
-#    -  name: Alan Watts – The Wisdom of Insecurity
-#    -  name: Buddhism Plain and Simple
-# Style:
-#    -  name: Poppy
-#       link: http://impoppy.com
-#    -  name: Deichkind
-#    -  name: Pet Shop Boys
-#    -  name: Die Antwoord
-# Serien:
    
 # 'Zürich: Locations':
 #    -  name: Bar am Egge
@@ -42,11 +12,4 @@
 # Webseiten:
 #    -  name: 9 Volt Nelly
 #       link: http://9voltnelly.ch
-# Fotografie:
-#    -  name: Elena Brotschi 
-#       link: http://www.elenabrotschi.com
-#    -  name: Sebastian Wagner 
-#       link: https://sebastianwagner.studio
-# Kunst:
-#    -  name: Herr Hürzeler
-#       link: http://herrhuerzeler.ch
+

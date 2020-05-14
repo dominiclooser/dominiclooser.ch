@@ -1,30 +1,21 @@
+- title = local.title ? local.title : global.settings.title
+- description = local.description ? local.description : global.settings.description
+ 
 doctype html
-html(lang='de')
+html(lang=global.settings.lang)
    head
-      script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-109667635-1")
-      script.
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-         gtag('config', 'UA-109667635-1');
       meta(charset='utf-8')
-      block title
-         if local.pagetitle
-            title= local.pagetitle + ' – Dominic Looser'
-         else
-            title Dominic Looser: Text / Web / Grafik
-      block description
-         meta(name='description', content='todo')
       meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      title= title   
+      meta(name='description', content=description)
       meta(name='viewport', content='width=device-width, initial-scale=1')
 
       link(rel='stylesheet', href='/styles/styles.css')
-      link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Inconsolata:300,400,700|Rubik:300,400,500,700|EB+Garamond:400,400i,700,700i') 
-      link(rel='stylesheet', href='/styles/lightbox.min.css')
-   
-   body(id='#{id}')
-      block main
+      link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=' + global.settings.google_fonts)
+      include /styles
+
+   body
+      block content
+      include /netlifycms_scripts
       block scripts
-         script(src='/scripts/jquery.min.js')
-         script(src='/scripts/navigation.js')
-         script(src='/scripts/wd-elements.umd.js')
+         

@@ -1,4 +1,4 @@
-mixin item(data, lang='en')
+mixin item(data, lang)
    if typeof data == 'string' 
       if data.startsWith('Q')
          button.show-item(data-id=data): wd-entity(id=data, label, lang=lang)

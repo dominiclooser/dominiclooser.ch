@@ -56,8 +56,10 @@
 
 .text
     max-width: text-width
-    margin-top: var(--three-units)
+    p+h2
+        margin-top: var(--unit)
     h2
+        @extends .h2
         font-family: inherit
         font-size: var(--m)
         font-weight: normal

@@ -1,6 +1,14 @@
 ---
 title: COVID19
 
+concepts:
+   - Q82069695   # sars cov 2
+   - Q278567     # sars cov
+   - Q16532287   # betacoronavirus
+   - Q89469904   # corona virus
+   - Q754447     # atemwegsinfekt
+   - Stille Feiung
+
 videos:
 
    -  youtube_id: WFkMIlKyHoI
@@ -111,6 +119,21 @@ props:
          - Q28032204   # streeck 
          - Q1489360     
 --- 
+
+Dies sind meine Notizen zu COVID19.
+
+## Verschiedenheit von Sars-cov-2
+Gegenargument: Viele haben keine Symptome, ihr Immunsystem muss also den Virus schon kennen.
+
+## Schweden
+
+## Zensur
+- dubiosen Entwarnungen
+- in Foren von Scientologen und Impfgegnern
+- John Ioannidis, einen streitlustigen Epidemiologen
+
+## Was wollen die Alten/
+
 <!-- Fragen: wer löscht Videos?
 - wie funktioniert Propaganda
 

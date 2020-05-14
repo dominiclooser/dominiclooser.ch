@@ -1,6 +1,35 @@
 title: Diverses
 flat: true
 content:
+   Bühne:
+      -  label: Josef Hader
+         link: http://hader.at
+      -  label: Lara Stoll
+         link: http://larastoll.ch
+      -  label: Valerio Moser
+         link: http://valeriomoser.ch
+      -  label: Andreas Thiel
+      -  label: Nico Semsrott
+         link: http://nicosemsrott.de
+      -  label: Volker Pispers
+         link: http://www.volker-pispers.de
+      -  label: 9 Volt Nelly
+         link: http://9voltnelly.ch
+   Style:
+      -  label: Poppy
+         link: http://impoppy.com
+      -  label: Deichkind
+      -  label: Pet Shop Boys
+      -  label: Die Antwoord
+   Fotografie:
+      -  label: Elena Brotschi 
+         link: http://www.elenabrotschi.com
+      -  label: Sebastian Wagner 
+         link: https://sebastianwagner.studio
+   Kunst:
+      - Q28668836
+      - label: Herr Hürzeler
+        link: http://herrhuerzeler.ch
    Typographie:
       -  label: Jeremiah Shoaf
          link: https://www.jeremiahshoaf.com
@@ -34,6 +63,11 @@ content:
          link: https://diekrassetassegmbh.ch
       -  label: dfdu AG
          link: http://dfdu.org
+   Shopping:
+      -  link: https://palmtreat.design/
+         label: Palm Treat
+      -  link: https://www.rageon.com/
+         label: Rage On
    Produkte:
       -  label: Place of Places
          link: http://placeofplaces.com

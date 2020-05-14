@@ -4,7 +4,8 @@ content:
    misc:
       -  label: "Douglas Adams: The Hitchhiker's Guide to the Galaxy"
       -  label: 'Joey Goebel: Torture the Artist'
-      - Q208460  # 1984
+      - Q208460    # 1984
+      - Q92093161  # wisdom of insecurity
       # -  name: Murakami
       # Das Fest des Ziegenbocks
       # Der futorologische Kongress

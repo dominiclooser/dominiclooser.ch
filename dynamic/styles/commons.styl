@@ -7,6 +7,9 @@
     dd+dt
         margin-top: var(--unit)
 
+.wrapper
+    @extends .fullwidth-wrapper
+
 body
     font-weight: 300
 
@@ -65,15 +68,6 @@ body
     dl(weight: 400)
 
 
-////////////
-// layout //
-////////////
-
-
-.grid
-    grid(min-column-width: 400px, gap: var(--semi-unit))
-
-
 ////////////////
 // typography //
 ////////////////
@@ -109,7 +103,46 @@ body
 
 .h3
     text-transform: uppercase
-    
+
+
+//////////
+// page //
+//////////
+
+.page-intro
+    max-width: text-width
+    margin-bottom: var(--unit)
+    @extend .spaced-paragraphs
+    section+section
+        margin-top: var(--unit)
+    h2
+        margin-bottom: var(--semi-unit)
+        @extend .h2
+    ul 
+        arrow-list()
+    ul+p
+        margin-top: var(--semi-unit) 
+
+.page-content
+    display: grid
+    gap: var(--unit)
+    @media l
+        grid-template-columns: 1fr 2fr
+        
+.page-aside
+    padding: var(--unit)
+    background: hsl(0, 0, 94%)
+
+.page-main
+    max-width: text-width
+
+////////////
+// layout //
+////////////
+
+
+.grid
+    grid(min-column-width: 400px, gap: var(--semi-unit))
 
 
 ///////////
@@ -299,32 +332,7 @@ body
 
 
 
-.page-intro
-    max-width: text-width
-    margin-bottom: var(--unit)
-    @extend .spaced-paragraphs
-    section+section
-        margin-top: var(--unit)
-    h2
-        margin-bottom: var(--semi-unit)
-        @extend .h2
-    ul 
-        arrow-list()
-    ul+p
-        margin-top: var(--semi-unit) 
 
-.page-content
-    @media l
-        display: grid
-        grid-template-columns: 1fr 2fr
-        grid-gap: var(--unit)
-
-.page-aside
-    padding: var(--unit)
-    background: hsl(0, 0, 94%)
-
-.page-main
-    max-width: text-width
 
 
 .masonry-item

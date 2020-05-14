@@ -1,0 +1,44 @@
+include /wikidata
+
+mixin section(title)
+   if block
+      section.s1
+         header.s1-header
+            h2.h2= title
+         .s1-main
+            block
+
+mixin listSection(data, title, lang)
+   if data
+      +section(title)
+         ul.default-list
+            for item in data
+               li
+                  +item(item, lang=lang)
+
+
+mixin flatSection(title, data, props=[], lang='en')
+      if data
+         +section(title)
+            dl.dl
+               for prop in props
+                  if data[prop.key]
+                     dt= prop.label
+                     dd
+                        +item(data[prop.key], lang=lang)
+
+
+
+mixin listSubsection(title, data, lang='de')
+   if data
+      section.s2
+         header.s2-header
+            h3.h3= title
+         .s2-main
+            ul.default-list
+               for item in data
+                  li
+                     if item.startsWith('Q')
+                        wd-entity(id=item, label, lang=lang)
+                     else
+                        = item

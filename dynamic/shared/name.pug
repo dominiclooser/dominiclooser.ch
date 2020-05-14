@@ -1,12 +1,15 @@
 extends /default
+include /wikidata
+include /sections
 
 block content
-   if local.forms
-      ul.default-list
-         for form in local.forms
-            li= form
+   - lang = 'en'
 
-   if local.people
-      ul.default-list
-         for person in local.people
-            li= person
+   +listSection(local.forms, 'Formen', lang)
+   +listSection(local.people, 'People', lang)
+
+
+block append scripts
+   script(src='/scripts/wikibase-sdk.min.js')
+   script(src='/scripts/wd-elements.umd.js')
+   script(src='/scripts/wikidata.js')

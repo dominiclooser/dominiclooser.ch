@@ -1,29 +1,30 @@
----
-pagetitle: Deine Empfehlungen
----
-extends /default
+extends /base
 include /cards
+include /page
+include /sections
+include /wikidata
 
-mixin section(items, title)
+mixin recSection(title, items)
    if items
-      section.s1
-         header.s1-header
-            h2.h2= title
-         main.s1-main.grid.randomly-colored
+      +section(title)
+         .s1-main.grid.randomly-colored
             for item in items
                .rec
-                  h3.rec-title: wd-entity(id=item, label, lang='en')
+                  h3.rec-title
+                     +item(item, lang='en')
 
 
 block content
-   if local.recs
-      +section(local.recs.people, 'Personen')
-      +section(local.recs.books, 'Bücher')
-      +section(local.recs.films, 'Filme')
-      +section(local.recs.tv, 'Serien')
+   .wrapper
+      +pageHeading('Deine Empfehlungen')
+      if local.recs
+         +recSection('Personen', local.recs.people)
+         +recSection('Bücher', local.recs.books)
+         +recSection('Filme', local.recs.films)
+         +recSection('Serien', local.recs.tv)
       
-      
-
+block append scripts
+   include /wikidata_scripts
 
                   
    //- if local.likes
