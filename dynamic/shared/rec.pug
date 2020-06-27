@@ -1,6 +1,6 @@
 extends /base
 include /cards
-include /page
+include /page_heading
 include /sections
 include /wikidata
 
@@ -16,17 +16,16 @@ mixin recSection(title, items)
 
 block content
    .wrapper
+      include /navigation
       +pageHeading('Deine Empfehlungen')
       if local.recs
          +recSection('Personen', local.recs.people)
+         +recSection('Songs', local.recs.songs)
          +recSection('Bücher', local.recs.books)
          +recSection('Filme', local.recs.films)
          +recSection('Serien', local.recs.tv)
-      
-block append scripts
-   include /wikidata_scripts
-
-                  
+      include /footer
+                     
    //- if local.likes
    //-    section.s1
    //-       header.s1-header

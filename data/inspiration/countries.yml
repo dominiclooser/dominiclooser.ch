@@ -1,6 +1,8 @@
 title: Länder
 content:
    Europa:
+      Q39:  # Schweiz
+         - Q123190 # jean piaget
       Q34:  # Schweden 
          -  label: Roxette
       Island:

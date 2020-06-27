@@ -20,20 +20,20 @@ content:
    # me and earl and the dying girl
    # frank
    # magnolia
-
-
    # kategorie: sonderbar sympathisch, kitchen sink
+   
    
    Filme:
       # Q59931      # garden state
       # Q14578326   # wish i was here
       # Q488222     # the host
       # Q144756     # let the right one in
+      # Q132351 the usual suspects
 
       Lieblingsfilme:
          - Q669591    # Happy go lucky
          - Q300555    # A serious man
-
+         
       Fastdokumentarisch:
          # fish tank
          # the wrestler
@@ -46,6 +46,7 @@ content:
          - Q860479    # Synecdoche Ney York
 
       Psychologisch:
+         # stay
          - Q165699    # melancholia
          - Q909445    # Shame
          - Q19864603  # Manchester by the sea
@@ -113,6 +114,7 @@ content:
    Personen:
 
       Schauspiel: 
+         - Q165518  # ewan mcgregor
          - Q236875  # Thora Birch
          - Q156796  # Michelle Williams
          - label: Chloë Sevigny
@@ -142,6 +144,9 @@ content:
    
          
    Geographisch:
+
+      Q408: # australian
+         - Q798641 # bad boy buddy
 
       Deutschland: 
          - Q28443710   # Dark

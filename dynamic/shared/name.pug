@@ -1,15 +1,15 @@
-extends /default
+extends /base
 include /wikidata
 include /sections
+include /page_heading
 
 block content
-   - lang = 'en'
-
-   +listSection(local.forms, 'Formen', lang)
-   +listSection(local.people, 'People', lang)
-
-
-block append scripts
-   script(src='/scripts/wikibase-sdk.min.js')
-   script(src='/scripts/wd-elements.umd.js')
-   script(src='/scripts/wikidata.js')
+   .wrapper
+      include /navigation
+      +pageHeading(local)
+      .page-main
+         if local.meaning
+            div= local.meaning
+         +listSection(local.forms, 'Formen')
+         +listSection(local.people, 'People')
+      include /footer

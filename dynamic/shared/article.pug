@@ -1,15 +1,19 @@
 extends /base
 include /wikidata
 include /sections
-include /page
+include /page_heading
 
 block content
-   - lang = 'en'
    .wrapper
-      +pageHeading(local.title)
+      include /navigation
+      if local.wikidata_id
+         +pageHeading(local.wikidata_id)
+      else
+         +pageHeading(local.title)
 
       .page-content
-
+         +listSection(local.concepts, 'Concepts')
+         +listSection(local.people, 'People')
          if local.props
             aside.page-aside
                dl.props-dl
@@ -28,7 +32,7 @@ block content
                      else
                         dt: wd-entity(id=prop, label, lang=lang)
                         dd: wd-entity(id=local.wikidata_id, property=prop, lang=lang)
-               +listSection(local.concepts, 'Concepts', lang)
+               
          
          main.page-main
 
@@ -44,8 +48,6 @@ block content
                         for video in local.videos
                            li: a(href='https://www.youtube.com/watch?v=' + video.youtube_id)= video.title
 
-
-
             if local.resources
                section.s1
                   header.s1-header
@@ -55,6 +57,8 @@ block content
                         for res in local.resources
                            li
                               +item(res)
+            
+            +listSection(local.films, 'Films')
 
             if local.articles
                section.s1
@@ -65,6 +69,3 @@ block content
                         for article in local.articles
                            li
                               +item(article)
-
-block append scripts
-   include /wikidata_scripts

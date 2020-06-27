@@ -1,10 +1,9 @@
----
-pagetitle: Text
----
-extends /default
+extends /base
 include /mixins
+include /page_heading
 
 block content
+   +pageHeading('Text')
    main.page-main.grid.colored-cards
       section.card
          header.card-header

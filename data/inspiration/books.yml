@@ -1,17 +1,20 @@
 title: Buch
 flat: true
 content:
+   # -  name: Murakami
+      # Das Fest des Ziegenbocks
+      # Der futorologische Kongress
+      
+   Q748:  # buddhism
+      - Q83504291  # buddhism plain and simple
+      - Q92616393  # the places that scare you
+      - Q92093161  # wisdom of insecurity
+
    misc:
       -  label: "Douglas Adams: The Hitchhiker's Guide to the Galaxy"
       -  label: 'Joey Goebel: Torture the Artist'
       - Q208460    # 1984
-      - Q92093161  # wisdom of insecurity
-      # -  name: Murakami
-      # Das Fest des Ziegenbocks
-      # Der futorologische Kongress
-
-   Psychologisch:
-      # Chödrön, the places that scare you
-      # alan watts:
+      
+   # Q9418
       # pete walker: tao of feeling, ptsd
-      - label: Buddhism Plain and Simple
+      

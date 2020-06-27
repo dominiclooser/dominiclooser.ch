@@ -1,9 +1,12 @@
----
-pagetitle: Empfehlungen
----
-extends /default
+extends /base
+include /page_heading
 
 block content
-   ul.color-on-hover-links
-      for rec in global.recs
-         li: a(href=rec.id)= rec.id
+   .wrapper
+      include /navigation
+      +pageHeading('Empfehlungen')
+      main.page-main
+         ul.colored-on-hover-links
+            for rec in global.recs
+               li: a(href=rec.id)= rec.id
+      include /footer

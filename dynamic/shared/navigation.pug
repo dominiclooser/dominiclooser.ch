@@ -19,3 +19,13 @@ nav.mobile-nav
    ul
       for item in global.nav
          li: a(href=item.link)= item.title
+
+script
+   :coffee-script
+      mobileNav = document.querySelector('.mobile-nav')
+
+      document.querySelector('.open-nav').addEventListener 'click', ->
+         mobileNav.style.display = 'block'
+
+      document.querySelector('.close').addEventListener 'click', ->
+         mobileNav.style.display = 'none'

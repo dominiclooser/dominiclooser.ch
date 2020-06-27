@@ -22,12 +22,14 @@ content:
       -  label: Pet Shop Boys
       -  label: Die Antwoord
    Fotografie:
+      - Q19976007  # hassan hajjaj
       -  label: Elena Brotschi 
          link: http://www.elenabrotschi.com
       -  label: Sebastian Wagner 
          link: https://sebastianwagner.studio
    Kunst:
-      - Q28668836
+      - Q96143229  # jan hakon erichsen
+      - Q28668836  # luis quiles
       - label: Herr Hürzeler
         link: http://herrhuerzeler.ch
    Typographie:

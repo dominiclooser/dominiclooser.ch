@@ -8,13 +8,13 @@ mixin section(title)
          .s1-main
             block
 
-mixin listSection(data, title, lang)
+mixin listSection(data, title)
    if data
       +section(title)
          ul.default-list
             for item in data
                li
-                  +item(item, lang=lang)
+                  +item(item)
 
 
 mixin flatSection(title, data, props=[], lang='en')
@@ -29,7 +29,7 @@ mixin flatSection(title, data, props=[], lang='en')
 
 
 
-mixin listSubsection(title, data, lang='de')
+mixin listSubsection(data, title)
    if data
       section.s2
          header.s2-header
@@ -38,7 +38,4 @@ mixin listSubsection(title, data, lang='de')
             ul.default-list
                for item in data
                   li
-                     if item.startsWith('Q')
-                        wd-entity(id=item, label, lang=lang)
-                     else
-                        = item
+                     +item(item)

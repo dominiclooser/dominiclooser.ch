@@ -1,35 +1,38 @@
 extends /base
 include /wikidata
 include /image
+include /page_heading
 
 block content
 
    .wrapper
-      if local.flat
-         .colored-cards
-            for cardItems, cardTitle in local.content
-               .card
-                  header.card-header
-                     h3.card-title= cardTitle
-                  main.card-main
-                     ul.card-list
-                        for item in cardItems
-                           li: +item(item, lang=global.settings.lang)
-      else
-         for sectionContent, section in local.content
-            section.s1
-               header.s1-header
-                  h2.h2= section
-               main.s1-main.colored-cards
-                  for cardItems, cardTitle in sectionContent
-                     .card
-                        //- +responsiveImage(local.image)(class='card-background-image')
-                        header.card-header
-                           h3.card-title= cardTitle
-                        main.card-main
-                           ul.card-list
-                              for item in cardItems
-                                 li: +item(item, lang=global.settings.lang)
-
-block append scripts
-   include /wikidata_scripts
+      include /navigation
+      +pageHeading(local.title)
+      .page-main
+         if local.flat
+            .colored-cards
+               for cardItems, cardTitle in local.content
+                  .card
+                     header.card-header
+                        h3.card-title
+                           +item(cardTitle)
+                     main.card-main
+                        ul.card-list
+                           for item in cardItems
+                              li: +item(item)
+         else
+            for sectionContent, section in local.content
+               section.s1
+                  header.s1-header
+                     h2.h2= section
+                  main.s1-main.colored-cards
+                     for cardItems, cardTitle in sectionContent
+                        .card
+                           //- +responsiveImage(local.image)(class='card-background-image')
+                           header.card-header
+                              h3.card-title
+                                 +item(cardTitle)
+                           main.card-main
+                              ul.card-list
+                                 for item in cardItems
+                                    li: +item(item)

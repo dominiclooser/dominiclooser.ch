@@ -1,4 +1,10 @@
    
+.videos
+    grid(min-column-width: 200px)
+
+.grid
+    grid(min-column-width: 400px, gap: var(--semi-unit))
+
 .props-dl
     dt
         font-weight: 400
@@ -133,17 +139,6 @@ body
     padding: var(--unit)
     background: hsl(0, 0, 94%)
 
-.page-main
-    max-width: text-width
-
-////////////
-// layout //
-////////////
-
-
-.grid
-    grid(min-column-width: 400px, gap: var(--semi-unit))
-
 
 ///////////
 // header
@@ -155,7 +150,6 @@ body
     font-family: heading-font
     text-transform: uppercase
     padding: var(--semi-unit) 0 
-    border-bottom: 2px solid dark
     display: flex
     justify-content: space-between
 
@@ -203,7 +197,7 @@ body
     color: colors[0]
 
 .desktop-page-header
-    @extends .color-on-hover-links
+    @extends .colored-on-hover-links
     letter-spacing: 0.05em
     border-bottom: 2px solid dark
     text-transform: uppercase

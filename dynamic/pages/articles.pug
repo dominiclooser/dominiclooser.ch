@@ -1,18 +1,20 @@
----
-pagetitle: Artikel
----
-extends /default
+extends /base
 include /wikidata
+include /page_heading
+
 
 block content
    - lang = 'en'
-   ul.default-list
-      for article in global.articles
-         li: a(href=article.id)
-            if article.title
-               = article.title
-            else if article.wikidata_id
-               +item(article.wikidata_id, lang)
+   .wrapper
+      +pageHeading('Artikel')
+      .page-main
+         ul.default-list
+            for article in global.articles
+               li: a(href=article.id)
+                  if article.title
+                     = article.title
+                  else if article.wikidata_id
+                     +item(article.wikidata_id, lang)
 
 block append scripts
    include /wikidata_scripts

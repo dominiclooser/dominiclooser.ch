@@ -1,20 +1,20 @@
----
-pagetitle: Zitate
----
-extends /default
+extends /base
+include /wikidata
+include /page_heading
 
 block content
-   ul.quotes
-      for quote in global.quotes
-         li
-            blockquote.quote
-               p.quote-text= quote.text
-               footer.quote-footer
-                  span.quote-author 
-                     if quote.author
-                        if quote.author.label
-                           = quote.author.label
-                        else 
-                           = quote.author
-                  if quote.author && quote.source
-                     span &ensp;(#{quote.source.label})
+   .wrapper
+      include /navigation
+      +pageHeading('Zitate')
+      ul.quotes
+         for quote in global.quotes
+            li
+               blockquote.quote
+                  p.quote-text= quote.text
+                  footer.quote-footer
+                     span.quote-author 
+                        if quote.author
+                           +item(quote.author)
+                     //- if quote.author && quote.source
+                     //-    span &ensp;(#{quote.source.label})
+      include /footer

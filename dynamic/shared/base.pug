@@ -9,13 +9,15 @@ html(lang=global.settings.lang)
       title= title   
       meta(name='description', content=description)
       meta(name='viewport', content='width=device-width, initial-scale=1')
+      meta(property='og:image', content=global.settings.og_image)
 
       link(rel='stylesheet', href='/styles/styles.css')
       link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=' + global.settings.google_fonts)
       include /styles
+      include /early_scripts
 
    body
       block content
-      include /netlifycms_scripts
       block scripts
+         include /late_scripts
          

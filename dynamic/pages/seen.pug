@@ -1,12 +1,10 @@
----
-pagetitle: Seen
----
-extends /default
+extends /base
 include /wikidata
-
+include /page_heading
 
 block content
-   ul
-      for entry in global.seen.films
-         li
-            +item(entry.what)
+   .wrapper
+      ul
+         for entry in global.seen.films
+            li
+               +item(entry.what)

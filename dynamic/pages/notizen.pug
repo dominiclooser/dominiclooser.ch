@@ -1,11 +1,17 @@
----
-pagetitle: Notizen
----
-extends /default
+extends /base
 include /wikidata
+include /page_heading
 
 block content
-   ul.notes-list
-      for note in global.notes
-         li
-            +item(note, lang='de')
+   .wrapper
+      include /navigation
+      +pageHeading('Notizen')
+      main.page-main
+         ul.notes-list
+            for note in global.notes
+               li
+                  +item(note)
+      include /footer
+
+block append scripts 
+   include /wikidata_scripts

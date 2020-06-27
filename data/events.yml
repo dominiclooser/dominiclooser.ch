@@ -1,10 +1,10 @@
 2014:
    deaths:
-      - Q860479 # Philipp seymor hoffmann
+      - Q860479    # Philipp seymor hoffmann
 
 201d:
    deaths:
-      - Q270935  # Chris Cornell
+      - Q270935    # Chris Cornell
      
 2019: 
    deaths:
@@ -18,8 +18,11 @@
    deaths:
       - Q104027    # Kirk Douglas 
       - Q203215    # Max von Sydow
+      - Q296752    # carlos ruiz zafon
+      - Q295207    # joel schumacher
    ends:
       - Q708661    # Lindenstrasse
    misc:
       - Q85636305  # Hanau Shootings
-
+      - Q95579249  # death of george floyd
+      - Q95965839  # George Floyd protests 

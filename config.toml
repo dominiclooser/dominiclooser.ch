@@ -17,3 +17,8 @@ target = 'inspiration'
 template = 'rec.pug'
 data = 'recs/*'
 target = 'empfehlungen'
+
+[[generators]]
+template = 'project.pug'
+data = 'projects/*.yml'
+target = 'projects'

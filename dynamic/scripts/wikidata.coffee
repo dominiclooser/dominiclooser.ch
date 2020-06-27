@@ -9,6 +9,9 @@ getEntityProps = (entity) ->
     if 'Q11424' in types # film
         props.push('P57', 'P58', 'P495', 'P272')  # dir, screenwriter, country, prod comp
     
+    if 'Q47461344' in types  # written work
+        props.push('P50', 'P577')  # author, publication date
+
     if 'Q5' in types # human
         props.push('P101', 'P108', 'P69')    
 

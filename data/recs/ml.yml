@@ -10,6 +10,7 @@ recs:
       - Q860479    # Synecdoche Ney York
       - Q300555    # A serious man
    people:
+      - Q96143229  # jan hakon erichsen
       - Q191755    # jim jarmusch
       - Q312751    # Charlie Kaufmann
 

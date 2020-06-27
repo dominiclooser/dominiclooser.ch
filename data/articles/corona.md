@@ -9,6 +9,13 @@ concepts:
    - Q754447     # atemwegsinfekt
    - Stille Feiung
 
+quotes:
+   -  content: Lockdown is over,  Life is about risk.  It was never about "nobody will ever get this asymptomatic flu again".  It was about flattening the curve.  Yes, if you live on Earth, you might get sick, might have an accident, might get cancer next year if you don't get the flu this year.  It is what it is.   Go back to living.  You people are too focused on not dying that you're not living.
+      author: a random youtuber
+
+   -  content: Never in the field of human endeavour have so many been so scared for so long of so little.
+      author: another random youtuber
+
 videos:
 
    -  youtube_id: WFkMIlKyHoI
@@ -132,7 +139,12 @@ Gegenargument: Viele haben keine Symptome, ihr Immunsystem muss also den Virus s
 - in Foren von Scientologen und Impfgegnern
 - John Ioannidis, einen streitlustigen Epidemiologen
 
-## Was wollen die Alten/
+## Was wollen die Risikogruppen?
+Selbstbestimmung?
+
+## Folgen des Lockdowns
+- Veränderung Suizidraten?
+- Veränderung anderer Krankheiten?
 
 <!-- Fragen: wer löscht Videos?
 - wie funktioniert Propaganda
