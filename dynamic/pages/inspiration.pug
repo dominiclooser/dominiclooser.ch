@@ -1,14 +1,16 @@
----
-pagetitle: Inspiration
----
 extends /base
+include /page_heading 
 
 block content
-   .grid.colored-cards
-      for section in global.inspiration   
-         .card
-            h2.card-title
-               a(href=section.id)= section.title
+   .wrapper
+      include /navigation
+      +pageHeading('Inspiration')
+      .page-main
+         .grid.colored-cards
+            for section in global.inspiration   
+               .card
+                  h2.card-title
+                     a(href=section.id)= section.title
 
 
 

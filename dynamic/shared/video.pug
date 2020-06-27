@@ -1,0 +1,4 @@
+mixin youtubeVideo(id)
+   - urlStart = 'https://www.youtube.com/embed/'
+   .video-wrapper
+      iframe(width="560", height="315", src=urlStart + id, frameborder="0", allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen)

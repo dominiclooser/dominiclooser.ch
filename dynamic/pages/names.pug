@@ -1,0 +1,14 @@
+extends /base
+include /page_heading
+include /wikidata
+
+block content
+   .wrapper
+      include /navigation
+      +pageHeading('Namen')
+      .page-main
+         ul
+            for name in global.names
+               li: a(href='/names/' + name.id)
+                  +label(name)
+      include /footer

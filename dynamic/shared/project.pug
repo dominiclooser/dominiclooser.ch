@@ -1,0 +1,20 @@
+extends /base
+include /page_heading
+include /sections
+
+block content
+   .wrapper
+      include /navigation
+      +pageHeading(local.title)
+      main.page-main.rainbow-links
+         +section('Inspiration')
+            //- +videoSubsection(local.inspiration.videos, 'Videos')
+            +listSubsection(local.inspiration.concepts, 'Concepts')
+            +listSubsection(local.inspiration.misc, 'Misc')
+            
+
+      include /footer
+
+block append scripts
+   include /wikidata_scripts
+      

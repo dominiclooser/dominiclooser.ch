@@ -1,0 +1,15 @@
+companies:
+   -  wd_id: Q1113804  # comcast
+      subsidiaries: 
+         -  Q918390  # sky
+         -  wd_id: Q724759 # nbcuniversal
+            subsidiaries: 
+               - Q13974  # nbc
+               - Q168383 # universal studios
+   -  wd_id: Q35476    # AT&T
+      subsidiaries:
+         -  wd_id: Q191715   # warner media   
+            subsidiaries:
+               -  Q126399    # Warner bros
+               -  Q23633     # hbo
+               -  Q65359104  # hbo max
