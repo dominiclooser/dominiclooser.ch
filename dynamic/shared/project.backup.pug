@@ -1,0 +1,35 @@
+extends /base
+include /page_heading
+include /sections
+include /wikidata
+
+block content
+   .wrapper
+      include /navigation
+      +pageHeading(local.title)
+      main.page-main.rainbow-links
+
+         if local.prototype
+            dl.dl
+               dt Prototyp
+               dd 
+                  +item(local.prototype)
+
+         +section('Team')
+            ul.default-list
+               for person in local.team
+                  li #{person.name} 
+
+
+         +section('Inspiration')
+            +listSubsection(local.inspiration.name, 'Name')
+            //- +videoSubsection(local.inspiration.videos, 'Videos')
+            +listSubsection(local.inspiration.concepts, 'Concepts')
+            +listSubsection(local.inspiration.misc, 'Misc')
+            
+
+      include /footer
+
+block append scripts
+   include /wikidata_scripts
+      
