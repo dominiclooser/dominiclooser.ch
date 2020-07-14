@@ -146,6 +146,9 @@ Selbstbestimmung?
 - Veränderung Suizidraten?
 - Veränderung anderer Krankheiten?
 
+
+Witze:
+- Patient zu Arzt: «Herr Doktor, wann ist COVID19 vorbei?» «Keine Ahnung! Ich bin Arzt, nicht Politiker!»
 <!-- Fragen: wer löscht Videos?
 - wie funktioniert Propaganda
 

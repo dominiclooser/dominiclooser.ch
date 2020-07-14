@@ -17,25 +17,34 @@ mixin listSection(data, title)
                   +item(item)
 
 
-mixin flatSection(title, data, props=[], lang='en')
-      if data
-         +section(title)
-            dl.dl
-               for prop in props
-                  if data[prop.key]
-                     dt= prop.label
-                     dd
-                        +item(data[prop.key], lang=lang)
+mixin flatSection(title, data, props=[])
+   if data
+      +section(title)
+         dl.dl
+            for prop in props
+               if data[prop.key]
+                  dt= prop.label
+                  dd
+                     +item(data[prop.key])
 
 
+mixin subsection(title)
+   section.s2
+      header.s2-header
+         h3.h3= title
+      .s2-main
+         block
 
 mixin listSubsection(data, title)
    if data
-      section.s2
-         header.s2-header
-            h3.h3= title
-         .s2-main
-            ul.default-list
-               for item in data
-                  li
-                     +item(item)
+      +subsection(title)
+         ul.default-list
+            for item in data
+               li
+                  +item(item)
+
+mixin imageSubsection(title, dir)
+   +subsection(title)
+      .image-columns
+         for fileId in getImages(dir)
+            +lightboxImage(fileId, lightboxGroup='inspirational_images')

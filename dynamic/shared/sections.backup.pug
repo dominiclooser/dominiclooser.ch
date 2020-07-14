@@ -1,5 +1,4 @@
 include /wikidata
-include /video
 
 mixin section(title)
    if block
@@ -9,25 +8,16 @@ mixin section(title)
          .s1-main
             block
 
-mixin subsection(title)
-   if block
-      section.s2
-         header.s2-header
-            h3.h3= title
-         .s2-main
-            block
-
-
-mixin listSection(data, title, lang)
+mixin listSection(data, title)
    if data
       +section(title)
          ul.default-list
             for item in data
                li
-                  +item(item, lang=lang)
+                  +item(item)
 
 
-mixin flatSection(title, data, props=[], lang='en')
+mixin flatSection(title, data, props=[])
       if data
          +section(title)
             dl.dl
@@ -35,25 +25,17 @@ mixin flatSection(title, data, props=[], lang='en')
                   if data[prop.key]
                      dt= prop.label
                      dd
-                        +item(data[prop.key], lang=lang)
+                        +item(data[prop.key])
 
-
-mixin videoSubsection(data, title)
-   if data
-      +subsection(title)
-         ul.videos
-            for video in data
-               li.video
-                  +youtubeVideo(video.youtube_id)
 
 
 mixin listSubsection(data, title)
    if data
-      +subsection(title)
-         ul.default-list
-            for item in data
-               li
-                  if attributes.lang
-                     +item(item, attributes.lang)
-                  else
+      section.s2
+         header.s2-header
+            h3.h3= title
+         .s2-main
+            ul.default-list
+               for item in data
+                  li
                      +item(item)

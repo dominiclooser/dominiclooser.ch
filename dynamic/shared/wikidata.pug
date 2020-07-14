@@ -14,8 +14,13 @@ mixin item(data, lang=global.settings.lang)
          button.show-item(data-id=data): wd-entity(id=data, label, lang=lang)
       else
          = data
+   
    else if data.label 
-      = data.label
+      if data.link
+         a(href=data.link)= data.label
+      else
+         = data.label
+   
    else if data.title
       if data.link
          a(href=data.link)= data.title

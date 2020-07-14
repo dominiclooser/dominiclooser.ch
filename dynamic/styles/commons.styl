@@ -1,4 +1,7 @@
    
+img
+    width: 100% 
+
 .videos
     grid(min-column-width: 200px)
 
@@ -82,7 +85,7 @@ body
     padding-top: var(--unit)
 
 .s1-header + .s1-main
-    margin-top: var(--unit)
+    margin-top: var(--quarter-unit)
 
 .s1 + .s1
     margin-top: var(--unit)
@@ -104,16 +107,24 @@ body
     line-height: heading-line-height
 
 .h2
+    font-family: heading-font
     font-size: var(--l)
     color: heading-color
 
 .h3
-    text-transform: uppercase
+    font-family: heading-font
 
 
 //////////
 // page //
 //////////
+
+.page-heading
+    margin-top: var(--three-units)
+    & + .page-content
+    & + .page-main
+        margin-top: var(--three-units)
+    
 
 .page-intro
     max-width: text-width
@@ -129,15 +140,18 @@ body
     ul+p
         margin-top: var(--semi-unit) 
 
+.page-title
+    text-transform: uppercase
+
 .page-content
     display: grid
     gap: var(--unit)
     @media l
-        grid-template-columns: 1fr 2fr
+        grid-template-columns: 2fr 1fr
         
 .page-aside
     padding: var(--unit)
-    background: hsl(0, 0, 94%)
+    border: 1px solid primary
 
 
 ///////////
@@ -194,17 +208,17 @@ body
     font-family: heading-font
     text-transform: uppercase
     margin-right: var(--unit)
-    color: colors[0]
 
 .desktop-page-header
     @extends .colored-on-hover-links
     letter-spacing: 0.05em
-    border-bottom: 2px solid dark
     text-transform: uppercase
     font-family: heading-font
     line-height: var(--unit)
     vertical-align: bottom 
     padding: var(--semi-unit) 0
+    display: flex
+    justify-content: space-between
     @media mobile-nav
         display: none
     
@@ -212,11 +226,9 @@ body
     display: inline
     ul
         display: inline
-        hlist(sep: '•')
+        hlist(sep: '•', spacing-right: 0em)
 
-.page-heading
-    margin-top: var(--three-units)
-    margin-bottom: var(--two-units)
+
 
 .page-title
     @extends .h1

@@ -1,20 +1,171 @@
 extends /base
-include /page_heading
+include /image
 include /sections
+include /page_heading
+
+mixin teamSection(title, data, termProp, valueProp)
+      if data
+         section.s1
+            header.s1-header
+               h2.h2= title
+            .s1-main
+               dl.vdl
+                  for item in data
+                     dt= item[termProp]
+                     dd= item[valueProp]
 
 block content
+
+   - objectId = 'projects/' + local.id 
+   - moment.locale('de')
+
    .wrapper
       include /navigation
-      +pageHeading(local.title)
-      main.page-main.rainbow-links
-         +section('Inspiration')
-            //- +videoSubsection(local.inspiration.videos, 'Videos')
-            +listSubsection(local.inspiration.concepts, 'Concepts')
-            +listSubsection(local.inspiration.misc, 'Misc')
-            
+      +pageHeading(local.title, '– Project Hub –')
+      .page-content
+         .page-main
 
+            +responsiveImage(objectId + '/title.jpg')
+
+            if local.goal
+               section.s1.goal
+                  span Ziel: 
+                  span= local.goal
+
+            if local.prototype
+               dl.dl
+                  dt Prototyp
+                  dd: a(href=local.prototype.link)= local.prototype.label
+            
+            if local.inspiration
+               +section('Inspiration')
+                     +listSubsection(local.inspiration.name, 'Name')
+                     +listSubsection(local.inspiration.tagline, 'Tagline')
+                     +listSubsection(local.inspiration.misc, 'Diverses')
+
+                     if local.inspiration && local.inspiration.websites
+                        section.s2
+                           header.s2-header
+                              h3.h3 Webseiten
+                           main.s2-main
+                              ul.default-list
+                                 for website in local.inspiration.websites
+                                    li: a(href=website.link)= website.label
+                     
+                     
+                     
+                     +imageSubsection('Bilder', objectId + '/inspiration/images')
+
+                     //- if containsImages(objectId + '/inspiration/images')
+                     //-    section.s2
+                     //-       header.s2-header
+                     //-          h3.h3 Images
+                     //-       main.s2-main   
+                     //-          .default-columns
+                     //-             for fileId in getImages(objectId + '/inspiration/images')
+                     //-                +lightboxImage(fileId, lightboxGroup='inspirational_images')
+                     
+                     if containsImages(objectId + '/inspiration/colors')
+                        section.s2
+                           header.s2-header
+                              h3.h3 Colors
+                           main.s2-main   
+                              .default-columns
+                                 for fileId in getImages(objectId + '/inspiration/colors')
+                                    +lightboxImage(fileId, lightboxGroup='colors')
+
+                     if local.inspiration && local.inspiration.typography
+                        section.s2
+                           header.s2-header
+                              h3.h3 Typography
+                           main.s2-main
+                              ul.default-list
+                                 for item in local.inspiration.typography
+                                    li: a(href=item.link)= item.title
+
+                     if local.inspiration && local.inspiration.effects
+                        section.s2
+                           header.s2-header
+                              h3.h3 Effects
+                           main.s2-main
+                              ul.default-list
+                                 for item in local.inspiration.effects
+                                    li: a(href=item.link)= item.title
+            
+            - props = [{key: 'web_framework', label: 'Web Framework'}, {key: 'database', label: 'Datenbank'}, {key: 'hosting', label: 'Hosting'}, {key: 'domain', label: 'Domain'}]
+            +flatSection('Technisch', local.technical, props)
+
+            if local.identity
+               section.s1
+                  header.s1-header
+                     h2.h2 Identität
+                  main.s1-main
+                     dl.dl
+                        dt Eigenschaften
+                        dd
+                           ul
+                              for attribute in local.identity.attributes
+                                 li= attribute 
+
+            if containsImages(objectId + '/design/images') || local.design
+               section.s1
+                  header.s1-header
+                     h2.h2 Design
+                  main.s1-main
+                     if local.design
+                        +listSubsection('Farben', local.design.colors)
+                     if containsImages(objectId + '/design/images')
+                        section.s2
+                           header.s2-header
+                              h3.h3 Images
+                           main.s2-main   
+                              .default-columns
+                                 for fileId in getImages(objectId + '/design/images')
+                                    +lightboxImage(fileId, lightboxGroup='images')
+
+            if local.props
+               section.s1
+                  .s1-header
+                     h2.h2 Identity
+                  .s1-main
+                     dl.dl
+                        for prop in local.props
+                           dt= prop.name
+                           dd
+                              if Array.isArray(prop.value)
+                                 ul
+                                    for value in prop.value
+                                       li= value
+                              else
+                                 = prop.value
+      
+         aside.page-aside
+            //- ul#project-nav
+            //-    li: button Meetings
+            //-    li: button Documents
+
+            +teamSection('Team', local.team, 'name', 'roles') 
+
+            if local.meetings
+               section#meetings.box
+                  h2.h2 Meetings
+                  main.box-main
+                     for meeting in local.meetings
+                        .meeting
+                           h3.meeting-title= meeting.title
+                           dl.dl
+                              dt Wann
+                              dd: time= moment(meeting.when).format('dd Do MMM YY, H:mm')
+                              dt Ort
+                              dd= meeting.place
+                              if meeting.topics
+                                 dt Themen
+                                 dd
+                                    ul
+                                       for topic in meeting.topics
+                                          li= topic
+      
       include /footer
 
-block append scripts
-   include /wikidata_scripts
-      
+      script(src='/scripts/lightbox-plus-jquery.min.js')
+      script(src='/scripts/wd-elements.umd.js')

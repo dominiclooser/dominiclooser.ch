@@ -113,13 +113,15 @@ content:
    
    Personen:
 
-      Schauspiel: 
+      Schauspieler: 
          - Q165518  # ewan mcgregor
+         - Q57147   # Michael Fassbender
+
+      Schauspielerinnen:
          - Q236875  # Thora Birch
          - Q156796  # Michelle Williams
          - label: Chloë Sevigny
          - Q233466  # Elisabeth Moss 
-         - Q57147   # Michael Fassbender
          - Q219655  # Carey Mulligan
 
       Regie:
