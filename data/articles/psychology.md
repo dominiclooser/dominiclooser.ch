@@ -6,6 +6,7 @@ people:
    - Q433134    # judith herman
    - Q83504500  # pete walker
 concepts:
+   - Q5287966   # Dodo Bird verdict 
    - Q909609    # attachement theory
    - Q334231    # transference
    - Q29963683  # hochsensiblität

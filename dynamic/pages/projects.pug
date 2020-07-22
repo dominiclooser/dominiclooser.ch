@@ -1,0 +1,12 @@
+extends /base
+include /page_heading
+
+block content
+   .wrapper
+      include /navigation
+      +pageHeading('Projekte')
+      .page-main
+         ul
+            for project in global.projects
+               li: a(href=project.id)= project.title
+      include /footer

@@ -45,7 +45,7 @@ h1, h2, h3, h4
 *, *:before, *:after 
     box-sizing: border-box
 
-img, video, iframe
+video, iframe
     max-width: 100%
 
 dd
@@ -53,8 +53,15 @@ dd
 
 canvas, img
     vertical-align: middle
-  
+
+input 
+    -webkit-appearance: none
+    font-family: inherit
+    font-size: inherit
+    border: none
+
 button
+    text-transform: inherit
     cursor: pointer
     border: none
     margin: 0
@@ -83,6 +90,7 @@ blockquote
 body
     background-color: background-color
     min-height: 100vh
+    min-height: calc(var(--vh, 1vh) * 100)
     color: text-color
     font-size: var(--m)
     font-family: body-font

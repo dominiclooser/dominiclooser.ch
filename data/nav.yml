@@ -2,12 +2,13 @@
    link: /
 -  title: Text
    link: /text
--  title: Web
-   link: /web
 -  title: Grafik
    link: /grafik
--  title: Inspiration
-   link: /inspiration
+-  title: Tipps
+   link: /tipps
+   subnav:
+      -  title: Zitate
+         link: /quotes
 # -  title: Shop
 #    link: /shop
 -  title: About

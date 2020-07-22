@@ -17,5 +17,8 @@ team:
       roles: Lektorat
    -  name: Hano Ammann
       roles: Lektorat
+   -  name: Alice Fiedler
+      roles: Illustration
    -  name: Dominic Looser
+      link: https://dominiclooser.ch
       roles: Gestaltung, Implementation, Koordination

@@ -364,7 +364,7 @@ module.exports = (grunt) ->
             fs.writeFileSync(target, html)
             
 
-    grunt.registerTask 'build', ['imagemin', 'responsive_images', 'pug', 'stylus', 'postcss', 'coffee', 'copy:static', 'strip-extensions', 'exec']
+    grunt.registerTask 'build', ['pug', 'stylus', 'postcss', 'coffee', 'copy:static', 'strip-extensions', 'exec']
     grunt.registerTask 'default', ['build', 'watch']
     
     grunt.registerTask 'full_build', ['clean', 'make-dirs', 'imagemin', 'responsive_images', 'build'] 

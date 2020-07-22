@@ -3,17 +3,6 @@ include /image
 include /sections
 include /page_heading
 
-mixin teamSection(title, data, termProp, valueProp)
-      if data
-         section.s1
-            header.s1-header
-               h2.h2= title
-            .s1-main
-               dl.vdl
-                  for item in data
-                     dt= item[termProp]
-                     dd= item[valueProp]
-
 block content
 
    - objectId = 'projects/' + local.id 
@@ -144,7 +133,16 @@ block content
             //-    li: button Meetings
             //-    li: button Documents
 
-            +teamSection('Team', local.team, 'name', 'roles') 
+            if local.team
+               +section('Team')
+                  dl.vdl.rainbow-links
+                     for person in local.team
+                        dt
+                           if person.link
+                              a(href=person.link)= person.name
+                           else
+                              = person.name
+                        dd= person.roles
 
             if local.meetings
                section#meetings.box

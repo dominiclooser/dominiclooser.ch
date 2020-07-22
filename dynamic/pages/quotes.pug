@@ -6,11 +6,11 @@ block content
    .wrapper
       include /navigation
       +pageHeading('Zitate')
-      ul.quotes
+      .page-main
          for quote in global.quotes
-            li
+            .quote-wrapper
                blockquote.quote
-                  p.quote-text= quote.text
+                  p.quote-content= quote.text
                   footer.quote-footer
                      span.quote-author 
                         if quote.author
