@@ -96,16 +96,16 @@ img
 .h1
     font-family: heading-font
     color: heading-color
-    font-size: var(--xxxl)
+    font-size: var(--xxl)
     @media big-mobile
-        font-size: var(--xxxxl)
+        font-size: var(--xxxl)
     @media big-heading
         font-size: var(--xxxxxxl)
     line-height: heading-line-height
 
 .h2
     font-family: heading-font
-    font-size: var(--l)
+    font-size: var(--xxl)
     color: heading-color
 
 .h3
@@ -117,11 +117,15 @@ img
 //////////
 
 .page-heading
-    margin-top: var(--three-units)
+    margin-top: var(--two-units)
     & + .page-content
     & + .page-main
-        margin-top: var(--three-units)
+        margin-top: var(--two-units)
     
+.page-title
+    padding-bottom: var(--semi-unit)
+    border-bottom: 4px solid dark
+    display: inline-block
 
 .page-intro
     max-width: text-width
@@ -136,9 +140,6 @@ img
         arrow-list()
     ul+p
         margin-top: var(--semi-unit) 
-
-.page-title
-    text-transform: uppercase
 
 .page-content
     display: grid
@@ -271,10 +272,10 @@ img
 
 .card
     @extends .spaced-paragraphs
-    
+    background: hsl(0, 0, 92)
     padding: var(--semi-unit) var(--semi-unit)
     @media m
-        padding: var(--two-units)
+        padding: var(--two-units) var(--unit)
 
     p+ul 
         margin-top: var(--semi-unit)
@@ -287,12 +288,10 @@ img
     object-fit: contain
 
 .card-header + .card-main
-    margin-top: var(--unit)
+    margin-top: var(--semi-unit)
 
 .card-title
-    font-family: heading-font
-    font-size: var(--xxl)
-    // font-weight: 500
+    font-size: var(--l)
 
 .card-section + .card-section
     margin-top: var(--semi-unit)
@@ -308,18 +307,18 @@ img
         max-height: none
 
 .cards
-    display: grid
-    gap: var(--semi-unit)
-    @media two-cols
-        grid-template-columns: 1fr 1fr
-    @media three-cols
-        grid-template-columns: 1fr 1fr 1fr
+    grid(min-column-width: 300px)
+    // display: grid
+    // gap: var(--semi-unit)
+    // @media two-cols
+    //     grid-template-columns: 1fr 1fr
+    // @media three-cols
+    //     grid-template-columns: 1fr 1fr 1fr
 
 .colored-cards
     @extends .cards
     .card
         &:nth-child(3n+1)
-            // border: 6px solid colors[0]
             background: lights[0]
         &:nth-child(3n+2)
             // border: 6px solid colors[1]

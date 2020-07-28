@@ -1,15 +1,24 @@
 companies:
-   -  wd_id: Q1113804  # comcast
+   
+   -  wikidata_id: Q7414  # the walt disney company
+      subsidiaries:
+         - Q2216535  # the walt disney studios
+         - Q1200552  # marvel entertainment
+         - Q242446   # lucasfilm
+         - Q5476713  # 21th century fox
+         
+   -  wikidata_id: Q1113804  # comcast
       subsidiaries: 
          -  Q918390  # sky
-         -  wd_id: Q724759 # nbcuniversal
+         -  wikidata_id: Q724759 # nbcuniversal
             subsidiaries: 
                - Q13974  # nbc
                - Q168383 # universal studios
-   -  wd_id: Q35476    # AT&T
+   
+   -  wikidata_id: Q35476    # at&t
       subsidiaries:
-         -  wd_id: Q191715   # warner media   
+         -  wikidata_id: Q191715   # warner media   
             subsidiaries:
-               -  Q126399    # Warner bros
+               -  Q126399    # warner bros
                -  Q23633     # hbo
                -  Q65359104  # hbo max

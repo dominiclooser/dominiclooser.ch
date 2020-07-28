@@ -29,11 +29,23 @@ content:
       # Q488222     # the host
       # Q144756     # let the right one in
       # Q132351 the usual suspects
+      # dancer in the dark
+      
+
 
       Lieblingsfilme:
+         # ed wood
          - Q669591    # Happy go lucky
          - Q300555    # A serious man
-         
+
+      Q8588:
+         - Q300555    # A serious man
+         - Q28443710  # Dark
+
+      Philosophisch:
+         - Q28443710  # Dark
+         - Q300555    # A serious man
+
       Fastdokumentarisch:
          # fish tank
          # the wrestler
@@ -78,7 +90,7 @@ content:
          -  label: Cinemania
             link: https://www.imdb.com/label/tt0281724
 
-      Heftig und manchmal schön:
+      Heftig / schön:
          -  Q676047    # Blue Valentine
          -  label: Never Let Me Go
          -  label: The Secret Life of Words
@@ -113,12 +125,14 @@ content:
       
       audiovisuel:
          - Q28443710  # Dark
-         - Q217112    # moonrise kindgdome
+         - Q217112    # moonrise kindgdom
          - Q487181    # requiem for a dream
 
    Personen:
 
       Schauspieler: 
+      # johnny depp
+      # roberto begnini
          - Q165518  # ewan mcgregor
          - Q57147   # Michael Fassbender
 
@@ -134,6 +148,8 @@ content:
          # Harmony Korine
          # Taika Waititi
          # Wes Anderson
+         - Q72021   # andreas dresen
+         - Q133730  # lars von trier
          - Q504656  # todd solondz
          - Q55238   # ken loach
          - Q315756  # Mike Leigh
@@ -156,15 +172,24 @@ content:
          - Q798641 # bad boy buddy
 
       Deutschland: 
+         # - Tom Tykwer
+         - Q72021      # andreas dresen
+         - Q478536     # drei
+         - Q390914     # halt auf freier strecke
+         - Q879404     # halbe strecke
          - Q28443710   # Dark
       
       Österreich:
          - Q84199    # Michael Haneke
          - Q112182   # Ulrich Seidl
 
+      Dänemark:
+         - Q133730   # lars von trier
+      
+      Island:
+         -  Q165525  # 101 reykjavik
+
       Skandinavien:
-         -  label: 101 Reykjavik (Island)
-            link: http://en.wikipedia.org/wiki/101_Reykjav%C3%ADk
          -  label: Nói albinói (Island)
          -  Q7053629   # nord
          -  label: Tillsammans (Schweden)

@@ -11,7 +11,7 @@ target = 'names'
 [[generators]]
 template = 'inspiration.pug'
 data = 'inspiration/*'
-target = 'inspiration'
+target = 'tipps'
 
 [[generators]]
 template = 'rec.pug'

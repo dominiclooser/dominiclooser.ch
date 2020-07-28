@@ -20,9 +20,7 @@ lyrics:
       author: Sarah Lesch
       song: Da Draussen
 content:
-   Genre:
-      Battle Rap:
-         - Q15975687 # Karate Andi
+   Genre:   
       Singer/Songwriter:
          -  label: Conor Oberst
          -  label: Bob Dylan
@@ -42,6 +40,7 @@ content:
          - Q17334464  # Scroobius Pip
          -  label: Die Fantastischen Vier
          -  label: Money Boy
+         - Q15975687 # Karate Andi
    Land:
       England:
          - Q17334464  # Scroobius Pip
@@ -57,6 +56,7 @@ content:
          - Q694170    # Die Fantastischen Vier
          - Q157079    # Wir sind Helden
       Österreich:
+         - Q78837     # soap and skin
          -  label: Seiler und Speer
             link: http://seilerundspeer.at
          -  label: Ludwig Hirsch 

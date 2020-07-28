@@ -7,10 +7,10 @@ block content
 
    .wrapper
       include /navigation
-      +pageHeading(local.title)
+      +pageHeading('Tipps: ' + local.title)
       .page-main
          if local.flat
-            .colored-cards
+            .cards
                for cardItems, cardTitle in local.content
                   .card
                      header.card-header
@@ -25,7 +25,7 @@ block content
                section.s1
                   header.s1-header
                      h2.h2= section
-                  main.s1-main.colored-cards
+                  main.s1-main.cards
                      for cardItems, cardTitle in sectionContent
                         .card
                            //- +responsiveImage(local.image)(class='card-background-image')
@@ -36,3 +36,4 @@ block content
                               ul.card-list
                                  for item in cardItems
                                     li: +item(item)
+      include /footer

@@ -23,10 +23,13 @@
 .text-wrapper
     max-width: max-text-width
 
-grid(min-column-width = 100px, gap = var(--unit))
+grid(min-column-width = 200px, gap = var(--unit))
     display: grid
     grid-template-columns: repeat(auto-fill, minmax(min-column-width, 1fr))
     gap: gap
+
+.grid
+    grid()
 
 .textplus
     @media textplus
