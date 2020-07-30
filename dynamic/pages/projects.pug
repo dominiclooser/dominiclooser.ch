@@ -1,12 +1,40 @@
 extends /base
 include /page_heading
+include /sections
+include /wikidata
 
 block content
+
+   -
+      map = new Map()
+      map.set('In Arbeit', [])
+      for (project of Object.values(global.projects)) {
+         if ('year' in project) {
+            if (!(map.has(project.year))) {
+               map.set(project.year, [])
+            } 
+            map.get(project.year).push(project)
+         }  else {
+            map.get('In Arbeit').push(project)
+         }    
+      }
+      projects = Array.from(map.entries()).sort().reverse()
+         
+
    .wrapper
       include /navigation
       +pageHeading('Projekte')
       .page-main
-         ul
-            for project in global.projects
-               li: a(href=project.id)= project.title
+         .projects.columns
+            - for ([year, projects] of projects)
+               +section(year)
+                  ul
+                     for project in projects
+                        li
+                           a(href=project.id)= project.title
+                           if project.type
+                              span= ' ('
+                              +label(project.type)
+                              span )
+
       include /footer

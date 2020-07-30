@@ -61,11 +61,17 @@ grid(min-column-width = 200px, gap = var(--unit))
 .plustext-plus
     align-self: left
 
+.columns
+    columns: 300px
+    *
+        break-inside: avoid
+
 .image-columns
     columns: 200px
     column-gap: var(--semi-unit)
     *
         margin-bottom: var(--semi-unit)
+    
 
 
 //////////

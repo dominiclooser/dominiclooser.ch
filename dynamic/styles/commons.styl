@@ -78,8 +78,8 @@ img
 // typography //
 ////////////////
 
-.s1
-    padding-top: var(--unit)
+// .s1
+//     padding-top: var(--unit)
 
 .s1-header + .s1-main
     margin-top: var(--quarter-unit)
@@ -93,19 +93,9 @@ img
 .s2-header + .s2-main
     margin-top: var(--semi-unit)
 
-.h1
-    font-family: heading-font
-    color: heading-color
-    font-size: var(--xxl)
-    @media big-mobile
-        font-size: var(--xxxl)
-    @media big-heading
-        font-size: var(--xxxxxxl)
-    line-height: heading-line-height
-
 .h2
-    font-family: heading-font
-    font-size: var(--xxl)
+    font-size: var(--l)
+    font-weight: bold
     color: heading-color
 
 .h3
@@ -123,9 +113,17 @@ img
         margin-top: var(--two-units)
     
 .page-title
-    padding-bottom: var(--semi-unit)
+    padding-bottom: 0.2em
     border-bottom: 4px solid dark
     display: inline-block
+    font-family: heading-font
+    color: heading-color
+    font-size: var(--xxl)
+    @media big-mobile
+        font-size: var(--xxxl)
+    @media big-heading
+        font-size: var(--xxxxl)
+    line-height: heading-line-height
 
 .page-intro
     max-width: text-width
@@ -227,10 +225,6 @@ img
         hlist(sep: '•', spacing-right: 0em)
 
 
-
-.page-title
-    @extends .h1
-
 .page-subtitle
     font-family: heading-font
     font-size: var(--l)
@@ -331,11 +325,6 @@ img
 //////////
 // misc //
 //////////
-
-
-
-
-
 
 .masonry-item
     margin-bottom: 33px
