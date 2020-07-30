@@ -64,6 +64,7 @@ content:
          -  label: Stephan Eicher
          -  label: Patent Ochsner
          -  label: Mani Matter
+         - Q1030310
       USA:
          # Nirvana
          - Q915714    # Bright Eyes
@@ -81,5 +82,6 @@ content:
             creator: Joachim Witt, Peter Heppner
             link: https://www.youtube.com/watch?v=vIOSucOj2_k
          - Q87724236  # again (archive)
+         - Q1030310   # campari soda
       # Alben:
       #    -  label: Molden, Resetarits, Soyka, Wirth
