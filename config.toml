@@ -1,6 +1,6 @@
 [[generators]]
 template = 'article.pug'
-data = 'articles/*.md'
+data = 'articles/*'
 target = 'articles'
 
 [[generators]]

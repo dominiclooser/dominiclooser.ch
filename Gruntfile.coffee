@@ -58,6 +58,8 @@ getDataObject = (dir) ->
     data = {}
     
     for name in fs.readdirSync(dir)
+        if name == 'drafts'
+            continue
         dataPath = join(dir, name)
         id = replaceExt(name, '')
         id = id.split('-').join('_')
@@ -75,15 +77,14 @@ getDataObject = (dir) ->
    
 config =
 
-    exec:
-        encrypt:  'staticrypt out/articles/corona/index.html keinpasswort -o out/articles/corona/index.html'
-        encrypt2: 'staticrypt out/projects/percy/index.html percy -o out/projects/percy/index.html'
+    # exec:
+    #     encrypt:  'staticrypt out/articles/corona/index.html keinpasswort -o out/articles/corona/index.html'
+    #     encrypt2: 'staticrypt out/projects/percy/index.html percy -o out/projects/percy/index.html'
     
     imagemin:
         main: 
             options:
                 use: [imageminMozjpeg(), imageminPngquant()]
-                optimizationLevel: 7
             files: [
                 expand: true
                 cwd: 'dynamic/images'
@@ -126,11 +127,11 @@ config =
     'gh-pages':
         production:
             options:
-                base: 'www'
+                base: 'out'
             src: '**/*'
         stage:
             options:
-                base: 'www'
+                base: 'out'
                 repo: 'git@github.com:dominiclooser/dominiclooser.ch-stage.git'
             src: '**/*'
     
@@ -263,13 +264,9 @@ module.exports = (grunt) ->
             if fs.existsSync(filename)
                 return fs.readFileSync(filename)
             else
-                return ''
-            # catch e
-            #     console.log('ERROR')
-            #     return ''
-                # if ex.code != 'ENOENT'
-                #     throw ex
-                # return Buffer.alloc(0)        
+                return ''    
+
+        wikidata = {} # todo
 
         globalOptions =
             basedir: 'dynamic/shared'
@@ -281,6 +278,7 @@ module.exports = (grunt) ->
             marked: marked
             toWidth: toWidth
             plugins: [{read: read}]
+            wikidata: wikidata
     
             
        
@@ -364,7 +362,7 @@ module.exports = (grunt) ->
             fs.writeFileSync(target, html)
             
 
-    grunt.registerTask 'build', ['pug', 'stylus', 'postcss', 'coffee', 'copy:static', 'strip-extensions', 'exec']
+    grunt.registerTask 'build', ['pug', 'stylus', 'postcss', 'coffee', 'copy:static', 'strip-extensions']
     grunt.registerTask 'default', ['build', 'watch']
     
     grunt.registerTask 'full_build', ['clean', 'make-dirs', 'imagemin', 'responsive_images', 'build'] 
