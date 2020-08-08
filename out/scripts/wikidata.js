@@ -34,9 +34,9 @@
     links = `<ul>\n    <li><a is='wd-link' entity-id=${entity.id} site='enwiki'>English Wikipedia</a></li>\n    <li><a is='wd-link' entity-id=${entity.id} property='P856'>Official Website</a></li>\n    <li><a is='wd-link' entity-id=${entity.id} property='P345'>IMDB</a></li>\n</ul>`;
     overlay = document.createElement('div');
     overlay.classList.add('overlay');
-    overlay.innerHTML = `<div class='overlay-content'>\n    <header class='overlay-header'>\n        <h4 class='overlay-title'>\n            <wd-entity id=${entity.id} label lang=${lang}>\n        </h4>\n        <svg class='close' viewBox='0 0 100 100'>\n            <line x1=0 y1=0 x2=100 y2=100 />\n            <line x1=0 y1=100 x2=100 y2=0 />\n        </svg> \n    </header>\n    <div class='overlay-main'>\n        ${dl}\n        ${links}\n    </div>\n</div>`;
+    overlay.innerHTML = `<div class='overlay-content'>\n    <header class='overlay-header'>\n        <h4 class='overlay-title'>\n            <wd-entity id=${entity.id} label lang=${lang}>\n        </h4>\n        <svg class='close-overlay' viewBox='0 0 100 100'>\n            <line x1=0 y1=0 x2=100 y2=100 />\n            <line x1=0 y1=100 x2=100 y2=0 />\n        </svg> \n    </header>\n    <div class='overlay-main'>\n        ${dl}\n        ${links}\n    </div>\n</div>`;
     document.body.append(overlay);
-    close = overlay.querySelector('.close');
+    close = overlay.querySelector('.close-overlay');
     return close.addEventListener('click', function() {
       return overlay.style.display = 'none';
     });

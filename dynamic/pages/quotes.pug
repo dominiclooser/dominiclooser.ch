@@ -7,14 +7,16 @@ block content
       include /navigation
       +pageHeading('Zitate')
       .page-main
-         for quote in global.quotes
-            .quote-wrapper
+         .quotes
+            for quote in global.quotes
                blockquote.quote
                   p.quote-content= quote.text
                   footer.quote-footer
                      span.quote-author 
                         if quote.author
                            +item(quote.author)
-                     //- if quote.author && quote.source
-                     //-    span &ensp;(#{quote.source.label})
+                        if quote.source
+                           span= ' ('
+                           +item(quote.source)
+                           span= ')'
       include /footer

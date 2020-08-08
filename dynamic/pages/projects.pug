@@ -2,6 +2,7 @@ extends /base
 include /page_heading
 include /sections
 include /wikidata
+include /menu
 
 block content
 
@@ -22,7 +23,8 @@ block content
          
 
    .wrapper
-      include /navigation
+      +pageHeader(true)
+         span Menu
       +pageHeading('Projekte')
       .page-main
          .projects.columns

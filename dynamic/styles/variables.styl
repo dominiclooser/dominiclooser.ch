@@ -22,12 +22,21 @@ big-mobile = '(min-width: 375px)'
 ////////////////
 
 mono-font = Inconsolata
-body-font = Overpass//Rubik //Inconsolata
+body-font = Overpass
 heading-font = Druk Text
 text-width = 700px
 heading-line-height = 0.9
 
 :root
+    --primary: #ED5083
+    --secondary: #05CDFE 
+    --tertiary: #08E498
+
+    --light-primary: #FBDAE5
+    --light-secondary: #D6F7FF
+
+    --secondary-background-color: hsl(0, 0, 97)
+    
     --scale-factor: 1.2
     --line-height: 1.4
     --font-size: 18px
@@ -76,20 +85,10 @@ heading-line-height = 0.9
 // colors //
 ////////////
 
-primary =  #ED5083
-
-colors = #05CDFE #ED5083 #08E498 
-lights = lightness(colors[0], 80%) lightness(colors[1], 75%) lightness(colors[2], 70%) 
-primary-color =  #05CDFE 
-secondary-color = #08E498
-tertiary-color = #ED5083
-link-color = tertiary-color
-dark = #404040  // hsl(0, 0, 25%)  // rgba(0,0,0,0.87)
+dark = hsl(0, 0, 25%)
 light-grey = #f7f7f7
 middle-grey = #e8e6e6
 background-color = #fefefe // #E4D5AD//white//#6D97C6 //#EDF2F4 // #EAEEEF //#FEFDCA //#fdfd77 //#F0F9F4 //light-grey //#eff6fb
-
-
 text-color = dark
 heading-color = hsl(0, 0%, 30%)
 

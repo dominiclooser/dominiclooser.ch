@@ -30,9 +30,10 @@ img
 .dl
     dl(weight: 400)
     
-.close
-    height: var(--unit) 
-    stroke-width: 0.3em
+.close-overlay
+    margin-right: var(--semi-unit)
+    height: 1.2em 
+    stroke-width: 0.4em
     stroke: dark   
     cursor: pointer
     &:hover
@@ -51,7 +52,7 @@ img
     margin: 0 auto
     height: 100%
     max-width: text-width
-    background: lights[0]
+    background: var(--secondary)
     padding: var(--two-units) var(--unit)
     @media l
         padding: var(--two-units)
@@ -72,34 +73,6 @@ img
 
 .overlay-props
     dl(weight: 400)
-
-
-////////////////
-// typography //
-////////////////
-
-// .s1
-//     padding-top: var(--unit)
-
-.s1-header + .s1-main
-    margin-top: var(--quarter-unit)
-
-.s1 + .s1
-    margin-top: var(--unit)
-
-.s2 + .s2 
-    margin-top: var(--semi-unit)
-
-.s2-header + .s2-main
-    margin-top: var(--semi-unit)
-
-.h2
-    font-size: var(--l)
-    font-weight: bold
-    color: heading-color
-
-.h3
-    font-family: heading-font
 
 
 //////////
@@ -133,7 +106,6 @@ img
         margin-top: var(--unit)
     h2
         margin-bottom: var(--semi-unit)
-        @extend .h2
     ul 
         arrow-list()
     ul+p
@@ -150,79 +122,110 @@ img
     border: 1px solid primary
 
 
-///////////
-// header
-///////////
+//////////
+// menu //
+//////////
 
 .mobile-page-header
+    font-family: heading-font
+    text-transform: uppercase
     @media desktop-nav
         display: none
-    font-family: heading-font
-    text-transform: uppercase
-    padding: var(--semi-unit) 0 
-    display: flex
-    justify-content: space-between
+
 
 .mobile-nav
-    display: none
-    position: fixed
-    top: 0
-    height: 100vh
-    width: 100vw
-    background: primary-color
-    z-index: 10
-    left: 0
-    font-family heading-font
-    color: white
-    text-align: center
-    ul
-        stacked-list(border: none)
-    li
-        line-height: 1
-        font-size: var(--xxxl)
+    font-size: var(--xxxxl)
+    font-weight: 700
+    line-height: 1.1
     li:hover
-        background: white
-        color: primary-color
-    .close
-        margin: var(--two-units) 0 var(--unit) 0 
-        stroke: white
-        stroke-width: 6
-        height: var(--unit)
-        cursor: pointer
-
-.open-nav
-    cursor: pointer
-    
-.hamburger
-    height: var(--two-units)
-    fill: none
-    stroke-width: 0.5
-    stroke: dark
-    cursor: pointer
-
-.logo
-    font-family: heading-font
-    text-transform: uppercase
-    margin-right: var(--unit)
+        background: dark
+        color: var(--primary)
+.close
+    width: calc(1.5*var(--unit))
 
 .desktop-page-header
-    @extends .colored-on-hover-links
-    letter-spacing: 0.05em
-    text-transform: uppercase
-    font-family: heading-font
-    line-height: var(--unit)
-    vertical-align: bottom 
-    padding: var(--semi-unit) 0
-    display: flex
-    justify-content: space-between
-    @media mobile-nav
-        display: none
+    @media desktop-nav
+        display: flex
+
+// .mobile-page-header
+//     @media desktop-nav
+//         display: none
+//     font-family: heading-font
+//     text-transform: uppercase
+//     display: flex
+//     justify-content: space-between
+
+// .mobile-nav
     
-.desktop-nav
-    display: inline
-    ul
-        display: inline
-        hlist(sep: '•', spacing-right: 0em)
+//     ul
+//         stacked-list(border: none)
+//     li
+//         line-height: 1
+//         font-size: var(--xxxxl)
+//     li:hover
+//         background: white
+//         color: primary-color
+//     .close
+//         margin: var(--two-units) 0 var(--unit) 0 
+//         stroke: white
+//         stroke-width: 6
+//         height: var(--unit)
+//         cursor: pointer
+
+
+
+// .desktop-page-header
+//     @extends .colored-on-hover-links
+//     letter-spacing: 0.05em
+//     text-transform: uppercase
+//     font-family: heading-font
+//     line-height: var(--unit)
+//     vertical-align: bottom 
+//     padding: var(--semi-unit) 0
+//     display: flex
+//     justify-content: space-between
+//     @media mobile-nav
+//         display: none
+    
+// .desktop-nav
+//     display: inline
+//     ul
+//         display: inline
+//         hlist(sep: '•', spacing-right: 0em)
+
+
+////////////////
+// typography //
+////////////////
+
+// .s1
+//     padding-top: var(--unit)
+
+.s1-header + .s1-main
+    margin-top: var(--quarter-unit)
+
+.s1 + .s1
+    margin-top: var(--unit)
+
+.s2 + .s2 
+    margin-top: var(--semi-unit)
+
+.s2-header + .s2-main
+    margin-top: var(--semi-unit)
+
+.h2
+    font-size: var(--l)
+    font-weight: bold
+    color: heading-color
+
+.h3
+    font-family: heading-font
+
+
+
+
+
+
 
 
 .page-subtitle
@@ -266,7 +269,7 @@ img
 
 .card
     @extends .spaced-paragraphs
-    background: hsl(0, 0, 92)
+    background: var(--card-background-color) 
     padding: var(--semi-unit) var(--semi-unit)
     @media m
         padding: var(--two-units) var(--unit)
@@ -309,17 +312,17 @@ img
     // @media three-cols
     //     grid-template-columns: 1fr 1fr 1fr
 
-.colored-cards
-    @extends .cards
-    .card
-        &:nth-child(3n+1)
-            background: lights[0]
-        &:nth-child(3n+2)
-            // border: 6px solid colors[1]
-            background: lights[1]
-        &:nth-child(3n+3)
-            // border: 6px solid colors[2]
-            background: lights[2]
+// .colored-cards
+//     @extends .cards
+//     .card
+//         &:nth-child(3n+1)
+//             background: lights[0]
+//         &:nth-child(3n+2)
+//             // border: 6px solid colors[1]
+//             background: lights[1]
+//         &:nth-child(3n+3)
+//             // border: 6px solid colors[2]
+//             background: lights[2]
 
 
 //////////

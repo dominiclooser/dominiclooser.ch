@@ -4,7 +4,7 @@
 
 .rec
     padding: var(--semi-unit)
-    border: 2px solid colors[0]
+    border: 2px solid var(--primary)
 
 
 //////////
@@ -59,7 +59,6 @@
     p+h2
         margin-top: var(--unit)
     h2
-        @extends .h2
         font-family: inherit
         font-size: var(--m)
         font-weight: normal
@@ -197,7 +196,7 @@
     .card-title
         text-transform: uppercase
     .card
-        background: colors[0]
+        background: var(--primary)
 
 .lyrics
     margin-bottom: var(--two-units)
@@ -278,15 +277,25 @@
 //  quotes //
 /////////////
 
-.quote-wrapper
-    height: 100vh
+.quotes
+    columns: 300px
+    gap: var(--two-units)
+
+.quote + .quote
+    margin-top: var(--two-units)
 
 .quote-content    
-    font-size: var(--xxl)
+    font-size: var(--l)
     line-height: 1.2
 
 .quote-footer
-    margin-top: 0.5em
+    margin-top: 0.1em
+
+.quote-author::before
+   content: '—'
+
+
+
 
 
 ///////////////

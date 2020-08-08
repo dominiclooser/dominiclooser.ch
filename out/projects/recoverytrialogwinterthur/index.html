@@ -1,13 +1,43 @@
-<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Recovery Trialog Winterthur</title><meta name="description" content="Text und Grafik"><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:image"><link rel="stylesheet" href="/styles/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900"></head><body><div class="wrapper"><header class="desktop-page-header"><a class="logo" href="/">Dominic Looser</a><nav class="desktop-nav"><ul><li><a href="/text">Text</a></li><li><a href="/grafik">Grafik</a></li><li><a href="/tipps">Tipps</a></li><li><a href="/about">About</a></li></ul></nav></header><header class="mobile-page-header"><a class="logo" href="/"> <span>Dominic </span><span>Looser</span></a><p class="open-nav">Menu</p></header><nav class="mobile-nav"><svg class="close" viewBox="0 0 100 100"><line x1="10" y1="10" x2="90" y2="90"></line><line x1="10" y1="90" x2="90" y2="10"></line></svg><ul><li><a href="/">Home</a></li><li><a href="/text">Text</a></li><li><a href="/grafik">Grafik</a></li><li><a href="/tipps">Tipps</a></li><li><a href="/about">About</a></li></ul></nav><script>(function() {
-  var mobileNav;
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Recovery Trialog Winterthur</title><meta name="description" content="Text und Grafik"><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:image"><link rel="icon" href="/images/favicon.png" sizes="32x32"><link rel="stylesheet" href="/styles/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900"></head><body><div class="wrapper"><style>.mobile-page-header {
+   display: flex;
+   justify-content: space-between;
+   padding: var(--semi-unit) 0;
+}
+.desktop-page-header {
+   display: none
+}
+.close, .open-menu{
+   cursor: pointer
+}
+.close {
+   stroke-width: 10px;
+   height: var(--unit);
+}
+.mobile-nav {
+   display: none;
+   justify-content: space-between;
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100vh;
+   width: 100vw;
+   padding: var(--unit);
+   background: var(--primary)
+}
+   </style><header class="desktop-page-header"><a class="logo" href="/">Dominic Looser</a><nav class="desktop-nav"><ul class="desktop-nav-list"><li><a href="/text">Text</a></li><li><a href="/grafik">Grafik</a></li><li><a href="/tipps">Tipps</a></li><li><a href="/about">About</a></li></ul></nav></header><header class="mobile-page-header"><a class="logo" href="/">Dominic Looser</a><div class="open-menu"><span>Menu</span></div></header><nav class="mobile-nav"><ul class="mobile-nav-list"><li class="nav-group"><a class="nav-item" href="/">Home</a></li><li class="nav-group"><a class="nav-item" href="/text">Text</a></li><li class="nav-group"><a class="nav-item" href="/grafik">Grafik</a></li><li class="nav-group"><a class="nav-item" href="/tipps">Tipps</a></li><li class="nav-group"><a class="nav-item" href="/about">About</a></li></ul><div class="close-wrapper"><svg class="close" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="0" y1="100" x2="100" y2="0"> </line></svg></div></nav><script>(function() {
+  var close, mobileNav, openMenu;
+
+  close = document.querySelector('.close');
 
   mobileNav = document.querySelector('.mobile-nav');
 
-  document.querySelector('.open-nav').addEventListener('click', function() {
-    return mobileNav.style.display = 'block';
+  openMenu = document.querySelector('.open-menu');
+
+  openMenu.addEventListener('click', function() {
+    return mobileNav.style.display = 'flex';
   });
 
-  document.querySelector('.close').addEventListener('click', function() {
+  close.addEventListener('click', function() {
     return mobileNav.style.display = 'none';
   });
 

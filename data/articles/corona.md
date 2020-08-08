@@ -46,7 +46,12 @@ videos:
       title: Is COVID-19 Even Real?
 
 resources:
-
+   -  link: https://ourworldindata.org/covid-excess-mortality
+      label: A pandemic primer on excess mortality statistics and their comparability across countries (Our World in Data)
+   - Q17299925  # human mortality database
+   - Q217659  # eurostat
+   -  link: https://ec.europa.eu/eurostat/web/population-demography-migration-projections/data/database
+   -  label: eurostat relevant data
    -  link: https://swprs.org/covid-19-hinweis-ii/
       label: Swiss Propaganda Research – COVID19
 

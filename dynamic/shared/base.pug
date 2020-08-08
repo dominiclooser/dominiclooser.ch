@@ -11,12 +11,13 @@ html(lang=global.settings.lang)
       meta(name='viewport', content='width=device-width, initial-scale=1')
       meta(property='og:image', content=global.settings.og_image)
 
+      link(rel='icon', href='/images/favicon.png', sizes='32x32')
       link(rel='stylesheet', href='/styles/styles.css')
-      link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=' + global.settings.google_fonts)
+      link(rel='stylesheet', href='https://fonts.googleapis.com/css?' + global.settings.google_fonts)
       include /styles
       include /early_scripts
 
-   body
+   body(id=path)
       block content
       block scripts
          include /late_scripts

@@ -44,7 +44,7 @@ render = (entity, lang) ->
                 <h4 class='overlay-title'>
                     <wd-entity id=#{entity.id} label lang=#{lang}>
                 </h4>
-                <svg class='close' viewBox='0 0 100 100'>
+                <svg class='close-overlay' viewBox='0 0 100 100'>
                     <line x1=0 y1=0 x2=100 y2=100 />
                     <line x1=0 y1=100 x2=100 y2=0 />
                 </svg> 
@@ -56,7 +56,7 @@ render = (entity, lang) ->
         </div>
     """
     document.body.append(overlay)
-    close = overlay.querySelector('.close')
+    close = overlay.querySelector('.close-overlay')
     close.addEventListener 'click', ->
         overlay.style.display = 'none'
 
