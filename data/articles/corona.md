@@ -46,6 +46,8 @@ videos:
       title: Is COVID-19 Even Real?
 
 resources:
+   -  link: https://corona-transition.org
+      label: Corona Transition
    -  link: https://ourworldindata.org/covid-excess-mortality
       label: A pandemic primer on excess mortality statistics and their comparability across countries (Our World in Data)
    - Q17299925  # human mortality database
@@ -131,9 +133,6 @@ props:
          - Q28032204   # streeck 
          - Q1489360     
 --- 
-
-Dies sind meine Notizen zu COVID19.
-
 ## Verschiedenheit von Sars-cov-2
 Gegenargument: Viele haben keine Symptome, ihr Immunsystem muss also den Virus schon kennen.
 

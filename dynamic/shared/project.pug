@@ -10,11 +10,16 @@ block content
 
    .wrapper
       include /navigation
-      +pageHeading(local.title, '– Project Hub –')
+      +pageHeading(local.title, 'Project Hub')
       .page-content
          .page-main
-
-            +responsiveImage(objectId + '/title.jpg')
+            if local.title_image
+               if local.title_image.endsWith('.svg')
+                  +image(objectId + '/' + local.title_image)
+               else
+                  +responsiveImage(objectId + '/' + local.title_image)
+            else 
+               +responsiveImage(objectId + '/title.jpg')
 
             if local.goal
                section.s1.goal

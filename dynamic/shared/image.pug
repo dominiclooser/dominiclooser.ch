@@ -1,5 +1,8 @@
-mixin image(imageId, size='m')
-   img(src=`/images/${size}/${imageId}`)
+mixin image(imageId, size)
+   if size
+      img(src=`/images/${size}/${imageId}`)
+   else
+      img(src=`/images/${imageId}`)
 
 mixin responsiveImage(imageId)
    - lPath = '/images/l/' + imageId
@@ -20,5 +23,5 @@ mixin lightboxImage(imageId, lightboxGroup)
    if ! lightboxGroup
       - lightboxGroup = imageId
 
-   a(href=mPath, data-lightbox=lightboxGroup, class=attributes.class)
-      img(src=sPath)
+   a(href=lPath, data-lightbox=lightboxGroup, class=attributes.class)
+      img(src=mPath)

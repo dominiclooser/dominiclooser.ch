@@ -9,14 +9,16 @@ content:
          -  label: Björk
       Österreich:
          -  label: Ludwig Wittgenstein
-         -  label: Falco
          -  label: Kurt Gödel
+         -  label: Falco   
       Pretty British:
+         - Q354867  # alan watts
          - Q315756    # Mike Leigh
-         -  label: Kate Tempest
-            link: https://katetempest.co.uk
+         # -  label: Kate Tempest
+         #    link: https://katetempest.co.uk
          -  label: Scroobius Pip
             link: http://scroobiuspip.co.uk
+         
    Amerika:
       USA:
          - Q17457     # Donald Knuth

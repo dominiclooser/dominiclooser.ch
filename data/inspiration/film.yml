@@ -133,6 +133,7 @@ content:
       Schauspieler: 
       # johnny depp
       # roberto begnini
+         - Q193815  # ryan gosling
          - Q165518  # ewan mcgregor
          - Q57147   # Michael Fassbender
 
@@ -170,6 +171,10 @@ content:
 
       Q408: # australian
          - Q798641 # bad boy buddy
+
+      #Italien # roberto begnini
+
+      # Kanada Ryan Gosling 
 
       Deutschland: 
          # - Tom Tykwer

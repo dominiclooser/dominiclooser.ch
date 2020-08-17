@@ -30,13 +30,20 @@ block content
          .projects.columns
             - for ([year, projects] of projects)
                +section(year)
-                  ul
+                  ul.project-list
                      for project in projects
                         li
-                           a(href=project.id)= project.title
+                           span.project-title= project.title
                            if project.type
                               span= ' ('
                               +label(project.type)
                               span )
-
+                           if project.more 
+                              span= ' '
+                              a.arrow.colored.underlined-on-hover(href=project.id) mehr 
+                           if project.link
+                              span= ' '
+                              a.arrow.colored.underlined-on-hover(href=project.link) live 
+                           if project.slogan
+                              p.project-slogan= project.slogan 
       include /footer

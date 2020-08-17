@@ -76,11 +76,10 @@ content:
          - Q87989169  # Back in town
          - Q87988680  # Die Fotzen sind wieder da
       Songs:
+         - Q863433    # creep
          - Q88952808  # verdamp lang her
          - Q581952    # space oddity
-         -  label: Die Flut
-            creator: Joachim Witt, Peter Heppner
-            link: https://www.youtube.com/watch?v=vIOSucOj2_k
+         - Q1212500   # die flut
          - Q87724236  # again (archive)
          - Q1030310   # campari soda
       # Alben:

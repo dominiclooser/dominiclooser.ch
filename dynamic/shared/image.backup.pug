@@ -1,4 +1,4 @@
-mixin image(imageId, size)
+mixin image(imageId, size='m')
    img(src=`/images/${size}/${imageId}`)
 
 mixin responsiveImage(imageId)
@@ -7,7 +7,7 @@ mixin responsiveImage(imageId)
    - sPath = '/images/s/' + imageId
    - srcset = `${lPath} 2000w, ${mPath} 1000w, ${sPath} 400w`
    
-   img(src=mPath, srcset=srcset, class!=attributes.class)
+   img(src=mPath, srcset=srcset, class=attributes.class)
 
 
 

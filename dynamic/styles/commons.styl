@@ -1,4 +1,135 @@
-   
+//////////////
+// settings //
+/////////////
+
+.dl
+    dl(weight: 400)
+
+
+//////////
+// page //
+//////////
+
+.page-heading
+    margin-top: var(--two-units)
+    & + .page-content
+    & + .page-main
+        margin-top: var(--two-units)
+    
+.page-title
+    display: inline-block
+    font-family: heading-font
+    color: heading-color
+    font-size: var(--xxl)
+    @media big-mobile
+        font-size: var(--xxxl)
+    @media big-heading
+        font-size: var(--xxxxl)
+    line-height: heading-line-height
+
+.page-intro
+    max-width: text-width
+    margin-bottom: var(--unit)
+    @extend .spaced-paragraphs
+    section+section
+        margin-top: var(--unit)
+    h2
+        margin-bottom: var(--semi-unit)
+    ul 
+        arrow-list()
+    ul+p
+        margin-top: var(--semi-unit) 
+
+.page-content
+    display: grid
+    gap: var(--unit)
+    @media l
+        grid-template-columns: 2fr 1fr
+        
+.page-aside
+    padding: var(--unit)
+    border: 1px solid var(--primary)
+
+
+///////////
+// cards //
+///////////
+
+.card
+    @extends .spaced-paragraphs
+    background: var(--card-background-color)
+    padding: var(--semi-unit) var(--semi-unit)
+    @media m
+        padding: var(--two-units) var(--unit)
+
+    p+ul 
+        margin-top: var(--semi-unit)
+
+    .button-wrapper
+        display: flex 
+        padding-top: var(--unit)
+
+.card-background-image
+    object-fit: contain
+
+.card-header + .card-main
+    margin-top: var(--semi-unit)
+
+.card-title
+    font-size: var(--l)
+
+.card-section + .card-section
+    margin-top: var(--semi-unit)
+
+.card-list
+    vlist(spacing: 0.5em, border: 1px solid dark)
+
+.card-images
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: var(--semi-unit)
+    img
+        max-height: none
+
+.cards
+    grid(min-column-width: 300px)
+    // display: grid
+    // gap: var(--semi-unit)
+    // @media two-cols
+    //     grid-template-columns: 1fr 1fr
+    // @media three-cols
+    //     grid-template-columns: 1fr 1fr 1fr
+
+//////////
+// menu //
+//////////
+
+.mobile-page-header
+    font-family: heading-font
+    text-transform: uppercase
+    @media desktop-nav
+        display: none
+
+
+.mobile-nav
+    font-size: var(--xxxxl)
+    font-weight: 700
+    line-height: 1.1
+    li:hover
+        background: dark
+        color: var(--primary)
+.close
+    width: calc(1.5*var(--unit))
+
+.desktop-page-header
+    @media desktop-nav
+        display: flex
+
+
+//////////////
+// settings //
+/////////////
+
 img
     width: 100% 
 
@@ -27,9 +158,7 @@ img
     margin-top: var(--three-units)
     border-top: 1px dotted dark
 
-.dl
-    dl(weight: 400)
-    
+
 .close-overlay
     margin-right: var(--semi-unit)
     height: 1.2em 
@@ -38,6 +167,10 @@ img
     cursor: pointer
     &:hover
         stroke-width: 0.6em
+
+/////////////
+// overlay //
+////////////
 
 .overlay
     position: fixed
@@ -75,77 +208,8 @@ img
     dl(weight: 400)
 
 
-//////////
-// page //
-//////////
-
-.page-heading
-    margin-top: var(--two-units)
-    & + .page-content
-    & + .page-main
-        margin-top: var(--two-units)
-    
-.page-title
-    padding-bottom: 0.2em
-    border-bottom: 4px solid dark
-    display: inline-block
-    font-family: heading-font
-    color: heading-color
-    font-size: var(--xxl)
-    @media big-mobile
-        font-size: var(--xxxl)
-    @media big-heading
-        font-size: var(--xxxxl)
-    line-height: heading-line-height
-
-.page-intro
-    max-width: text-width
-    margin-bottom: var(--unit)
-    @extend .spaced-paragraphs
-    section+section
-        margin-top: var(--unit)
-    h2
-        margin-bottom: var(--semi-unit)
-    ul 
-        arrow-list()
-    ul+p
-        margin-top: var(--semi-unit) 
-
-.page-content
-    display: grid
-    gap: var(--unit)
-    @media l
-        grid-template-columns: 2fr 1fr
-        
-.page-aside
-    padding: var(--unit)
-    border: 1px solid primary
 
 
-//////////
-// menu //
-//////////
-
-.mobile-page-header
-    font-family: heading-font
-    text-transform: uppercase
-    @media desktop-nav
-        display: none
-
-
-.mobile-nav
-    font-size: var(--xxxxl)
-    font-weight: 700
-    line-height: 1.1
-    li:hover
-        background: dark
-        color: var(--primary)
-.close
-    width: calc(1.5*var(--unit))
-
-.desktop-page-header
-    @media desktop-nav
-        display: flex
 
 // .mobile-page-header
 //     @media desktop-nav
@@ -222,12 +286,6 @@ img
     font-family: heading-font
 
 
-
-
-
-
-
-
 .page-subtitle
     font-family: heading-font
     font-size: var(--l)
@@ -263,54 +321,7 @@ img
         background: dark
         color: light-background-color
 
-///////////
-// cards //
-///////////
 
-.card
-    @extends .spaced-paragraphs
-    background: var(--card-background-color) 
-    padding: var(--semi-unit) var(--semi-unit)
-    @media m
-        padding: var(--two-units) var(--unit)
-
-    p+ul 
-        margin-top: var(--semi-unit)
-
-    .button-wrapper
-        display: flex 
-        padding-top: var(--unit)
-
-.card-background-image
-    object-fit: contain
-
-.card-header + .card-main
-    margin-top: var(--semi-unit)
-
-.card-title
-    font-size: var(--l)
-
-.card-section + .card-section
-    margin-top: var(--semi-unit)
-
-.card-list
-    vlist(spacing: 0.5em, border: 1px solid dark)
-
-.card-images
-    display: grid
-    grid-template-columns: 1fr 1fr
-    grid-gap: var(--semi-unit)
-    img
-        max-height: none
-
-.cards
-    grid(min-column-width: 300px)
-    // display: grid
-    // gap: var(--semi-unit)
-    // @media two-cols
-    //     grid-template-columns: 1fr 1fr
-    // @media three-cols
-    //     grid-template-columns: 1fr 1fr 1fr
 
 // .colored-cards
 //     @extends .cards

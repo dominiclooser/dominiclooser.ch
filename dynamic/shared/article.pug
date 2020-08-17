@@ -12,10 +12,36 @@ block content
          +pageHeading(local.title)
 
       .page-content
-         +listSection(local.concepts, 'Concepts')
-         +listSection(local.people, 'People')
-         if local.props
-            aside.page-aside
+         main.page-main
+            if local.content
+               .text.spaced-paragraphs!= marked(local.content)
+            if local.videos
+               section.s1
+                  header.s1-header
+                     h2.h2 Videos
+                  .s1-main
+                     ul.default-list.underlined-on-hover-links
+                        for video in local.videos
+                           li: a(href='https://www.youtube.com/watch?v=' + video.youtube_id)= video.title
+
+            +listSection(local.resources, 'Ressourcen')            
+            +listSection(local.films, 'Films')
+            +listSection(local.songs, 'Songs')
+
+            if local.articles
+               section.s1
+                  header.s1-header
+                     h2.h2 Artikel
+                  .s1-main
+                     ul.default-list.underlined-on-hover-links
+                        for article in local.articles
+                           li
+                              +item(article)
+
+         aside.page-aside
+            +listSection(local.concepts, 'Concepts')
+            +listSection(local.people, 'People')
+            if local.props
                dl.props-dl
                   for prop in local.props
                      if prop.key
@@ -32,41 +58,3 @@ block content
                      else
                         dt: wd-entity(id=prop, label, lang=lang)
                         dd: wd-entity(id=local.wikidata_id, property=prop, lang=lang)
-               
-         
-         main.page-main
-
-            if local.content
-               .text.spaced-paragraphs!= marked(local.content)
-
-            if local.videos
-               section.s1
-                  header.s1-header
-                     h2.h2 Videos
-                  .s1-main
-                     ul.default-list.underlined-on-hover-links
-                        for video in local.videos
-                           li: a(href='https://www.youtube.com/watch?v=' + video.youtube_id)= video.title
-
-            if local.resources
-               section.s1
-                  header.s1-header
-                     h2.h2 Resourcen
-                  .s1-main
-                     ul.default-list.underlined-on-hover-links
-                        for res in local.resources
-                           li
-                              +item(res)
-            
-            +listSection(local.films, 'Films')
-            +listSection(local.songs, 'Songs')
-
-            if local.articles
-               section.s1
-                  header.s1-header
-                     h2.h2 Artikel
-                  .s1-main
-                     ul.default-list.underlined-on-hover-links
-                        for article in local.articles
-                           li
-                              +item(article)
