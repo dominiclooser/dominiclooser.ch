@@ -1,6 +1,33 @@
 # -  text: Der Mensch kann tun was er will; er kann aber nicht wollen was er will.
 #    author: Q38193  # arthur schopenhauer
 
+-  text: And language just happened. It was never planned
+   author: Bright Eyes
+   source: A Scale, A Mirror, and Those Indifferent Clocks
+   
+-  text: Das ist das Land der begrenzten Unmöglichkeiten
+   author: Wir sind Helden
+   source: Müssen nur wollen
+
+-  text: I’m not carefree, no. I’m free to care, I just never do
+   author: Monsters Of Folk
+   source: Ahead Of The Curve
+
+-  text: Don’t ever buy nothing from a man named Truth
+   author: Monsters Of Folk
+   source: Man named Truth
+
+-  text: And if you swear that there's no truth and who cares – how come you say it like you're right?
+   author: Bright Eyes
+   source: We Are Nowhere and It's Now
+
+-  text: Aber Mut heißt nicht, keine Angst zu haben – Mut heißt nur, dass man trotzdem springt
+   author: Sarah Lesch
+   source: Da Draussen
+
+-  text: Responding to change over following a plan.
+   source: Q2746660  # agile manifesto
+
 -  text: An unseren Gedanken leiden wir mehr als an den Tatsachen.
    author: Q2054  # seneca
 

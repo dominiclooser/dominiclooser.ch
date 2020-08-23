@@ -10,10 +10,24 @@ concepts:
    - Stille Feiung
 
 quotes:
-   -  content: Lockdown is over,  Life is about risk.  It was never about "nobody will ever get this asymptomatic flu again".  It was about flattening the curve.  Yes, if you live on Earth, you might get sick, might have an accident, might get cancer next year if you don't get the flu this year.  It is what it is.   Go back to living.  You people are too focused on not dying that you're not living.
-      author: a random youtuber
+   -  content: |
+         I'm from a country in Eastern Europe and here's the opposite: leftists fighting for freedom (with the super left activists protesting) and right government + their supporters supporting lockdowns and authoritarianism. It's fascinating how in the US it's the opposite.
+      source: > 
+         https://www.reddit.com/r/LockdownSkepticism/comments/icj3x6/some_swedish_officials_want_to_lockdown_sweden/
+      date: 20-08-19
 
-   -  content: Never in the field of human endeavour have so many been so scared for so long of so little.
+   -  content: | 
+         A culture of safetyism has enveloped the world for decades, and now we're seeing a dramatic example of how it can usher in totalitarianism under the guise of health and safety.
+
+         We're witnessing an extreme example of how concept creep has disastrous effects on collaborative sense making by destroying language and meaning.
+      source: > 
+         https://www.reddit.com/r/LockdownSkepticism/comments/icj3x6/   some_swedish_officials_want_to_lockdown_sweden/
+      date: 20-08-19
+   -  content: | 
+         Lockdown is over,  Life is about risk.  It was never about "nobody will ever get this asymptomatic flu again".  It was about flattening the curve.  Yes, if you live on Earth, you might get sick, might have an accident, might get cancer next year if you don't get the flu this year.  It is what it is.   Go back to living.  You people are too focused on not dying that you're not living.
+      author: a random youtuber
+   -  content: | 
+         Never in the field of human endeavour have so many been so scared for so long of so little.
       author: another random youtuber
 
 videos:
@@ -106,8 +120,6 @@ articles:
    -  link: https://www.mdr.de/wissen/corona-berechnung-todesrate-unterschiede-italien-100.html#sprung5
       label: Warum hat Italien eine so hohe Todesrate?
 
-   
-
 props:
    -  key: Institutionen
       value: 
@@ -152,17 +164,16 @@ Selbstbestimmung?
 
 
 Witze:
-- Patient zu Arzt: «Herr Doktor, wann ist COVID19 vorbei?» «Keine Ahnung! Ich bin Arzt, nicht Politiker!»
-<!-- Fragen: wer löscht Videos?
+- Patient zu Arzt: «Herr Doktor, wann ist COVID19 vorbei?» «Keine Ahnung! Ich Fragen: wer löscht Videos?
 - wie funktioniert Propaganda
 
 Kampf gegen den unsichtbaren Feind
 
 Sirenen, die das Unheil verkünden
 
-die Zahl der Infizierten steigt unaufhörlich -->
+die Zahl der Infizierten steigt unaufhörlich
 
-<!-- In einer Fußgängerzone steht ein Mann und klatscht alle 10 Sekunden in die Hände.
+In einer Fußgängerzone steht ein Mann und klatscht alle 10 Sekunden in die Hände.
 Als ein Passant ihn fragt, was er denn tue, antwortet er: „Ich vertreibe die wilden Elefanten !“.
 Erstaunt entgegnet der Passant: „Aber hier sind doch gar keine Elefanten.“
 Worauf der klatschende Mann zufrieden lächelt und feststellt: „Sehen Sie, das Klatschen wirkt“
@@ -170,5 +181,4 @@ Worauf der klatschende Mann zufrieden lächelt und feststellt: „Sehen Sie, das
 änderung google algorithms
 youtube löschung
 facebook?
-twitter? -->
-
+twitter? 

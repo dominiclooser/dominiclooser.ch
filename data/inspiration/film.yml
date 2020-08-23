@@ -145,26 +145,26 @@ content:
          - Q219655  # Carey Mulligan
 
       Regie:
+         - label: Darren Aronofsky
+         - Q315756  # Mike Leigh
+         - label: Lukas Moodysson
+         - Q56095   # Coen Brothers
+         - Q312751  # Charlie Kaufmann
+         - label: Danny Boyle
+         # Wes Anderson
          # Jim Jarmusch
          # Harmony Korine
          # Taika Waititi
-         # Wes Anderson
          - Q72021   # andreas dresen
          - Q133730  # lars von trier
          - Q504656  # todd solondz
          - Q55238   # ken loach
-         - Q315756  # Mike Leigh
          - Q40035   # Richard Linklater
-         - Q56095   # Coen Brothers
          - Q459349  # Noah Baumbach
-         - Q312751  # Charlie Kaufmann
          - Q25089   # Woody Allen
          - label: Stanley Kubrik
          - label: Michel Gondry
          - label: Ulrich Seidl
-         - label: Darren Aronofsky
-         - label: Danny Boyle
-         - label: Lukas Moodysson
    
          
    Geographisch:
