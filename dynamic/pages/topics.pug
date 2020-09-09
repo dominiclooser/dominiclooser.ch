@@ -1,0 +1,19 @@
+extends /base
+include /wikidata
+include /page_heading
+
+
+block content
+   .wrapper
+      +pageHeading('Themen')
+      .page-main
+         ul.default-list
+            for topic in global.topics
+               li: a(href=topic.id)
+                  if topic.title
+                     = topic.title
+                  else if topic.wikidata_id
+                     +label(topic.wikidata_id)
+
+block append scripts
+   include /wikidata_scripts

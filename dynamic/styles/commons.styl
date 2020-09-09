@@ -5,13 +5,15 @@
 .dl
     dl(weight: 400)
 
+img
+    max-width: 100%
 
 //////////
 // page //
 //////////
 
 .page-heading
-    margin-top: var(--two-units)
+    margin-top: var(--unit)
     & + .page-content
     & + .page-main
         margin-top: var(--two-units)
@@ -49,6 +51,43 @@
 .page-aside
     padding: var(--unit)
     border: 1px solid var(--primary)
+
+
+//////////
+// menu //
+//////////
+
+.mobile-page-header
+    padding-top: 0 !important
+    font-family: heading-font
+    text-transform: uppercase
+    justify-content: flex-end !important
+    @media desktop-nav
+        display: none
+
+.open-menu
+    padding: var(--quarter-unit) var(--semi-unit)
+    color: var(--primary)
+    border-bottom: 1px solid currentColor
+    border-left: @border-bottom
+    border-bottom-left-radius: 0.5em
+    letter-spacing: 0.03em
+
+.mobile-nav
+    font-size: var(--xxxxl)
+    font-weight: 700
+    line-height: 1.1
+    li:hover
+        background: dark
+        color: var(--primary)
+
+.close
+    width: calc(1.5*var(--unit))
+    stroke: dark
+
+.desktop-page-header
+    @media desktop-nav
+        display: flex
 
 
 ///////////
@@ -100,30 +139,7 @@
     // @media three-cols
     //     grid-template-columns: 1fr 1fr 1fr
 
-//////////
-// menu //
-//////////
 
-.mobile-page-header
-    font-family: heading-font
-    text-transform: uppercase
-    @media desktop-nav
-        display: none
-
-
-.mobile-nav
-    font-size: var(--xxxxl)
-    font-weight: 700
-    line-height: 1.1
-    li:hover
-        background: dark
-        color: var(--primary)
-.close
-    width: calc(1.5*var(--unit))
-
-.desktop-page-header
-    @media desktop-nav
-        display: flex
 
 
 //////////////

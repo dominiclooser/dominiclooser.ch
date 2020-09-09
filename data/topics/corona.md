@@ -11,11 +11,16 @@ concepts:
 
 quotes:
    -  content: |
+         Es war eimal ein Land, indem jeden Tag ca. 180 Personen starben. Im Schnitt waren die über 80 Jahre alt. Eines Tages wurde begonnen bei diesen Sterbenden mit einem neuer Test nach einem Virus zu suchen. Bei einem dieser 180 fiel der Test positiv aus. Anstatt normal weiterzuleben, rannten alle mit Masken herum. Das sei solidarisch, man dürfe nicht mehr sterben, sagten sie. Es war eine verrückte Zeit.
+      source: > 
+         https://www.srf.ch/news/schweiz/               das-neueste-zur-coronakrise-england-fuehrt-6-personen-regel-ein
+      author: Roland Hügli
+         date: 20-09-09
+   -  content: |
          I'm from a country in Eastern Europe and here's the opposite: leftists fighting for freedom (with the super left activists protesting) and right government + their supporters supporting lockdowns and authoritarianism. It's fascinating how in the US it's the opposite.
       source: > 
          https://www.reddit.com/r/LockdownSkepticism/comments/icj3x6/some_swedish_officials_want_to_lockdown_sweden/
       date: 20-08-19
-
    -  content: | 
          A culture of safetyism has enveloped the world for decades, and now we're seeing a dramatic example of how it can usher in totalitarianism under the guise of health and safety.
 

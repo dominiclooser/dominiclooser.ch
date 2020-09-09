@@ -3,8 +3,8 @@ include /image
 include /page_heading
 
 block content
+   include /navigation
    .wrapper
-      include /navigation
       +pageHeading('Grafik')
       main.page-main
          .page-intro
@@ -12,7 +12,7 @@ block content
                Ich gestalte Bücher, Postkarten, T&#8209;Shirts, Tassen, Poster und Flyer. Am liebsten in Verbindung 
                mit Sprache und Typographie. 
          .page-content
-            .grafik.columns
+            .grafik.image-columns
                for item in global.grafik
                   +lightboxImage(`grafik/${item.filename}`, lightboxGroup='grafik')
       include /footer

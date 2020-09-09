@@ -67,7 +67,7 @@ content:
       Musik:
          - Q137754   # Once
          - Q2935739  # Begin Again
-         - label: Herr Lehmann
+         - Q7705911  # herr lehmann
          # -  label: 28 Days Later
          
       Dystopia:
@@ -143,28 +143,30 @@ content:
          - label: Chloë Sevigny
          - Q233466  # Elisabeth Moss 
          - Q219655  # Carey Mulligan
+         - Q223281  # laura linney
 
       Regie:
+         - label: Lukas Moodysson
          - label: Darren Aronofsky
          - Q315756  # Mike Leigh
-         - label: Lukas Moodysson
          - Q56095   # Coen Brothers
          - Q312751  # Charlie Kaufmann
          - label: Danny Boyle
+         - Q504656  # todd solondz
+         - Q25089   # Woody Allen
          # Wes Anderson
          # Jim Jarmusch
          # Harmony Korine
          # Taika Waititi
          - Q72021   # andreas dresen
          - Q133730  # lars von trier
-         - Q504656  # todd solondz
          - Q55238   # ken loach
          - Q40035   # Richard Linklater
          - Q459349  # Noah Baumbach
-         - Q25089   # Woody Allen
          - label: Stanley Kubrik
          - label: Michel Gondry
          - label: Ulrich Seidl
+         - Q259913  # spike jonze
    
          
    Geographisch:
@@ -179,6 +181,7 @@ content:
       Deutschland: 
          # - Tom Tykwer
          - Q72021      # andreas dresen
+         - Q7705911    # herr lehmann
          - Q478536     # drei
          - Q390914     # halt auf freier strecke
          - Q879404     # halbe strecke

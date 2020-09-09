@@ -30,7 +30,11 @@ getData = (dataPath) ->
     name = parse(dataPath).base
     id = replaceExt(name, '')
     suffix = parse(dataPath).ext
-    content = fs.readFileSync(dataPath, 'utf8')
+    try
+        content = fs.readFileSync(dataPath, 'utf8')
+    catch error
+        console.log('could not read ' + dataPath)
+        throw error
     data = {}
 
     if suffix == '.md'
@@ -58,7 +62,7 @@ getDataObject = (dir) ->
     data = {}
     
     for name in fs.readdirSync(dir)
-        if name == 'drafts'
+        if name.startsWith('_')
             continue
         dataPath = join(dir, name)
         id = replaceExt(name, '')
@@ -267,6 +271,9 @@ module.exports = (grunt) ->
                 return ''    
 
         wikidata = {} # todo
+
+        marked.setOptions
+            smartypants: true
 
         globalOptions =
             basedir: 'dynamic/shared'

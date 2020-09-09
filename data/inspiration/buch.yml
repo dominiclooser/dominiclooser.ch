@@ -1,23 +1,22 @@
 title: Buch
 flat: true
 content:
-   # -  name: Murakami
-      # Das Fest des Ziegenbocks
-      
+   Autoren:
+      - Q73909  # sven regener 
    Q748:  # buddhism
       - Q83504291  # buddhism plain and simple
       - Q92616393  # the places that scare you
       - Q92093161  # wisdom of insecurity
-
    Q9418:  # Psychologie
       - Q83504496  # Tao of fully feeling
-
    Diverse:
+      # Das Fest des Ziegenbocks
       - Q594439   # hard boiled wonderland
       - Q1198633  # der futurologische kongress
       - label: "Douglas Adams: The Hitchhiker's Guide to the Galaxy"
       - label: 'Joey Goebel: Torture the Artist'
       - Q208460    # 1984
+      - Q16843291  # herr lehmann
       
       
       

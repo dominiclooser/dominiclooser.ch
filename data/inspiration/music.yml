@@ -1,24 +1,4 @@
 title: Musik
-lyrics:
-   -  text: And language just happened. It was never planned
-      author: Bright Eyes
-      song: A Scale, A Mirror, and Those Indifferent Clocks
-      album: Fevers and Mirrors 
-   -  text: Das ist das Land der begrenzten Unmöglichkeiten
-      author: Wir sind Helden
-      song: Müssen nur wollen
-   -  text: I'm not carefree, no <br> I'm free to care, I just never do
-      author: Monsters Of Folk
-      song: Ahead Of The Curve
-   -  text: Don’t ever buy nothing from a man named Truth
-      author: Monsters Of Folk
-      song: Man named Truth
-   -  text: And if you swear that there's no truth and who cares <br> How come you say it like you're right?
-      author: Bright Eyes
-      song: We Are Nowhere and It's Now
-   -  text: Aber Mut heißt nicht, keine Angst zu haben<br>Mut heißt nur, dass man trotzdem springt
-      author: Sarah Lesch
-      song: Da Draussen
 content:
    Genre:   
       Singer/Songwriter:
@@ -40,21 +20,24 @@ content:
          - Q17334464  # Scroobius Pip
          -  label: Die Fantastischen Vier
          -  label: Money Boy
-         - Q15975687 # Karate Andi
+         - Q15975687  # Karate Andi
+      misc:
+         - Q635772    # archive 
    Land:
       England:
-         - Q17334464  # Scroobius Pip
+         - Q895739    # Element of crime
          - Q485820    # Blur
+         - Q17334464  # Scroobius Pip
+         - Q635772    # archive
       Deutschland:
-         - Q880650    # PeterLicht
          - Q15907277  # Käptn Peng und die Tentakel von Delphi
          - label: Tocotronic
          - label: Grossstadtgeflüster
          - Q445911    # Kettcar
          - Q509334    # Kraftclub
-         - Q895739    # Element of crime
          - Q694170    # Die Fantastischen Vier
          - Q157079    # Wir sind Helden
+         - Q880650    # PeterLicht
       Österreich:
          - Q78837     # soap and skin
          -  label: Seiler und Speer

@@ -4,9 +4,8 @@ include /image
 include /page_heading
 
 block content
-
+   include /navigation
    .wrapper
-      include /navigation
       +pageHeading('Tipps: ' + local.title)
       .page-main
          if local.flat

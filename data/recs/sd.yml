@@ -1,5 +1,17 @@
 recs:
+   films:
+      - Q2619747   # crumb
+      - Q798641    # bad boy bubby 
+      - Q165699    # melancholia
+      - Q842770    # the fountain
+      - Q639481    # Ed Wood
+      - Q1119322   # Exit thourgh the gift shop
+      - Q43294135  # Jim and Andy
    books:
       - Q83504496  # Tao of fully feeling
-   songs:
-      - Q88952808  # verdamp lang her
+      - Q83504291  # Buddshism plain and simple
+   people:
+      - Q442384    # Pema Chödrön
+      - Q6276882   # Jordan Peterson
+      - Q18246346  # Teal Swan
+      - Q354867    # Alan Watts 

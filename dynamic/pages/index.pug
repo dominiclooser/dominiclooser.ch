@@ -1,10 +1,12 @@
 extends /base
 include /mixins
 include /image
+include /menu
 
 block content
+   +pageHeader
+      span Menu
    .wrapper
-      include /navigation
       header.page-heading
          ul.site-title.colored-on-hover-links
             li: a(href='text') Text

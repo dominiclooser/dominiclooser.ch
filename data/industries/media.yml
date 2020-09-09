@@ -19,6 +19,14 @@ companies:
       subsidiaries:
          -  wikidata_id: Q191715   # warner media   
             subsidiaries:
-               -  Q126399    # warner bros
+               -  wikidata_id: Q126399    # warner bros
+                  products:
+                     - Q60834962  # dune 2020
                -  Q23633     # hbo
                -  Q65359104  # hbo max
+
+   -  wikidata_id: Q5210937   # wanda group
+      subsidiaries:
+         - wikidata_id: Q621364  # legendary pictures
+           products:
+              - - Q60834962  # dune 2020

@@ -1,7 +1,7 @@
 [[generators]]
-template = 'article.pug'
-data = 'articles/*'
-target = 'articles'
+template = 'topic.pug'
+data = 'topics/*'
+target = 'topics'
 
 [[generators]]
 template = 'name.pug'

@@ -1,0 +1,49 @@
+title: Face Your Fears 2
+more: true
+
+meetings:
+   -  title: Kickoff
+      when: 2020-03-04T19:00
+      place: Plattenhof
+
+goal: Eine Webseite mit einer Sammlung von Gruppen-Übungen
+
+inspiration:
+   name:
+      - Contaction
+      - Social Fun
+      - Social Stuff
+      - Dumb your Fears
+   tagline:
+      - Archiv des furchtlosen Daseins
+
+tasks:
+   Leitung:
+      - Meetings
+      - Dokumentation
+   Design:
+      - Name
+   Code:
+      - Django/Backend
+      - Html
+      - Css
+   Inhalt:
+      - Übungen strukturieren
+      - Übungen eingeben
+
+# team:
+#    -  name: Philip Omlin
+#       roles: Frontend
+#    -  name: Sabina Ibric
+#       roles: Frontend
+#    -  name: CB
+#       roles: Technische Beratung, Inhalt
+#    -  name: Lena Merk
+#       roles: Inhalt
+#    -  name: Dominic Looser
+#       roles: Design, Projektleitung? 
+
+technical:
+   web_framework: Q842014  # Django
+   database: Q192490       # Postgres
+   hosting: Q2350702       # Heroku
