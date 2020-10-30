@@ -28,10 +28,10 @@ content:
       -  label: Sebastian Wagner 
          link: https://sebastianwagner.studio
    Kunst:
-      - Q96143229  # jan hakon erichsen
       - Q28668836  # luis quiles
       - label: Herr Hürzeler
         link: http://herrhuerzeler.ch
+      - Q98152523  # jan hakon erichsen
    Typographie:
       -  label: Jeremiah Shoaf
          link: https://www.jeremiahshoaf.com
@@ -50,6 +50,7 @@ content:
       - Q1106819   # Coffeescript
       - Q60608219  # IINA
       -  label: LaTeX
+      - label: latexmk
       -  label: z
          link: https://github.com/rupa/z
    Firmen:

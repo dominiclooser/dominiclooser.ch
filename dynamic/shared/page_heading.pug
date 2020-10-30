@@ -1,7 +1,10 @@
+include wikidata
+
 mixin pageHeading(title, subtitle)
    header.page-heading
       h1
-         p.page-title= title
+         p.page-title
+            +label(title)
          if subtitle
             p.page-subtitle= subtitle
             

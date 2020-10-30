@@ -4,10 +4,9 @@ include /image
 include /menu
 
 block content
-   +pageHeader
-      span Menu
+   +pageHeader(logo=true)
    .wrapper
-      header.page-heading
+      header.site-heading
          ul.site-title.colored-on-hover-links
             li: a(href='text') Text
             li: a(href='web') Web

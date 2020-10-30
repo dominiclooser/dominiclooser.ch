@@ -1,10 +1,46 @@
+mixin scripts
+   script(src='/scripts/webcomponents-bundle.js')
+   script(src='/scripts/wikibase-sdk.min.js')
+   script(src='https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js')
+   //- script(src='https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js') 
+   script(type='module', src='/scripts/wikidata.js')
+
+
 mixin item(data, lang=global.settings.lang)
+   if ! data
+      return ''
    if typeof data == 'string' 
       if data.startsWith('Q')
          button.show-item(data-id=data): wd-entity(id=data, label, lang=lang)
       else
          = data
-   else if data.link
-      a(href=data.link)= data.label
+   
    else if data.label 
-      = data.label
+      if data.link
+         a(href=data.link)= data.label
+      else
+         = data.label
+   
+   else if data.title
+      if data.link
+         a(href=data.link)= data.title
+      else
+         = data.title
+   
+   +scripts
+      
+mixin label(id, lang=global.settings.lang)
+   script(type='module', src='https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js')
+   wd-entity(entity-id=id, label, lang=lang)
+   
+mixin title(id)
+   script(type='module', src='https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js')
+   wd-entity(entity-id=id, property='P1476')
+
+mixin propLabel(prop, lang=global.settings.lang)
+   wd-entity(id=prop, label, lang=lang)
+   +scripts
+
+mixin value(entity, prop, lang=global.settings.lang)
+   wd-entity(id=entity, property=prop, lang=lang)
+   +scripts

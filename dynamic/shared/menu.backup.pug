@@ -1,0 +1,96 @@
+mixin hamburger
+   style.
+      .hamburger {
+         cursor: pointer;
+         stroke-width: 6px;
+         width: var(--unit);
+         stroke: var(--text-color)
+      }
+ 
+   svg.hamburger(viewBox='0 0 100 54')
+      line(x1=0, y1=10, x2=100, y2=10)
+      line(x1=0, y1=30, x2=100, y2=30)
+      line(x1=0, y1=50, x2=100, y2=50)
+
+mixin logo
+   a(href='/').logo= global.settings.title
+
+mixin pageHeader(logo)
+
+   style.
+      .mobile-page-header {
+         display: flex;
+         justify-content: space-between;
+         padding: var(--semi-unit) 0;
+      }
+      .desktop-page-header {
+         display: none
+      }
+      .close, .open-menu{
+         cursor: pointer
+      }
+      .close {
+         stroke-width: 10px;
+         height: var(--unit);
+      }
+      .mobile-nav {
+         display: none;
+         justify-content: space-between;
+         position: fixed;
+         top: 0;
+         left: 0;
+         height: 100vh;
+         width: 100vw;
+         padding: var(--unit);
+         background-color: var(--mobile-nav-background-color);
+      }
+         
+   header.desktop-page-header
+      if logo
+         +logo
+      nav.desktop-nav
+         ul.desktop-nav-list
+            for item in global.menu
+               if item.link != '/' 
+                  li: a(href=item.link)= item.title
+      
+   header.mobile-page-header
+      if logo
+         +logo
+      .open-menu
+         if block
+            block
+
+   nav.mobile-nav
+      ul.mobile-nav-list
+         for item in global.menu
+            li.nav-group
+               a.nav-item(href=item.link)= item.title
+               if item.sub
+                  ul.sub-nav
+                     for subitem in item.sub
+                        li.nav-item: a(href=subitem.link)= subitem.title
+      .close-wrapper
+         svg.close(viewBox='0 0 100 100')
+            line(x1=0, y1=0, x2=100, y2=100)
+            line(x1=0, y1=100, x2=100, y2=0) 
+
+   script
+      :coffee-script
+         close = document.querySelector('.close')
+         mobileNav = document.querySelector('.mobile-nav')
+         openMenu = document.querySelector('.open-menu')
+         
+         openMenu.addEventListener 'click', ->
+            mobileNav.style.display = 'flex'
+
+         close.addEventListener 'click', ->
+            mobileNav.style.display = 'none'
+
+
+//- nav.desktop-subnav
+      //-    if current.path[0] in nav 
+      //-       if 'subnav' in nav[current.path[0]]
+      //-          ul
+      //-             for item in nav[current.path[0]].subnav
+      //-                li: a(href=item.link)= item.title

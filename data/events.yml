@@ -24,11 +24,13 @@
 
 2020:
    deaths:
+      - Q166159    # Terry Jones
       - Q104027    # Kirk Douglas 
       - Q203215    # Max von Sydow
       - Q296752    # carlos ruiz zafon
       - Q295207    # joel schumacher
       - Q5066520   # chadwick boseman
+      - Q1933505   # mike shiva
    ends:
       - Q708661    # Lindenstrasse
    misc:

@@ -6,6 +6,7 @@ people:
    - Q433134    # judith herman
    - Q83504500  # pete walker
 concepts:
+   - Q1542815   # heldenreise
    - Q2866472   # defense mechanism
    - Q5287966   # Dodo Bird verdict 
    - Q909609    # attachement theory

@@ -8,8 +8,8 @@ block content
    - objectId = 'projects/' + local.id 
    - moment.locale('de')
 
+   include /navigation
    .wrapper
-      include /navigation
       +pageHeading(local.title, 'Project Hub')
       .page-content
          .page-main
@@ -18,7 +18,7 @@ block content
                   +image(objectId + '/' + local.title_image)
                else
                   +responsiveImage(objectId + '/' + local.title_image)
-            else 
+            else if fs.existsSync(objectId + '/title.jpg')
                +responsiveImage(objectId + '/title.jpg')
 
             if local.goal
@@ -33,58 +33,41 @@ block content
             
             if local.inspiration
                +section('Inspiration')
-                     +listSubsection(local.inspiration.name, 'Name')
-                     +listSubsection(local.inspiration.tagline, 'Tagline')
-                     +listSubsection(local.inspiration.misc, 'Diverses')
+                  +listSubsection(local.inspiration.name, 'Name')
+                  +listSubsection(local.inspiration.tagline, 'Tagline')
+                  +listSubsection(local.inspiration.typography, 'Typographie')
+                  +listSubsection(local.inspiration.misc, 'Diverses')
 
-                     if local.inspiration && local.inspiration.websites
-                        section.s2
-                           header.s2-header
-                              h3.h3 Webseiten
-                           main.s2-main
-                              ul.default-list
-                                 for website in local.inspiration.websites
-                                    li: a(href=website.link)= website.label
-                     
-                     
-                     
-                     +imageSubsection('Bilder', objectId + '/inspiration/images')
+                  if local.inspiration && local.inspiration.websites
+                     section.s2
+                        header.s2-header
+                           h3.h3 Webseiten
+                        main.s2-main
+                           ul.default-list
+                              for website in local.inspiration.websites
+                                 li: a(href=website.link)= website.label
+                  
+                  
+                  
+                  +imageSubsection('Bilder', objectId + '/inspiration/images')
+                  
+                  if containsImages(objectId + '/inspiration/colors')
+                     section.s2
+                        header.s2-header
+                           h3.h3 Colors
+                        main.s2-main   
+                           .default-columns
+                              for fileId in getImages(objectId + '/inspiration/colors')
+                                 +lightboxImage(fileId, lightboxGroup='colors')
 
-                     //- if containsImages(objectId + '/inspiration/images')
-                     //-    section.s2
-                     //-       header.s2-header
-                     //-          h3.h3 Images
-                     //-       main.s2-main   
-                     //-          .default-columns
-                     //-             for fileId in getImages(objectId + '/inspiration/images')
-                     //-                +lightboxImage(fileId, lightboxGroup='inspirational_images')
-                     
-                     if containsImages(objectId + '/inspiration/colors')
-                        section.s2
-                           header.s2-header
-                              h3.h3 Colors
-                           main.s2-main   
-                              .default-columns
-                                 for fileId in getImages(objectId + '/inspiration/colors')
-                                    +lightboxImage(fileId, lightboxGroup='colors')
-
-                     if local.inspiration && local.inspiration.typography
-                        section.s2
-                           header.s2-header
-                              h3.h3 Typography
-                           main.s2-main
-                              ul.default-list
-                                 for item in local.inspiration.typography
-                                    li: a(href=item.link)= item.title
-
-                     if local.inspiration && local.inspiration.effects
-                        section.s2
-                           header.s2-header
-                              h3.h3 Effects
-                           main.s2-main
-                              ul.default-list
-                                 for item in local.inspiration.effects
-                                    li: a(href=item.link)= item.title
+                  if local.inspiration && local.inspiration.effects
+                     section.s2
+                        header.s2-header
+                           h3.h3 Effects
+                        main.s2-main
+                           ul.default-list
+                              for item in local.inspiration.effects
+                                 li: a(href=item.link)= item.title
             
             - props = [{key: 'web_framework', label: 'Web Framework'}, {key: 'database', label: 'Datenbank'}, {key: 'hosting', label: 'Hosting'}, {key: 'domain', label: 'Domain'}]
             +flatSection('Technisch', local.technical, props)

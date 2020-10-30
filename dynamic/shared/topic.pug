@@ -15,14 +15,24 @@ block content
          main.page-main
             if local.content
                .text.spaced-paragraphs!= marked(local.content)
+            if local.quotes
+               +section('Zitate')
+                  for quote in local.quotes
+                     blockquote.quote
+                        p.quote-content= quote.content
+                        footer.quote-footer
+                           if quote.author
+                              span.quote-autor= quote.author
+                           if quote.author && quote.source
+                              span= ', '
+                           if quote.source
+                              span.quote-source= quote.source
+
             if local.videos
-               section.s1
-                  header.s1-header
-                     h2.h2 Videos
-                  .s1-main
-                     ul.default-list.underlined-on-hover-links
-                        for video in local.videos
-                           li: a(href='https://www.youtube.com/watch?v=' + video.youtube_id)= video.title
+               +section('Videos')
+                  ul.default-list.underlined-on-hover-links
+                     for video in local.videos
+                        li: a(href='https://www.youtube.com/watch?v=' + video.youtube_id)= video.title
 
             +listSection(local.resources, 'Ressourcen')            
             +listSection(local.films, 'Films')
@@ -51,10 +61,13 @@ block content
                               ul
                                  for value in prop.value
                                     li
-                                       +item(value, lang=lang)
+                                       +item(value)
                            else
-                              +item(prop.value, lang=lang)
+                              +item(prop.value)
                               
                      else
-                        dt: wd-entity(id=prop, label, lang=lang)
-                        dd: wd-entity(id=local.wikidata_id, property=prop, lang=lang)
+                        dt
+                           +label(prop)
+                        dd
+                           +value(local.wikidata_id, prop)
+                     
