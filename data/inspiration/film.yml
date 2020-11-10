@@ -179,13 +179,14 @@ content:
       # Kanada Ryan Gosling 
 
       Deutschland: 
-         # - Tom Tykwer
-         - Q72021      # andreas dresen
-         - Q7705911    # herr lehmann
-         - Q478536     # drei
-         - Q390914     # halt auf freier strecke
-         - Q879404     # halbe strecke
+         - Q57231      # Tom Tykwer
+         - Q72021      # Andreas Dresen
+         - Q7705911    # Herr Lehmann
+         - Q478536     # Drei
+         - Q390914     # Halt auf freier Strecke
+         - Q879404     # Halbe Strecke
          - Q28443710   # Dark
+         - Q1475778    # Oh Boy
       
       Österreich:
          - Q84199    # Michael Haneke
