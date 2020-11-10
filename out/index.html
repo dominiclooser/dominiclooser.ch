@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Dominic Looser</title><meta name="description" content="Text und Grafik"><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:image"><link rel="icon" href="/images/favicon.png" sizes="32x32"><link rel="stylesheet" href="/styles/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900"></head><body id="index"><style>.mobile-page-header {
+   display: flex;
+   justify-content: space-between;
+   padding: var(--semi-unit) var(--page-padding);
+}
+.desktop-page-header {
+   display: none
+}
+.close, .open-menu{
+   cursor: pointer
+}
+.close {
+   stroke-width: 10px;
+   height: var(--unit);
+}
+.mobile-nav {
+   display: none;
+   justify-content: space-between;
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100vh;
+   width: 100vw;
+   padding: var(--unit);
+   background-color: var(--mobile-nav-background-color);
+}
+   </style><header class="desktop-page-header"><nav class="desktop-nav"><ul class="desktop-nav-list"><li><a href="/text">Text</a></li><li><a href="/grafik">Grafik</a></li><li><a href="/tipps">Tipps</a></li><li><a href="/projects">Projekte</a></li><li><a href="/about">About</a></li></ul></nav></header><header class="mobile-page-header"><div class="open-menu">MENU</div></header><nav class="mobile-nav"><ul class="mobile-nav-list"><li class="nav-group"><a class="nav-item" href="/">Home</a></li><li class="nav-group"><a class="nav-item" href="/text">Text</a></li><li class="nav-group"><a class="nav-item" href="/grafik">Grafik</a></li><li class="nav-group"><a class="nav-item" href="/tipps">Tipps</a></li><li class="nav-group"><a class="nav-item" href="/projects">Projekte</a></li><li class="nav-group"><a class="nav-item" href="/about">About</a></li></ul><div class="close-wrapper"><svg class="close" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="0" y1="100" x2="100" y2="0"> </line></svg></div></nav><script>(function() {
+  var close, mobileNav, openMenu;
+
+  close = document.querySelector('.close');
+
+  mobileNav = document.querySelector('.mobile-nav');
+
+  openMenu = document.querySelector('.open-menu');
+
+  openMenu.addEventListener('click', function() {
+    return mobileNav.style.display = 'flex';
+  });
+
+  close.addEventListener('click', function() {
+    return mobileNav.style.display = 'none';
+  });
+
+}).call(this);
+</script><div class="wrapper"><header class="site-heading"><ul class="site-title colored-on-hover-links"><li><a href="text">Text</a></li><li><a href="web">Web</a></li><li><a href="grafik">Grafik</a></li></ul><h1 class="site-subtitle">Design is Art for Loosers</h1></header><main class="page-main"><div class="page-intro"><p>Mein Name ist Dominic Looser und ich mache Webseiten, Bücher und 
+Lesungen. Und noch ein paar Sachen mehr. Hallo!</p></div><div class="grid"><section class="card" id="wasrauskam"><header class="card-header"><h2 class="card-title"><a class="underline-on-hover" href="/wasrauskam">Was raus kam</a></h2></header><main class="card-main"><section class="card-images card-section"><a href="/images/l/grafik/was-raus-kam-2-front.jpg" data-lightbox="wasrauskam"><img src="/images/m/grafik/was-raus-kam-2-front.jpg"/></a><a href="/images/l/grafik/was-raus-kam-2-back.jpg" data-lightbox="wasrauskam"><img src="/images/m/grafik/was-raus-kam-2-back.jpg"/></a></section><section class="card-section spaced-paragraphs"><p>Meine Texte gibt es jetzt im Büchlein mit dem Titel <em>Was raus kam</em>.</p><p><a class="arrow" href="/wasrauskam">Info & Konsum</a></p></section></main></section><section class="card"><header class="card-header"><h2 class="card-title"><a class="underline-on-hover" href="grafik">Grafik</a></h2></header><main class="card-main"><section class="card-section"><a href="/images/l/grafik/das-glueck.jpg" data-lightbox="grafik/das-glueck.jpg"><img src="/images/m/grafik/das-glueck.jpg"/></a></section><section class="card-section"><a class="arrow" href="/grafik">alle Grafiken</a></section></main></section><section class="card"><header class="card-header"><h2 class="card-title">Projekte</h2></header><main class="card-main"><ul class="arrow-links"><li><a href="https://thebinarytruth.com">The Binary Truth</a></li><li><a href="projekt-799">Projekt 799</a></li><li><a href="http://diekrassetassegmbh.ch">Die Krasse Tasse GmbH</a></li><li><a href="/die-essenz-des-lebens">Die Essenz des Lebens</a></li><li><a href="http://einezwecklosewebseite.ch">Eine zwecklose Webseite</a></li><li><a href="https://facebook.com/AnalogeTage/">Analoge Tage</a></li><li>TsnuK (inaktiv)</li><li>Cinemap (inaktiv)</li></ul></main></section><section class="card"><header class="card-header"><h2 class="card-title">Dienstleistungen</h2></header><main class="card-main"><ul class="arrow-links"><li><a href="/web">Web: Design und Programmierung</a></li><li><a href="/grafik">Typographische Gestaltung</a></li><li><a href="/text">Lesungen und Performances</a></li></ul></main></section><section class="card"><header class="card-header"><h2 class="card-title">Kontakt</h2></header><main class="card-main"><ul class="arrow-links"><li><a href="mailto:#{email}">Email</a></li><li><a href="https://www.facebook.com/dominic.looser">Facebook</a></li><li><a href="tel:+41787730105">078 773 01 05</a></li></ul></main></section></div></main><footer class="site-footer"><span>Ich freue mich über Nachrichten (fast) jeder Art: </span><a class="arrow" href="mailto:#{global.settings.email}">dominic.looser@gmail.com</a></footer></div><script src="/scripts/moment-with-locales.min.js"></script><script src="/scripts/homepage.js"></script><script src="/scripts/formatdates.js"></script><script src="/scripts/lightbox.min.js"></script></body></html>

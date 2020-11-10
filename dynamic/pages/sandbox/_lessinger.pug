@@ -1,0 +1,21 @@
+extends /base
+include /image
+include /page_heading
+
+block content
+   .wrapper
+      include /navigation
+      +pageHeading('Lessinger')
+      .lessinger
+      include /footer
+
+   script
+      :coffee-script
+         grid = document.querySelector('.lessinger')
+         for _ in [1..200]
+            image = document.createElement('img')
+            filename = 1 + Math.floor(Math.random() * 3)
+            image.src = "/images/s/lessinger/#{filename}c.jpg"
+            grid.append(image)
+
+      

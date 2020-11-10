@@ -315,7 +315,8 @@ module.exports = (grunt) ->
                 dataGlob = generator.data
 
                 for dataPath in glob.sync(join(DATA_DIR, dataGlob))
-                         
+                    if parse(dataPath).name.startsWith('_')
+                        continue
                     local = {}
                     _.merge(local, getData(dataPath), templateData)
                     locals = 
@@ -341,6 +342,8 @@ module.exports = (grunt) ->
                     console.log("done. Generated #{targetFile}")
                
         for pagePath in glob.sync('dynamic/pages/**/*.pug')
+            if parse(pagePath).name.startsWith('_')
+                continue
             relativePath = path.relative(PAGES_PATH, pagePath)
             urlPath = replaceExt(relativePath, '')
 
