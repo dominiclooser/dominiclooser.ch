@@ -2,11 +2,9 @@ title: Film
 image: 'backgrounds/film.jpg'
 content:
    # Abre los Ojos
-   # the host
-   # Q1130310  the skin i live in
    # marriage story
    # Eternal sunshine of a spotless mind
-   # Q649165  # Being John Malkovich
+   
    # ghost world
    # Q260509     # submarine
    # man on the moon
@@ -24,19 +22,54 @@ content:
    
    
    Filme:
+      # Q1130310  the skin i live in
       # Q59931      # garden state
       # Q14578326   # wish i was here
-      # Q488222     # the host
+      
       # Q144756     # let the right one in
       # Q132351 the usual suspects
       # dancer in the dark
-      
 
+      heftig / schön:
+         -  Q676047    # Blue Valentine
+         -  Q927826     # never let me go
+         -  label: The Secret Life of Words
+         -  label: Trainspotting
+         -  label: A Clockwork Orange 
+         - Q487181    # requiem for a dream
+         -  label: Cidade de Deus
+            link: https://www.imdb.com/label/tt0317248
+         -  label: Magnolia
+            link: https://www.imdb.com/label/tt0175880
+         -  label: Lilja 4-ever
+            link: https://www.imdb.com/label/tt0300140
+         -  label: American History X 
+
+      Absurd und lustig:
+         -  Q105702    # dr. strangelove
+         -  Q1119322   # exit thourgh the gift shop
+         -  label: The Great Dictator
+            link: https://www.imdb.com/label/tt0032553
+         -  label: "No Man's Land"
+         -  Q639481  # Ed Wood
 
       Lieblingsfilme:
-         # ed wood
          - Q669591    # Happy go lucky
+         - Q190050    # fight club
          - Q300555    # A serious man
+         - Q487181    # requiem for a dream
+         - Q639481    # Ed Wood
+
+      Cinema about Cinema:
+         -  Q5120815  # Cinemania
+         -  Q1757581  # Lost in la Mancha
+         -  label: Cinéma Inch'Allah!
+            link: https://www.imdb.com/label/tt2349854
+         
+      Q24862:  # Kurzfilm
+         - Q101499706  # right place wrong tim
+
+      
 
       Q8588:
          - Q300555    # A serious man
@@ -56,6 +89,7 @@ content:
       Selbstreferenz: 
          - Q352431    # Adaptations
          - Q860479    # Synecdoche Ney York
+         - Q649165    # Being John Malkovich
 
       Psychologisch:
          # stay
@@ -71,62 +105,47 @@ content:
          # -  label: 28 Days Later
          
       Dystopia:
+         - Q927826     # never let me go
          - Q221075     # 28 days later
 
       Geheimtipps: 
          - Q4499335   # cold souls
          - label: Holy Motors 
+         - Q488222     # the host
 
       Dokumentarfilme:
+         -  Q1757581  # Lost in la Mancha
+         -  Q5120815  # Cinemania
          # the unmaking of don quijote
          -  label: Cinéma Inch'Allah!
             link: https://www.imdb.com/label/tt2349854
          -  label: Young@Heart 
          -  label: Crumb
             link: https://en.wikipedia.org/wiki/Crumb_(film)
-         -  Q1119322  # exit through the gift shop
+         -  Q1119322   # exit through the gift shop
          -  label: Waltz with Bashir
             link: https://en.wikipedia.org/wiki/Waltz_with_Bashir
-         -  label: Cinemania
-            link: https://www.imdb.com/label/tt0281724
 
-      Heftig / schön:
-         -  Q676047    # Blue Valentine
-         -  label: Never Let Me Go
-         -  label: The Secret Life of Words
-         -  label: Trainspotting
-         -  label: Fight Club
-         -  label: A Clockwork Orange 
-         -  label: Requiem for a Dream
-         -  label: Cidade de Deus
-            link: https://www.imdb.com/label/tt0317248
-         -  label: Magnolia
-            link: https://www.imdb.com/label/tt0175880
-         -  label: Lilja 4-ever
-            link: https://www.imdb.com/label/tt0300140
-         -  label: American History X 
-
-      Absurd und lustig:
-         -  Q105702    # dr. strangelove
-         -  Q1119322   # exit thourgh the gift shop
-         -  label: The Great Dictator
-            link: https://www.imdb.com/label/tt0032553
-         -  label: "No Man's Land"
-         -  Q639481  # Ed Wood
+      
 
       Serien: 
          # Lost, X-Files
+         
+         - label: Westworld
+         - Q85808226  # the queen's gambit
          - Q28443710  # Dark
          - Q239672    # The IT-Crowd
-         - label: The End of the F***ing World
-         - label: Westworld
+         - Q88759629  # unorthodox
          - label: A Handmaid's Tale
+         - label: The End of the F***ing World
          - label: Twin Peaks
       
       audiovisuel:
-         - Q28443710  # Dark
-         - Q217112    # moonrise kindgdom
          - Q487181    # requiem for a dream
+         - Q217112    # moonrise kindgdom
+         - Q28443710  # Dark
+         
+         
 
    Personen:
 
@@ -138,19 +157,20 @@ content:
          - Q57147   # Michael Fassbender
 
       Schauspielerinnen:
-         - Q236875  # Thora Birch
-         - Q156796  # Michelle Williams
+         - Q233563  # Sally Hawkins
          - label: Chloë Sevigny
-         - Q233466  # Elisabeth Moss 
          - Q219655  # Carey Mulligan
+         - Q156796  # Michelle Williams
          - Q223281  # laura linney
+         - Q236875  # Thora Birch
+         - Q233466  # Elisabeth Moss 
 
       Regie:
-         - label: Lukas Moodysson
          - label: Darren Aronofsky
          - Q315756  # Mike Leigh
-         - Q56095   # Coen Brothers
          - Q312751  # Charlie Kaufmann
+         - label: Lukas Moodysson
+         - Q56095   # Coen Brothers
          - label: Danny Boyle
          - Q504656  # todd solondz
          - Q25089   # Woody Allen
@@ -177,6 +197,12 @@ content:
       #Italien # roberto begnini
 
       # Kanada Ryan Gosling 
+
+      Q142:   # france
+         - Q2212493   # st jaques la meque
+      
+      Grossbritanien:
+         - Q18134529  # x+y
 
       Deutschland: 
          - Q57231      # Tom Tykwer

@@ -1,0 +1,13 @@
+extends /base
+include /page_heading
+include /menu
+
+block content
+   +pageHeader(true)
+   .wrapper
+      +pageHeading('Domains')
+      .page-main
+         ul.domains.underlined-on-hover-links
+            for domain in global.domains
+               li.domain
+                  a(href='https' + domain)= domain

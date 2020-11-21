@@ -1,0 +1,22 @@
+wikidata_id: Q201
+concepts:
+   - Q83204    # triumvirat
+   - Q34929    # three dimensional space
+   - Q1257777  # dreifarbentheorie
+   - Q228220   # three jewels / bhuddism
+   - Q37090    # trinity
+   - Q7378982  # rule of three
+   - Q536135   # dreirad
+   - Q607699   # three body problem
+movies: 
+   - https://de.wikipedia.org/wiki/Aller_guten_Dinge_sind_drei_(Film)
+books:
+   - Q49945   # die drei fragezeichen
+   - Q140527  # die drei musketiere
+misc:
+   - Q220728  # flatiron building
+   - Q14384   # triceratops
+   - Q101538  # klee
+content: |
+   - https://de.wikipedia.org/wiki/Die_drei_%3F%3F%3F_(H%C3%B6rspiel)
+   - https://de.wikipedia.org/wiki/Liste_gefl%C3%BCgelter_Worte/A#Aller_guten_Dinge_sind_drei

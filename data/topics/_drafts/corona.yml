@@ -1,6 +1,4 @@
----
-title: COVID19
-
+title: Corona
 people: 
    - Q100324088  # Reiner Füllmich 
    - Q87933407   # Daniel Koch
@@ -32,6 +30,10 @@ concepts:
    - Stille Feiung
 
 quotes:
+   -  content: "No content is allowed on YouTube that expressly questions the benefits of social distancing or self-isolation recommended by the World Health Organization (WHO) or local health authorities"
+      author: YouTube
+   -  content: You know, most times when people tell us something's for the best, it's for the worst.
+      source: Q102104692  # end games / the queens gambit
    -  content: Wir brechen euch die Beine und helfen gütig mit Krücken, die ihr selbst bezahlt habt.
       source: Twitter
    -  content: | 
@@ -96,6 +98,12 @@ quotes:
       author: another random youtuber
 
 videos:
+   -  link: https://www.bitchute.com/video/chsp1QCwWr0v/?fbclid=IwAR1x6n7nQ5vTXOpIHcYq7koY_6S1itvjhO1pdDhfEp0zbQEKthnmRm62hK0
+   -  link: https://www.arte.tv/de/videos/098118-000-A/corona-sicherheit-kontra-freiheit/
+      title: Corona – Sicherheit kontra Freiheit
+
+   # -  title: Unerhört
+   #    link: todo
 
    -  youtube_id: WFkMIlKyHoI
       title: Ende der Pandemie? Neue Zahlen widersprechen Regierungs-Linie - Punkt.PRERADOVIC mit Prof. Homburg
@@ -197,58 +205,64 @@ props:
          - Q93242934   # schweizer covid task force
          - Q193727     # John Hopkins University
          - Q679041     # Robert Koch Institut
---- 
-<!-- ## Gates Foundation
-- BBC
-- The Guardian
-- npr
-- abc 
-- our world in data
-- behörde in schweiz
-- gavi
+content: |
+   ## Gates Foundation
+   - BBC
+   - The Guardian
+   - npr
+   - abc 
+   - our world in data
+   - behörde in schweiz
+   - gavi
 
-## Verschiedenheit von Sars-cov-2
-Gegenargument: Viele haben keine Symptome, ihr Immunsystem muss also den Virus schon kennen.
+   ## Verschiedenheit von Sars-cov-2
+   Gegenargument: Viele haben keine Symptome, ihr Immunsystem muss also den Virus schon kennen.
 
-## Schweden
+   ## Schweden
 
-## Zensur
-- dubiosen Entwarnungen
-- in Foren von Scientologen und Impfgegnern
-- John Ioannidis, einen streitlustigen Epidemiologen
+   ## Zensur
+   - dubiosen Entwarnungen
+   - in Foren von Scientologen und Impfgegnern
+   - John Ioannidis, einen streitlustigen Epidemiologen
 
-## Was wollen die Risikogruppen?
-Selbstbestimmung?
+   ## Was wollen die Risikogruppen?
+   Selbstbestimmung?
 
-## Folgen des Lockdowns
-- Veränderung Suizidraten?
-- Veränderung anderer Krankheiten?
-- Das Ende des Mittelstands?
+   ## Folgen des Lockdowns
+   - Veränderung Suizidraten?
+   - Veränderung anderer Krankheiten?
+   - Das Ende des Mittelstands?
 
 
-Witze:
-- Patient zu Arzt: «Herr Doktor, wann ist COVID19 vorbei?» «Keine Ahnung! Ich 
+   ## Witze:
+   - Patient zu Arzt: «Herr Doktor, wann ist COVID19 vorbei?» «Keine Ahnung! Ich 
 
-Fragen
-- wer löscht Videos?
-- wie funktioniert Propaganda
+   Fragen
+   - wer löscht Videos?
+   - wie funktioniert Propaganda
 
-Kampf gegen den unsichtbaren Feind
+   Kampf gegen den unsichtbaren Feind
 
-## Propaganda
+   ## Sprache/Propaganda
+   - super spreader
+   - social distancing
+   - flatten the curve
+   - the great reset
+   - the new normal
+   - auf uns acht geben (Spahn)
+   - Die anderen schützen
+   - Sirenen, die das Unheil verkünden
+   - die Zahl der Infizierten steigt unaufhörlich
+   - Die Lage spitzt sich weiter zu
+   - Die Situation sei sehr ernst: Der Präsident des Robert-Koch-Instituts, Lothar Wieler, ist besorgt über die jüngste Entwicklung bei den Corona-Neuinfektionen in Deutschland. 
+   - „Wir müssen davon ausgehen, dass mehr Menschen sterben werden“
 
-- Sirenen, die das Unheil verkünden
-- die Zahl der Infizierten steigt unaufhörlich
-- Die Lage spitzt sich weiter zu
-- Die Situation sei sehr ernst: Der Präsident des Robert-Koch-Instituts, Lothar Wieler, ist besorgt über die jüngste Entwicklung bei den Corona-Neuinfektionen in Deutschland. 
-- „Wir müssen davon ausgehen, dass mehr Menschen sterben werden“
+   In einer Fußgängerzone steht ein Mann und klatscht alle 10 Sekunden in die Hände.
+   Als ein Passant ihn fragt, was er denn tue, antwortet er: „Ich vertreibe die wilden Elefanten !“.
+   Erstaunt entgegnet der Passant: „Aber hier sind doch gar keine Elefanten.“
+   Worauf der klatschende Mann zufrieden lächelt und feststellt: „Sehen Sie, das Klatschen wirkt“
 
-In einer Fußgängerzone steht ein Mann und klatscht alle 10 Sekunden in die Hände.
-Als ein Passant ihn fragt, was er denn tue, antwortet er: „Ich vertreibe die wilden Elefanten !“.
-Erstaunt entgegnet der Passant: „Aber hier sind doch gar keine Elefanten.“
-Worauf der klatschende Mann zufrieden lächelt und feststellt: „Sehen Sie, das Klatschen wirkt“
-
-änderung google algorithms
-youtube löschung
-facebook?
-twitter?  -->
+   änderung google algorithms
+   youtube löschung
+   facebook?
+   twitter? 

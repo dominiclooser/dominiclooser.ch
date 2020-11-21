@@ -21,7 +21,7 @@ mixin pageHeader(logo)
       .mobile-page-header {
          display: flex;
          justify-content: space-between;
-         padding: var(--semi-unit) 0;
+         padding: var(--semi-unit) var(--page-padding);
       }
       .desktop-page-header {
          display: none
@@ -58,8 +58,10 @@ mixin pageHeader(logo)
       if logo
          +logo
       .open-menu
-         if block
-            block
+         if global.settings.open_menu_button_text
+            =global.settings.open_menu_button_text
+         else
+            +hamburger
 
    nav.mobile-nav
       ul.mobile-nav-list
