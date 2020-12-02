@@ -2,10 +2,12 @@ extends /base
 include /wikidata
 include /sections
 include /page_heading
+include /menu
 
 block content
+   +pageHeader(true)
    .wrapper
-      include /navigation
+      
       if local.wikidata_id
          +pageHeading(local.wikidata_id)
       else
@@ -15,18 +17,25 @@ block content
          main.page-main
             if local.content
                .text.spaced-paragraphs!= marked(local.content)
+
+            for list in local.lists
+               +listSection(list.title, list.items)
+            
             if local.quotes
                +section('Zitate')
-                  for quote in local.quotes
+                  - topicQuotes = global.quotes.filter(quote => quote.topics && quote.topics.includes(local.wikidata_id))
+                  for quote in topicQuotes
                      blockquote.quote
-                        p.quote-content= quote.content
+                        p.quote-content!= marked(quote.content)
                         footer.quote-footer
                            if quote.author
-                              span.quote-autor= quote.author
+                              span.quote-autor 
+                                 +item(quote.author)
                            if quote.author && quote.source
                               span= ', '
                            if quote.source
-                              span.quote-source= quote.source
+                              span.quote-source
+                                 +item(quote.source)
 
             if local.videos
                +section('Videos')
@@ -34,9 +43,9 @@ block content
                      for video in local.videos
                         li: a(href='https://www.youtube.com/watch?v=' + video.youtube_id)= video.title
 
-            +listSection(local.resources, 'Ressourcen')            
-            +listSection(local.films, 'Films')
-            +listSection(local.songs, 'Songs')
+            +listSection('Ressourcen', local.resources)            
+            +listSection('Films', local.films)
+            +listSection('Songs', local.songs)
 
             if local.articles
                section.s1
@@ -49,8 +58,8 @@ block content
                               +item(article)
 
          aside.page-aside
-            +listSection(local.concepts, 'Concepts')
-            +listSection(local.people, 'People')
+            +listSection('Concepts', local.concepts)
+            +listSection('People', local.people)
             if local.props
                dl.props-dl
                   for prop in local.props

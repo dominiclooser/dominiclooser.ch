@@ -1,0 +1,22 @@
+title: IT
+flat: true
+content:
+   Webseiten:
+      - Q686797    # Hackernews
+   Software:
+      - Q28401317
+      - Q5301      # TeX
+      - Q86924750  # Pug
+      - Q28865     # Python
+      - Q1106819   # Coffeescript
+      - Q60608219  # IINA
+      -  label: LaTeX
+      - label: latexmk
+      -  label: z
+   Hardware:
+      - Q28132320  # pine64 
+      - Q28450799  # Purism
+      - Q7663600   # System 76
+      
+      
+      

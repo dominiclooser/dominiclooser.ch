@@ -1,3 +1,7 @@
+wikidata = WBK
+    instance: 'https://www.wikidata.org'
+    sparqlEndpoint: 'https://query.wikidata.org/sparql'
+
 getEntityProps = (entity) ->
     types = entity.claims['P31']
     props = []
@@ -18,9 +22,15 @@ getEntityProps = (entity) ->
     return props
 
 
-render = (entity, lang) ->
+render = (entity, extract, lang) ->
+    
+    logos = entity.claims['P154']
+    if logos
+        fileName = logos[0].replace(' ', '_')
+        logoUrl = wikidata.getImageUrl(fileName)
+        image = "<img src='#{logoUrl}'>"
+    
     props = getEntityProps(entity)
-
     dl = "<dl class='overlay-props'>"
     for prop in props
         value = entity.claims[prop]
@@ -29,13 +39,21 @@ render = (entity, lang) ->
         <dd><wd-entity id=#{entity.id} property=#{prop} lang=#{lang}></dd>
         """
     dl += '</dl>'
-    links = """
-        <ul>
-            <li><a is='wd-link' entity-id=#{entity.id} site='enwiki'>English Wikipedia</a></li>
-            <li><a is='wd-link' entity-id=#{entity.id} property='P856'>Official Website</a></li>
-            <li><a is='wd-link' entity-id=#{entity.id} property='P345'>IMDB</a></li>
-        </ul>
-    """
+    
+    links = '<ul>'
+    console.log(entity)
+    if entity.sitelinks.enwiki
+        links += '<li><a href="https://wikipedia.org/wiki/enwiki/#{entity.sitelinks.enwiki}">English Wikipedia entry</a></li>'
+    links += '</ul>'
+
+    #     <ul>
+    #         
+    #         <li><a is='wd-link' entity-id=#{entity.id} property='P856'>Official Website</a></li>
+    #         <li><a is='wd-link' entity-id=#{entity.id} property='P345'>IMDB</a></li>
+    #     </ul>
+    # """
+    
+    
     overlay = document.createElement('div')
     overlay.classList.add('overlay')
     overlay.innerHTML = """
@@ -50,6 +68,7 @@ render = (entity, lang) ->
                 </svg> 
             </header>
             <div class='overlay-main'>
+                <div class='overlay-summary'>#{extract}</div>
                 #{dl}
                 #{links}
             </div>
@@ -63,10 +82,6 @@ render = (entity, lang) ->
 
 showOverlay = (id, lang) ->
 
-    wikidata = WBK
-        instance: 'https://www.wikidata.org'
-        sparqlEndpoint: 'https://query.wikidata.org/sparql'
-  
     url = wikidata.getEntities(id)
     fetch(url)
         .then (response) -> 
@@ -74,7 +89,16 @@ showOverlay = (id, lang) ->
         .then wikidata.parse.wd.entities
         .then (entities) ->
             entity = entities[id] 
-            render(entity, lang)
+            sitelink = entity.sitelinks.enwiki
+            fetch("https://en.wikipedia.org/api/rest_v1/page/summary/#{sitelink}")
+                .then (response) -> response.json()
+                .then (data) ->
+                    if data.type == 'standard'
+                        summary = data.extract
+                    else
+                        summary = ''
+                    render(entity, summary, lang)
+                    
 
 buttons = document.querySelectorAll('.show-item')
 for button in buttons

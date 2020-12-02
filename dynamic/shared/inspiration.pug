@@ -2,9 +2,10 @@ extends /base
 include /wikidata
 include /image
 include /page_heading
+include /menu
 
 block content
-   include /navigation
+   +pageHeader(true)
    .wrapper
       +pageHeading('Tipps: ' + local.title)
       .page-main

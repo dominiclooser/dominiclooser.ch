@@ -8,11 +8,11 @@ mixin section(title)
          .s1-main
             block
 
-mixin listSection(data, title)
-   if data
+mixin listSection(title, items)
+   if items
       +section(title)
          ul.default-list
-            for item in data
+            for item in items
                li
                   +item(item)
 

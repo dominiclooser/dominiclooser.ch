@@ -141,7 +141,7 @@ config =
     
     postcss:
         options:
-            processors: [autoprefixer, cssVariables, calc]
+            processors: [autoprefixer]
         main:
             src: 'out/styles/styles.css'
     

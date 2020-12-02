@@ -16,9 +16,10 @@ img
     margin-top: var(--two-units)
     & + .page-content
     & + .page-main
-        margin-top: var(--unit)
+        margin-top: var(--two-units)
     
 .page-title
+    text-transform: capitalize
     display: inline-block
     font-family: heading-font
     color: heading-color
@@ -186,6 +187,7 @@ img
 ////////////
 
 .overlay
+    @extends .arrow-links
     position: fixed
     top: 0
     left: 0
@@ -215,7 +217,7 @@ img
         font-size: var(--xxxxl)
 
 .overlay-main
-    margin-top: var(--two-units)
+    margin-top: var(--unit)
 
 .overlay-props
     dl(weight: 400)

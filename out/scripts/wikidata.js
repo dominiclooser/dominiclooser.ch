@@ -1,6 +1,11 @@
 (function() {
-  var button, buttons, getEntityProps, i, len, render, showOverlay,
+  var button, buttons, getEntityProps, i, len, render, showOverlay, wikidata,
     indexOf = [].indexOf;
+
+  wikidata = WBK({
+    instance: 'https://www.wikidata.org',
+    sparqlEndpoint: 'https://query.wikidata.org/sparql'
+  });
 
   getEntityProps = function(entity) {
     var props, types;
@@ -21,8 +26,14 @@
     return props;
   };
 
-  render = function(entity, lang) {
-    var close, dl, i, len, links, overlay, prop, props, value;
+  render = function(entity, extract, lang) {
+    var close, dl, fileName, i, image, len, links, logoUrl, logos, overlay, prop, props, value;
+    logos = entity.claims['P154'];
+    if (logos) {
+      fileName = logos[0].replace(' ', '_');
+      logoUrl = wikidata.getImageUrl(fileName);
+      image = `<img src='${logoUrl}'>`;
+    }
     props = getEntityProps(entity);
     dl = "<dl class='overlay-props'>";
     for (i = 0, len = props.length; i < len; i++) {
@@ -31,10 +42,21 @@
       dl += `<dt><wd-entity id=${prop} lang=${lang}></dt>\n<dd><wd-entity id=${entity.id} property=${prop} lang=${lang}></dd>`;
     }
     dl += '</dl>';
-    links = `<ul>\n    <li><a is='wd-link' entity-id=${entity.id} site='enwiki'>English Wikipedia</a></li>\n    <li><a is='wd-link' entity-id=${entity.id} property='P856'>Official Website</a></li>\n    <li><a is='wd-link' entity-id=${entity.id} property='P345'>IMDB</a></li>\n</ul>`;
+    links = '<ul>';
+    console.log(entity);
+    if (entity.sitelinks.enwiki) {
+      links += '<li><a href="https://wikipedia.org/wiki/enwiki/#{entity.sitelinks.enwiki}">English Wikipedia entry</a></li>';
+    }
+    links += '</ul>';
+    //     <ul>
+
+    //         <li><a is='wd-link' entity-id=#{entity.id} property='P856'>Official Website</a></li>
+    //         <li><a is='wd-link' entity-id=#{entity.id} property='P345'>IMDB</a></li>
+    //     </ul>
+    // """
     overlay = document.createElement('div');
     overlay.classList.add('overlay');
-    overlay.innerHTML = `<div class='overlay-content'>\n    <header class='overlay-header'>\n        <h4 class='overlay-title'>\n            <wd-entity id=${entity.id} label lang=${lang}>\n        </h4>\n        <svg class='close-overlay' viewBox='0 0 100 100'>\n            <line x1=0 y1=0 x2=100 y2=100 />\n            <line x1=0 y1=100 x2=100 y2=0 />\n        </svg> \n    </header>\n    <div class='overlay-main'>\n        ${dl}\n        ${links}\n    </div>\n</div>`;
+    overlay.innerHTML = `<div class='overlay-content'>\n    <header class='overlay-header'>\n        <h4 class='overlay-title'>\n            <wd-entity id=${entity.id} label lang=${lang}>\n        </h4>\n        <svg class='close-overlay' viewBox='0 0 100 100'>\n            <line x1=0 y1=0 x2=100 y2=100 />\n            <line x1=0 y1=100 x2=100 y2=0 />\n        </svg> \n    </header>\n    <div class='overlay-main'>\n        <div class='overlay-summary'>${extract}</div>\n        ${dl}\n        ${links}\n    </div>\n</div>`;
     document.body.append(overlay);
     close = overlay.querySelector('.close-overlay');
     return close.addEventListener('click', function() {
@@ -43,18 +65,25 @@
   };
 
   showOverlay = function(id, lang) {
-    var url, wikidata;
-    wikidata = WBK({
-      instance: 'https://www.wikidata.org',
-      sparqlEndpoint: 'https://query.wikidata.org/sparql'
-    });
+    var url;
     url = wikidata.getEntities(id);
     return fetch(url).then(function(response) {
       return response.json();
     }).then(wikidata.parse.wd.entities).then(function(entities) {
-      var entity;
+      var entity, sitelink;
       entity = entities[id];
-      return render(entity, lang);
+      sitelink = entity.sitelinks.enwiki;
+      return fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${sitelink}`).then(function(response) {
+        return response.json();
+      }).then(function(data) {
+        var summary;
+        if (data.type === 'standard') {
+          summary = data.extract;
+        } else {
+          summary = '';
+        }
+        return render(entity, summary, lang);
+      });
     });
   };
 

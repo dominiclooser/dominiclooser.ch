@@ -24,7 +24,7 @@ mixin item(data, lang=global.settings.lang)
       else
          = data.title
    
-   script(src='/scripts/wikibase-sdk.min.js')
+   script(type='module', src='/scripts/wikibase-sdk.min.js')
    script(type='module', src='/scripts/wikidata.js')
 
       

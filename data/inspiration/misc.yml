@@ -25,6 +25,8 @@ content:
       - Q19976007  # hassan hajjaj
       -  label: Elena Brotschi 
          link: http://www.elenabrotschi.com
+      -  link: https://www.laurettasuter.ch/
+         label: Lauretta Suter
       -  label: Sebastian Wagner 
          link: https://sebastianwagner.studio
    Kunst:
@@ -42,17 +44,6 @@ content:
       -  label: Bebas Neue
       -  label: Noe Text
       -  label: Inconsolata
-   Software:
-      - Q28401317
-      - Q5301      # TeX
-      - Q86924750  # Pug
-      - Q28865     # Python
-      - Q1106819   # Coffeescript
-      - Q60608219  # IINA
-      -  label: LaTeX
-      - label: latexmk
-      -  label: z
-         link: https://github.com/rupa/z
    Firmen:
       -  label: Atelier für Sonderaufgaben
          link: https://www.sonderaufgaben.ch

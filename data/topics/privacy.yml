@@ -1,0 +1,15 @@
+wikidata_id: Q188728
+lists:
+   -  title: Manufacturer
+      items:
+         - Q28132320  # pine64 
+         - Q28450799  # Purism
+   
+   -  title: Hardware
+      items:
+         - Q80443980  # pinephone
+
+   -  title: Private Cloud
+      items:
+         - Q25874683  # nextcloud
+
