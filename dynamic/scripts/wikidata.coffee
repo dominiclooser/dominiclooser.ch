@@ -25,10 +25,19 @@ getEntityProps = (entity) ->
 render = (entity, extract, lang) ->
     
     logos = entity.claims['P154']
+    images = entity.claims['P18']
     if logos
         fileName = logos[0].replace(' ', '_')
-        logoUrl = wikidata.getImageUrl(fileName)
-        image = "<img src='#{logoUrl}'>"
+        imageUrl = wikidata.getImageUrl(fileName)
+    else if images
+        fileName = images[0].replace(' ', '_')
+        imageUrl = wikidata.getImageUrl(fileName)
+
+    if imageUrl
+        image = "<img src='#{imageUrl}' class='overlay-image'>"
+    else
+        image = ''
+
     
     props = getEntityProps(entity)
     dl = "<dl class='overlay-props'>"
@@ -68,6 +77,7 @@ render = (entity, extract, lang) ->
                 </svg> 
             </header>
             <div class='overlay-main'>
+                #{image}
                 <div class='overlay-summary'>#{extract}</div>
                 #{dl}
                 #{links}
@@ -77,6 +87,7 @@ render = (entity, extract, lang) ->
     document.body.append(overlay)
     close = overlay.querySelector('.close-overlay')
     close.addEventListener 'click', ->
+        document.body.style.overflow = 'scroll'
         overlay.style.display = 'none'
 
 
@@ -104,7 +115,9 @@ buttons = document.querySelectorAll('.show-item')
 for button in buttons
     button.addEventListener 'click', ->
         id = this.dataset.id
+        document.body.style.overflow = 'hidden'
         showOverlay(id, 'en')
+        
 
 
 # showOverlay('Q669591', 'en')

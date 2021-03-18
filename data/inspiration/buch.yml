@@ -2,13 +2,20 @@ title: Buch
 flat: true
 content:
    Autoren:
-      - Q73909  # sven regener 
+      - Q73909     # sven regener
+      - Q354867    # Alan Watts
+      - Q3335      # George Orwell
+      - Q442384    # Pema Chödrön
+      - Q1691822   # joey goebel 
+      - Q134798    # Haruki Murakami
    Q748:  # buddhism
       - Q83504291  # buddhism plain and simple
       - Q92616393  # the places that scare you
       - Q92093161  # wisdom of insecurity
    Q9418:  # Psychologie
-      - Q83504496  # Tao of fully feeling
+      - Q106024572  # Traumaheilung durch radikale Erlaubnis / Mike Hellwig
+      - Q83504496   # Tao of fully feeling
+      - Q106029185  # Complex PTSD: From Surviving to Thriving
    Diverse:
       # Das Fest des Ziegenbocks
       - Q594439   # hard boiled wonderland

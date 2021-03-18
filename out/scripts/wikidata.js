@@ -27,12 +27,20 @@
   };
 
   render = function(entity, extract, lang) {
-    var close, dl, fileName, i, image, len, links, logoUrl, logos, overlay, prop, props, value;
+    var close, dl, fileName, i, image, imageUrl, images, len, links, logos, overlay, prop, props, value;
     logos = entity.claims['P154'];
+    images = entity.claims['P18'];
     if (logos) {
       fileName = logos[0].replace(' ', '_');
-      logoUrl = wikidata.getImageUrl(fileName);
-      image = `<img src='${logoUrl}'>`;
+      imageUrl = wikidata.getImageUrl(fileName);
+    } else if (images) {
+      fileName = images[0].replace(' ', '_');
+      imageUrl = wikidata.getImageUrl(fileName);
+    }
+    if (imageUrl) {
+      image = `<img src='${imageUrl}' class='overlay-image'>`;
+    } else {
+      image = '';
     }
     props = getEntityProps(entity);
     dl = "<dl class='overlay-props'>";
@@ -56,10 +64,11 @@
     // """
     overlay = document.createElement('div');
     overlay.classList.add('overlay');
-    overlay.innerHTML = `<div class='overlay-content'>\n    <header class='overlay-header'>\n        <h4 class='overlay-title'>\n            <wd-entity id=${entity.id} label lang=${lang}>\n        </h4>\n        <svg class='close-overlay' viewBox='0 0 100 100'>\n            <line x1=0 y1=0 x2=100 y2=100 />\n            <line x1=0 y1=100 x2=100 y2=0 />\n        </svg> \n    </header>\n    <div class='overlay-main'>\n        <div class='overlay-summary'>${extract}</div>\n        ${dl}\n        ${links}\n    </div>\n</div>`;
+    overlay.innerHTML = `<div class='overlay-content'>\n    <header class='overlay-header'>\n        <h4 class='overlay-title'>\n            <wd-entity id=${entity.id} label lang=${lang}>\n        </h4>\n        <svg class='close-overlay' viewBox='0 0 100 100'>\n            <line x1=0 y1=0 x2=100 y2=100 />\n            <line x1=0 y1=100 x2=100 y2=0 />\n        </svg> \n    </header>\n    <div class='overlay-main'>\n        ${image}\n        <div class='overlay-summary'>${extract}</div>\n        ${dl}\n        ${links}\n    </div>\n</div>`;
     document.body.append(overlay);
     close = overlay.querySelector('.close-overlay');
     return close.addEventListener('click', function() {
+      document.body.style.overflow = 'scroll';
       return overlay.style.display = 'none';
     });
   };
@@ -94,10 +103,12 @@
     button.addEventListener('click', function() {
       var id;
       id = this.dataset.id;
+      document.body.style.overflow = 'hidden';
       return showOverlay(id, 'en');
     });
   }
 
-  // showOverlay('Q669591', 'en')
+  
+// showOverlay('Q669591', 'en')
 
 }).call(this);

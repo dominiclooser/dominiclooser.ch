@@ -1,15 +1,19 @@
 title: IT
 flat: true
 content:
-   Webseiten:
+   Websites:
       - Q686797    # Hackernews
+   Grafik:
+      # inkscape
+      - Q8295  # scribus  
    Software:
+      - Q103410350  # trash
       - Q28401317
-      - Q5301      # TeX
-      - Q86924750  # Pug
-      - Q28865     # Python
-      - Q1106819   # Coffeescript
-      - Q60608219  # IINA
+      - Q5301       # TeX
+      - Q86924750   # Pug
+      - Q28865      # Python
+      - Q1106819    # Coffeescript
+      - Q60608219   # IINA
       -  label: LaTeX
       - label: latexmk
       -  label: z

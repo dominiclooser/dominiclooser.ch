@@ -1,10 +1,8 @@
 title: Film
 image: 'backgrounds/film.jpg'
 content:
-   # Abre los Ojos
    # marriage story
    # Eternal sunshine of a spotless mind
-   
    # ghost world
    # Q260509     # submarine
    # man on the moon
@@ -54,6 +52,7 @@ content:
          -  Q639481  # Ed Wood
 
       Lieblingsfilme:
+         # herr lehmann
          - Q669591    # Happy go lucky
          - Q190050    # fight club
          - Q300555    # A serious man
@@ -98,6 +97,11 @@ content:
          - Q19864603  # Manchester by the sea
          # Blue Valentine 
          
+       
+      Brainfuck:
+         - Q1136400   # abre los ojos
+         - Q110278    # vanilla sky
+
       Musik:
          - Q137754   # Once
          - Q2935739  # Begin Again
@@ -136,6 +140,7 @@ content:
          - Q28443710  # Dark
          - Q239672    # The IT-Crowd
          - Q88759629  # unorthodox
+         - Q65980217  # wandavision
          - label: A Handmaid's Tale
          - label: The End of the F***ing World
          - label: Twin Peaks
@@ -150,11 +155,13 @@ content:
    Personen:
 
       Schauspieler: 
+      # christian ulmen
       # johnny depp
       # roberto begnini
          - Q193815  # ryan gosling
          - Q165518  # ewan mcgregor
          - Q57147   # Michael Fassbender
+         - Q134895  # Javier Bardem  
 
       Schauspielerinnen:
          - Q233563  # Sally Hawkins
@@ -164,6 +171,7 @@ content:
          - Q223281  # laura linney
          - Q236875  # Thora Birch
          - Q233466  # Elisabeth Moss 
+         - Q39666   # penelope cruz
 
       Regie:
          - label: Darren Aronofsky
@@ -174,6 +182,7 @@ content:
          - label: Danny Boyle
          - Q504656  # todd solondz
          - Q25089   # Woody Allen
+         - Q256671  # miranda july
          # Wes Anderson
          # Jim Jarmusch
          # Harmony Korine

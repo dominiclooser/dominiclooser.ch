@@ -1,9 +1,16 @@
+
 # -  content: Der Mensch kann tun was er will; er kann aber nicht wollen was er will.
 #    author: Q38193  # arthur schopenhauer
 
 # -  content: ein betrug funktioniert erst dann wenn er gross genug ist.
 #    author: markus krall
-#
+-  content: 'Oh ja, ich mag die Haltung von Punk und den Style von Jazz,
+Ich mag die Bässe von Reggae und die Beats von Rap'
+   author: Q19018  # jan delay 
+
+-  content: 'In einer Fußgängerzone steht ein Mann und klatscht alle 10 Sekunden in die Hände. Als ein Passant ihn fragt, was er denn tue, antwortet er: „Ich vertreibe die wilden Elefanten“. Erstaunt entgegnet der Passant: „Aber hier sind doch gar keine Elefanten.“ Worauf der klatschende Mann zufrieden lächelt und feststellt: „Sehen Sie, das Klatschen wirkt“.'
+   author: Q93781 # watzlawick
+
 -  content: "...it's *the running away* that is, in fact, torturing you"
    source: Q89598741  # the completion process
    topics: [Q9418] # psychology

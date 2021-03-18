@@ -8,6 +8,20 @@ mixin section(title)
          .s1-main
             block
 
+mixin textSection(title, data)
+   +section(title)
+      != marked(data)
+
+mixin dlSection(title, data, lang=global.settings.lang)
+   if data
+      +section(title)
+         dl.dl
+            for definition, term in data
+               dt
+                  +item(term, lang=lang)
+               dd 
+                  +item(definition, lang=lang)
+
 mixin listSection(data, title)
    if data
       +section(title)
@@ -18,24 +32,40 @@ mixin listSection(data, title)
 
 
 mixin flatSection(title, data, props=[])
-      if data
-         +section(title)
-            dl.dl
-               for prop in props
-                  if data[prop.key]
-                     dt= prop.label
-                     dd
-                        +item(data[prop.key])
+   if data
+      +section(title)
+         dl.dl
+            for prop in props
+               if data[prop.key]
+                  dt= prop.label
+                  dd
+                     +item(data[prop.key])
+
+mixin videoSection(videos, title)
+   if videos
+      +section(title)
+         .video-grid
+            for video in videos
+               iframe(width='560', height='315', src='https://www.youtube.com/embed/' + video.youtube_id, frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
 
 
+mixin subsection(title)
+   section.s2
+      header.s2-header
+         h3.h3= title
+      .s2-main
+         block
 
 mixin listSubsection(data, title)
    if data
-      section.s2
-         header.s2-header
-            h3.h3= title
-         .s2-main
-            ul.default-list
-               for item in data
-                  li
-                     +item(item)
+      +subsection(title)
+         ul.default-list
+            for item in data
+               li
+                  +item(item)
+
+mixin imageSubsection(title, dir)
+   +subsection(title)
+      .image-columns
+         for fileId in getImages(dir)
+            +lightboxImage(fileId, lightboxGroup='inspirational_images')

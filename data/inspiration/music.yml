@@ -12,6 +12,7 @@ content:
          -  label: Gysbert zu Knyphausen
          -  label: Funny van Dannen
          -  label: Manuel Stahlberger
+         - Q271602    # anna ternheim
       Rap:
          - Q15907277  # Käptn Peng und die Tentakel von Delphi
          - Q66729708  # Kummer
@@ -24,8 +25,9 @@ content:
       misc:
          - Q635772    # archive 
    Land:
+      Q34:
+         - Q271602    # anna ternheim
       England:
-         - Q895739    # Element of crime
          - Q485820    # Blur
          - Q17334464  # Scroobius Pip
          - Q635772    # archive
@@ -33,6 +35,7 @@ content:
          - Q15907277  # Käptn Peng und die Tentakel von Delphi
          - label: Tocotronic
          - label: Grossstadtgeflüster
+         - Q895739    # Element of crime
          - Q445911    # Kettcar
          - Q509334    # Kraftclub
          - Q694170    # Die Fantastischen Vier
@@ -44,6 +47,7 @@ content:
             link: http://seilerundspeer.at
          -  label: Ludwig Hirsch 
       Schweiz:
+         - Q1959331  # müslüm
          -  label: Stephan Eicher
          -  label: Patent Ochsner
          -  label: Mani Matter

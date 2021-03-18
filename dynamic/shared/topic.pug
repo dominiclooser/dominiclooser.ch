@@ -18,8 +18,9 @@ block content
             if local.content
                .text.spaced-paragraphs!= marked(local.content)
 
-            for list in local.lists
-               +listSection(list.title, list.items)
+            if local.lists
+               for list in local.lists
+                  +listSection(list.items, list.title)
             
             if local.quotes
                +section('Zitate')
@@ -37,15 +38,12 @@ block content
                               span.quote-source
                                  +item(quote.source)
 
-            if local.videos
-               +section('Videos')
-                  ul.default-list.underlined-on-hover-links
-                     for video in local.videos
-                        li: a(href='https://www.youtube.com/watch?v=' + video.youtube_id)= video.title
-
-            +listSection('Ressourcen', local.resources)            
-            +listSection('Films', local.films)
-            +listSection('Songs', local.songs)
+            
+                     
+            //- +videoSection(local.videos, 'Videos')
+            +listSection(local.resources, 'Ressourcen')            
+            +listSection(local.films, 'Films')
+            +listSection(local.songs, 'Songs')
 
             if local.articles
                section.s1
@@ -58,8 +56,8 @@ block content
                               +item(article)
 
          aside.page-aside
-            +listSection('Concepts', local.concepts)
-            +listSection('People', local.people)
+            +listSection(local.concepts, 'Concepts')
+            +listSection(local.people, 'People')
             if local.props
                dl.props-dl
                   for prop in local.props

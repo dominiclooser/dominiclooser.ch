@@ -8,11 +8,25 @@ mixin section(title)
          .s1-main
             block
 
-mixin listSection(title, items)
-   if items
+mixin textSection(title, data)
+   +section(title)
+      != marked(data)
+
+mixin dlSection(title, data, lang=global.settings.lang)
+   if data
+      +section(title)
+         dl.dl
+            for definition, term in data
+               dt
+                  +item(term, lang=lang)
+               dd 
+                  +item(definition, lang=lang)
+
+mixin listSection(data, title)
+   if data
       +section(title)
          ul.default-list
-            for item in items
+            for item in data
                li
                   +item(item)
 
@@ -44,8 +58,7 @@ mixin listSubsection(data, title)
                   +item(item)
 
 mixin imageSubsection(title, dir)
-   if containsImages(dir)
-      +subsection(title)
-         .image-columns
-            for fileId in getImages(dir)
-               +lightboxImage(fileId, lightboxGroup='inspirational_images')
+   +subsection(title)
+      .image-columns
+         for fileId in getImages(dir)
+            +lightboxImage(fileId, lightboxGroup='inspirational_images')

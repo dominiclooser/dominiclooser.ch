@@ -5,6 +5,7 @@ people:
    - Q123190    # jean piaget
    - Q433134    # judith herman
    - Q83504500  # pete walker
+   - Q1577397   # Hans-Joachim Maaz  
 concepts:
    - Q1542815   # heldenreise
    - Q2866472   # defense mechanism
@@ -12,8 +13,8 @@ concepts:
    - Q909609    # attachement theory
    - Q334231    # transference
    - Q29963683  # hochsensiblität
-quotes:
-   
+   - Q338924    # amygdala
+
 videos:
    -  title: | 
          'Gerald Hüther: Momente gelingender Beziehungen (eine neue Beziehungskultur für eine bessere Welt)'

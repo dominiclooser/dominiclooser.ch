@@ -39,10 +39,11 @@ content:
          link: https://www.jeremiahshoaf.com
       -  label: Typewolf
          link: http://typewolf.com 
+      # typographicposters
    Schriftarten:
       -  label: Druk 
       -  label: Bebas Neue
-      -  label: Noe Text
+      -  label: Noe
       -  label: Inconsolata
    Firmen:
       -  label: Atelier für Sonderaufgaben
@@ -72,4 +73,7 @@ content:
       -  label: Krasse Tasse
          link: https://diekrassetassegmbh.ch
    Tiere:
+      - Q126683  # saiga antilope
       - Q285214  # galagos
+      - Q127470  # seegurke
+      - Q15343   # platypus

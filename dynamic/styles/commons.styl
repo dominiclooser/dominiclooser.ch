@@ -12,6 +12,9 @@ img
 // page //
 //////////
 
+body
+    padding-bottom: var(--two-units)
+
 .page-heading
     margin-top: var(--two-units)
     & + .page-content
@@ -199,6 +202,7 @@ img
 .overlay-content
     margin: 0 auto
     height: 100%
+    overflow-y: scroll
     max-width: text-width
     background: var(--secondary)
     padding: var(--two-units) var(--unit)
@@ -218,6 +222,9 @@ img
 
 .overlay-main
     margin-top: var(--unit)
+
+.overlay-image
+    margin-bottom: var(--unit)
 
 .overlay-props
     dl(weight: 400)
