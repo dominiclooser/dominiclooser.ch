@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Dominic Looser</title><meta name="description" content="Text und Grafik"><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:image"><link rel="icon" href="/images/favicon.png" sizes="32x32"><link rel="stylesheet" href="/styles/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900"></head><body><style>.mobile-page-header {
+   display: flex;
+   justify-content: space-between;
+   padding: var(--semi-unit) var(--page-padding);
+}
+.desktop-page-header {
+   display: none
+}
+.close, .open-menu{
+   cursor: pointer
+}
+.close {
+   stroke: var(--text-color);
+   stroke-width: 10px;
+   height: var(--unit);
+}
+.mobile-nav {
+   display: none;
+   justify-content: space-between;
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100vh;
+   width: 100vw;
+   padding: var(--unit);
+   background-color: var(--mobile-nav-background-color);
+}
+   </style><header class="desktop-page-header"><a class="logo" href="/">Dominic Looser</a><nav class="desktop-nav"><ul class="desktop-nav-list"><li><a href="/text">Text</a></li><li><a href="/grafik">Grafik</a></li><li><a href="/tipps">Tipps</a></li><li><a href="/projects">Projekte</a></li><li><a href="/about">About</a></li></ul></nav></header><header class="mobile-page-header"><a class="logo" href="/">Dominic Looser</a><div class="open-menu">MENU</div></header><nav class="mobile-nav"><ul class="mobile-nav-list"><li class="nav-group"><a class="nav-item" href="/">Home</a></li><li class="nav-group"><a class="nav-item" href="/text">Text</a></li><li class="nav-group"><a class="nav-item" href="/grafik">Grafik</a></li><li class="nav-group"><a class="nav-item" href="/tipps">Tipps</a></li><li class="nav-group"><a class="nav-item" href="/projects">Projekte</a></li><li class="nav-group"><a class="nav-item" href="/about">About</a></li></ul><div class="close-wrapper"><svg class="close" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="0" y1="100" x2="100" y2="0"> </line></svg></div></nav><script>(function() {
+  var close, mobileNav, openMenu;
+
+  close = document.querySelector('.close');
+
+  mobileNav = document.querySelector('.mobile-nav');
+
+  openMenu = document.querySelector('.open-menu');
+
+  openMenu.addEventListener('click', function() {
+    return mobileNav.style.display = 'flex';
+  });
+
+  close.addEventListener('click', function() {
+    return mobileNav.style.display = 'none';
+  });
+
+}).call(this);
+</script><div class="wrapper"><header class="page-heading"><h1><p class="page-title"><wd-entity entity-id="Q1123462" label="label" lang="de"></wd-entity><script src="/scripts/webcomponents-bundle.js"></script><script src="https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js"> </script></p></h1></header><div class="page-content"><main class="page-main"><div class="text spaced-paragraphs"><h1 id="commands">Commands</h1>
+<p>A <em>command</em> begins with Backslash (). A command in ConTeX 
+is the same as a macro in TeX. A <em>macro package</em> is a collection
+of macros/commands. </p>
+<p>command = setup([]) + scope({})</p>
+<p>\define[1]\mpThree{The ID3 Tag of the MP3 file is: #1}</p>
+<h1 id="setup">Setup</h1>
+<pre><code>\setuppapersize
+\setuplayout
+\setuppagenumbering
+\setuphead[which][textstyle=]</code></pre><h1 id="structure">Structure</h1>
+<pre><code>\starttext
+   \completecontent (\placecontent)
+   \startfrontmatter
+   \endfrondmatter
+   \startbodymatter
+   \endbodymatter
+\endtext
+
+<p>\chapter (\title)
+\section (\subject)
+\subsection (\subsubject)</code></pre><h1 id="fonts">Fonts</h1></p>
+<pre><code>\definefontfamily[mainface][rm][TeX Gyre Pagella]
+\definefontfamily[mainface][ss][TeX Gyre Heros]
+\definefontfamily[mainface][mm][TeX Gyre Pagella Math]
+\setupbodyfont[mainface, 12pt]
+
+\em{}
+\italic{}
+\bold{}</code></pre><p>To switch typeface, use <code>\switchtobodyfont</code>.</p>
+<h1 id="size">Size</h1>
+<pre><code>\tfa
+\tfb
+...</code></pre><h1 id="alignment">Alignment</h1>
+<p>To center, use <code>\midaligned{}</code> or <code>\startalignment[middle]</code> and <code>\stopalignment</code>.</p>
+</div><section class="s1"><header class="s1-header"><h2 class="h2">Ressourcen</h2></header><div class="s1-main"><ul class="default-list"><li><a href="http://pmrb.free.fr/contextref.pdf">Reference Manual (2013)</a><script type="module" src="/scripts/wikibase-sdk.min.js"></script><script type="module" src="/scripts/wikidata.js"></script></li><li><a href="http://tug.ctan.org/info/context-top-ten/cmds.pdf">Macros Top Ten</a><script type="module" src="/scripts/wikibase-sdk.min.js"></script><script type="module" src="/scripts/wikidata.js"></script></li><li><a href="https://tex.stackexchange.com/questions/448812/the-definitive-guide-to-context-mkiv-documentation">Documentation Overview</a><script type="module" src="/scripts/wikibase-sdk.min.js"></script><script type="module" src="/scripts/wikidata.js"></script></li></ul></div></section></main><aside class="page-aside"><dl class="props-dl"><dt>P178<script src="/scripts/webcomponents-bundle.js"></script><script src="https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js"> </script></dt><dd><script type="module" src="https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js"></script><wd-entity entity-id="Q1123462" property="P178" lang="de"></wd-entity></dd></dl></aside></div></div></body></html>
