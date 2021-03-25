@@ -10,20 +10,24 @@
   getEntityProps = function(entity) {
     var props, types;
     types = entity.claims['P31'];
-    props = [];
-    // P69 educated at
-    // P101 field of work
-    // P108 employer
-    if (indexOf.call(types, 'Q11424') >= 0) { // film
-      props.push('P57', 'P58', 'P495', 'P272'); // dir, screenwriter, country, prod comp
+    if (!types) {
+      return [];
+    } else {
+      props = [];
+      // P69 educated at
+      // P101 field of work
+      // P108 employer
+      if (indexOf.call(types, 'Q11424') >= 0) { // film
+        props.push('P57', 'P58', 'P495', 'P272'); // dir, screenwriter, country, prod comp
+      }
+      if (indexOf.call(types, 'Q47461344') >= 0) { // written work
+        props.push('P50', 'P577'); // author, publication date
+      }
+      if (indexOf.call(types, 'Q5') >= 0) { // human
+        props.push('P101', 'P108', 'P69');
+      }
+      return props;
     }
-    if (indexOf.call(types, 'Q47461344') >= 0) { // written work
-      props.push('P50', 'P577'); // author, publication date
-    }
-    if (indexOf.call(types, 'Q5') >= 0) { // human
-      props.push('P101', 'P108', 'P69');
-    }
-    return props;
   };
 
   render = function(entity, extract, lang) {

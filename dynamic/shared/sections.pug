@@ -58,7 +58,8 @@ mixin listSubsection(data, title)
                   +item(item)
 
 mixin imageSubsection(title, dir)
-   +subsection(title)
-      .image-columns
-         for fileId in getImages(dir)
-            +lightboxImage(fileId, lightboxGroup='inspirational_images')
+   if containsImages(dir)
+      +subsection(title)
+         .image-columns
+            for fileId in getImages(dir)
+               +lightboxImage(fileId, lightboxGroup='inspirational_images')
