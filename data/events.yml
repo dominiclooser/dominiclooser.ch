@@ -24,6 +24,11 @@
       - Q81068910  # Corona Virus
 
 2020:
+   films:
+      - Q67628998  # the platform 
+      - Q54868299  # kajillionaire
+   series:
+      - Q85808226  # the queens gambit
    deaths:
       - Q4573      # Sean Connery
       - Q17515     # Diego Maradona

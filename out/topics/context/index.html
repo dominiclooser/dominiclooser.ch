@@ -43,28 +43,30 @@
   });
 
 }).call(this);
-</script><div class="wrapper"><header class="page-heading"><h1><p class="page-title"><wd-entity entity-id="Q1123462" label="label" lang="de"></wd-entity><script src="/scripts/webcomponents-bundle.js"></script><script src="https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js"> </script></p></h1></header><div class="page-content"><main class="page-main"><div class="text spaced-paragraphs"><h1 id="commands">Commands</h1>
+</script><div class="wrapper"><header class="page-heading"><h1><p class="page-title"><wd-entity entity-id="Q1123462" label="label" lang="de"></wd-entity><script src="/scripts/webcomponents-bundle.js"></script><script src="https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js"> </script></p></h1></header><div class="page-content"><main class="page-main"><div class="text spaced-paragraphs"><h2 id="commands">Commands</h2>
 <p>A <em>command</em> begins with Backslash (). A command in ConTeX 
 is the same as a macro in TeX. A <em>macro package</em> is a collection
 of macros/commands. </p>
 <p>command = setup([]) + scope({})</p>
-<p>\define[1]\mpThree{The ID3 Tag of the MP3 file is: #1}</p>
-<h1 id="setup">Setup</h1>
+<p>Example: 
+<code>\define[1]\mpThree{The ID3 Tag of the MP3 file is: #1}</code></p>
+<h2 id="setup">Setup</h2>
 <pre><code>\setuppapersize
 \setuplayout
 \setuppagenumbering
-\setuphead[which][textstyle=]</code></pre><h1 id="structure">Structure</h1>
+\setupindenting[no/yes, small/medium]
+\setuphead[which][textstyle=]</code></pre><h2 id="structure">Structure</h2>
 <pre><code>\starttext
-   \completecontent (\placecontent)
-   \startfrontmatter
-   \endfrondmatter
-   \startbodymatter
-   \endbodymatter
+\completecontent (\placecontent)
+\startfrontmatter
+\endfrondmatter
+\startbodymatter
+\endbodymatter
 \endtext
 
 <p>\chapter (\title)
 \section (\subject)
-\subsection (\subsubject)</code></pre><h1 id="fonts">Fonts</h1></p>
+\subsection (\subsubject)</code></pre><h2 id="fonts">Fonts</h2></p>
 <pre><code>\definefontfamily[mainface][rm][TeX Gyre Pagella]
 \definefontfamily[mainface][ss][TeX Gyre Heros]
 \definefontfamily[mainface][mm][TeX Gyre Pagella Math]
@@ -73,9 +75,9 @@ of macros/commands. </p>
 \em{}
 \italic{}
 \bold{}</code></pre><p>To switch typeface, use <code>\switchtobodyfont</code>.</p>
-<h1 id="size">Size</h1>
+<h2 id="size">Size</h2>
 <pre><code>\tfa
 \tfb
-...</code></pre><h1 id="alignment">Alignment</h1>
+...</code></pre><h2 id="alignment">Alignment</h2>
 <p>To center, use <code>\midaligned{}</code> or <code>\startalignment[middle]</code> and <code>\stopalignment</code>.</p>
-</div><section class="s1"><header class="s1-header"><h2 class="h2">Ressourcen</h2></header><div class="s1-main"><ul class="default-list"><li><a href="http://pmrb.free.fr/contextref.pdf">Reference Manual (2013)</a><script type="module" src="/scripts/wikibase-sdk.min.js"></script><script type="module" src="/scripts/wikidata.js"></script></li><li><a href="http://tug.ctan.org/info/context-top-ten/cmds.pdf">Macros Top Ten</a><script type="module" src="/scripts/wikibase-sdk.min.js"></script><script type="module" src="/scripts/wikidata.js"></script></li><li><a href="https://tex.stackexchange.com/questions/448812/the-definitive-guide-to-context-mkiv-documentation">Documentation Overview</a><script type="module" src="/scripts/wikibase-sdk.min.js"></script><script type="module" src="/scripts/wikidata.js"></script></li></ul></div></section></main><aside class="page-aside"><dl class="props-dl"><dt>P178<script src="/scripts/webcomponents-bundle.js"></script><script src="https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js"> </script></dt><dd><script type="module" src="https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js"></script><wd-entity entity-id="Q1123462" property="P178" lang="de"></wd-entity></dd></dl></aside></div></div></body></html>
+</div><section class="s1"><header class="s1-header"><h2 class="h2">Ressourcen</h2></header><div class="s1-main"><ul class="default-list"><li><a href="https://www.pragma-ade.nl/general/manuals/ma-cb-en.pdf">ConTeXt Mark IV – an excursion</a><script type="module" src="/scripts/wikibase-sdk.min.js"></script><script type="module" src="/scripts/wikidata.js"></script></li><li><a href="http://pmrb.free.fr/contextref.pdf">Reference Manual (2013)</a><script type="module" src="/scripts/wikibase-sdk.min.js"></script><script type="module" src="/scripts/wikidata.js"></script></li><li><a href="http://tug.ctan.org/info/context-top-ten/cmds.pdf">Macros Top Ten</a><script type="module" src="/scripts/wikibase-sdk.min.js"></script><script type="module" src="/scripts/wikidata.js"></script></li><li><a href="https://tex.stackexchange.com/questions/448812/the-definitive-guide-to-context-mkiv-documentation">Documentation Overview</a><script type="module" src="/scripts/wikibase-sdk.min.js"></script><script type="module" src="/scripts/wikidata.js"></script></li></ul></div></section></main><aside class="page-aside"><dl class="props-dl"><dt>P178<script src="/scripts/webcomponents-bundle.js"></script><script src="https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js"> </script></dt><dd><script type="module" src="https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js"></script><wd-entity entity-id="Q1123462" property="P178" lang="de"></wd-entity></dd></dl></aside></div></div></body></html>

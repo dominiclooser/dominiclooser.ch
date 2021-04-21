@@ -41,13 +41,6 @@ mixin flatSection(title, data, props=[])
                   dd
                      +item(data[prop.key])
 
-mixin videoSection(videos, title)
-   if videos
-      +section(title)
-         .video-grid
-            for video in videos
-               iframe(width='560', height='315', src='https://www.youtube.com/embed/' + video.youtube_id, frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
-
 
 mixin subsection(title)
    section.s2
@@ -65,7 +58,8 @@ mixin listSubsection(data, title)
                   +item(item)
 
 mixin imageSubsection(title, dir)
-   +subsection(title)
-      .image-columns
-         for fileId in getImages(dir)
-            +lightboxImage(fileId, lightboxGroup='inspirational_images')
+   if containsImages(dir)
+      +subsection(title)
+         .image-columns
+            for fileId in getImages(dir)
+               +lightboxImage(fileId, lightboxGroup='inspirational_images')

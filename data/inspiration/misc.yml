@@ -33,6 +33,7 @@ content:
       - Q28668836  # luis quiles
       - label: Herr Hürzeler
         link: http://herrhuerzeler.ch
+      - Q153965    # joseph beuys
       - Q98152523  # jan hakon erichsen
    Typographie:
       -  label: Jeremiah Shoaf
@@ -73,6 +74,7 @@ content:
       -  label: Krasse Tasse
          link: https://diekrassetassegmbh.ch
    Tiere:
+      - Q134015  # erdmännchen
       - Q126683  # saiga antilope
       - Q285214  # galagos
       - Q127470  # seegurke
