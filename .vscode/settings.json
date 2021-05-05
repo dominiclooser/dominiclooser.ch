@@ -9,5 +9,10 @@
         ".grunt": true,
         ".vscode": true,
         "node_modules": true
+    },
+    "yaml.schemas": {
+        "/Users/dominic/.setup/schemas/name.yml": ["**/names/*.yml"],
+        "/Users/dominic/.setup/schemas/topic.yml": ["**/topics/*.yml", "**/topics/**/.md"],
+        "/Users/dominic/.setup/schemas/project.yml": ["**/projects/*.yml"]
     }
 }

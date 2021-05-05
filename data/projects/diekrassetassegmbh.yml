@@ -1,9 +1,12 @@
 title: Die Krasse Tasse GmbH
-year: 2018
-link: https://diekrassetassegmbh.ch
+more: true
+url: https://diekrassetassegmbh.ch
 inspiration:
    misc:
       -  Q175121  # crassus
+   typography:
+      -  url: https://www.myfonts.com/fonts/argentina-lian-types/erotica
+         label: Erotica
    websites:
-      -  link: https://puregreenfranchise.com
+      -  url: https://puregreenfranchise.com
          label: Pure Green Franchise
