@@ -1,0 +1,22 @@
+-  wikidata_id: Q42319856
+   label: Franz Ruppert
+   tags: ['Q9418']        # psychology
+
+-  wikidata_id: Q6276882  
+   label: jordan peterson
+   tags: ['Q9418']        # psychology
+
+-  wikidata_id: Q1738618  
+   label: Ken Jebsen
+   tags: ['Gegenpropaganda', 'Q11030']  # journalismus
+
+-  wikidata_id: Q354867   
+   label:  Alan Watts
+   tags: ['Q5891']   # philosophy
+
+-  wikidata_id: Q60025   
+   label: hannah arendt
+   tags: ['Q7163', 'Q5891']   # politics, philosophy
+
+
+# -  Michael Lewit

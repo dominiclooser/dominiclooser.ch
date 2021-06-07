@@ -1,0 +1,46 @@
+-  wikidata_id: Q163698
+   label: Psychological Warfare
+   tags: ['Gegenpropaganda', 'Q9418',  'Q7163']  # psychology, politics
+
+-  wikidata_id: Q1139051  
+   label: Regression
+   tags: ['Gegenpropaganda', 'Q9418']  # psychology
+
+-  wikidata_id: Q128135  
+   label:  Totalitarianism
+   tags: ['Gegenpropaganda', 'Q7163']  # politics
+
+-  wikidata_id: Q180095   
+   label: tyrant
+   tags: ['Q7163'] # politics
+
+-  wikidata_id: Q173424
+   label:  autocracy
+   tags: ['Q7163', 'Gegenpropaganda'] # politics
+
+-  wikidata_id: Q68951    
+   label: divide and conquer
+   tags: ['Q7163', 'Gegenpropaganda'] # politics
+
+-  wikidata_id: Q3343912  
+   label: normopathy
+   tags: ['Gegenpropaganda', 'Q9418']  # psychology
+
+-  wikidata_id: Q1325774  
+   label: splitting
+   tags: ['Gegenpropaganda', 'Q9418']  # psychology
+
+-  wikidata_id: Q778684       
+   label: asch conformity experiment
+   tags: ['Gegenpropaganda', 'Q9418']  # psychology
+
+-  wikidata_id: Q191474       
+   label: milgram experiment
+   tags: ['Gegenpropaganda', 'Q9418']  # psychology
+
+-  label: Anonyme Autorität
+   tags: ['Gegenpropaganda', 'Q9418']  # psychology
+
+-  wikidata_id: Q1255650      
+   label: drama triangle
+   tags: ['Gegenpropaganda', 'Q9418']  # psychology

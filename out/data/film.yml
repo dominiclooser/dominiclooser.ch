@@ -1,0 +1,234 @@
+
+   # marriage story
+   # Eternal sunshine of a spotless mind
+   # ghost world
+   # Q260509     # submarine
+   # man on the moon
+   # night on earth
+   # coffee and cigarettes
+   # the darjeeling limited
+   # me and you and everyone we know
+   # Ulrich Seidl Filme
+   # Wes Anderson Filme
+   # the perks of being a wallflower
+   # me and earl and the dying girl
+   # frank
+   # magnolia
+   # kategorie: sonderbar sympathisch, kitchen sink
+   
+   
+Filme:
+   # children of men  
+   # y tu mama tambien
+   # Q1130310  the skin i live in
+   # Q59931      # garden state
+   # Q14578326   # wish i was here
+   # Q144756     # let the right one in
+   # Q132351 the usual suspects
+   
+
+   heftig / schön:
+      # dancer in the dark
+      -  Q676047    # Blue Valentine
+      -  Q927826     # never let me go
+      -  label: The Secret Life of Words
+      -  label: Trainspotting
+      -  label: A Clockwork Orange 
+      - Q487181    # requiem for a dream
+      -  label: Cidade de Deus
+         link: https://www.imdb.com/label/tt0317248
+      -  label: Magnolia
+         link: https://www.imdb.com/label/tt0175880
+      -  label: Lilja 4-ever
+         link: https://www.imdb.com/label/tt0300140
+      -  label: American History X 
+
+   Absurd und lustig:
+      -  Q105702    # dr. strangelove
+      -  Q1119322   # exit thourgh the gift shop
+      -  label: The Great Dictator
+         link: https://www.imdb.com/label/tt0032553
+      -  label: "No Man's Land"
+      -  Q639481  # Ed Wood
+
+   Lieblingsfilme:
+      # herr lehmann
+      - Q669591    # Happy go lucky
+      - Q190050    # fight club
+      - Q300555    # A serious man
+      - Q487181    # requiem for a dream
+      - Q639481    # Ed Wood
+
+   Cinema about Cinema:
+      -  Q5120815  # Cinemania
+      -  Q1757581  # Lost in la Mancha
+      -  label: Cinéma Inch'Allah!
+         link: https://www.imdb.com/label/tt2349854
+      
+   Q8588:
+      - Q300555    # A serious man
+      - Q28443710  # Dark
+
+   Philosophisch:
+      - Q28443710  # Dark
+      - Q300555    # A serious man
+
+   Fastdokumentarisch:
+      # fish tank
+      # the wrestler
+      - Q646426    # Kids
+      - Q1675435   # It's a free world
+      - Q1963079   # Naked
+
+   Selbstreferenz: 
+      - Q352431    # Adaptations
+      - Q860479    # Synecdoche Ney York
+      - Q649165    # Being John Malkovich
+
+   Psychologisch:
+      # stay
+      - Q165699    # melancholia
+      - Q909445    # Shame
+      - Q19864603  # Manchester by the sea
+      # Blue Valentine 
+      
+   Brainfuck:
+      - Q1136400   # abre los ojos
+      - Q110278    # vanilla sky
+
+   Musik:
+      - Q137754   # Once
+      - Q2935739  # Begin Again
+      - Q7705911  # herr lehmann
+      # -  label: 28 Days Later
+      
+   Dystopia:
+      - Q927826     # never let me go
+      - Q221075     # 28 days later
+
+   Geheimtipps: 
+      - Q4499335   # cold souls
+      - label: Holy Motors 
+      - Q488222     # the host
+
+   Dokumentarfilme:
+      -  Q1757581  # Lost in la Mancha
+      -  Q5120815  # Cinemania
+      # the unmaking of don quijote
+      -  label: Cinéma Inch'Allah!
+         link: https://www.imdb.com/label/tt2349854
+      -  label: Young@Heart 
+      -  label: Crumb
+         link: https://en.wikipedia.org/wiki/Crumb_(film)
+      -  Q1119322   # exit through the gift shop
+      -  label: Waltz with Bashir
+         link: https://en.wikipedia.org/wiki/Waltz_with_Bashir
+
+   Serien: 
+      # Lost, X-Files
+      
+      - label: Westworld
+      - Q85808226  # the queen's gambit
+      - Q28443710  # Dark
+      - Q239672    # The IT-Crowd
+      - Q88759629  # unorthodox
+      - Q65980217  # wandavision
+      - label: A Handmaid's Tale
+      - label: The End of the F***ing World
+      - label: Twin Peaks
+   
+   audiovisuel:
+      - Q487181    # requiem for a dream
+      - Q217112    # moonrise kindgdom
+      - Q28443710  # Dark
+      
+      
+
+Personen:
+
+   Schauspieler: 
+   # christian ulmen
+   # johnny depp
+   # roberto begnini
+      - Q193815  # ryan gosling
+      - Q165518  # ewan mcgregor
+      - Q57147   # Michael Fassbender
+      - Q134895  # Javier Bardem  
+
+   Schauspielerinnen:
+      - Q233563  # Sally Hawkins
+      - label: Chloë Sevigny
+      - Q219655  # Carey Mulligan
+      - Q156796  # Michelle Williams
+      - Q223281  # laura linney
+      - Q236875  # Thora Birch
+      - Q233466  # Elisabeth Moss 
+      - Q39666   # penelope cruz
+
+   Regie:
+      - label: Darren Aronofsky
+      - Q315756  # Mike Leigh
+      - Q312751  # Charlie Kaufmann
+      - label: Lukas Moodysson
+      - Q56095   # Coen Brothers
+      - label: Danny Boyle
+      - Q504656  # todd solondz
+      - Q25089   # Woody Allen
+      - Q256671  # miranda july
+      # Wes Anderson
+      # Jim Jarmusch
+      # Harmony Korine
+      # Taika Waititi
+      - Q72021   # andreas dresen
+      - Q133730  # lars von trier
+      - Q55238   # ken loach
+      - Q40035   # Richard Linklater
+      - Q459349  # Noah Baumbach
+      - label: Stanley Kubrik
+      - label: Michel Gondry
+      - label: Ulrich Seidl
+      - Q259913  # spike jonze
+
+      
+Geographisch:
+
+   Q408: # australian
+      - Q798641 # bad boy buddy
+
+   #Italien # roberto begnini
+
+   # Kanada Ryan Gosling 
+
+   Q142:   # france
+      - Q2212493   # st jaques la meque
+      - Q65735181  # fete de famille
+   
+   Grossbritanien:
+      - Q18134529  # x+y
+
+   Deutschland: 
+      - Q57231      # Tom Tykwer
+      - Q72021      # Andreas Dresen
+      - Q7705911    # Herr Lehmann
+      - Q478536     # Drei
+      - Q390914     # Halt auf freier Strecke
+      - Q879404     # Halbe Strecke
+      - Q28443710   # Dark
+      - Q1475778    # Oh Boy
+   
+   Österreich:
+      - Q84199    # Michael Haneke
+      - Q112182   # Ulrich Seidl
+
+   Dänemark:
+      - Q133730   # lars von trier
+   
+   Island:
+      -  Q165525  # 101 reykjavik
+
+   Skandinavien:
+      -  label: Nói albinói (Island)
+      -  Q7053629   # nord
+      -  label: Tillsammans (Schweden)
+      -  label: Lilya 4-ever (Schweden)
+         link: https://en.wikipedia.org/wiki/Lilya_4-ever
