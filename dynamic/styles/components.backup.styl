@@ -23,10 +23,22 @@
 .text-wrapper
     max-width: max-text-width
 
-grid(min-column-width = 100px, gap = var(--unit))
+grid(min-column-width = 200px, gap = var(--unit))
     display: grid
     grid-template-columns: repeat(auto-fill, minmax(min-column-width, 1fr))
     gap: gap
+
+// striped-grid(color=var(--secondary-background-color, gap=var(--unit)))
+//     display: grid
+//     grid-template-columns: repeat(auto-fill, minmax(min-column-width, 1fr))
+//     column-gap: gap
+//     & > *:nth-child(2n+1)
+//         background: color
+
+
+
+.grid
+    grid()
 
 .textplus
     @media textplus
@@ -58,11 +70,17 @@ grid(min-column-width = 100px, gap = var(--unit))
 .plustext-plus
     align-self: left
 
+.columns
+    columns: 300px
+    *
+        break-inside: avoid
+
 .image-columns
     columns: 200px
     column-gap: var(--semi-unit)
     *
         margin-bottom: var(--semi-unit)
+    
 
 
 //////////
@@ -109,15 +127,20 @@ grid(min-column-width = 100px, gap = var(--unit))
 .arrow
     &::before
         content: '\2192'
-        margin-right: 0.3em
+        margin-right: 0.15em
         display: inline-block
         
 .arrow-links
     a
         @extends .arrow
 
+.colored
+    color: var(--link-color)
+    &:hover
+        color: var(--link-color)
+
 .colored-links a
-    color: link-color
+    @extends .colored
 
 .underlined
     text-decoration: underline
@@ -136,7 +159,7 @@ grid(min-column-width = 100px, gap = var(--unit))
 
 .colored-on-hover-links 
     a:hover
-        color: link-color
+        color: var(--link-color)
 
 
 ///////////
@@ -193,11 +216,10 @@ highlight-list(background = dark, color = white)
     a
         text-decoration: none
 
-striped-list(color)
+striped-list(color=var(--secondary-background-color))
     li
         padding: var(--semi-unit)
     li:nth-child(2n+1)
-
         background-color: color
 
 dl(row-gap=0.2em, term-width=max-content, weight=bold)

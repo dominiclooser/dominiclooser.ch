@@ -39,6 +39,7 @@ block content
                   +listSubsection(local.inspiration.tagline, 'Tagline')
                   +listSubsection(local.inspiration.typography, 'Typographie')
                   +listSubsection(local.inspiration.misc, 'Diverses')
+                  +videoSubsection(local.inspiration.videos, 'Video')
 
                   if local.inspiration && local.inspiration.websites
                      section.s2
@@ -47,7 +48,7 @@ block content
                         main.s2-main
                            ul.default-list
                               for website in local.inspiration.websites
-                                 li: a(href=website.link)= website.label
+                                 li: a(href=website.url)= website.label
                   
                   
                   

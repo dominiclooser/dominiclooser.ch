@@ -161,6 +161,10 @@ grid(min-column-width = 200px, gap = var(--unit))
     a:hover
         color: var(--link-color)
 
+.bold-on-hover
+    &:hover
+        font-weight: bold
+
 
 ///////////
 // lists //
@@ -181,7 +185,7 @@ grid(min-column-width = 200px, gap = var(--unit))
     li:before
         content: '\2192 \a0'        
 
-vlist(spacing=var(--semi-unit), border='1px dotted dark')
+vlist(spacing=var(--semi-unit), border=1px solid var(--list-border-color))
     list-style: none
     padding: 0
     li  

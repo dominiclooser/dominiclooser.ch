@@ -141,7 +141,7 @@ config =
     
     postcss:
         options:
-            processors: [autoprefixer]
+            processors: [autoprefixer()]
         main:
             src: 'out/styles/styles.css'
     
@@ -372,7 +372,7 @@ module.exports = (grunt) ->
             fs.writeFileSync(target, html)
             
 
-    grunt.registerTask 'build', ['pug', 'stylus', 'postcss', 'coffee', 'copy:static', 'strip-extensions']
+    grunt.registerTask 'build', ['make-dirs', 'pug', 'stylus', 'postcss', 'coffee', 'copy:static', 'strip-extensions']
     grunt.registerTask 'default', ['build', 'watch']
     
     grunt.registerTask 'full_build', ['clean', 'make-dirs', 'imagemin', 'responsive_images', 'build'] 

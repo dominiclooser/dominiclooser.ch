@@ -1,12 +1,19 @@
 title: Die Krasse Tasse GmbH
 more: true
 url: https://diekrassetassegmbh.ch
+ideas:
+   slogan: 
+      - Wir retten die Welt
 inspiration:
    misc:
       -  Q175121  # crassus
    typography:
+      -  url: https://www.fontshop.com/families/polonaise
+         label: Polonaise
       -  url: https://www.myfonts.com/fonts/argentina-lian-types/erotica
          label: Erotica
    websites:
+      -  url: https://googone.com/
+         label: GOO GONE
       -  url: https://puregreenfranchise.com
          label: Pure Green Franchise

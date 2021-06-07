@@ -1,6 +1,7 @@
 title: Diverses
 flat: true
 content:
+   
    Bühne:
       -  label: Josef Hader
          link: http://hader.at
@@ -15,12 +16,14 @@ content:
          link: http://www.volker-pispers.de
       -  label: 9 Volt Nelly
          link: http://9voltnelly.ch
+   
    Style:
       -  label: Poppy
          link: http://impoppy.com
       -  label: Deichkind
       -  label: Pet Shop Boys
       -  label: Die Antwoord
+   
    Fotografie:
       - Q19976007  # hassan hajjaj
       -  label: Elena Brotschi 
@@ -29,23 +32,35 @@ content:
          label: Lauretta Suter
       -  label: Sebastian Wagner 
          link: https://sebastianwagner.studio
+   
    Kunst:
       - Q28668836  # luis quiles
       - label: Herr Hürzeler
         link: http://herrhuerzeler.ch
       - Q153965    # joseph beuys
       - Q98152523  # jan hakon erichsen
+
+   Design:
+      -  Q89568     # stefan sagmeister
+      -  url: https://andwalsh.com
+         label: '&Walsh'
+      # Peter Saville
+      # ARCHIE BOSTON
+
    Typographie:
       -  label: Jeremiah Shoaf
          link: https://www.jeremiahshoaf.com
       -  label: Typewolf
          link: http://typewolf.com 
       # typographicposters
+      # fontsinuse
+
    Schriftarten:
       -  label: Druk 
       -  label: Bebas Neue
       -  label: Noe
       -  label: Inconsolata
+   
    Firmen:
       -  label: Atelier für Sonderaufgaben
          link: https://www.sonderaufgaben.ch
@@ -59,11 +74,13 @@ content:
          link: https://diekrassetassegmbh.ch
       -  label: dfdu AG
          link: http://dfdu.org
+   
    Shopping:
       -  link: https://palmtreat.design/
          label: Palm Treat
       -  link: https://www.rageon.com/
          label: Rage On
+   
    Produkte:
       -  label: Place of Places
          link: http://placeofplaces.com
@@ -73,6 +90,7 @@ content:
          link: https://www.amazon.com/Forum-Novelties-Adult-Undies-Underwear/dp/B0149D0HWO
       -  label: Krasse Tasse
          link: https://diekrassetassegmbh.ch
+   
    Tiere:
       - Q134015  # erdmännchen
       - Q126683  # saiga antilope
