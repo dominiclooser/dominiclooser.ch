@@ -1,0 +1,12 @@
+extends /base
+include /page_heading
+
+block content
+   - title = 'Bundesverfassung der Schweizerischen Eidgenossenschaft'
+   - subtitle = 'vom 18. April 1999 (Stand am 23. September 2018)'
+   .wrapper
+      include /navigation
+      +pageHeading(title, subtitle)
+      main.page-main
+         article.spaced-paragraphs!= global.texts.verfassung.content
+      include /footer

@@ -14,12 +14,12 @@ block content
                   footer.quote-footer 
                      if quote.author
                         span.quote-author 
-                           +item(quote.author)
+                           +infoboxButton(quote.author)
                         if quote.source
                            span= ', '
                            span.quote-source
-                              +item(quote.source)
+                              +infoboxButton(quote.source)
                      else if quote.source
                         span.quote-source
-                           +item(quote.source)
+                           +infoboxButton(quote.source)
       include /footer

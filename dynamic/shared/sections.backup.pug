@@ -8,20 +8,40 @@ mixin section(title)
          .s1-main
             block
 
+mixin videos(data)
+   .video-grid
+      for video in data
+         .video
+            if video.youtube_id
+               .video-wrapper
+                  iframe(src='https://www.youtube.com/embed/' + video.youtube_id, frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
+            else if video.youtube_playlist_id
+               .video-wrapper
+                  iframe(src=`https://www.youtube.com/embed/videoseries?list=${video.youtube_playlist_id}`, frameborder='0', allowfullscreen)
+            else if video.odysee_id
+               .video-wrapper
+                  iframe(id="lbry-iframe", src=`https://odysee.com/$/embed/${video.odysee_id}`, allowfullscreen)
+            else if video.vimeo_id
+               a(href='https://vimeo.com/' + video.vimeo_id) Auf Vimeo schauen
+            else if video.youmaker_id
+               .video-wrapper
+                  iframe(src=`https://www.youmaker.com/embed/${video.youmaker_id}`, frameborder="0", allowfullscreen)
+            h3.video-title= video.title
+            p= video.description
+
+
 mixin videoSection(videos, title)
    if videos
       +section(title)
-         .video-grid
-            for video in videos
-               .video
-                  if video.youtube_id
-                     iframe(width='560', height='315', src='https://www.youtube.com/embed/' + video.youtube_id, frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
-                  else if video.vimeo_id
-                     a(href='https://vimeo.com/' + video.vimeo_id) Auf Vimeo schauen
-                  else if video.youmaker_id
-                     iframe(src=`https://www.youmaker.com/embed/${video.youmaker_id}`, width="560", height="315", frameborder="0", allowfullscreen)
-                  h3.video-title= video.title
-                  p= video.description
+         +videos(videos)
+         
+
+mixin videoSubsection(videos, title)
+   if videos
+      +subsection(title)
+         +videos(videos)
+
+
 mixin textSection(title, data)
    +section(title)
       != marked(data)

@@ -2,7 +2,7 @@
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
 	typeof define === 'function' && define.amd ? define(['exports'], factory) :
 	(global = global || self, factory(global.WDElements = {}));
-}(this, function (exports) { 'use strict';
+}(this, (function (exports) { 'use strict';
 
 	var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -192,9 +192,425 @@
 	    attachTo.clearImmediate = clearImmediate;
 	}(typeof self === "undefined" ? typeof commonjsGlobal === "undefined" ? commonjsGlobal : commonjsGlobal : self));
 
+	/**
+	 * Copyright (c) 2019-present, GraphQL Foundation
+	 *
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
+	 *
+	 * 
+	 */
+	// A Function, which when given an Array of keys, returns a Promise of an Array
+	// of values or Errors.
+	// Optionally turn off batching or caching or provide a cache key function or a
+	// custom cache instance.
+	// If a custom cache is provided, it must be of this type (a subset of ES6 Map).
+
+	/**
+	 * A `DataLoader` creates a public API for loading data from a particular
+	 * data back-end with unique keys such as the `id` column of a SQL table or
+	 * document name in a MongoDB database, given a batch loading function.
+	 *
+	 * Each `DataLoader` instance contains a unique memoized cache. Use caution when
+	 * used in long-lived applications or those which serve many users with
+	 * different access permissions and consider creating a new instance per
+	 * web request.
+	 */
+	var DataLoader =
+	/*#__PURE__*/
+	function () {
+	  function DataLoader(batchLoadFn, options) {
+	    if (typeof batchLoadFn !== 'function') {
+	      throw new TypeError('DataLoader must be constructed with a function which accepts ' + ("Array<key> and returns Promise<Array<value>>, but got: " + batchLoadFn + "."));
+	    }
+
+	    this._batchLoadFn = batchLoadFn;
+	    this._maxBatchSize = getValidMaxBatchSize(options);
+	    this._batchScheduleFn = getValidBatchScheduleFn(options);
+	    this._cacheKeyFn = getValidCacheKeyFn(options);
+	    this._cacheMap = getValidCacheMap(options);
+	    this._batch = null;
+	  } // Private
+
+
+	  var _proto = DataLoader.prototype;
+
+	  /**
+	   * Loads a key, returning a `Promise` for the value represented by that key.
+	   */
+	  _proto.load = function load(key) {
+	    if (key === null || key === undefined) {
+	      throw new TypeError('The loader.load() function must be called with a value,' + ("but got: " + String(key) + "."));
+	    }
+
+	    var batch = getCurrentBatch(this);
+	    var cacheMap = this._cacheMap;
+
+	    var cacheKey = this._cacheKeyFn(key); // If caching and there is a cache-hit, return cached Promise.
+
+
+	    if (cacheMap) {
+	      var cachedPromise = cacheMap.get(cacheKey);
+
+	      if (cachedPromise) {
+	        var cacheHits = batch.cacheHits || (batch.cacheHits = []);
+	        return new Promise(function (resolve) {
+	          cacheHits.push(function () {
+	            return resolve(cachedPromise);
+	          });
+	        });
+	      }
+	    } // Otherwise, produce a new Promise for this key, and enqueue it to be
+	    // dispatched along with the current batch.
+
+
+	    batch.keys.push(key);
+	    var promise = new Promise(function (resolve, reject) {
+	      batch.callbacks.push({
+	        resolve: resolve,
+	        reject: reject
+	      });
+	    }); // If caching, cache this promise.
+
+	    if (cacheMap) {
+	      cacheMap.set(cacheKey, promise);
+	    }
+
+	    return promise;
+	  }
+	  /**
+	   * Loads multiple keys, promising an array of values:
+	   *
+	   *     var [ a, b ] = await myLoader.loadMany([ 'a', 'b' ]);
+	   *
+	   * This is similar to the more verbose:
+	   *
+	   *     var [ a, b ] = await Promise.all([
+	   *       myLoader.load('a'),
+	   *       myLoader.load('b')
+	   *     ]);
+	   *
+	   * However it is different in the case where any load fails. Where
+	   * Promise.all() would reject, loadMany() always resolves, however each result
+	   * is either a value or an Error instance.
+	   *
+	   *     var [ a, b, c ] = await myLoader.loadMany([ 'a', 'b', 'badkey' ]);
+	   *     // c instanceof Error
+	   *
+	   */
+	  ;
+
+	  _proto.loadMany = function loadMany(keys) {
+	    if (!isArrayLike(keys)) {
+	      throw new TypeError('The loader.loadMany() function must be called with Array<key> ' + ("but got: " + keys + "."));
+	    } // Support ArrayLike by using only minimal property access
+
+
+	    var loadPromises = [];
+
+	    for (var i = 0; i < keys.length; i++) {
+	      loadPromises.push(this.load(keys[i])["catch"](function (error) {
+	        return error;
+	      }));
+	    }
+
+	    return Promise.all(loadPromises);
+	  }
+	  /**
+	   * Clears the value at `key` from the cache, if it exists. Returns itself for
+	   * method chaining.
+	   */
+	  ;
+
+	  _proto.clear = function clear(key) {
+	    var cacheMap = this._cacheMap;
+
+	    if (cacheMap) {
+	      var cacheKey = this._cacheKeyFn(key);
+
+	      cacheMap["delete"](cacheKey);
+	    }
+
+	    return this;
+	  }
+	  /**
+	   * Clears the entire cache. To be used when some event results in unknown
+	   * invalidations across this particular `DataLoader`. Returns itself for
+	   * method chaining.
+	   */
+	  ;
+
+	  _proto.clearAll = function clearAll() {
+	    var cacheMap = this._cacheMap;
+
+	    if (cacheMap) {
+	      cacheMap.clear();
+	    }
+
+	    return this;
+	  }
+	  /**
+	   * Adds the provided key and value to the cache. If the key already
+	   * exists, no change is made. Returns itself for method chaining.
+	   *
+	   * To prime the cache with an error at a key, provide an Error instance.
+	   */
+	  ;
+
+	  _proto.prime = function prime(key, value) {
+	    var cacheMap = this._cacheMap;
+
+	    if (cacheMap) {
+	      var cacheKey = this._cacheKeyFn(key); // Only add the key if it does not already exist.
+
+
+	      if (cacheMap.get(cacheKey) === undefined) {
+	        // Cache a rejected promise if the value is an Error, in order to match
+	        // the behavior of load(key).
+	        var promise;
+
+	        if (value instanceof Error) {
+	          promise = Promise.reject(value); // Since this is a case where an Error is intentionally being primed
+	          // for a given key, we want to disable unhandled promise rejection.
+
+	          promise["catch"](function () {});
+	        } else {
+	          promise = Promise.resolve(value);
+	        }
+
+	        cacheMap.set(cacheKey, promise);
+	      }
+	    }
+
+	    return this;
+	  };
+
+	  return DataLoader;
+	}(); // Private: Enqueue a Job to be executed after all "PromiseJobs" Jobs.
+	//
+	// ES6 JavaScript uses the concepts Job and JobQueue to schedule work to occur
+	// after the current execution context has completed:
+	// http://www.ecma-international.org/ecma-262/6.0/#sec-jobs-and-job-queues
+	//
+	// Node.js uses the `process.nextTick` mechanism to implement the concept of a
+	// Job, maintaining a global FIFO JobQueue for all Jobs, which is flushed after
+	// the current call stack ends.
+	//
+	// When calling `then` on a Promise, it enqueues a Job on a specific
+	// "PromiseJobs" JobQueue which is flushed in Node as a single Job on the
+	// global JobQueue.
+	//
+	// DataLoader batches all loads which occur in a single frame of execution, but
+	// should include in the batch all loads which occur during the flushing of the
+	// "PromiseJobs" JobQueue after that same execution frame.
+	//
+	// In order to avoid the DataLoader dispatch Job occuring before "PromiseJobs",
+	// A Promise Job is created with the sole purpose of enqueuing a global Job,
+	// ensuring that it always occurs after "PromiseJobs" ends.
+	//
+	// Node.js's job queue is unique. Browsers do not have an equivalent mechanism
+	// for enqueuing a job to be performed after promise microtasks and before the
+	// next macrotask. For browser environments, a macrotask is used (via
+	// setImmediate or setTimeout) at a potential performance penalty.
+
+
+	var enqueuePostPromiseJob = typeof process === 'object' && typeof process.nextTick === 'function' ? function (fn) {
+	  if (!resolvedPromise) {
+	    resolvedPromise = Promise.resolve();
+	  }
+
+	  resolvedPromise.then(function () {
+	    return process.nextTick(fn);
+	  });
+	} : setImmediate || setTimeout; // Private: cached resolved Promise instance
+
+	var resolvedPromise; // Private: Describes a batch of requests
+
+	// Private: Either returns the current batch, or creates and schedules a
+	// dispatch of a new batch for the given loader.
+	function getCurrentBatch(loader) {
+	  // If there is an existing batch which has not yet dispatched and is within
+	  // the limit of the batch size, then return it.
+	  var existingBatch = loader._batch;
+
+	  if (existingBatch !== null && !existingBatch.hasDispatched && existingBatch.keys.length < loader._maxBatchSize && (!existingBatch.cacheHits || existingBatch.cacheHits.length < loader._maxBatchSize)) {
+	    return existingBatch;
+	  } // Otherwise, create a new batch for this loader.
+
+
+	  var newBatch = {
+	    hasDispatched: false,
+	    keys: [],
+	    callbacks: []
+	  }; // Store it on the loader so it may be reused.
+
+	  loader._batch = newBatch; // Then schedule a task to dispatch this batch of requests.
+
+	  loader._batchScheduleFn(function () {
+	    return dispatchBatch(loader, newBatch);
+	  });
+
+	  return newBatch;
+	}
+
+	function dispatchBatch(loader, batch) {
+	  // Mark this batch as having been dispatched.
+	  batch.hasDispatched = true; // If there's nothing to load, resolve any cache hits and return early.
+
+	  if (batch.keys.length === 0) {
+	    resolveCacheHits(batch);
+	    return;
+	  } // Call the provided batchLoadFn for this loader with the batch's keys and
+	  // with the loader as the `this` context.
+
+
+	  var batchPromise = loader._batchLoadFn(batch.keys); // Assert the expected response from batchLoadFn
+
+
+	  if (!batchPromise || typeof batchPromise.then !== 'function') {
+	    return failedDispatch(loader, batch, new TypeError('DataLoader must be constructed with a function which accepts ' + 'Array<key> and returns Promise<Array<value>>, but the function did ' + ("not return a Promise: " + String(batchPromise) + ".")));
+	  } // Await the resolution of the call to batchLoadFn.
+
+
+	  batchPromise.then(function (values) {
+	    // Assert the expected resolution from batchLoadFn.
+	    if (!isArrayLike(values)) {
+	      throw new TypeError('DataLoader must be constructed with a function which accepts ' + 'Array<key> and returns Promise<Array<value>>, but the function did ' + ("not return a Promise of an Array: " + String(values) + "."));
+	    }
+
+	    if (values.length !== batch.keys.length) {
+	      throw new TypeError('DataLoader must be constructed with a function which accepts ' + 'Array<key> and returns Promise<Array<value>>, but the function did ' + 'not return a Promise of an Array of the same length as the Array ' + 'of keys.' + ("\n\nKeys:\n" + String(batch.keys)) + ("\n\nValues:\n" + String(values)));
+	    } // Resolve all cache hits in the same micro-task as freshly loaded values.
+
+
+	    resolveCacheHits(batch); // Step through values, resolving or rejecting each Promise in the batch.
+
+	    for (var i = 0; i < batch.callbacks.length; i++) {
+	      var value = values[i];
+
+	      if (value instanceof Error) {
+	        batch.callbacks[i].reject(value);
+	      } else {
+	        batch.callbacks[i].resolve(value);
+	      }
+	    }
+	  })["catch"](function (error) {
+	    return failedDispatch(loader, batch, error);
+	  });
+	} // Private: do not cache individual loads if the entire batch dispatch fails,
+	// but still reject each request so they do not hang.
+
+
+	function failedDispatch(loader, batch, error) {
+	  // Cache hits are resolved, even though the batch failed.
+	  resolveCacheHits(batch);
+
+	  for (var i = 0; i < batch.keys.length; i++) {
+	    loader.clear(batch.keys[i]);
+	    batch.callbacks[i].reject(error);
+	  }
+	} // Private: Resolves the Promises for any cache hits in this batch.
+
+
+	function resolveCacheHits(batch) {
+	  if (batch.cacheHits) {
+	    for (var i = 0; i < batch.cacheHits.length; i++) {
+	      batch.cacheHits[i]();
+	    }
+	  }
+	} // Private: given the DataLoader's options, produce a valid max batch size.
+
+
+	function getValidMaxBatchSize(options) {
+	  var shouldBatch = !options || options.batch !== false;
+
+	  if (!shouldBatch) {
+	    return 1;
+	  }
+
+	  var maxBatchSize = options && options.maxBatchSize;
+
+	  if (maxBatchSize === undefined) {
+	    return Infinity;
+	  }
+
+	  if (typeof maxBatchSize !== 'number' || maxBatchSize < 1) {
+	    throw new TypeError("maxBatchSize must be a positive number: " + maxBatchSize);
+	  }
+
+	  return maxBatchSize;
+	} // Private
+
+
+	function getValidBatchScheduleFn(options) {
+	  var batchScheduleFn = options && options.batchScheduleFn;
+
+	  if (batchScheduleFn === undefined) {
+	    return enqueuePostPromiseJob;
+	  }
+
+	  if (typeof batchScheduleFn !== 'function') {
+	    throw new TypeError("batchScheduleFn must be a function: " + batchScheduleFn);
+	  }
+
+	  return batchScheduleFn;
+	} // Private: given the DataLoader's options, produce a cache key function.
+
+
+	function getValidCacheKeyFn(options) {
+	  var cacheKeyFn = options && options.cacheKeyFn;
+
+	  if (cacheKeyFn === undefined) {
+	    return function (key) {
+	      return key;
+	    };
+	  }
+
+	  if (typeof cacheKeyFn !== 'function') {
+	    throw new TypeError("cacheKeyFn must be a function: " + cacheKeyFn);
+	  }
+
+	  return cacheKeyFn;
+	} // Private: given the DataLoader's options, produce a CacheMap to be used.
+
+
+	function getValidCacheMap(options) {
+	  var shouldCache = !options || options.cache !== false;
+
+	  if (!shouldCache) {
+	    return null;
+	  }
+
+	  var cacheMap = options && options.cacheMap;
+
+	  if (cacheMap === undefined) {
+	    return new Map();
+	  }
+
+	  if (cacheMap !== null) {
+	    var cacheFunctions = ['get', 'set', 'delete', 'clear'];
+	    var missingFunctions = cacheFunctions.filter(function (fnName) {
+	      return cacheMap && typeof cacheMap[fnName] !== 'function';
+	    });
+
+	    if (missingFunctions.length !== 0) {
+	      throw new TypeError('Custom cacheMap missing methods: ' + missingFunctions.join(', '));
+	    }
+	  }
+
+	  return cacheMap;
+	} // Private
+
+
+	function isArrayLike(x) {
+	  return typeof x === 'object' && x !== null && typeof x.length === 'number' && (x.length === 0 || x.length > 0 && Object.prototype.hasOwnProperty.call(x, x.length - 1));
+	}
+
+	var dataloader = DataLoader;
+
 	var utils = {
 	  // Ex: keep only 'fr' in 'fr_FR'
-	  shortLang: language => language.toLowerCase().split(/[^a-z]/)[0],
+	  shortLang: language => language.toLowerCase().split('_')[0],
 
 	  // a polymorphism helper:
 	  // accept either a string or an array and return an array
@@ -239,7 +655,10 @@
 	var simplify_text_attributes = {
 	  labels: singleValue,
 	  descriptions: singleValue,
-	  aliases: simplifyTextAttributes(true)
+	  aliases: simplifyTextAttributes(true),
+	  lemmas: singleValue,
+	  representations: singleValue,
+	  glosses: singleValue
 	};
 
 	var wikibase_time_to_date_object = wikibaseTime => {
@@ -284,11 +703,13 @@
 
 	const helpers = {};
 	helpers.isNumericId = id => /^[1-9][0-9]*$/.test(id);
-	helpers.isEntityId = id => /^(Q|P|L)[1-9][0-9]*$/.test(id);
+	helpers.isEntityId = id => /^((Q|P|L)[1-9][0-9]*|L[1-9][0-9]*-(F|S)[1-9][0-9]*)$/.test(id);
 	helpers.isItemId = id => /^Q[1-9][0-9]*$/.test(id);
 	helpers.isPropertyId = id => /^P[1-9][0-9]*$/.test(id);
 	helpers.isLexemeId = id => /^L[1-9][0-9]*$/.test(id);
-	helpers.isGuid = guid => /^(Q|P|L)\d+\$[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(guid);
+	helpers.isFormId = id => /^L[1-9][0-9]*-F[1-9][0-9]*$/.test(id);
+	helpers.isSenseId = id => /^L[1-9][0-9]*-S[1-9][0-9]*$/.test(id);
+	helpers.isGuid = guid => /^((Q|P|L)[1-9][0-9]*|L[1-9][0-9]*-(F|S)[1-9][0-9]*)\$[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(guid);
 	helpers.isRevisionId = id => /^\d+$/.test(id);
 
 	helpers.isEntityPageTitle = title => {
@@ -306,9 +727,11 @@
 
 	const isEntityNamespace = str => entityNamespaces.includes(str);
 
+	const isNonNestedEntityId = id => /^(Q|P|L)[1-9][0-9]*$/.test(id);
+
 	helpers.getNumericId = id => {
-	  if (!(helpers.isEntityId(id))) throw new Error(`invalid wikidata id: ${id}`)
-	  return id.replace(/Q|P/, '')
+	  if (!isNonNestedEntityId(id)) throw new Error(`invalid entity id: ${id}`)
+	  return id.replace(/^(Q|P|L)/, '')
 	};
 
 	helpers.wikibaseTimeToDateObject = wikibase_time_to_date_object;
@@ -452,31 +875,31 @@
 	};
 
 	const parsers = {
-	  string: simple,
 	  commonsMedia: simple,
-	  url: simple,
 	  'external-id': simple,
+	  'geo-shape': simple,
+	  'globe-coordinate': coordinate,
 	  math: simple,
 	  monolingualtext,
+	  'musical-notation': simple,
+	  quantity,
+	  string: simple,
+	  'tabular-data': simple,
+	  time,
+	  url: simple,
+	  'wikibase-entityid': entity,
+	  'wikibase-form': entity,
 	  'wikibase-item': entity,
 	  'wikibase-lexeme': entity,
 	  'wikibase-property': entity,
-	  time,
-	  quantity,
-	  'globe-coordinate': coordinate,
-	  'geo-shape': simple,
-	  'tabular-data': simple,
-	  'musical-notation': simple
+	  'wikibase-sense': entity
 	};
 
 	var parse_claim = {
 	  parsers,
 	  parse: (datatype, datavalue, options, claimId) => {
-	    if (!datatype) {
-	      // Ex: https://www.wikidata.org/w/index.php?title=Q2105758&oldid=630350590
-	      console.error('invalid claim', claimId);
-	      return null
-	    }
+	    // Known case of missing datatype: form.claims, sense.claims
+	    datatype = datatype || datavalue.type;
 
 	    try {
 	      return parsers[datatype](datavalue, options)
@@ -524,7 +947,7 @@
 	  const { propertyPrefix } = parseOptions(options);
 	  const simpleClaims = {};
 	  for (let id in claims) {
-	    let propClaims = claims[id];
+	    const propClaims = claims[id];
 	    if (propertyPrefix) {
 	      id = propertyPrefix + ':' + id;
 	    }
@@ -600,21 +1023,19 @@
 	  if (isQualifierSnak) {
 	    if (!(keepHashes || keepTypes || keepSnaktypes)) return value
 
-	    const richValue = { value };
+	    const valueObj = { value };
 
-	    if (keepHashes) richValue.hash = claim.hash;
-	    if (keepTypes) richValue.type = datatype;
-	    if (keepSnaktypes) richValue.snaktype = snaktype;
+	    if (keepHashes) valueObj.hash = claim.hash;
+	    if (keepTypes) valueObj.type = datatype;
+	    if (keepSnaktypes) valueObj.snaktype = snaktype;
 
-	    return richValue
+	    return valueObj
 	  }
-
 	  if (isReferenceSnak) {
 	    if (!keepTypes) return value
 
 	    return { type: datatype, value }
 	  }
-
 	  // No need to test keepHashes as it has no effect if neither
 	  // keepQualifiers or keepReferences is true
 	  if (!(keepQualifiers || keepReferences || keepIds || keepTypes || keepSnaktypes || keepRanks)) {
@@ -623,33 +1044,33 @@
 
 	  // When keeping qualifiers or references, the value becomes an object
 	  // instead of a direct value
-	  const richValue = { value };
+	  const valueObj = { value };
 
-	  if (keepTypes) richValue.type = datatype;
+	  if (keepTypes) valueObj.type = datatype;
 
-	  if (keepSnaktypes) richValue.snaktype = snaktype;
+	  if (keepSnaktypes) valueObj.snaktype = snaktype;
 
-	  if (keepRanks) richValue.rank = rank;
+	  if (keepRanks) valueObj.rank = rank;
 
 	  const subSnaksOptions = getSubSnakOptions(options);
 	  subSnaksOptions.keepHashes = keepHashes;
 
 	  if (keepQualifiers) {
-	    richValue.qualifiers = simplifyClaims(claim.qualifiers, subSnaksOptions);
+	    valueObj.qualifiers = simplifyClaims(claim.qualifiers, subSnaksOptions);
 	  }
 
 	  if (keepReferences) {
 	    claim.references = claim.references || [];
-	    richValue.references = claim.references.map(refRecord => {
+	    valueObj.references = claim.references.map(refRecord => {
 	      const snaks = simplifyClaims(refRecord.snaks, subSnaksOptions);
 	      if (keepHashes) return { snaks, hash: refRecord.hash }
 	      else return snaks
 	    });
 	  }
 
-	  if (keepIds) richValue.id = claim.id;
+	  if (keepIds) valueObj.id = claim.id;
 
-	  return richValue
+	  return valueObj
 	};
 
 	const parseOptions = options => {
@@ -675,7 +1096,8 @@
 	  return Object.assign({}, options, { areSubSnaks: true })
 	};
 
-	const keepOptions = [ 'keepQualifiers', 'keepReferences', 'keepIds', 'keepHashes', 'keepTypes', 'keepSnaktypes', 'keepRanks' ];
+	const keepOptions = [ 'keepQualifiers', 'keepReferences', 'keepIds', 'keepHashes', 'keepTypes', 'keepSnaktypes', 'keepRanks', 'keepRichValues' ];
+
 	const parseKeepOptions = options => {
 	  if (options.keepAll) {
 	    keepOptions.forEach(optionName => {
@@ -694,8 +1116,45 @@
 	  simplifyQualifier: simplifyClaim
 	};
 
+	const { isFormId } = helpers_1;
+	const { representations: simplifyRepresentations } = simplify_text_attributes;
+	const { simplifyClaims: simplifyClaims$1 } = simplify_claims;
+
+	const simplifyForm = (form, options) => {
+	  const { id, representations, grammaticalFeatures, claims } = form;
+	  if (!isFormId(id)) throw new Error('invalid form object')
+	  return {
+	    id,
+	    representations: simplifyRepresentations(representations),
+	    grammaticalFeatures,
+	    claims: simplifyClaims$1(claims, options)
+	  }
+	};
+
+	const simplifyForms = (forms, options) => forms.map(form => simplifyForm(form, options));
+
+	var simplify_forms = { simplifyForm, simplifyForms };
+
+	const { isSenseId } = helpers_1;
+	const { glosses: simplifyGlosses } = simplify_text_attributes;
+	const { simplifyClaims: simplifyClaims$2 } = simplify_claims;
+
+	const simplifySense = (sense, options) => {
+	  const { id, glosses, claims } = sense;
+	  if (!isSenseId(id)) throw new Error('invalid sense object')
+	  return {
+	    id,
+	    glosses: simplifyGlosses(glosses),
+	    claims: simplifyClaims$2(claims, options)
+	  }
+	};
+
+	const simplifySenses = (senses, options) => senses.map(sense => simplifySense(sense, options));
+
+	var simplify_senses = { simplifySense, simplifySenses };
+
 	// Generated by 'npm run update-sitelinks-languages'
-	var sitelinks_languages = ['aa', 'ab', 'af', 'ak', 'als', 'am', 'ang', 'an', 'ar', 'ast', 'as', 'av', 'ay', 'az', 'ba', 'be', 'bg', 'bh', 'bi', 'bm', 'bn', 'bo', 'br', 'bs', 'ca', 'chr', 'ch', 'co', 'cr', 'csb', 'cs', 'cv', 'cy', 'da', 'de', 'dv', 'dz', 'el', 'en', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fj', 'fo', 'fr', 'fy', 'ga', 'gd', 'gl', 'gn', 'got', 'gu', 'gv', 'ha', 'he', 'hif', 'hi', 'hr', 'hsb', 'ht', 'hu', 'hy', 'ia', 'id', 'ie', 'ik', 'io', 'is', 'it', 'iu', 'ja', 'jbo', 'jv', 'ka', 'kk', 'kl', 'km', 'kn', 'ko', 'kr', 'ks', 'ku', 'kw', 'ky', 'la', 'lb', 'li', 'ln', 'lo', 'lt', 'lv', 'mg', 'mh', 'mi', 'mk', 'ml', 'mn', 'mo', 'mr', 'ms', 'mt', 'my', 'nah', 'na', 'nds', 'ne', 'nl', 'nn', 'no', 'oc', 'om', 'or', 'pa', 'pi', 'pl', 'pms', 'pnb', 'ps', 'pt', 'qu', 'rm', 'rn', 'roa_rup', 'ro', 'ru', 'rw', 'sah', 'sa', 'scn', 'sc', 'sd', 'se', 'sg', 'sh', 'simple', 'si', 'sk', 'sl', 'sm', 'sn', 'so', 'sq', 'sr', 'ss', 'st', 'su', 'sv', 'sw', 'ta', 'te', 'tg', 'th', 'ti', 'tk', 'tl', 'tn', 'to', 'tpi', 'tr', 'ts', 'tt', 'tw', 'ug', 'uk', 'ur', 'uz', 'vec', 'vi', 'vo', 'wa', 'wo', 'xh', 'yi', 'yo', 'yue', 'za', 'zh_min_nan', 'zh', 'zu', 'ace', 'arc', 'arz', 'bar', 'bat_smg', 'bcl', 'be_x_old', 'bjn', 'bpy', 'bug', 'bxr', 'cbk_zam', 'cdo', 'ce', 'ceb', 'cho', 'chy', 'ckb', 'crh', 'cu', 'diq', 'dsb', 'ee', 'eml', 'ext', 'ff', 'fiu_vro', 'frp', 'frr', 'fur', 'gag', 'gan', 'glk', 'hak', 'haw', 'ho', 'hz', 'ig', 'ii', 'ilo', 'kaa', 'kab', 'kbd', 'kg', 'ki', 'kj', 'koi', 'krc', 'ksh', 'kv', 'lad', 'lbe', 'lez', 'lg', 'lij', 'lmo', 'ltg', 'mai', 'map_bms', 'mdf', 'mhr', 'min', 'mrj', 'mus', 'mwl', 'myv', 'mzn', 'nap', 'nds_nl', 'new', 'ng', 'nov', 'nrm', 'nso', 'nv', 'ny', 'os', 'pag', 'pam', 'pap', 'pcd', 'pdc', 'pfl', 'pih', 'pnt', 'rmy', 'roa_tara', 'rue', 'sco', 'srn', 'stq', 'szl', 'tet', 'tum', 'ty', 'tyv', 'udm', 've', 'vep', 'vls', 'war', 'wuu', 'xal', 'xmf', 'zea', 'zh_classical', 'zh_yue', 'lrc', 'gom', 'azb', 'ady', 'jam', 'tcy', 'olo', 'dty', 'atj', 'kbp', 'din', 'gor', 'inh', 'lfn', 'sat', 'shn', 'hyw'];
+	var sitelinks_languages = [ 'aa', 'ab', 'af', 'ak', 'als', 'am', 'ang', 'an', 'ar', 'ast', 'as', 'av', 'ay', 'az', 'ba', 'be', 'bg', 'bh', 'bi', 'bm', 'bn', 'bo', 'br', 'bs', 'ca', 'chr', 'ch', 'co', 'cr', 'csb', 'cs', 'cv', 'cy', 'da', 'de', 'dv', 'dz', 'el', 'en', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fj', 'fo', 'fr', 'fy', 'ga', 'gd', 'gl', 'gn', 'got', 'gu', 'gv', 'ha', 'he', 'hif', 'hi', 'hr', 'hsb', 'ht', 'hu', 'hy', 'ia', 'id', 'ie', 'ik', 'io', 'is', 'it', 'iu', 'ja', 'jbo', 'jv', 'ka', 'kk', 'kl', 'km', 'kn', 'ko', 'kr', 'ks', 'ku', 'kw', 'ky', 'la', 'lb', 'li', 'ln', 'lo', 'lt', 'lv', 'mg', 'mh', 'mi', 'mk', 'ml', 'mn', 'mo', 'mr', 'ms', 'mt', 'my', 'nah', 'nap', 'na', 'nds', 'ne', 'nl', 'nn', 'no', 'oc', 'om', 'or', 'pa', 'pi', 'pl', 'pms', 'pnb', 'ps', 'pt', 'qu', 'rm', 'rn', 'roa_rup', 'ro', 'ru', 'rw', 'sah', 'sa', 'scn', 'sc', 'sd', 'se', 'sg', 'sh', 'simple', 'si', 'sk', 'sl', 'sm', 'sn', 'so', 'sq', 'sr', 'ss', 'st', 'su', 'sv', 'sw', 'ta', 'te', 'tg', 'th', 'ti', 'tk', 'tl', 'tn', 'to', 'tpi', 'tr', 'ts', 'tt', 'tw', 'ug', 'uk', 'ur', 'uz', 'vec', 'vi', 'vo', 'wa', 'wo', 'xh', 'yi', 'yo', 'yue', 'za', 'zh_min_nan', 'zh', 'zu', 'ace', 'arc', 'arz', 'bar', 'bat_smg', 'bcl', 'be_x_old', 'bjn', 'bpy', 'bug', 'bxr', 'cbk_zam', 'cdo', 'ce', 'ceb', 'cho', 'chy', 'ckb', 'crh', 'cu', 'diq', 'dsb', 'ee', 'eml', 'ext', 'ff', 'fiu_vro', 'frp', 'frr', 'fur', 'gag', 'gan', 'glk', 'hak', 'haw', 'ho', 'hz', 'ig', 'ii', 'ilo', 'kaa', 'kab', 'kbd', 'kg', 'ki', 'kj', 'koi', 'krc', 'ksh', 'kv', 'lad', 'lbe', 'lez', 'lg', 'lij', 'lmo', 'ltg', 'mai', 'map_bms', 'mdf', 'mhr', 'min', 'mrj', 'mus', 'mwl', 'myv', 'mzn', 'nds_nl', 'new', 'ng', 'nov', 'nrm', 'nso', 'nv', 'ny', 'os', 'pag', 'pam', 'pap', 'pcd', 'pdc', 'pfl', 'pih', 'pnt', 'rmy', 'roa_tara', 'rue', 'sco', 'srn', 'stq', 'szl', 'tet', 'tum', 'ty', 'tyv', 'udm', 've', 'vep', 'vls', 'war', 'wuu', 'xal', 'xmf', 'zea', 'zh_classical', 'zh_yue', 'lrc', 'gom', 'azb', 'ady', 'jam', 'tcy', 'olo', 'dty', 'atj', 'kbp', 'din', 'gor', 'inh', 'lfn', 'sat', 'shn', 'hyw', 'nqo', 'ban' ];
 
 	const { fixedEncodeURIComponent, replaceSpaceByUnderscores, isPlainObject } = utils;
 	const { isPropertyId } = helpers_1;
@@ -734,23 +1193,45 @@
 	  wikimania: wikimediaSite('wikimania')
 	};
 
+	const sitelinkUrlPattern = /^https?:\/\/([\w-]{2,10})\.(\w+)\.org\/\w+\/(.*)/;
+
 	const getSitelinkData = site => {
-	  const specialProjectName = specialSites[site];
-	  if (specialProjectName) return { lang: 'en', project: specialProjectName }
+	  if (site.startsWith('http')) {
+	    const url = site;
+	    const matchData = url.match(sitelinkUrlPattern);
+	    if (!matchData) throw new Error(`invalid sitelink url: ${url}`)
+	    let [ lang, project, title ] = matchData.slice(1);
+	    let key;
+	    // Known case: wikidata, mediawiki
+	    if (lang === 'www') {
+	      lang = 'en';
+	      key = project;
+	    } else if (lang === 'commons') {
+	      lang = 'en';
+	      project = key = 'commons';
+	    } else {
+	      key = `${lang}${project}`.replace('wikipedia', 'wiki');
+	    }
+	    return { lang, project, key, title, url }
+	  } else {
+	    const key = site;
+	    const specialProjectName = specialSites[key];
+	    if (specialProjectName) return { lang: 'en', project: specialProjectName, key }
 
-	  const [ lang, projectSuffix, rest ] = site.split('wik');
+	    const [ lang, projectSuffix, rest ] = key.split('wik');
 
-	  // Detecting cases like 'frwikiwiki' that would return [ 'fr', 'i', 'i' ]
-	  if (rest != null) throw new Error(`invalid sitelink: ${site}`)
+	    // Detecting cases like 'frwikiwiki' that would return [ 'fr', 'i', 'i' ]
+	    if (rest != null) throw new Error(`invalid sitelink key: ${key}`)
 
-	  if (sitelinks_languages.indexOf(lang) === -1) {
-	    throw new Error(`sitelink lang not found: ${lang}`)
+	    if (sitelinks_languages.indexOf(lang) === -1) {
+	      throw new Error(`sitelink lang not found: ${lang}`)
+	    }
+
+	    const project = projectsBySuffix[projectSuffix];
+	    if (!project) throw new Error(`sitelink project not found: ${project}`)
+
+	    return { lang, project, key }
 	  }
-
-	  const project = projectsBySuffix[projectSuffix];
-	  if (!project) throw new Error(`sitelink project not found: ${project}`)
-
-	  return { lang, project }
 	};
 
 	const specialSites = {
@@ -802,51 +1283,6 @@
 	  return index
 	};
 
-	const { simplifyClaims: simplifyClaims$1 } = simplify_claims;
-
-
-
-	const simplifyEntity = (entity, options) => {
-	  const simplified = {
-	    id: entity.id,
-	    type: entity.type,
-	    modified: entity.modified
-	  };
-
-	  simplifyIfDefined(entity, simplified, 'labels');
-	  simplifyIfDefined(entity, simplified, 'descriptions');
-	  simplifyIfDefined(entity, simplified, 'aliases');
-
-	  if (entity.claims != null) {
-	    simplified.claims = simplifyClaims$1(entity.claims, options);
-	  }
-
-	  if (entity.sitelinks != null) {
-	    simplified.sitelinks = simplify_sitelinks(entity.sitelinks, options);
-	  }
-
-	  return simplified
-	};
-
-	const simplifyIfDefined = (entity, simplified, attribute) => {
-	  if (entity[attribute] != null) {
-	    simplified[attribute] = simplify_text_attributes[attribute](entity[attribute]);
-	  }
-	};
-
-	const simplifyEntities = (entities, options = {}) => {
-	  if (entities.entities) entities = entities.entities;
-	  const { entityPrefix } = options;
-	  return Object.keys(entities).reduce((obj, key) => {
-	    const entity = entities[key];
-	    if (entityPrefix) key = `${entityPrefix}:${key}`;
-	    obj[key] = simplifyEntity(entity, options);
-	    return obj
-	  }, {})
-	};
-
-	var simplify_entity = { simplifyEntity, simplifyEntities };
-
 	var simplify_sparql_results = (input, options = {}) => {
 	  if (typeof input === 'string') input = JSON.parse(input);
 
@@ -861,8 +1297,8 @@
 	    .filter(result => result != null)
 	  }
 
-	  const { richVars, standaloneVars } = identifyVars(vars);
-	  return results.map(getSimplifiedResult(richVars, standaloneVars))
+	  const { richVars, associatedVars, standaloneVars } = identifyVars(vars);
+	  return results.map(getSimplifiedResult(richVars, associatedVars, standaloneVars))
 	};
 
 	const parseValue = valueObj => {
@@ -918,82 +1354,53 @@
 	};
 
 	const identifyVars = vars => {
-	  const data = { richVars: [], standaloneVars: [] };
-	  return vars.reduce(spreadVars(vars), data)
+	  const richVars = vars.filter(varName => vars.some(isAssociatedVar(varName)));
+	  const associatedVarPattern = new RegExp(`^(${richVars.join('|')})[A-Z]`);
+	  const associatedVars = vars.filter(varName => associatedVarPattern.test(varName));
+	  const standaloneVars = vars.filter(varName => {
+	    return !richVars.includes(varName) && !associatedVarPattern.test(varName)
+	  });
+	  return { richVars, associatedVars, standaloneVars }
 	};
 
-	const spreadVars = vars => (data, varName) => {
-	  if (vars.some(isAssociatedVar(varName))) {
-	    data.richVars.push(varName);
-	    return data
-	  }
-
-	  if (!associatedVarPattern.test(varName)) {
-	    data.standaloneVars.push(varName);
-	    return data
-	  }
-
-	  let associatedVar = varName
-	    .replace(associatedVarPattern, '$1')
-	    // The pattern regex fails to capture AltLabel prefixes alone,
-	    // due to the comflict with Label
-	    .replace(/Alt$/, '');
-
-	  if (!vars.includes(associatedVar)) {
-	    data.standaloneVars.push(varName);
-	  }
-
-	  return data
+	const isAssociatedVar = varNameA => {
+	  const pattern = new RegExp(`^${varNameA}[A-Z]\\w+`);
+	  return pattern.test.bind(pattern)
 	};
 
-	const associatedVarPattern = /^(\w+)(Label|Description|AltLabel)$/;
-
-	const isAssociatedVar = varNameA => varNameB => {
-	  if (`${varNameA}Label` === varNameB) return true
-	  if (`${varNameA}Description` === varNameB) return true
-	  if (`${varNameA}AltLabel` === varNameB) return true
-	  return false
-	};
-
-	const getSimplifiedResult = (richVars, standaloneVars) => {
-	  return result => {
-	    const simplifiedResult = {};
-	    for (let varName of richVars) {
-	      let value = parseValue(result[varName]);
-	      if (value != null) {
-	        simplifiedResult[varName] = { value };
-	        addAssociatedValue(result, varName, 'label', simplifiedResult[varName]);
-	        addAssociatedValue(result, varName, 'description', simplifiedResult[varName]);
-	        addAssociatedValue(result, varName, 'aliases', simplifiedResult[varName]);
-	      }
+	const getSimplifiedResult = (richVars, associatedVars, standaloneVars) => result => {
+	  const simplifiedResult = {};
+	  for (const varName of richVars) {
+	    const richVarData = {};
+	    const value = parseValue(result[varName]);
+	    if (value != null) richVarData.value = value;
+	    for (const associatedVarName of associatedVars) {
+	      if (associatedVarName.startsWith(varName)) addAssociatedValue(result, varName, associatedVarName, richVarData);
 	    }
-	    for (let varName of standaloneVars) {
-	      simplifiedResult[varName] = parseValue(result[varName]);
-	    }
-	    return simplifiedResult
+	    if (Object.keys(richVarData).length > 0) simplifiedResult[varName] = richVarData;
 	  }
-	};
-
-	const addAssociatedValue = (result, varName, associatedVarName, varData) => {
-	  const fullAssociatedVarName = varName + varNameSuffixMap[associatedVarName];
-	  const fullAssociatedVarData = result[fullAssociatedVarName];
-	  if (fullAssociatedVarData != null) {
-	    varData[associatedVarName] = fullAssociatedVarData.value;
+	  for (const varName of standaloneVars) {
+	    simplifiedResult[varName] = parseValue(result[varName]);
 	  }
+	  return simplifiedResult
 	};
 
-	const varNameSuffixMap = {
-	  label: 'Label',
-	  description: 'Description',
-	  aliases: 'AltLabel'
+	const addAssociatedValue = (result, varName, associatedVarName, richVarData) => {
+	  // ex: propertyType => Type
+	  var shortAssociatedVarName = associatedVarName.split(varName)[1];
+	  // ex: Type => type
+	  shortAssociatedVarName = shortAssociatedVarName[0].toLowerCase() + shortAssociatedVarName.slice(1);
+	  // ex: altLabel => aliases
+	  shortAssociatedVarName = specialNames[shortAssociatedVarName] || shortAssociatedVarName;
+	  const associatedVarData = result[associatedVarName];
+	  if (associatedVarData != null) richVarData[shortAssociatedVarName] = associatedVarData.value;
 	};
 
-	const { labels, descriptions, aliases } = simplify_text_attributes;
+	const specialNames = {
+	  altLabel: 'aliases'
+	};
 
-	const {
-	  simplifyEntity: entity$1,
-	  simplifyEntities: entities
-	} = simplify_entity;
+	const { labels, descriptions, aliases, lemmas, glosses } = simplify_text_attributes;
 
 	const {
 	  simplifyClaim: claim,
@@ -1004,12 +1411,13 @@
 	  simplifyQualifiers: qualifiers
 	} = simplify_claims;
 
+	const { simplifyForm: form, simplifyForms: forms } = simplify_forms;
+	const { simplifySense: sense, simplifySenses: senses } = simplify_senses;
+
 
 
 
 	var simplify = {
-	  entity: entity$1,
-	  entities,
 	  labels,
 	  descriptions,
 	  aliases,
@@ -1020,8 +1428,78 @@
 	  propertyQualifiers,
 	  qualifiers,
 	  sitelinks: simplify_sitelinks,
+
+	  // Lexemes
+	  lemmas,
+	  glosses,
+	  form,
+	  forms,
+	  sense,
+	  senses,
+
 	  sparqlResults: simplify_sparql_results
+
+	  // Set in ./simplify_entity
+	  // entity,
+	  // entities,
 	};
+
+	const simplifyEntity = (entity, options) => {
+	  const { type } = entity;
+	  const simplified = {
+	    id: entity.id,
+	    type,
+	    modified: entity.modified
+	  };
+
+	  if (entity.datatype) simplified.datatype = entity.datatype;
+
+	  if (type === 'item') {
+	    simplifyIfDefined(entity, simplified, 'labels');
+	    simplifyIfDefined(entity, simplified, 'descriptions');
+	    simplifyIfDefined(entity, simplified, 'aliases');
+	    simplifyIfDefined(entity, simplified, 'claims', options);
+	    simplifyIfDefined(entity, simplified, 'sitelinks', options);
+	  } else if (type === 'property') {
+	    simplified.datatype = entity.datatype;
+	    simplifyIfDefined(entity, simplified, 'labels');
+	    simplifyIfDefined(entity, simplified, 'descriptions');
+	    simplifyIfDefined(entity, simplified, 'aliases');
+	    simplifyIfDefined(entity, simplified, 'claims', options);
+	  } else if (type === 'lexeme') {
+	    simplifyIfDefined(entity, simplified, 'lemmas');
+	    simplified.lexicalCategory = entity.lexicalCategory;
+	    simplified.language = entity.language;
+	    simplifyIfDefined(entity, simplified, 'claims', options);
+	    simplifyIfDefined(entity, simplified, 'forms', options);
+	    simplifyIfDefined(entity, simplified, 'senses', options);
+	  }
+
+	  return simplified
+	};
+
+	const simplifyIfDefined = (entity, simplified, attribute, options) => {
+	  if (entity[attribute] != null) {
+	    simplified[attribute] = simplify[attribute](entity[attribute], options);
+	  }
+	};
+
+	const simplifyEntities = (entities, options = {}) => {
+	  if (entities.entities) entities = entities.entities;
+	  const { entityPrefix } = options;
+	  return Object.keys(entities).reduce((obj, key) => {
+	    const entity = entities[key];
+	    if (entityPrefix) key = `${entityPrefix}:${key}`;
+	    obj[key] = simplifyEntity(entity, options);
+	    return obj
+	  }, {})
+	};
+
+	// Set those here instead of in ./simplify to avoid a circular dependency
+	simplify.entity = simplifyEntity;
+	simplify.entities = simplifyEntities;
+
+	var simplify_entity = { simplifyEntity, simplifyEntities };
 
 	const { simplifyEntity: simplifyEntity$1 } = simplify_entity;
 
@@ -1041,8 +1519,8 @@
 	var querystring_lite = {
 	  stringify: queryObj => {
 	    var qstring = '';
-	    for (let key in queryObj) {
-	      let value = queryObj[key];
+	    for (const key in queryObj) {
+	      const value = queryObj[key];
 	      if (value) qstring += `&${key}=${value}`;
 	    }
 
@@ -1238,6 +1716,7 @@
 	  limit = limit || '20';
 	  format = format || 'json';
 	  type = type || 'item';
+	  offset = offset || '0';
 
 	  if (!types.includes(type)) throw new Error(`invalid type: ${type}`)
 
@@ -1332,7 +1811,7 @@
 	const getIdsGroups = ids => {
 	  const groups = [];
 	  while (ids.length > 0) {
-	    let group = ids.slice(0, 50);
+	    const group = ids.slice(0, 50);
 	    ids = ids.slice(50);
 	    groups.push(group);
 	  }
@@ -1351,11 +1830,19 @@
 	    action: 'query',
 	    prop: 'revisions'
 	  };
+
 	  query.titles = ids.join('|');
 	  query.format = options.format || 'json';
 	  if (uniqueId) query.rvlimit = options.limit || 'max';
 	  if (uniqueId && options.start) query.rvstart = getEpochSeconds(options.start);
 	  if (uniqueId && options.end) query.rvend = getEpochSeconds(options.end);
+
+	  const { prop, user, excludeuser, tag } = options;
+	  if (prop) query.rvprop = forceArray$1(prop).join('|');
+	  if (user) query.rvuser = user;
+	  if (excludeuser) query.rvexcludeuser = excludeuser;
+	  if (tag) query.rvtag = tag;
+
 	  return buildUrl(query)
 	};
 
@@ -1399,7 +1886,7 @@
 	  format = format || 'json';
 
 	  // titles cant be let empty
-	  if (!(titles && titles.length > 0)) throw new Error('no title provided')
+	  if (!(titles && titles.length > 0)) throw new Error('no titles provided')
 	  // default to the English Wikipedia
 	  if (!(sites && sites.length > 0)) sites = [ 'enwiki' ];
 
@@ -1515,6 +2002,9 @@
 
 
 
+	const tip = `Tip: if you just want to access functions that don't need an instance or a sparqlEndpoint,
+those are also exposed directly on the module object. Exemple:
+const { isItemId, simplify } = require('wikibase-sdk')`;
 
 	const common = Object.assign({ simplify, parse: parse_responses }, helpers_1, sitelinks, rank);
 
@@ -1522,24 +2012,40 @@
 	  if (!isPlainObject$6(config)) throw new Error('invalid config')
 	  const { instance, sparqlEndpoint } = config;
 
-	  validateEndpoint('instance', instance);
+	  if (!(instance || sparqlEndpoint)) {
+	    throw new Error(`one of instance or sparqlEndpoint should be set at initialization.\n${tip}`)
+	  }
 
-	  const instanceRoot = instance
-	    .replace(/\/$/, '')
-	    .replace('/w/api.php', '');
+	  var wikibaseApiFunctions, instanceRoot, instanceApiEndpoint;
+	  if (instance) {
+	    validateEndpoint('instance', instance);
 
-	  const instanceApiEndpoint = `${instanceRoot}/w/api.php`;
+	    instanceRoot = instance
+	      .replace(/\/$/, '')
+	      .replace('/w/api.php', '');
 
-	  const buildUrl = build_url(instanceApiEndpoint);
+	    instanceApiEndpoint = `${instanceRoot}/w/api.php`;
 
-	  const wikibaseApiFunctions = {
-	    searchEntities: search_entities(buildUrl),
-	    getEntities: get_entities(buildUrl),
-	    getManyEntities: get_many_entities(buildUrl),
-	    getRevisions: get_revisions(buildUrl),
-	    getEntityRevision: get_entity_revision(instance),
-	    getEntitiesFromSitelinks: get_entities_from_sitelinks(buildUrl)
-	  };
+	    const buildUrl = build_url(instanceApiEndpoint);
+
+	    wikibaseApiFunctions = {
+	      searchEntities: search_entities(buildUrl),
+	      getEntities: get_entities(buildUrl),
+	      getManyEntities: get_many_entities(buildUrl),
+	      getRevisions: get_revisions(buildUrl),
+	      getEntityRevision: get_entity_revision(instance),
+	      getEntitiesFromSitelinks: get_entities_from_sitelinks(buildUrl)
+	    };
+	  } else {
+	    wikibaseApiFunctions = {
+	      searchEntities: missingInstance('searchEntities'),
+	      getEntities: missingInstance('getEntities'),
+	      getManyEntities: missingInstance('getManyEntities'),
+	      getRevisions: missingInstance('getRevisions'),
+	      getEntityRevision: missingInstance('getEntityRevision'),
+	      getEntitiesFromSitelinks: missingInstance('getEntitiesFromSitelinks')
+	    };
+	  }
 
 	  var wikibaseQueryServiceFunctions;
 	  if (sparqlEndpoint) {
@@ -1555,12 +2061,14 @@
 	    };
 	  }
 
-	  return Object.assign({
+	  const parsedData = {
 	    instance: {
 	      root: instanceRoot,
 	      apiEndpoint: instanceApiEndpoint
 	    }
-	  }, common, wikibaseApiFunctions, wikibaseQueryServiceFunctions)
+	  };
+
+	  return Object.assign(parsedData, common, wikibaseApiFunctions, wikibaseQueryServiceFunctions)
 	};
 
 	// Make heplpers that don't require an instance to be specified available
@@ -1573,17 +2081,72 @@
 	  }
 	};
 
-	const missingSparqlEndpoint = name => () => {
-	  throw new Error(`${name} requires a sparqlEndpoint to be set in configuration object`)
+	const missingConfig = missingParameter => name => () => {
+	  throw new Error(`${name} requires ${missingParameter} to be set at initialization`)
 	};
+
+	const missingSparqlEndpoint = missingConfig('a sparqlEndpoint');
+	const missingInstance = missingConfig('an instance');
 
 	var wikibaseSdk = WBK;
 
+	// TODO: Expose API to allow user to set custom wikibase endpoint
+	const wbk = wikibaseSdk({
+	  instance: 'https://www.wikidata.org',
+	  sparqlEndpoint: 'https://query.wikidata.org/sparql',
+	});
+
+	// Inject setimmediate polyfill in order to use dataloader in browser
+
+	async function fetchEntitiesByIds({ids}) {
+	  const url = wbk.getEntities({ids});
+	  let response = await fetch(url);
+	  let res = await response.json();
+	  const {entities} = res;
+	  const entityInstances = Object();
+	  for (let [entityId, entity] of Object.entries(entities)) {
+	    entityInstances[entityId] = entity;
+	  }
+	  return entityInstances
+	}
+
+	async function batchGetEntities(keys) {
+	  const entities = await fetchEntitiesByIds({ids: keys});
+	  return keys.map((key) => entities[key])
+	}
+
+	const entityLoader = new dataloader(batchGetEntities);
+
+	async function fetchEntity({id}) {
+	  return await entityLoader.load(id)
+	}
+
+	function parseArrayHTMLAttribute(value) {
+	  const listOfValues = value.split(',');
+	  return listOfValues.map((v) => v.trim())
+	}
+
 	class WikibaseEntity {
 	  constructor(entity) {
-	    //   Original entitiy saved for future usage
+	    // Original entitiy saved for future usage
 	    this.entity = entity;
 	    this.simplifyEntity = wbk.simplify.entity(entity);
+	  }
+
+	  static getEntity(args) {
+	    return fetchEntity(args).then((entity) => new WikibaseEntity(entity))
+	  }
+
+	  formatUrl(value) {
+	    const templates = this.simplifyEntity.claims.P1630;
+	    if (templates.length === 0) {
+	      throw new Error(
+	        `The property ${this.simplifyEntity.id} do not have a format url property (P1630)`
+	      )
+	    }
+	    const formatUrlTemplate = templates[0];
+	    // TODO: double check if that's possbile to more than 1 placeholder in the formatter?
+	    return formatUrlTemplate.replace('$1', value)
 	  }
 
 	  getLabel(lang) {
@@ -1598,356 +2161,62 @@
 	    const propertyValue = this.simplifyEntity.claims[property];
 
 	    if (wbk.isItemId(propertyValue)) {
-	      return fetchEntity({id: propertyValue}).then(item => item.getLabel(lang))
+	      if (!lang) {
+	        throw new Error(
+	          'You need to have provide a lang argument to display the property'
+	        )
+	      }
+
+	      return this.constructor
+	        .getEntity({id: propertyValue})
+	        .then((item) => item.getLabel(lang))
 	    } else {
 	      return Promise.resolve(propertyValue)
 	    }
 	  }
-	}
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	/**
-	 * A `DataLoader` creates a public API for loading data from a particular
-	 * data back-end with unique keys such as the `id` column of a SQL table or
-	 * document name in a MongoDB database, given a batch loading function.
-	 *
-	 * Each `DataLoader` instance contains a unique memoized cache. Use caution when
-	 * used in long-lived applications or those which serve many users with
-	 * different access permissions and consider creating a new instance per
-	 * web request.
-	 */
-
-
-	// Optionally turn off batching or caching or provide a cache key function or a
-	// custom cache instance.
-	var DataLoader = function () {
-	  function DataLoader(batchLoadFn, options) {
-	    _classCallCheck(this, DataLoader);
-
-	    if (typeof batchLoadFn !== 'function') {
-	      throw new TypeError('DataLoader must be constructed with a function which accepts ' + ('Array<key> and returns Promise<Array<value>>, but got: ' + batchLoadFn + '.'));
-	    }
-	    this._batchLoadFn = batchLoadFn;
-	    this._options = options;
-	    this._promiseCache = getValidCacheMap(options);
-	    this._queue = [];
-	  }
-
-	  // Private
-
-
-	  /**
-	   * Loads a key, returning a `Promise` for the value represented by that key.
-	   */
-	  DataLoader.prototype.load = function load(key) {
-	    var _this = this;
-
-	    if (key === null || key === undefined) {
-	      throw new TypeError('The loader.load() function must be called with a value,' + ('but got: ' + String(key) + '.'));
-	    }
-
-	    // Determine options
-	    var options = this._options;
-	    var shouldBatch = !options || options.batch !== false;
-	    var shouldCache = !options || options.cache !== false;
-	    var cacheKeyFn = options && options.cacheKeyFn;
-	    var cacheKey = cacheKeyFn ? cacheKeyFn(key) : key;
-
-	    // If caching and there is a cache-hit, return cached Promise.
-	    if (shouldCache) {
-	      var cachedPromise = this._promiseCache.get(cacheKey);
-	      if (cachedPromise) {
-	        return cachedPromise;
+	  getPropertyLink(property) {
+	    const propertyItemList = wbk.simplify.propertyClaims(
+	      this.entity.claims[property],
+	      {
+	        keepTypes: true,
 	      }
-	    }
+	    );
 
-	    // Otherwise, produce a new Promise for this value.
-	    var promise = new Promise(function (resolve, reject) {
-	      // Enqueue this Promise to be dispatched.
-	      _this._queue.push({ key: key, resolve: resolve, reject: reject });
+	    if (propertyItemList.length >= 0) {
+	      const propertyItem = propertyItemList[0];
+	      const {type, value} = propertyItem;
 
-	      // Determine if a dispatch of this queue should be scheduled.
-	      // A single dispatch should be scheduled per queue at the time when the
-	      // queue changes from "empty" to "full".
-	      if (_this._queue.length === 1) {
-	        if (shouldBatch) {
-	          // If batching, schedule a task to dispatch the queue.
-	          enqueuePostPromiseJob(function () {
-	            return dispatchQueue(_this);
-	          });
-	        } else {
-	          // Otherwise dispatch the (queue of one) immediately.
-	          dispatchQueue(_this);
-	        }
-	      }
-	    });
-
-	    // If caching, cache this promise.
-	    if (shouldCache) {
-	      this._promiseCache.set(cacheKey, promise);
-	    }
-
-	    return promise;
-	  };
-
-	  /**
-	   * Loads multiple keys, promising an array of values:
-	   *
-	   *     var [ a, b ] = await myLoader.loadMany([ 'a', 'b' ]);
-	   *
-	   * This is equivalent to the more verbose:
-	   *
-	   *     var [ a, b ] = await Promise.all([
-	   *       myLoader.load('a'),
-	   *       myLoader.load('b')
-	   *     ]);
-	   *
-	   */
-
-
-	  DataLoader.prototype.loadMany = function loadMany(keys) {
-	    var _this2 = this;
-
-	    if (!Array.isArray(keys)) {
-	      throw new TypeError('The loader.loadMany() function must be called with Array<key> ' + ('but got: ' + keys + '.'));
-	    }
-	    return Promise.all(keys.map(function (key) {
-	      return _this2.load(key);
-	    }));
-	  };
-
-	  /**
-	   * Clears the value at `key` from the cache, if it exists. Returns itself for
-	   * method chaining.
-	   */
-
-
-	  DataLoader.prototype.clear = function clear(key) {
-	    var cacheKeyFn = this._options && this._options.cacheKeyFn;
-	    var cacheKey = cacheKeyFn ? cacheKeyFn(key) : key;
-	    this._promiseCache.delete(cacheKey);
-	    return this;
-	  };
-
-	  /**
-	   * Clears the entire cache. To be used when some event results in unknown
-	   * invalidations across this particular `DataLoader`. Returns itself for
-	   * method chaining.
-	   */
-
-
-	  DataLoader.prototype.clearAll = function clearAll() {
-	    this._promiseCache.clear();
-	    return this;
-	  };
-
-	  /**
-	   * Adds the provided key and value to the cache. If the key already
-	   * exists, no change is made. Returns itself for method chaining.
-	   */
-
-
-	  DataLoader.prototype.prime = function prime(key, value) {
-	    var cacheKeyFn = this._options && this._options.cacheKeyFn;
-	    var cacheKey = cacheKeyFn ? cacheKeyFn(key) : key;
-
-	    // Only add the key if it does not already exist.
-	    if (this._promiseCache.get(cacheKey) === undefined) {
-	      // Cache a rejected promise if the value is an Error, in order to match
-	      // the behavior of load(key).
-	      var promise = value instanceof Error ? Promise.reject(value) : Promise.resolve(value);
-
-	      this._promiseCache.set(cacheKey, promise);
-	    }
-
-	    return this;
-	  };
-
-	  return DataLoader;
-	}();
-
-	// Private: Enqueue a Job to be executed after all "PromiseJobs" Jobs.
-	//
-	// ES6 JavaScript uses the concepts Job and JobQueue to schedule work to occur
-	// after the current execution context has completed:
-	// http://www.ecma-international.org/ecma-262/6.0/#sec-jobs-and-job-queues
-	//
-	// Node.js uses the `process.nextTick` mechanism to implement the concept of a
-	// Job, maintaining a global FIFO JobQueue for all Jobs, which is flushed after
-	// the current call stack ends.
-	//
-	// When calling `then` on a Promise, it enqueues a Job on a specific
-	// "PromiseJobs" JobQueue which is flushed in Node as a single Job on the
-	// global JobQueue.
-	//
-	// DataLoader batches all loads which occur in a single frame of execution, but
-	// should include in the batch all loads which occur during the flushing of the
-	// "PromiseJobs" JobQueue after that same execution frame.
-	//
-	// In order to avoid the DataLoader dispatch Job occuring before "PromiseJobs",
-	// A Promise Job is created with the sole purpose of enqueuing a global Job,
-	// ensuring that it always occurs after "PromiseJobs" ends.
-	//
-	// Node.js's job queue is unique. Browsers do not have an equivalent mechanism
-	// for enqueuing a job to be performed after promise microtasks and before the
-	// next macrotask. For browser environments, a macrotask is used (via
-	// setImmediate or setTimeout) at a potential performance penalty.
-
-
-	// If a custom cache is provided, it must be of this type (a subset of ES6 Map).
-
-	/**
-	 *  Copyright (c) 2015, Facebook, Inc.
-	 *  All rights reserved.
-	 *
-	 *  This source code is licensed under the BSD-style license found in the
-	 *  LICENSE file in the root directory of this source tree. An additional grant
-	 *  of patent rights can be found in the PATENTS file in the same directory.
-	 */
-
-	// A Function, which when given an Array of keys, returns a Promise of an Array
-	// of values or Errors.
-
-
-	var enqueuePostPromiseJob = typeof process === 'object' && typeof process.nextTick === 'function' ? function (fn) {
-	  if (!resolvedPromise) {
-	    resolvedPromise = Promise.resolve();
-	  }
-	  resolvedPromise.then(function () {
-	    return process.nextTick(fn);
-	  });
-	} : setImmediate || setTimeout;
-
-	// Private: cached resolved Promise instance
-	var resolvedPromise;
-
-	// Private: given the current state of a Loader instance, perform a batch load
-	// from its current queue.
-	function dispatchQueue(loader) {
-	  // Take the current loader queue, replacing it with an empty queue.
-	  var queue = loader._queue;
-	  loader._queue = [];
-
-	  // If a maxBatchSize was provided and the queue is longer, then segment the
-	  // queue into multiple batches, otherwise treat the queue as a single batch.
-	  var maxBatchSize = loader._options && loader._options.maxBatchSize;
-	  if (maxBatchSize && maxBatchSize > 0 && maxBatchSize < queue.length) {
-	    for (var i = 0; i < queue.length / maxBatchSize; i++) {
-	      dispatchQueueBatch(loader, queue.slice(i * maxBatchSize, (i + 1) * maxBatchSize));
-	    }
-	  } else {
-	    dispatchQueueBatch(loader, queue);
-	  }
-	}
-
-	function dispatchQueueBatch(loader, queue) {
-	  // Collect all keys to be loaded in this dispatch
-	  var keys = queue.map(function (_ref) {
-	    var key = _ref.key;
-	    return key;
-	  });
-
-	  // Call the provided batchLoadFn for this loader with the loader queue's keys.
-	  var batchLoadFn = loader._batchLoadFn;
-	  var batchPromise = batchLoadFn(keys);
-
-	  // Assert the expected response from batchLoadFn
-	  if (!batchPromise || typeof batchPromise.then !== 'function') {
-	    return failedDispatch(loader, queue, new TypeError('DataLoader must be constructed with a function which accepts ' + 'Array<key> and returns Promise<Array<value>>, but the function did ' + ('not return a Promise: ' + String(batchPromise) + '.')));
-	  }
-
-	  // Await the resolution of the call to batchLoadFn.
-	  batchPromise.then(function (values) {
-
-	    // Assert the expected resolution from batchLoadFn.
-	    if (!Array.isArray(values)) {
-	      throw new TypeError('DataLoader must be constructed with a function which accepts ' + 'Array<key> and returns Promise<Array<value>>, but the function did ' + ('not return a Promise of an Array: ' + String(values) + '.'));
-	    }
-	    if (values.length !== keys.length) {
-	      throw new TypeError('DataLoader must be constructed with a function which accepts ' + 'Array<key> and returns Promise<Array<value>>, but the function did ' + 'not return a Promise of an Array of the same length as the Array ' + 'of keys.' + ('\n\nKeys:\n' + String(keys)) + ('\n\nValues:\n' + String(values)));
-	    }
-
-	    // Step through the values, resolving or rejecting each Promise in the
-	    // loaded queue.
-	    queue.forEach(function (_ref2, index) {
-	      var resolve = _ref2.resolve,
-	          reject = _ref2.reject;
-
-	      var value = values[index];
-	      if (value instanceof Error) {
-	        reject(value);
+	      if (type === 'url') {
+	        return Promise.resolve(value)
+	      } else if (type === 'external-id') {
+	        // TODO add options to fetch less data because we only to format the external id
+	        return this.constructor
+	          .getEntity({id: property})
+	          .then((item) => item.formatUrl(value))
 	      } else {
-	        resolve(value);
+	        throw new Error('This property is not a valid url or external id')
 	      }
-	    });
-	  }).catch(function (error) {
-	    return failedDispatch(loader, queue, error);
-	  });
-	}
+	    }
 
-	// Private: do not cache individual loads if the entire batch dispatch fails,
-	// but still reject each request so they do not hang.
-	function failedDispatch(loader, queue, error) {
-	  queue.forEach(function (_ref3) {
-	    var key = _ref3.key,
-	        reject = _ref3.reject;
-
-	    loader.clear(key);
-	    reject(error);
-	  });
-	}
-
-	// Private: given the DataLoader's options, produce a CacheMap to be used.
-	function getValidCacheMap(options) {
-	  var cacheMap = options && options.cacheMap;
-	  if (!cacheMap) {
-	    return new Map();
+	    // return Promise.resolve(propertyValue)
 	  }
-	  var cacheFunctions = ['get', 'set', 'delete', 'clear'];
-	  var missingFunctions = cacheFunctions.filter(function (fnName) {
-	    return cacheMap && typeof cacheMap[fnName] !== 'function';
-	  });
-	  if (missingFunctions.length !== 0) {
-	    throw new TypeError('Custom cacheMap missing methods: ' + missingFunctions.join(', '));
+
+	  getSiteLink(sitenames) {
+	    const sitelinks = this.entity.sitelinks;
+
+	    for (var sitename of sitenames) {
+	      const sitelink = sitelinks[sitename];
+	      if (sitelink) {
+	        return Promise.resolve({
+	          ...sitelink,
+	          link: wbk.getSitelinkUrl(sitelink),
+	        })
+	      }
+	    }
+
+	    return Promise.reject()
 	  }
-	  return cacheMap;
-	}
-
-	// Private
-
-
-	var dataloader = DataLoader;
-
-	// Inject setimmediate polyfill in order to use dataloader in browser
-
-	// TODO: Expose API to allow user to set custom endpoint
-	const wbk = wikibaseSdk({
-	  instance: 'https://www.wikidata.org',
-	  sparqlEndpoint: 'https://query.wikidata.org/sparql'
-	});
-
-	async function fetchEntitiesByIds({ids}) {
-	  const url = wbk.getEntities({ids});
-	  let response = await fetch(url);
-	  let res = await response.json();
-	  const {entities} = res;
-	  const entityInstances = Object();
-	  for (let [entityId, entity] of Object.entries(entities)) {
-	    entityInstances[entityId] = new WikibaseEntity(entity);
-	  }
-	  return entityInstances
-	}
-
-	async function batchGetEntities(keys) {
-	  const entities = await fetchEntitiesByIds({ids: keys});
-	  return keys.map(key => entities[key])
-	}
-
-	const entityLoader = new dataloader(batchGetEntities);
-
-	async function fetchEntity({id}) {
-	  return await entityLoader.load(id)
 	}
 
 	class WDEntityElement extends HTMLElement {
@@ -1956,7 +2225,8 @@
 	  }
 
 	  connectedCallback() {
-	    const entityId = this.getAttribute('id');
+	    // TODO: deprecate the use of "id", since that's a built-in attribute in html
+	    const entityId = this.getAttribute('entity-id') || this.getAttribute('id');
 	    this.renderItem(entityId);
 	  }
 
@@ -1965,7 +2235,7 @@
 	    const description = this.hasAttribute('description');
 	    const lang = this.getAttribute('lang');
 
-	    fetchEntity({id: entityId}).then(entity => {
+	    WikibaseEntity.getEntity({id: entityId}).then((entity) => {
 	      let q = null;
 
 	      if (description) {
@@ -1975,7 +2245,7 @@
 	      } else {
 	        q = entity.getLabel(lang);
 	      }
-	      return q.then(value => {
+	      return q.then((value) => {
 	        this.textContent = value;
 	      })
 	    });
@@ -1989,8 +2259,56 @@
 	  window.customElements.define('wd-entity', WDEntityElement);
 	}
 
+	class WDLinkElement extends HTMLAnchorElement {
+	  constructor() {
+	    super();
+	  }
+
+	  static get observedAttributes() {
+	    return ['entity-id', 'site', 'property']
+	  }
+
+	  connectedCallback() {
+	    const entityId = this.getAttribute('entity-id');
+	    this.renderElement(entityId);
+	  }
+
+	  attributeChangedCallback(_, oldValue, newValue) {
+	    if (oldValue !== newValue) {
+	      this.renderElement(this.getAttribute('entity-id'));
+	    }
+	  }
+
+	  renderElement(entityId) {
+	    const property = this.getAttribute('property');
+	    const site = this.getAttribute('site');
+
+	    if (!(property || site)) {
+	      throw new Error("You need either 'property' or 'site' in the attributes")
+	    }
+
+	    WikibaseEntity.getEntity({id: entityId}).then((entity) => {
+	      if (property) {
+	        entity.getPropertyLink(property).then((value) => {
+	          this.setAttribute('href', value);
+	        });
+	      } else {
+	        entity.getSiteLink(parseArrayHTMLAttribute(site)).then(({link}) => {
+	          this.setAttribute('href', link);
+	        });
+	      }
+	    });
+	  }
+	}
+
+	if (!window.customElements.get('wd-link')) {
+	  window.WDLinkElement = WDLinkElement;
+	  window.customElements.define('wd-link', WDLinkElement, {extends: 'a'});
+	}
+
 	exports.WDEntityElement = WDEntityElement;
+	exports.WDLinkElement = WDLinkElement;
 
 	Object.defineProperty(exports, '__esModule', { value: true });
 
-}));
+})));

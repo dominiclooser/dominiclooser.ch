@@ -51,7 +51,8 @@
     for (i = 0, len = props.length; i < len; i++) {
       prop = props[i];
       value = entity.claims[prop];
-      dl += `<dt><wd-entity id=${prop} lang=${lang}></dt>\n<dd><wd-entity id=${entity.id} property=${prop} lang=${lang}></dd>`;
+      dl += `<dt><wd-entity id=${prop} lang=${lang}></dt>
+<dd><wd-entity id=${entity.id} property=${prop} lang=${lang}></dd>`;
     }
     dl += '</dl>';
     links = '<ul>';
@@ -68,7 +69,23 @@
     // """
     overlay = document.createElement('div');
     overlay.classList.add('overlay');
-    overlay.innerHTML = `<div class='overlay-content'>\n    <header class='overlay-header'>\n        <h4 class='overlay-title'>\n            <wd-entity id=${entity.id} label lang=${lang}>\n        </h4>\n        <svg class='close-overlay' viewBox='0 0 100 100'>\n            <line x1=0 y1=0 x2=100 y2=100 />\n            <line x1=0 y1=100 x2=100 y2=0 />\n        </svg> \n    </header>\n    <div class='overlay-main'>\n        ${image}\n        <div class='overlay-summary'>${extract}</div>\n        ${dl}\n        ${links}\n    </div>\n</div>`;
+    overlay.innerHTML = `<div class='overlay-content'>
+    <header class='overlay-header'>
+        <h4 class='overlay-title'>
+            <wd-entity id=${entity.id} label lang=${lang}>
+        </h4>
+        <svg class='close-overlay' viewBox='0 0 100 100'>
+            <line x1=0 y1=0 x2=100 y2=100 />
+            <line x1=0 y1=100 x2=100 y2=0 />
+        </svg> 
+    </header>
+    <div class='overlay-main'>
+        ${image}
+        <div class='overlay-summary'>${extract}</div>
+        ${dl}
+        ${links}
+    </div>
+</div>`;
     document.body.append(overlay);
     close = overlay.querySelector('.close-overlay');
     return close.addEventListener('click', function() {
@@ -113,6 +130,6 @@
   }
 
   
-// showOverlay('Q669591', 'en')
+  // showOverlay('Q669591', 'en')
 
 }).call(this);

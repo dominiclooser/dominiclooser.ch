@@ -2,4 +2,7 @@
 -  wikidata_id: Q11223506  # homebrew
 -  wikidata_id: Q8041      # inkscape 
 -  wikidata_id: Q86924750  # Pug
--  wikidata_id: Q8295      # Scribus
+-  wikidata_id: Q8295      
+   label: Scribus
+-  wikidata_id: Q281876
+   label: YAML

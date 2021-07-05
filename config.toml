@@ -1,3 +1,5 @@
+external = '/users/dominic/code/data/mydata'
+
 [[generators]]
 template = 'topic.pug'
 data = 'topics/*'
@@ -20,5 +22,5 @@ target = 'empfehlungen'
 
 [[generators]]
 template = 'project.pug'
-data = 'projects/*.yml'
+data = 'external:projects/*.yml'
 target = 'projects'

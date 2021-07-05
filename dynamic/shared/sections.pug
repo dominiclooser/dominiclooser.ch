@@ -8,39 +8,90 @@ mixin section(title)
          .s1-main
             block
 
-mixin videos(data)
-   .video-grid
-      for video in data
-         .video
-            if video.youtube_id
-               .video-wrapper
-                  iframe(src='https://www.youtube.com/embed/' + video.youtube_id, frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
-            else if video.youtube_playlist_id
-               .video-wrapper
-                  iframe(src=`https://www.youtube.com/embed/videoseries?list=${video.youtube_playlist_id}`, frameborder='0', allowfullscreen)
-            else if video.odysee_id
-               .video-wrapper
-                  iframe(id="lbry-iframe", src=`https://odysee.com/$/embed/${video.odysee_id}`, allowfullscreen)
-            else if video.vimeo_id
-               a(href='https://vimeo.com/' + video.vimeo_id) Auf Vimeo schauen
-            else if video.youmaker_id
-               .video-wrapper
-                  iframe(src=`https://www.youmaker.com/embed/${video.youmaker_id}`, frameborder="0", allowfullscreen)
-            h3.video-title= video.title
-            p= video.description
+mixin subsection(title)
+   section.s2
+      header.s2-header
+         h3.h3= title
+      .s2-main
+         block
 
+
+//-------
+//- video
+//-------
+
+mixin videoIframe(data)
+   if data.youtube_id
+      iframe(src='https://www.youtube.com/embed/' + data.youtube_id, frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
+   else if data.youtube_playlist_id
+      iframe(src=`https://www.youtube.com/embed/videoseries?list=${data.youtube_playlist_id}`, frameborder='0', allowfullscreen)
+   else if data.rumble_id
+      iframe(src=`https://rumble.com/embed/${data.rumble_id}`)
+   else if data.odysee_id
+      iframe(id="lbry-iframe", src=`https://odysee.com/$/embed/${data.odysee_id}`, allowfullscreen)
+   else if data.youmaker_id
+      iframe(src=`https://www.youmaker.com/embed/${data.youmaker_id}`, frameborder="0", allowfullscreen)
 
 mixin videoSection(videos, title)
-   if videos
+   if Array.isArray(videos) && videos.length
       +section(title)
-         +videos(videos)
-         
+         .video-grid
+            for video in videos
+               .video
+                  .video-wrapper
+                     +videoIframe(video)
+                  h3.video-title= video.title
+                  p= video.description
 
-mixin videoSubsection(videos, title)
-   if videos
+mixin videoSubsection(data, title)
+   if Array.isArray(data) && data.length
       +subsection(title)
-         +videos(videos)
+         .video-grid
+            for item in data
+               .video
+                  .video-wrapper
+                     +videoIframe(item)
+                  h3.video-title= item.title
+                  p= item.description
 
+
+mixin videoPlayerSection(videos, title)
+   +section(title)
+      .open-video
+         .video-wrapper
+            +videoIframe(videos[0])   
+      ul.video-controls
+         for item in videos
+            li: button.video-control(data-video=JSON.stringify(item))
+               h2.control-title= item.title
+      script
+         :coffee-script
+            toIframe = (data) ->
+               iframe = document.createElement('iframe')
+               if data.youtube_id
+                  iframe.src='https://www.youtube.com/embed/' + data.youtube_id
+               else if data.youtube_playlist_id
+                  iframe.src="https://www.youtube.com/embed/videoseries?list=#{data.youtube_playlist_id}"
+               else if data.rumble_id
+                  iframe.src="https://rumble.com/embed/#{data.rumble_id}"
+               else if data.odysee_id
+                  iframe.src="https://odysee.com/$/embed/#{data.odysee_id}"
+                  iframe.id = 'lbry-iframe'  
+               else if data.youmaker_id
+                  iframe.src="https://www.youmaker.com/embed/#{data.youmaker_id}"
+               console.log(iframe)
+               return iframe
+            controls = document.querySelectorAll('.video-control')
+            controls[0].classList.add('active')
+            window.openVideoIframe = document.querySelector('.open-video iframe')
+            for control in controls
+               control.addEventListener 'click', ->
+                  
+                  newIframe = toIframe(JSON.parse(this.dataset.video))
+                  window.openVideoIframe.replaceWith(newIframe)
+                  for control in controls
+                     control.classList.remove('active')
+                  this.classList.add('active')
 
 mixin textSection(title, data)
    +section(title)
@@ -52,17 +103,17 @@ mixin dlSection(title, data, lang=global.settings.lang)
          dl.dl
             for definition, term in data
                dt
-                  +item(term, lang=lang)
+                  +infoboxButton(term, lang=lang)
                dd 
-                  +item(definition, lang=lang)
+                  +infoboxButton(definition, lang=lang)
 
 mixin listSection(data, title)
-   if data
+   if data && Array.isArray(data) && data.length
       +section(title)
          ul.default-list
             for item in data
                li
-                  +item(item)
+                  +infoboxButton(item)
 
 
 mixin flatSection(title, data, props=[])
@@ -73,15 +124,16 @@ mixin flatSection(title, data, props=[])
                if data[prop.key]
                   dt= prop.label
                   dd
-                     +item(data[prop.key])
+                     if Array.isArray(data[prop.key])
+                        ul.default-list
+                           for item in data[prop.key]
+                              li 
+                                 +infoboxButton(item)
+                     else
+                        +infoboxButton(data[prop.key])
 
 
-mixin subsection(title)
-   section.s2
-      header.s2-header
-         h3.h3= title
-      .s2-main
-         block
+
 
 mixin listSubsection(data, title)
    if data
@@ -89,7 +141,7 @@ mixin listSubsection(data, title)
          ul.default-list
             for item in data
                li
-                  +item(item)
+                  +infoboxButton(item)
 
 mixin imageSubsection(title, dir)
    if containsImages(dir)

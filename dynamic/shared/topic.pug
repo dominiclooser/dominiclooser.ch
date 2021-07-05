@@ -31,12 +31,12 @@ block content
                         footer.quote-footer
                            if quote.author
                               span.quote-autor 
-                                 +item(quote.author)
+                                 +infoboxButton(quote.author)
                            if quote.author && quote.source
                               span= ', '
                            if quote.source
                               span.quote-source
-                                 +item(quote.source)
+                                 +infoboxButton(quote.source)
 
             
                      
@@ -53,7 +53,7 @@ block content
                      ul.default-list.underlined-on-hover-links
                         for article in local.articles
                            li
-                              +item(article)
+                              +infoboxButton(article)
 
          aside.page-aside
             +listSection(local.concepts, 'Concepts')
@@ -68,9 +68,9 @@ block content
                               ul
                                  for value in prop.value
                                     li
-                                       +item(value)
+                                       +infoboxButton(value)
                            else
-                              +item(prop.value)
+                              +infoboxButton(prop.value)
                               
                      else
                         dt

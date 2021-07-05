@@ -1,8 +1,6 @@
 time = require 'time-grunt'
 jit = require 'jit-grunt'
 autoprefixer = require 'autoprefixer'
-cssVariables = require 'postcss-css-variables'
-calc = require 'postcss-calc'
 fs = require 'fs'
 glob = require 'glob'
 toml = require 'toml'
@@ -18,15 +16,21 @@ marked = require 'marked'
 moment = require 'moment-timezone'
 imageminMozjpeg = require 'imagemin-mozjpeg'
 imageminPngquant = require 'imagemin-pngquant'
+Cite = require 'citation-js'
 
-DATA_DIR = 'data'
+LOCAL_DATA_DIR = 'data'
 PROCESSED_DATA_DIR = '.temp/data'
 OUT_DIR = 'out'
 CONFIG_PATH = 'config.toml'
 PAGES_PATH = 'dynamic/pages'
 
+configString = fs.readFileSync(CONFIG_PATH)
+try
+    HEY_CONFIG = toml.parse(configString)
+catch e
+    console.error(e)
 
-getData = (dataPath) ->
+getFileData = (dataPath) ->
     name = parse(dataPath).base
     id = replaceExt(name, '')
     suffix = parse(dataPath).ext
@@ -53,6 +57,12 @@ getData = (dataPath) ->
             data = toml.parse(content)
         catch error
             console.log(error)
+
+    else if suffix == '.bib'
+        try
+            data = Cite(content).format('data', {format: 'object'})
+        catch error
+            console.log(error)
     
     if data
         data.id = id
@@ -68,18 +78,184 @@ getDataObject = (dir) ->
         id = replaceExt(name, '')
         id = id.split('-').join('_')
         if fs.lstatSync(dataPath).isDirectory()
-            try
-                data[id] = getDataObject(dataPath)
-            catch e
-                console.error(e)
+            list = []
+            for name in fs.readdirSync(dataPath)
+                filePath = join(dataPath, name)
+                if name.startsWith('_')
+                    continue
+                else if fs.lstatSync(filePath).isDirectory()
+                    console.error("Problem with #{filePath}")
+                    continue
+                else
+                    fileData = getFileData(filePath)
+                    list.push(fileData)
+            data[id] = list
+
+            # try
+            #     data[id] = getDataObject(dataPath)
+            # catch e
+            #     console.error(e)
         else
             try
-                data[id] = getData(dataPath)
+                data[id] = getFileData(dataPath)
             catch e
                 console.log(e)
     return data
+
+getDefaultPugOptions = () ->
+    
+    getImages = (dirId) -> 
+        answer = []
+        baseDir = 'dynamic/images/' + dirId
+        if fs.existsSync(baseDir)
+            for name in fs.readdirSync(baseDir)
+                ext = path.parse(name).ext
+                if ext in ['.jpg', '.png']
+                    fileId = dirId + '/' + name
+                    answer.push(fileId)
+        return answer
+    
+    containsImages = (dirId) ->
+        images = getImages(dirId)
+        if images.length == 0
+            return false
+        else
+            return true
+
+    toWidth = (size) ->
+        if size == 's'
+            return 400
+        else if size == 'm'
+            return 1000
+        else if size == 'l'
+            return 1500
+        else
+            throw 'undefined image size'
+    
+    read = (filename) ->
+
+        if fs.existsSync(filename)
+            return fs.readFileSync(filename)
+        else
+            return ''  
+
+    bibtexToObject = (filepath) ->
+        content = fs.readFileSync(filepath)
+        data = Cite(content).format('data', {format: 'object'})
+        return data  
+
+    wikidata = {} # todo
+
+    marked.setOptions
+        smartypants: true
+
+    options =
+        basedir: 'dynamic/shared'
+        base: (path) -> parse(path).base
+        parse: parse
+        fs: fs
+        moment: moment
+        getImages: getImages
+        containsImages: containsImages
+        marked: marked
+        toWidth: toWidth
+        plugins: [{read: read}]
+        wikidata: wikidata
+        bibtexToObject: bibtexToObject
+        join: join
+        global: getDataObject(LOCAL_DATA_DIR)
+        external: getDataObject(HEY_CONFIG.external)
+    
+    # console.log(getDataObject(HEY_CONFIG.external))
+
+    return options
+
+generatePagesFromData = () ->
+    if not fs.existsSync(CONFIG_PATH)
+        return
+        
+    for generator in HEY_CONFIG.generators
+            
+        targetDirName = generator.target || ''
+        targetRoot = join(OUT_DIR, targetDirName)
+        if !fs.existsSync(targetRoot)
+            fs.mkdirSync(targetRoot)
+
+        templateName = generator.template || 'page.pug'
+
+        templatePath = 'dynamic/shared/' + templateName
+        templateString = fs.readFileSync(templatePath)
+        parsedTemplate = matter(templateString)
+        templateContent = parsedTemplate.content
+        templateData = parsedTemplate.data
+        
+        dataConfig = generator.data
+        splitted = dataConfig.split(':')
+        if splitted.length == 2 and splitted[0] == 'external'
+            dataDir = HEY_CONFIG['external']
+            dataGlob = splitted[1]
+        else
+            dataDir = LOCAL_DATA_DIR
+            dataGlob = dataConfig
+
+        for dataPath in glob.sync(join(dataDir, dataGlob))
+            if parse(dataPath).name.startsWith('_')
+                continue
+            local = {}
+            _.merge(local, getFileData(dataPath), templateData)
+
+            options = getDefaultPugOptions()
+            options.local = local
+            
+            process.stdout.write("Rendering #{templatePath} with data from #{dataPath} ... ")
+            try
+                html = pug.render(templateContent, options)
+            catch e
+                console.log('error.')
+                console.error(e)
+                continue
+                
+            key = parse(dataPath).base
+            name = replaceExt(key, '.html')
+            if local.path
+                targetDir = join(targetRoot, local.path)
+                if !fs.existsSync(targetDir)
+                    fs.mkdirSync(targetDir)
+                targetFile =  join(targetDir, 'index.html')
+            else
+                targetFile = join(targetRoot, name)
+        
+            fs.writeFileSync(targetFile, html)
+            console.log("done. Generated #{targetFile}")
+
+buildSinglePages = () ->
    
-config =
+    for pagePath in glob.sync('dynamic/pages/**/*.pug')
+        if parse(pagePath).name.startsWith('_')
+            continue
+        relativePath = path.relative(PAGES_PATH, pagePath)
+        urlPath = replaceExt(relativePath, '')
+        string = fs.readFileSync(pagePath)
+        parsed = matter(string)
+        options = getDefaultPugOptions()
+        options.local = parsed.data
+        options.path = urlPath
+        pugString = parsed.content
+        
+        try
+            process.stdout.write("Compiling #{pagePath} ... ")
+            html = pug.render(pugString, options)
+        catch e
+            console.log('error.')
+            console.error(e)
+            continue
+
+        relativeTarget = replaceExt(relativePath, '.html')
+        target = join(OUT_DIR, relativeTarget)
+        console.log("done. Writing to #{target}")
+        fs.writeFileSync(target, html)
+
+gruntConfig =
 
     # exec:
     #     encrypt:  'staticrypt out/articles/corona/index.html keinpasswort -o out/articles/corona/index.html'
@@ -179,7 +355,7 @@ config =
             files: 'data/**/*'
             tasks: ['pug', 'strip-extensions']
         pages:
-            files: ['dynamic/pages/*', 'dynamic/shared/*']
+            files: ['dynamic/pages/**/*', 'dynamic/shared/**/*']
             tasks: ['pug', 'strip-extensions']
         styles:
             files: 'dynamic/styles/*'
@@ -192,7 +368,7 @@ config =
             tasks: ['imagemin', 'responsive_images']
 
 module.exports = (grunt) ->
-    grunt.initConfig config
+    grunt.initConfig gruntConfig
     time grunt
     jit grunt
 
@@ -226,151 +402,8 @@ module.exports = (grunt) ->
                 fs.renameSync(filePath, newDir + '/index.html')
     
     grunt.registerTask 'pug', ->
-        
-        globals = 
-            global: getDataObject(DATA_DIR)
-
-        globalData = getDataObject(DATA_DIR)
-        
-        globals = 
-            global: globalData
-        
-        getImages = (dirId) -> 
-            answer = []
-            baseDir = 'dynamic/images/' + dirId
-            if fs.existsSync(baseDir)
-                for name in fs.readdirSync(baseDir)
-                    ext = path.parse(name).ext
-                    if ext in ['.jpg', '.png']
-                        fileId = dirId + '/' + name
-                        answer.push(fileId)
-            return answer
-        
-        containsImages = (dirId) ->
-            images = getImages(dirId)
-            if images.length == 0
-                return false
-            else
-                return true
-
-        toWidth = (size) ->
-            if size == 's'
-                return 400
-            else if size == 'm'
-                return 1000
-            else if size == 'l'
-                return 1500
-            else
-                throw 'undefined image size'
-        
-        read = (filename) ->
-    
-            if fs.existsSync(filename)
-                return fs.readFileSync(filename)
-            else
-                return ''    
-
-        wikidata = {} # todo
-
-        marked.setOptions
-            smartypants: true
-
-        globalOptions =
-            basedir: 'dynamic/shared'
-            base: (path) -> parse(path).base
-            fs: fs
-            moment: moment
-            getImages: getImages
-            containsImages: containsImages
-            marked: marked
-            toWidth: toWidth
-            plugins: [{read: read}]
-            wikidata: wikidata
-    
-            
-       
-        if fs.existsSync(CONFIG_PATH)
-            
-            configString = fs.readFileSync(CONFIG_PATH)
-            try
-                config = toml.parse(configString)
-            catch e
-                console.error(e)
-
-            for generator in config.generators
-                
-                targetDirName = generator.target || ''
-                targetDirPath = join(OUT_DIR, targetDirName)
-                if !fs.existsSync(targetDirPath)
-                    fs.mkdirSync(targetDirPath)
-
-                templateName = generator.template || 'page.pug'
-
-                templatePath = 'dynamic/shared/' + templateName
-                templateString = fs.readFileSync(templatePath)
-                parsedTemplate = matter(templateString)
-                templateContent = parsedTemplate.content
-                templateData = parsedTemplate.data
-                
-                dataGlob = generator.data
-
-                for dataPath in glob.sync(join(DATA_DIR, dataGlob))
-                    if parse(dataPath).name.startsWith('_')
-                        continue
-                    local = {}
-                    _.merge(local, getData(dataPath), templateData)
-                    locals = 
-                        local: local
-
-                    options = {}
-                    _.merge(options, locals, globals, globalOptions)
-                    # console.log(options)
-                    process.stdout.write("Rendering #{templatePath} with data from #{dataPath} ... ")
-                    try
-                        html = pug.render(templateContent, options)
-                    catch e
-                        console.log('error.')
-                        console.error(e)
-                        continue
-                        
-                    key = parse(dataPath).base
-                    
-                    name = replaceExt(key, '.html')
-                    targetFile = join(targetDirPath, name)
-                
-                    fs.writeFileSync(targetFile, html)
-                    console.log("done. Generated #{targetFile}")
-               
-        for pagePath in glob.sync('dynamic/pages/**/*.pug')
-            if parse(pagePath).name.startsWith('_')
-                continue
-            relativePath = path.relative(PAGES_PATH, pagePath)
-            urlPath = replaceExt(relativePath, '')
-
-            string = fs.readFileSync(pagePath)
-            parsed = matter(string)
-            
-            options = 
-                path: urlPath
-            locals = 
-                local: parsed.data
-            _.merge(options, locals, globals, globalOptions)
-
-            pugString = parsed.content
-            
-            try
-                process.stdout.write("Compiling #{pagePath} ... ")
-                html = pug.render(pugString, options)
-            catch e
-                console.log('error.')
-                console.error(e)
-                continue
-
-            relativeTarget = replaceExt(relativePath, '.html')
-            target = join(OUT_DIR, relativeTarget)
-            console.log("done. Writing to #{target}")
-            fs.writeFileSync(target, html)
-            
+        generatePagesFromData()
+        buildSinglePages()
 
     grunt.registerTask 'build', ['make-dirs', 'pug', 'stylus', 'postcss', 'coffee', 'copy:static', 'strip-extensions']
     grunt.registerTask 'default', ['build', 'watch']

@@ -15,11 +15,11 @@ block content
                   .card
                      header.card-header
                         h3.card-title
-                           +item(cardTitle)
+                           +infoboxButton(cardTitle)
                      main.card-main
                         ul.card-list
                            for item in cardItems
-                              li: +item(item)
+                              li: +infoboxButton(item)
          else
             for sectionContent, section in local.content
                section.s1
@@ -31,9 +31,9 @@ block content
                            //- +responsiveImage(local.image)(class='card-background-image')
                            header.card-header
                               h3.card-title
-                                 +item(cardTitle)
+                                 +infoboxButton(cardTitle)
                            main.card-main
                               ul.card-list
                                  for item in cardItems
-                                    li: +item(item)
+                                    li: +infoboxButton(item)
       include /footer

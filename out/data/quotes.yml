@@ -4,6 +4,17 @@
 # Man suffers only because he takes seriously what the gods made for fun.
 # -  content: A nation of sheep will beget a government of wolves.
 
+-  content: | 
+      Wenn man eine große Lüge erzählt und sie oft genug wiederholt, dann werden die Leute sie 
+      am Ende glauben. Man kann die Lüge so lange behaupten, wie es dem Staat gelingt, die 
+      Menschen von den politischen, wirtschaftlichen und militärischen Konsequenzen der Lüge 
+      \abzuschirmen. Deshalb ist es von lebenswichtiger Bedeutung für den Staat, seine gesamte 
+      Macht für die Unterdrückung abweichender Meinungen einzusetzen. Die Wahrheit ist der 
+      Todfeind der Lüge, und daher ist die Wahrheit der größte Feind des Staates.
+   author: Q41749  # goebbels
+   tags: ['Gegenpropaganda', 'Q7163']  # politics
+   source:  https://beruhmte-zitate.de/zitate/1974292-joseph-goebbels-wenn-man-eine-grosse-luge-erzahlt-und-sie-oft-genug
+
 -  content: Die glücklichen Sklaven sind die erbittertsten Feinde der Freiheit.
    tags: ['Gegenpropaganda', 'Q7163']  # politics
 

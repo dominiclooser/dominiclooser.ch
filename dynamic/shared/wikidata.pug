@@ -3,27 +3,32 @@ mixin elementScripts
    script(src='https://unpkg.com/wikidata-elements@0.1.0/dist/wd-elements.umd.js') 
 
 
-mixin item(data, lang=global.settings.lang)
+mixin infoboxButton(data, lang=global.settings.lang)
    if ! data
       return ''
-   if typeof data == 'string' 
+      
+   else if typeof data == 'string' 
       if data.startsWith('Q')
          button.show-item(data-id=data): wd-entity(id=data, label, lang=lang)
       else
          = data
    
+   else if data.wikidata_id
+      button.show-infobox(data-id=data.wikidata_id): wd-entity(id=data.wikidata_id, label, lang=lang)
+
    else if data.label 
-      if data.link
-         a(href=data.link)= data.label
+      if data.url
+         a(href=data.url)= data.label
       else
          = data.label
    
    else if data.title
-      if data.link
-         a(href=data.link)= data.title
+      if data.url
+         a(href=data.url)= data.title
       else
          = data.title
-   
+
+   +elementScripts
    script(type='module', src='/scripts/wikibase-sdk.min.js')
    script(type='module', src='/scripts/wikidata.js')
 
@@ -34,6 +39,10 @@ mixin label(input, lang=global.settings.lang)
          wd-entity(entity-id=input, label, lang=lang)
       else
          = input
+   else if input.wikidata_id
+      wd-entity(entity-id=input.wikidata_id, label, lang=lang)
+   else if input.label
+      = input.label
    +elementScripts
    
 mixin value(entity, prop, lang=global.settings.lang)

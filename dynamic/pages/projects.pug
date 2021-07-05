@@ -9,7 +9,7 @@ block content
    -
       map = new Map()
       map.set('In Arbeit', [])
-      for (project of Object.values(global.projects)) {
+      for (project of external.projects) {
          if ('year' in project) {
             if (!(map.has(project.year))) {
                map.set(project.year, [])
