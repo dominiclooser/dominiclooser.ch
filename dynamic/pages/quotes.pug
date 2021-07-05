@@ -3,14 +3,20 @@ include /wikidata
 include /page_heading
 
 block content
+   - quotes = external.quotes.concat(global.quotes)
    .wrapper
       include /navigation
       +pageHeading('Zitate')
-      .page-main
-         .quotes
-            for quote in global.quotes
-               blockquote.quote
-                  p.quote-content= quote.content
+   .page-main
+      .quotes
+         for quote in quotes
+            blockquote.quote
+               .wrapper
+                  .quote-content.spaced-paragraphs
+                     if quote.content.original
+                        != marked(quote.content.original)
+                     else
+                        != marked(quote.content)
                   footer.quote-footer 
                      if quote.author
                         span.quote-author 
@@ -22,4 +28,5 @@ block content
                      else if quote.source
                         span.quote-source
                            +infoboxButton(quote.source)
-      include /footer
+      .wrapper
+         include /footer

@@ -285,12 +285,20 @@
     
 .quote
     break-inside: avoid
+    height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    &:nth-child(2n)
+        background: var(--secondary-background-color)
 
 .quote + .quote
     margin-top: var(--unit)
 
-.quote-content    
-    font-size: var(--l)
+.quote-content   
+    font-style: italic 
+    @media l
+        font-size: var(--xl)
     line-height: 1.2
 
 .quote-footer

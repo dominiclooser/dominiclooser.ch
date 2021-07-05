@@ -352,7 +352,7 @@ gruntConfig =
             files: 'dynamic/scripts/*'
             tasks: 'coffee'
         data:
-            files: 'data/**/*'
+            files: ['data/**/*', '~/code/data/mydata/**/*']
             tasks: ['pug', 'strip-extensions']
         pages:
             files: ['dynamic/pages/**/*', 'dynamic/shared/**/*']
@@ -366,6 +366,7 @@ gruntConfig =
         images:
             files: 'dynamic/images/**/*'
             tasks: ['imagemin', 'responsive_images']
+
 
 module.exports = (grunt) ->
     grunt.initConfig gruntConfig
